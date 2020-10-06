@@ -142,7 +142,7 @@
        
 
 
-        <TextBlock HorizontalAlignment="Left" Margin="41,454,0,0" TextWrapping="Wrap" Text="Don't have an account?"
+        <TextBlock HorizontalAlignment="Left" Margin="41,454,0,0" TextWrapping="Wrap" Text="have an account?"
                    FontSize="18" VerticalAlignment="Top" FontWeight="Medium"/>
         <Button
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
