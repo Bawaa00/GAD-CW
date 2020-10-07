@@ -126,9 +126,9 @@
                    Height="30" FontSize="20" Foreground="White" FontWeight="Medium" Background="{x:Null}"/>
         <TextBlock HorizontalAlignment="Left" Margin="32,160,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"
                    Height="30" FontSize="20" Foreground="White" FontWeight="Medium" Background="{x:Null}"/>
-        <TextBox x:Name="u_nme" HorizontalAlignment="Right" Height="30" Margin="0,110,32,0" 
+        <TextBox x:Name="txt_uname" HorizontalAlignment="Right" Height="30" Margin="0,110,32,0" 
                  VerticalAlignment="Top" Width="183" FontSize="17" Foreground="White"/>
-        <PasswordBox x:Name="pwrd" HorizontalAlignment="Right" Height="30" Margin="0,160,32,0" 
+        <PasswordBox x:Name="pass_box" HorizontalAlignment="Right" Height="30" Margin="0,160,32,0" 
                  VerticalAlignment="Top" Width="183" FontSize="17" Foreground="White"/>
 
         <Button x:Name="btn_log"
@@ -145,7 +145,7 @@
                 <SolidColorBrush Color="#FFF3F3F7" Opacity="0.4"/>
             </TextBlock.Foreground>
         </TextBlock>
-        <TextBlock x:Name="txt_error" HorizontalAlignment="Left" Margin="45,387,0,0" TextWrapping="Wrap" Text="...." VerticalAlignment="Top" Height="148" Width="355"/>
+        <TextBlock x:Name="txt_error" HorizontalAlignment="Left" Margin="45,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="148" Width="355" FontSize="20" FontWeight="Bold" Foreground="Red"/>
 
 
 

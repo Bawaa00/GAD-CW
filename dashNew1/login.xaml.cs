@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace dashNew1
 {
@@ -19,6 +21,9 @@ namespace dashNew1
     /// </summary>
     public partial class login : Window
     {
+        Connect_DB db = new Connect_DB();
+        HashCode hc = new HashCode();
+
         public login()
         {
             InitializeComponent();
@@ -29,7 +34,18 @@ namespace dashNew1
             /*LoadingScreen ls = new LoadingScreen();
             ls.Show();
             this.Close();*/
-
+            DataTable dt = new DataTable();
+            dt = db.getData("Select * from User_login where U_name = '" + txt_uname.Text + "' and U_pass='" + hc.PassHash(pass_box.Password) + "' ");
+            if (dt.Rows.Count == 1)
+            {
+                LoadingScreen ls = new LoadingScreen();
+                this.Hide();
+                ls.Show();
+            }
+            else
+            {
+                txt_error.Text = "Check Username and Password";
+            }
         }
     }
 }
