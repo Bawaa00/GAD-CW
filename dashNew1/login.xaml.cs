@@ -21,8 +21,8 @@ namespace dashNew1
     /// </summary>
     public partial class login : Window
     {
-        Connect_DB db = new Connect_DB();
-        HashCode hc = new HashCode();
+        //Connect_DB db = new Connect_DB();
+       // HashCode hc = new HashCode();
 
         public login()
         {
@@ -31,10 +31,10 @@ namespace dashNew1
 
         private void btn_log_Click(object sender, RoutedEventArgs e)
         {
-            /*LoadingScreen ls = new LoadingScreen();
+            LoadingScreen ls = new LoadingScreen();
             ls.Show();
-            this.Close();*/
-            DataTable dt = new DataTable();
+            this.Close();
+            /*DataTable dt = new DataTable();
             dt = db.getData("Select * from User_login where U_name = '" + txt_uname.Text + "' and U_pass='" + hc.PassHash(pass_box.Password) + "' ");
             if (dt.Rows.Count == 1)
             {
@@ -45,7 +45,7 @@ namespace dashNew1
             else
             {
                 txt_error.Text = "Check Username and Password";
-            }
+            }*/
         }
     }
 }
