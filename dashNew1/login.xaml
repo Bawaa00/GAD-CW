@@ -139,27 +139,12 @@
             <TextBlock
                 Text="login" FontSize="20" FontWeight="Normal"/>
         </Button>
-
-
-
-        <TextBlock HorizontalAlignment="Left" Margin="38,454,0,0" TextWrapping="Wrap" Text="Don't have an account?"
-                   FontSize="18" VerticalAlignment="Top" FontWeight="Medium"/>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            Height="Auto"
-            materialDesign:ButtonAssist.CornerRadius="0 0 10 10"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="40,484,263.2,47.4">
-            <TextBlock
-                Text="Create Account" FontSize="15" />
-        </Button>
         <TextBlock HorizontalAlignment="Left" Margin="95,13,0,0"  Text="Welcome!" 
                    FontSize="50" VerticalAlignment="Top" Width="260" FontWeight="Heavy" Background="{x:Null}">
             <TextBlock.Foreground>
                 <SolidColorBrush Color="#FFF3F3F7" Opacity="0.4"/>
             </TextBlock.Foreground>
         </TextBlock>
-        <CheckBox Content="Remember me" HorizontalAlignment="Left" Margin="298,251,0,0" VerticalAlignment="Top" Width="116"
-                  Foreground="White" FontSize="14" VerticalContentAlignment="Center" Height="34"/>
         <TextBlock x:Name="txt_error" HorizontalAlignment="Left" Margin="45,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="299" FontSize="18" FontWeight="Bold" Foreground="Red"/>
 
 
