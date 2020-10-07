@@ -126,9 +126,9 @@
                    Height="30" FontSize="20" Foreground="White" FontWeight="Medium" Background="{x:Null}"/>
         <TextBlock HorizontalAlignment="Left" Margin="32,160,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"
                    Height="30" FontSize="20" Foreground="White" FontWeight="Medium" Background="{x:Null}"/>
-        <TextBox x:Name="u_nme" HorizontalAlignment="Right" Height="30" Margin="0,110,32,0" 
+        <TextBox x:Name="txt_uname" HorizontalAlignment="Right" Height="30" Margin="0,110,32,0" 
                  VerticalAlignment="Top" Width="183" FontSize="17" Foreground="White"/>
-        <PasswordBox x:Name="pwrd" HorizontalAlignment="Right" Height="30" Margin="0,160,32,0" 
+        <PasswordBox x:Name="pass_box" HorizontalAlignment="Right" Height="30" Margin="0,160,32,0" 
                  VerticalAlignment="Top" Width="183" FontSize="17" Foreground="White"/>
 
         <Button x:Name="btn_log"
@@ -160,6 +160,7 @@
         </TextBlock>
         <CheckBox Content="Remember me" HorizontalAlignment="Left" Margin="298,251,0,0" VerticalAlignment="Top" Width="116"
                   Foreground="White" FontSize="14" VerticalContentAlignment="Center" Height="34"/>
+        <TextBlock x:Name="txt_error" HorizontalAlignment="Left" Margin="45,381,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="299" FontSize="18" FontWeight="Bold" Foreground="Red"/>
 
 
 
