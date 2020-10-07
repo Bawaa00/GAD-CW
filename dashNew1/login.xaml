@@ -133,13 +133,13 @@
 
         <Button x:Name="btn_log"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="Auto" Width="100" Background="#5f5fc4"
+            Height="Auto" Background="#5f5fc4"
             materialDesign:ButtonAssist.CornerRadius="20"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="312,201,31.2,329.4" Click="btn_log_Click">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="312,201,21,325" Click="btn_log_Click">
             <TextBlock
                 Text="login" FontSize="20" FontWeight="Normal"/>
         </Button>
-       
+
 
 
         <TextBlock HorizontalAlignment="Left" Margin="38,454,0,0" TextWrapping="Wrap" Text="Don't have an account?"
