@@ -26,9 +26,10 @@ namespace dashNew1
 
         private void btn_log_Click(object sender, RoutedEventArgs e)
         {
-            LoadingScreen ls = new LoadingScreen();
+            /*LoadingScreen ls = new LoadingScreen();
             ls.Show();
-            this.Close();
+            this.Close();*/
+
         }
     }
 }
