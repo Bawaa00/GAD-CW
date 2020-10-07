@@ -11,23 +11,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace dashNew1
 {
     /// <summary>
-    /// Interaction logic for login.xaml
+    /// Interaction logic for LoadingScreen.xaml
     /// </summary>
-    public partial class login : Window
+    public partial class LoadingScreen : Window
     {
-        public login()
+        DispatcherTimer dT = new DispatcherTimer();
+        public LoadingScreen()
         {
             InitializeComponent();
-        }
 
-        private void btn_log_Click(object sender, RoutedEventArgs e)
+            dT.Tick += new EventHandler(dT_Tick);
+            dT.Interval = new TimeSpan(0, 0, 5);
+            dT.Start();
+        }
+        private void dT_Tick(object sender, EventArgs e)
         {
-            LoadingScreen ls = new LoadingScreen();
-            ls.Show();
+            MainWindow mw = new MainWindow();
+            mw.Show();
+
+            dT.Stop();
             this.Close();
         }
     }

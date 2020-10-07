@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="login" Height="600" Width="450">
+        Title="Login" Height="600" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Rectangle Fill="#320b86" HorizontalAlignment="Left" Height="350" Margin="0" VerticalAlignment="Top" Width="450"/>
         <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="100" Margin="344,300,0,0" VerticalAlignment="Top" Width="100"/>
@@ -131,11 +131,11 @@
         <PasswordBox x:Name="pwrd" HorizontalAlignment="Right" Height="30" Margin="0,160,32,0" 
                  VerticalAlignment="Top" Width="183" FontSize="17" Foreground="White"/>
 
-        <Button
+        <Button x:Name="btn_log"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="Auto" Width="100" Background="#5f5fc4"
             materialDesign:ButtonAssist.CornerRadius="20"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="312,201,31.2,329.4">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="312,201,31.2,329.4" Click="btn_log_Click">
             <TextBlock
                 Text="login" FontSize="20" FontWeight="Normal"/>
         </Button>
