@@ -28,40 +28,40 @@
 
 
         </Grid>
-        <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="228" Background="#4a148c" MouseDown="SidePanel_MouseDown" Margin="0,0,0,0.4">
+        <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="228" Background="#FF320B86" MouseDown="SidePanel_MouseDown" Margin="0,0,0,0.4">
             <ToggleButton
                         Style="{DynamicResource MaterialDesignHamburgerToggleButton}" Foreground="White" VerticalAlignment="Top"
                         HorizontalAlignment="Right" Margin="5" Height="40" Width="40" Click="collapse" />
             <StackPanel Height="600" VerticalAlignment="Bottom">
-                <TextBlock x:Name="Dashboard" Height="50" Background="#7c43bd" Margin="3" MouseEnter="Dashboard_MouseEnter"><InlineUIContainer>
+                <TextBlock x:Name="Dashboard" Height="50" Background="#FF4818B1" Margin="3" ><InlineUIContainer>
                         <materialDesign:PackIcon Kind="ViewDashboard" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Dashboard"/></TextBlock>
-                <TextBlock x:Name="Cars" Background="#7c43bd" Height="50" Margin="3">
+                <TextBlock x:Name="Cars" Background="#FF4818B1" Height="50" Margin="3">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="CarSports" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Vehicles"/>
                 </TextBlock>
-                <TextBlock x:Name="Customers" Background="#7c43bd" Height="50" Margin="3">
+                <TextBlock x:Name="Customers" Background="#FF4818B1" Height="50" Margin="3">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="HumanGreeting" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Customers"/>
                 </TextBlock>
-                <TextBlock x:Name="driver" Background="#7c43bd" Height="50" Margin="3">
+                <TextBlock x:Name="driver" Background="#FF4818B1" Height="50" Margin="3">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="CardAccountDetails" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Drivers"/>
                 </TextBlock>
-                <TextBlock x:Name="services" Background="#7c43bd" Height="50" Margin="3">
+                <TextBlock x:Name="services" Background="#FF4818B1" Height="50" Margin="3">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="ProgressWrench" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Services"/>
                 </TextBlock>
-                <TextBlock x:Name="maintenance" Background="#7c43bd" Height="50" Margin="3">
+                <TextBlock x:Name="maintenance" Background="#FF4818B1" Height="50" Margin="3">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="HammerWrench" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
@@ -70,6 +70,20 @@
             </StackPanel>
 
         </Grid>
+        <StackPanel HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
+                    Margin="228,186,0,0" VerticalAlignment="Top" Width="170">
+            <StackPanel.Effect>
+                <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
+            </StackPanel.Effect>
+            <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Add customer"
+                                                                     FontWeight="Medium"/></TextBlock>
+            <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    view customer"
+                    FontWeight="Medium"/></TextBlock>
+            <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Search customer"
+                    FontWeight="Medium"/></TextBlock>
+            <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Delete"
+                    FontWeight="Medium"/></TextBlock>
+        </StackPanel>
 
     </Grid>
 </Window>
