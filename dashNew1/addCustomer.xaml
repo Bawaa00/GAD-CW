@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="addCustomer" Height="700" Width="1300">
     <Grid>
-        <Rectangle Fill="#320b86" HorizontalAlignment="Left" Height="800" Margin="0,0,0,0" VerticalAlignment="Top" Width="800"/>
+        <Rectangle Fill="#320b86" HorizontalAlignment="Left" Height="671" Margin="0,0,0,0
+                   " VerticalAlignment="Top" Width="800"/>
         <Ellipse Fill="#FF4818B1" HorizontalAlignment="Left" Height="341" Margin="16,16,0,0" VerticalAlignment="Top" Width="341"/>
         <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="186" Margin="168,137,0,0" VerticalAlignment="Top" Width="186"/>
         <Ellipse Fill="#FF4818B1" HorizontalAlignment="Left" Height="202" Margin="48,360,0,0" VerticalAlignment="Top" Width="202"/>

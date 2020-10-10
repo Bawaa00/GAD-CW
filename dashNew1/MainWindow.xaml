@@ -19,12 +19,13 @@
         <Grid x:Name="headPanel" VerticalAlignment="Top" Height="50" Background="#12005e">
             <Button
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-                HorizontalAlignment="Right" VerticalAlignment="Center"
-                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,132.6,5"
+                HorizontalAlignment="Right" VerticalAlignment="Center" Background="#12005e"
+                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,83.6,5"
                 AllowDrop="True" Height="40" Width="40">
-                <materialDesign:PackIcon Kind="AccountCircleOutline" Foreground="White" Height="38" Width="38"/>
+                <materialDesign:PackIcon Kind="AccountCircleOutline" Foreground="White" Height="38" Width="38" Margin="0"
+                                         Background="{x:Null}"/>
             </Button>
-            
+
 
         </Grid>
         <Grid x:Name="sidePanel" HorizontalAlignment="Left" Width="228" Background="#4a148c" MouseDown="SidePanel_MouseDown" Margin="0,0,0,0.4">
