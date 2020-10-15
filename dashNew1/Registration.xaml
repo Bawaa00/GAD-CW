@@ -25,39 +25,40 @@
                    FontSize="18" Foreground="White" Height="25"/>
         <TextBlock Text="Retype passsword" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="32,291,0,0"
                    FontSize="18" Foreground="White" Height="25"/>
-        <TextBox x:Name="f_name" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,91,32,0" Height="25" Width="165" FontSize="17"
+        <TextBox x:Name="txt_fname" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,91,32,0" Height="25" Width="165" FontSize="17"
                  Foreground="White"/>
-        <TextBox x:Name="l_name" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,141,32,0" Height="25" Width="165" FontSize="17"
+        <TextBox x:Name="txt_lname" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,141,32,0" Height="25" Width="165" FontSize="17"
                  Foreground="White"/>
-        <TextBox x:Name="u_name" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,191,32,0" Height="25" Width="165" FontSize="17"
+        <TextBox x:Name="txt_uname" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,191,32,0" Height="25" Width="165" FontSize="17"
                  Foreground="White"/>
-        <PasswordBox x:Name="pswrd" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,241,32,0" Height="25" Width="165" FontSize="17"
+        <PasswordBox x:Name="pbox_pass" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,241,32,0" Height="25" Width="165" FontSize="17"
+                     Foreground="White" KeyUp="pbox_pass_KeyUp" LostFocus="pbox_pass_LostFocus"/>
+        <PasswordBox x:Name="pbox_retype" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,291,32,0" Height="25" Width="165" FontSize="17"
                      Foreground="White"/>
-        <PasswordBox x:Name="r_pswrd" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,291,32,0" Height="25" Width="165" FontSize="17"
-                     Foreground="White"/>
-        <Button
+        <Button x:Name="btn_submit"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="40" Width="140"
             HorizontalAlignment="Right" VerticalAlignment="Top"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="0,330,32,0" Background="#FF5B5BA4">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="0,330,32,0" Background="#FF5B5BA4" Click="btn_submit_Click">
             <TextBlock
                 Text="SUBMIT" FontSize="20"/>
         </Button>
 
 
-        <Ellipse HorizontalAlignment="Left" Height="61" Margin="185,410.5,0,0"  VerticalAlignment="Top" Width="61" Fill="#79b700"/>
-        <materialDesign:PackIcon Kind="CheckCircleOutline" Margin="182,408,0,0" Height="66" Width="66" Foreground="White"
-                                 Background="{x:Null}"/>
-        <TextBlock HorizontalAlignment="Left" Margin="183,483,0,0" TextWrapping="Wrap" Text="DONE!" VerticalAlignment="Top"
-                   Width="64" Height="30" FontSize="20" FontWeight="Medium"/>
+        <Ellipse x:Name="md_elipse" HorizontalAlignment="Left" Height="61" Margin="185,410.5,0,0"  VerticalAlignment="Top" Width="61" Fill="#79b700" Visibility="Hidden"/>
+        <materialDesign:PackIcon x:Name="md_icon" Kind="CheckCircleOutline" Margin="182,408,0,0" Height="66" Width="66" Foreground="White"
+                                 Background="{x:Null}" MouseEnter="md_icon_MouseEnter" Visibility="Hidden"/>
+
+        <TextBlock x:Name="txt_info" HorizontalAlignment="Left" Margin="183,483,0,0" TextWrapping="Wrap" Text="DONE!" VerticalAlignment="Top"
+                   Width="64" Height="30" FontSize="20" FontWeight="Medium" Visibility="Hidden"/>
         <TextBlock HorizontalAlignment="Left" Margin="75,10,0,0" Text="Create Your Account" VerticalAlignment="Top"
                    Height="40" FontSize="30" Width="300" FontWeight="Bold" FontFamily="Segoe UI Semibold" >
             <TextBlock.Foreground>
                 <SolidColorBrush Color="White" Opacity="0.4"/>
             </TextBlock.Foreground>
         </TextBlock>
-
+        
 
 
 
