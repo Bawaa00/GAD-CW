@@ -70,6 +70,9 @@
     <Compile Include="addCustomer.xaml.cs">
       <DependentUpon>addCustomer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Add_vehicle.xaml.cs">
+      <DependentUpon>Add_vehicle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connect_DB.cs" />
     <Compile Include="Driver_update.xaml.cs">
       <DependentUpon>Driver_update.xaml</DependentUpon>
@@ -84,7 +87,14 @@
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View_car.xaml.cs">
+      <DependentUpon>View_car.xaml</DependentUpon>
+    </Compile>
     <Page Include="addCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_vehicle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,6 +123,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View_car.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
