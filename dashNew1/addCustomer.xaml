@@ -37,6 +37,34 @@
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="25" Margin="758,64,0,0" VerticalAlignment="Top" Width="25"/>
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="11" Margin="758,241,0,0" VerticalAlignment="Top" Width="11"/>
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="99" Margin="454,491,0,0" VerticalAlignment="Top" Width="99"/>
+        <Rectangle HorizontalAlignment="Right" Height="61" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="383">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                    <GradientStop Color="#FF320B86" Offset="0.513"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,11.6,620.4">
+            <materialDesign:PackIcon
+                Kind="PagePrevious"
+                Height="24"
+                Width="24" />
+        </Button>
+
+        <Button
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,73.6,620.4">
+            <materialDesign:PackIcon
+                Kind="Home"
+                Height="24"
+                Width="24" />
+        </Button>
 
         <TextBlock
             Foreground="White" FontSize="21" VerticalAlignment="Top" HorizontalAlignment="Left"
@@ -151,6 +179,8 @@
                  Width="300" FontSize="17" FontWeight="Light"/>
         <TextBlock HorizontalAlignment="Left" Margin="240,49,0,0" TextWrapping="Wrap" Text="New Customer" VerticalAlignment="Top"
                    FontSize="50" Foreground="White" Opacity="0.6"/>
+
+
 
 
     </Grid>

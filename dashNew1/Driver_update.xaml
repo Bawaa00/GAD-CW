@@ -11,6 +11,26 @@
         <Rectangle Fill="#FF320B86" HorizontalAlignment="Left" Height="363" Margin="1,0,0,0" VerticalAlignment="Top" Width="176"/>
         <Ellipse Fill="#FF320B86" HorizontalAlignment="Left" Height="100" Margin="38,456,0,0" Stroke="#FF320B86" StrokeThickness="2" VerticalAlignment="Top" Width="100"/>
         <Ellipse Fill="#FF320B86" HorizontalAlignment="Left" Height="60" Margin="58,562,0,0" Stroke="#FF320B86" StrokeThickness="2" VerticalAlignment="Top" Width="60"/>
+        <Rectangle Fill="#FF320B86" HorizontalAlignment="Right" Height="670" Margin="0,0,0,0" VerticalAlignment="Top" Width="350"/>
+        
+        <Button
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,11.6,620.4">
+            <materialDesign:PackIcon
+                Kind="PagePrevious"
+                Height="24"
+                Width="24" />
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,68.6,620.4">
+            <materialDesign:PackIcon
+                Kind="Home"
+                Height="24"
+                Width="24" />
+        </Button>
 
         <TextBlock HorizontalAlignment="Left" Margin="50,85,0,0" TextWrapping="Wrap" Text="Driver ID" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
@@ -32,7 +52,7 @@
             FontSize="18" FontWeight="Medium"/>
         <TextBox HorizontalAlignment="Left" Height="30" Margin="200,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
-        <Rectangle Fill="#FF320B86" HorizontalAlignment="Right" Height="670" Margin="0,0,0,0" VerticalAlignment="Top" Width="350"/>
+        
 
         <Button
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
@@ -60,7 +80,8 @@
             ToolTip="MaterialDesignFlatButton" Width="100" Margin="330,359,449.6,275.4" BorderBrush="#FF320B86" Content="CLEAR ALL"/>
         <TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" Width="160" Height="50" Text="DRIVER" VerticalAlignment="Top"
                    FontSize="40" FontWeight="Bold" Foreground="#FF8F6AE0" Opacity="0.8" TextAlignment="Center"/>
-        <Image HorizontalAlignment="Right" Height="300" Margin="0,40,25,0" VerticalAlignment="Top" Width="300"/>
+        <Image HorizontalAlignment="Right" Height="300" Margin="0,90,25,0" VerticalAlignment="Top" Width="300"/>
+
 
     </Grid>
 </Window>
