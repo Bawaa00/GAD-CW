@@ -79,66 +79,51 @@ namespace dashNew1
             timer.Start();
         }
 
-        private void Dashboard_MouseEnter(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void option_panel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            option_panel.Visibility = Visibility.Visible;
-        }
-
-        private void option_panel_MouseLeave(object sender, MouseEventArgs e)
-        {
-            option_panel.Visibility = Visibility.Hidden;
-        }
-
         private void Cars_MouseEnter(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Visible;
-            option_panel.Margin = new Thickness(228, 120, 0, 0);
-            opt_1.Text = "    Add New Vehicle"; opt_1.FontSize = 18; opt_1.FontWeight = FontWeights.Medium; opt_1.TextAlignment = TextAlignment.Left;
+            car_option_panel.Visibility = Visibility.Visible;
+           // option_panel.Margin = new Thickness(228, 120, 0, 0);
+            //opt_1.Text = "    Add New Vehicle"; opt_1.FontSize = 18; opt_1.FontWeight = FontWeights.Medium; opt_1.TextAlignment = TextAlignment.Left;
             //opt_2.Text = "    View Vehicles";
             //opt_3.Text = "    Search and Update or Delete Vehicles";
         }
 
         private void Cars_MouseLeave(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Hidden;
+            car_option_panel.Visibility = Visibility.Hidden;
         }
 
         private void Customers_MouseEnter(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Visible;
-            option_panel.Margin = new Thickness(228, 174, 0, 0);
+            cus_option_panel.Visibility = Visibility.Visible;
+            //cus_option_panel.Margin = new Thickness(228, 174, 0, 0);
         }
 
         private void Customers_MouseLeave(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Hidden;
+           cus_option_panel.Visibility = Visibility.Hidden;
         }
 
         private void driver_MouseEnter(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Visible;
-            option_panel.Margin = new Thickness(228, 230, 0, 0);
+            d_option_panel.Visibility = Visibility.Visible;
+           // option_panel.Margin = new Thickness(228, 230, 0, 0);
         }
 
         private void driver_MouseLeave(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Hidden;
+            d_option_panel.Visibility = Visibility.Hidden;
         }
 
         private void services_MouseEnter(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Visible;
-            option_panel.Margin = new Thickness(228, 286, 0, 0);
+            s_option_panel.Visibility = Visibility.Visible;
+            //option_panel.Margin = new Thickness(228, 286, 0, 0);
         }
 
         private void services_MouseLeave(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Hidden;
+            s_option_panel.Visibility = Visibility.Hidden;
         }
 
         private void repairs_MouseEnter(object sender, MouseEventArgs e)
@@ -148,6 +133,56 @@ namespace dashNew1
         }
 
         private void repairs_MouseLeave(object sender, MouseEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void cus_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            cus_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void cus_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            cus_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void car_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            car_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void car_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            car_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void d_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            d_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void d_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            d_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void s_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void s_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void repair_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void reapair_option_panel_MouseLeave(object sender, MouseEventArgs e)
         {
             repair_option_panel.Visibility = Visibility.Hidden;
         }
