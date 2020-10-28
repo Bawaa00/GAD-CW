@@ -36,49 +36,49 @@
                         <materialDesign:PackIcon Kind="ViewDashboard" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Dashboard"/></TextBlock>
-                <TextBlock x:Name="Cars" Background="#FF4818B1" Height="50" Margin="3">
+                <TextBlock x:Name="Cars" Background="#FF4818B1" Height="50" Margin="3" MouseEnter="Cars_MouseEnter" MouseLeave="Cars_MouseLeave">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="CarSports" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Vehicles"/>
                 </TextBlock>
-                <TextBlock x:Name="Customers" Background="#FF4818B1" Height="50" Margin="3">
+                <TextBlock x:Name="Customers" Background="#FF4818B1" Height="50" Margin="3" MouseEnter="Customers_MouseEnter" MouseLeave="Customers_MouseLeave">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="HumanGreeting" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Customers"/>
                 </TextBlock>
-                <TextBlock x:Name="driver" Background="#FF4818B1" Height="50" Margin="3">
+                <TextBlock x:Name="driver" Background="#FF4818B1" Height="50" Margin="3" MouseEnter="driver_MouseEnter" MouseLeave="driver_MouseLeave">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="CardAccountDetails" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Drivers"/>
                 </TextBlock>
-                <TextBlock x:Name="services" Background="#FF4818B1" Height="50" Margin="3">
+                <TextBlock x:Name="services" Background="#FF4818B1" Height="50" Margin="3" MouseEnter="services_MouseEnter" MouseLeave="services_MouseLeave">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="ProgressWrench" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Services"/>
                 </TextBlock>
-                <TextBlock x:Name="maintenance" Background="#FF4818B1" Height="50" Margin="3">
+                <TextBlock x:Name="repairs" Background="#FF4818B1" Height="50" Margin="3" MouseEnter="repairs_MouseEnter" MouseLeave="repairs_MouseLeave">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="HammerWrench" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
-                    </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Maintenance"/>
+                    </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Repairs"/>
                 </TextBlock>
             </StackPanel>
 
         </Grid>
-        <StackPanel HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
-                    Margin="228,186,0,0" VerticalAlignment="Top" Width="170" Visibility="Hidden">
+        <StackPanel x:Name="option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
+                    Margin="228,186,0,0" VerticalAlignment="Top" Width="170" MouseEnter="option_panel_MouseEnter" MouseLeave="option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Add customer"
+            <TextBlock x:Name="opt_1" Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Add customer"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    view customer"
+            <TextBlock x:Name="opt_2" Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    view customer"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Search customer"
+            <TextBlock x:Name="opt_3" Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Search customer"
                     FontWeight="Medium"/></TextBlock>
             <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Delete"
                     FontWeight="Medium"/></TextBlock>

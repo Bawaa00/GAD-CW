@@ -83,5 +83,73 @@ namespace dashNew1
         {
 
         }
+
+        private void option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void Cars_MouseEnter(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Visible;
+            option_panel.Margin = new Thickness(228, 120, 0, 0);
+            //opt_1.Text = "    Add New Vehicle";
+            //opt_2.Text = "    View Vehicles";
+            //opt_3.Text = "    Search and Update or Delete Vehicles";
+        }
+
+        private void Cars_MouseLeave(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void Customers_MouseEnter(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Visible;
+            option_panel.Margin = new Thickness(228, 174, 0, 0);
+        }
+
+        private void Customers_MouseLeave(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void driver_MouseEnter(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Visible;
+            option_panel.Margin = new Thickness(228, 230, 0, 0);
+        }
+
+        private void driver_MouseLeave(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void services_MouseEnter(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Visible;
+            option_panel.Margin = new Thickness(228, 286, 0, 0);
+        }
+
+        private void services_MouseLeave(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void repairs_MouseEnter(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Visible;
+            option_panel.Margin = new Thickness(228, 346, 0, 0);
+        }
+
+        private void repairs_MouseLeave(object sender, MouseEventArgs e)
+        {
+            option_panel.Visibility = Visibility.Hidden;
+        }
     }
 }
