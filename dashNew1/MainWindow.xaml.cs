@@ -98,7 +98,7 @@ namespace dashNew1
         {
             option_panel.Visibility = Visibility.Visible;
             option_panel.Margin = new Thickness(228, 120, 0, 0);
-            //opt_1.Text = "    Add New Vehicle";
+            //opt_1.Text = "    Add New Vehicle"; opt_1.FontSize = 18;
             //opt_2.Text = "    View Vehicles";
             //opt_3.Text = "    Search and Update or Delete Vehicles";
         }
