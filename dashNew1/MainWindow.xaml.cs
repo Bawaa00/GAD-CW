@@ -98,7 +98,7 @@ namespace dashNew1
         {
             option_panel.Visibility = Visibility.Visible;
             option_panel.Margin = new Thickness(228, 120, 0, 0);
-            //opt_1.Text = "    Add New Vehicle"; opt_1.FontSize = 18;
+            opt_1.Text = "    Add New Vehicle"; opt_1.FontSize = 18; opt_1.FontWeight = FontWeights.Medium; opt_1.TextAlignment = TextAlignment.Left;
             //opt_2.Text = "    View Vehicles";
             //opt_3.Text = "    Search and Update or Delete Vehicles";
         }
@@ -143,13 +143,13 @@ namespace dashNew1
 
         private void repairs_MouseEnter(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Visible;
-            option_panel.Margin = new Thickness(228, 346, 0, 0);
+            repair_option_panel.Visibility = Visibility.Visible;
+            //option_panel.Margin = new Thickness(228, 346, 0, 0);
         }
 
         private void repairs_MouseLeave(object sender, MouseEventArgs e)
         {
-            option_panel.Visibility = Visibility.Hidden;
+            repair_option_panel.Visibility = Visibility.Hidden;
         }
     }
 }

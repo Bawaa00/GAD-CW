@@ -74,13 +74,27 @@
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="opt_1" Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Add customer"
+            <TextBlock x:Name="opt_1" Height="54" Margin="0,0,0,0"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="    Add customer"
                                                                      FontWeight="Medium"/></TextBlock>
             <TextBlock x:Name="opt_2" Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    view customer"
                     FontWeight="Medium"/></TextBlock>
             <TextBlock x:Name="opt_3" Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Search customer"
                     FontWeight="Medium"/></TextBlock>
             <TextBlock Height="54" Margin="0,0,0,0"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="    Delete"
+                    FontWeight="Medium"/></TextBlock>
+        </StackPanel>
+        <StackPanel x:Name="repair_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
+                    Margin="228,346,0,0" VerticalAlignment="Top" Width="170" MouseEnter="option_panel_MouseEnter" MouseLeave="option_panel_MouseLeave">
+            <StackPanel.Effect>
+                <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
+            </StackPanel.Effect>
+            <TextBlock x:Name="r_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run  BaselineAlignment="Top" FontSize="18" Text="Add Repair"
+                                                                     FontWeight="Medium"/></TextBlock>
+            <TextBlock x:Name="r_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Repairs"
+                    FontWeight="Medium"/></TextBlock>
+            <TextBlock x:Name="r_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
+                    FontWeight="Medium"/></TextBlock>
+            <TextBlock x:Name="r_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Delete"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
 
