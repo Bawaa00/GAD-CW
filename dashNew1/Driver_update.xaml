@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Driver" Height="700" Width="900">
+        Title="Driver" Height="700" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
         <Ellipse Fill="#FF320B86" HorizontalAlignment="Left" Height="176" Margin="1,275,0,0" Stroke="#FF320B86" StrokeThickness="2" VerticalAlignment="Top" Width="176"/>
         <Rectangle Fill="#FF320B86" HorizontalAlignment="Left" Height="363" Margin="1,0,0,0" VerticalAlignment="Top" Width="176"/>

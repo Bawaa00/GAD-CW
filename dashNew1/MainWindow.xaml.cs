@@ -186,5 +186,33 @@ namespace dashNew1
         {
             repair_option_panel.Visibility = Visibility.Hidden;
         }
+
+        private void v_opt1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Add_vehicle obj = new Add_vehicle();
+           // this.Hide();
+            obj.Show();
+        }
+
+        private void v_opt2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            View_car obj = new View_car();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void c_opt1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            addCustomer obj = new addCustomer();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void d_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Driver obj = new Driver();
+           // this.Hide();
+            obj.Show();
+        }
     }
 }
