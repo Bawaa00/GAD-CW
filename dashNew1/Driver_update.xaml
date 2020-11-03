@@ -42,45 +42,47 @@
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
         <TextBlock HorizontalAlignment="Left" Margin="50,305,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="200,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+        <TextBox x:Name="txt_Did" HorizontalAlignment="Left" Height="30" Margin="200,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
                  FontSize="18" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="200,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+        <TextBox x:Name="txt_Lnum" HorizontalAlignment="Left" Height="30" Margin="200,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="200,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+        <TextBox x:Name="txt_Name" HorizontalAlignment="Left" Height="30" Margin="200,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="200,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+        <TextBox x:Name="txt_Tp" HorizontalAlignment="Left" Height="30" Margin="200,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="200,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+        <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="30" Margin="200,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
         
 
-        <Button
+        <Button x:Name="btn_Update"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="160"
             materialDesign:ButtonAssist.CornerRadius="25 25 0 0"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="643,445,90.6,175.4">
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="643,445,90.6,175.4" Click="btn_Update_Click">
             <TextBlock
                 Text="UPDATE" FontSize="21" FontWeight="Bold" />
         </Button>
-        <Button
+        <Button x:Name="btn_Delete"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="160"
             materialDesign:ButtonAssist.CornerRadius="0 0 25 25"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="643,498,90.6,122.4">
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="643,498,90.6,122.4" Click="btn_Delete_Click">
             <TextBlock
                 Text="DELETE" FontSize="21" FontWeight="Bold" />
         </Button>
-        <Button
+        <Button x:Name="btn_cancel"
             Style="{StaticResource MaterialDesignFlatButton}"
-            ToolTip="MaterialDesignFlatButton" Width="100" Margin="200,359,593.6,279.4" BorderBrush="#FF320B86">
+            ToolTip="MaterialDesignFlatButton" Width="100" Margin="200,359,593.6,279.4" BorderBrush="#FF320B86" Click="btn_cancel_Click">
             CANCEL
         </Button>
-        <Button
+        <Button x:Name="btn_Clear"
             Style="{StaticResource MaterialDesignFlatButton}"
-            ToolTip="MaterialDesignFlatButton" Width="100" Margin="330,359,449.6,275.4" BorderBrush="#FF320B86" Content="CLEAR ALL"/>
+            ToolTip="MaterialDesignFlatButton" Width="100" Margin="330,359,449.6,275.4" BorderBrush="#FF320B86" Content="CLEAR ALL" Click="btn_Clear_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" Width="160" Height="50" Text="DRIVER" VerticalAlignment="Top"
                    FontSize="40" FontWeight="Bold" Foreground="#FF8F6AE0" Opacity="0.8" TextAlignment="Center"/>
-        <Image HorizontalAlignment="Right" Height="300" Margin="0,90,25,0" VerticalAlignment="Top" Width="300"/>
+        <Image x:Name="img" HorizontalAlignment="Right" Height="300" Margin="0,90,25,0" VerticalAlignment="Top" Width="300"/>
+        <Button x:Name="btn_Search" Content="search" HorizontalAlignment="Left" Margin="448,83,0,0" VerticalAlignment="Top" Width="75" Click="btn_Click"/>
+        <Button x:Name="btn_upload" Content="Browse" HorizontalAlignment="Left" Margin="684,387,0,0" VerticalAlignment="Top" Width="84" Click="btn_upload_Click"/>
 
 
     </Grid>
