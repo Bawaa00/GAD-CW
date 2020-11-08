@@ -70,6 +70,9 @@
     <Compile Include="addCustomer.xaml.cs">
       <DependentUpon>addCustomer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Add_owner.xaml.cs">
+      <DependentUpon>Add_owner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Add_vehicle.xaml.cs">
       <DependentUpon>Add_vehicle.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <DependentUpon>View_car.xaml</DependentUpon>
     </Compile>
     <Page Include="addCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_owner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
