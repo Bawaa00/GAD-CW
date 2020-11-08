@@ -79,9 +79,140 @@ namespace dashNew1
             timer.Start();
         }
 
-        private void Dashboard_MouseEnter(object sender, MouseEventArgs e)
+        private void Cars_MouseEnter(object sender, MouseEventArgs e)
         {
+            car_option_panel.Visibility = Visibility.Visible;
+           // option_panel.Margin = new Thickness(228, 120, 0, 0);
+            //opt_1.Text = "    Add New Vehicle"; opt_1.FontSize = 18; opt_1.FontWeight = FontWeights.Medium; opt_1.TextAlignment = TextAlignment.Left;
+            //opt_2.Text = "    View Vehicles";
+            //opt_3.Text = "    Search and Update or Delete Vehicles";
+        }
 
+        private void Cars_MouseLeave(object sender, MouseEventArgs e)
+        {
+            car_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void Customers_MouseEnter(object sender, MouseEventArgs e)
+        {
+            cus_option_panel.Visibility = Visibility.Visible;
+            //cus_option_panel.Margin = new Thickness(228, 174, 0, 0);
+        }
+
+        private void Customers_MouseLeave(object sender, MouseEventArgs e)
+        {
+           cus_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void driver_MouseEnter(object sender, MouseEventArgs e)
+        {
+            d_option_panel.Visibility = Visibility.Visible;
+           // option_panel.Margin = new Thickness(228, 230, 0, 0);
+        }
+
+        private void driver_MouseLeave(object sender, MouseEventArgs e)
+        {
+            d_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void services_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Visible;
+            //option_panel.Margin = new Thickness(228, 286, 0, 0);
+        }
+
+        private void services_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void repairs_MouseEnter(object sender, MouseEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Visible;
+            //option_panel.Margin = new Thickness(228, 346, 0, 0);
+        }
+
+        private void repairs_MouseLeave(object sender, MouseEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void cus_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            cus_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void cus_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            cus_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void car_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            car_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void car_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            car_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void d_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            d_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void d_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            d_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void s_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void s_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void repair_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void reapair_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void v_opt1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Add_vehicle obj = new Add_vehicle();
+           // this.Hide();
+            obj.Show();
+        }
+
+        private void v_opt2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            View_car obj = new View_car();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void c_opt1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            addCustomer obj = new addCustomer();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void d_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Driver obj = new Driver();
+           // this.Hide();
+            obj.Show();
         }
     }
 }
