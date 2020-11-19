@@ -37,13 +37,17 @@ namespace dashNew1
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            string id, fName, lName, address, L_No, NIC;
-            id = txt_id.Text;
-            fName = txt_fName.Text;
-            lName = txt_lName.Text;
-            address = txt_LicNum.Text;
-            L_No = txt_LicNum.Text;
-            NIC = txt_NIC.Text;
+            con.Open();
+            cmd = new SqlCommand("Insert into customer values ('" + txt_id.Text + "','" + txt_fName.Text + "'," +
+                "'" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "')", con);
+            int i = cmd.ExecuteNonQuery();
+            if(i == 1)
+                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            con.Close();
+            cmd.Dispose();
+
         }
     }
 }
