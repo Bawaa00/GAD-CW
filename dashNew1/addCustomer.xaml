@@ -1,11 +1,11 @@
-﻿<Window x:Class="dashNew1.addCustomer"
+﻿<Window x:Name="Add_Customer" x:Class="dashNew1.addCustomer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="addCustomer" Height="700" Width="1300" WindowStartupLocation="CenterScreen">
+        Title="addCustomer" Height="700" Width="1300" WindowStartupLocation="CenterScreen" Loaded="Add_Customer_Loaded">
     <Grid>
         <Rectangle Fill="#320b86" HorizontalAlignment="Left" Height="671" Margin="0,0,0,0
                    " VerticalAlignment="Top" Width="800"/>
@@ -114,11 +114,11 @@
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="20" Text=" NIC"/>
         </TextBlock>
-        <Button
+        <Button x:Name="btn_submit"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"
             materialDesign:ButtonAssist.CornerRadius="15 0 0 15" Margin="125,0,0,85"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD">
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Click="btn_submit_Click">
             <TextBlock
                 Text="SUBMIT" FontSize="21" FontWeight="Heavy" Foreground="White" />
         </Button>
@@ -138,22 +138,22 @@
             <TextBlock
                 Text="EXIT" FontSize="21" FontWeight="Heavy" Foreground="White" />
         </Button>
-        <TextBox x:Name="id" 
+        <TextBox x:Name="txt_id" 
                  HorizontalAlignment="Left" Height="31.2" Margin="420,147,0,0" TextWrapping="Wrap" Foreground="White"
                  VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
-        <TextBox x:Name="id_Copy" 
+        <TextBox x:Name="txt_fName" 
             HorizontalAlignment="Left" Height="32" Margin="420,207,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
-        <TextBox x:Name="id_Copy1" 
+        <TextBox x:Name="txt_lName" 
             HorizontalAlignment="Left" Height="32" Margin="420,267,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
-        <TextBox x:Name="id_Copy2" 
+        <TextBox x:Name="txt_address" 
             HorizontalAlignment="Left" Height="32" Margin="420,327,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
-        <TextBox x:Name="id_Copy3" 
+        <TextBox x:Name="txt_LicNum" 
             HorizontalAlignment="Left" Height="32" Margin="420,387,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
-        <TextBox x:Name="id_Copy4" 
+        <TextBox x:Name="txt_NIC" 
             HorizontalAlignment="Left" Height="32" Margin="420,447,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
         <Image HorizontalAlignment="Right" Height="300" Margin="0,100,100,0" VerticalAlignment="Top" Width="300"/>

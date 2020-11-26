@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace dashNew1
 {
@@ -23,5 +24,31 @@ namespace dashNew1
         {
             InitializeComponent();
         }
+
+        SqlConnection con;
+        SqlCommand cmd;
+
+        private void Add_Customer_Loaded(object sender, RoutedEventArgs e)
+        {
+            con = new SqlConnection("Data Source=DESKTOP-USKQUER;Initial Catalog=TaxiService;Integrated Security=True");
+        }
+
+
+
+        private void btn_submit_Click(object sender, RoutedEventArgs e)
+        {
+            con.Open();
+            cmd = new SqlCommand("Insert into customer values ('" + txt_id.Text + "','" + txt_fName.Text + "'," +
+                "'" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "')", con);
+            int i = cmd.ExecuteNonQuery();
+            if(i == 1)
+                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            con.Close();
+            cmd.Dispose();
+
+        }
     }
 }
+
