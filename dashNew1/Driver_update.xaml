@@ -86,7 +86,7 @@
                    FontSize="40" FontWeight="Bold" Foreground="#FF8F6AE0" Opacity="0.8" TextAlignment="Center" Grid.ColumnSpan="3"/>
         <Image x:Name="img" HorizontalAlignment="Right" Height="300" Margin="0,90,24.6,0" VerticalAlignment="Top" Width="300" Grid.Column="3"/>
         <Button x:Name="btn_upload" Content="Browse" HorizontalAlignment="Left" Margin="507.2,387,0,0" VerticalAlignment="Top" Width="84" Click="btn_upload_Click" Grid.Column="3"/>
-        <ComboBox x:Name="combo1" HorizontalAlignment="Left" Margin="23.2,90,0,0" VerticalAlignment="Top" Width="220" Grid.Column="3" DropDownClosed="combo1_DropDownClosed"/>
+        <ComboBox x:Name="cbox_did" HorizontalAlignment="Left" Margin="23.2,90,0,0" VerticalAlignment="Top" Width="220" Grid.Column="3" DropDownClosed="cbox_did_DropDownClosed"/>
 
 
     </Grid>
