@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using Microsoft.Win32;
+using System.IO;
+using System.Diagnostics;
 
 namespace dashNew1
 {
@@ -25,29 +28,62 @@ namespace dashNew1
             InitializeComponent();
         }
 
-        SqlConnection con;
-        SqlCommand cmd;
+        Connect_DB db = new Connect_DB();
+        string filepath;
 
-        private void Add_Customer_Loaded(object sender, RoutedEventArgs e)
+        private String GetDestinationPath(string filename)
         {
-            con = new SqlConnection("Data Source=DESKTOP-USKQUER;Initial Catalog=TaxiService;Integrated Security=True");
+            String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            string dir = appStartPath + "\\" + txt_id.Text;
+            // If directory does not exist, create it
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            appStartPath = String.Format(dir + "\\" + txt_id.Text + ".jpg");
+            return appStartPath;
         }
 
 
-
         private void btn_submit_Click(object sender, RoutedEventArgs e)
-        {
-            con.Open();
-            cmd = new SqlCommand("Insert into customer values ('" + txt_id.Text + "','" + txt_fName.Text + "'," +
-                "'" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "')", con);
-            int i = cmd.ExecuteNonQuery();
-            if(i == 1)
+        {   
+            string name = System.IO.Path.GetFileName(filepath);
+            string destinationPath = GetDestinationPath(name);
+            File.Copy(filepath, destinationPath, true);
+
+            string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','"+destinationPath+"')";
+
+            int i = db.save_update_delete(query);
+            if (i == 1)
                 MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
-            con.Close();
-            cmd.Dispose();
 
+        }
+
+        private void btn_upload_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Multiselect = false;
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            bool? result = open.ShowDialog();
+
+            if (result == true)
+            {
+                filepath = open.FileName; // Stores Original Path in Textbox    
+                ImageSource imgsource = new BitmapImage(new Uri(filepath)); // Just show The File In Image when we browse It
+                img_cus.Source = imgsource;
+            }
+        }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            txt_id.Clear();
+            txt_fName.Clear();
+            txt_lName.Clear();
+            txt_address.Clear();
+            txt_LicNum.Clear();
+            img_cus.Source = null;
         }
     }
 }
