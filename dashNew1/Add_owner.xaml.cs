@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.Diagnostics;
 using System.IO;
+using System.Data;
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -81,5 +83,18 @@ namespace dashNew1
             txt_contact.Clear();
             img_owner.Source = null;
         }
+
+        private void owner_form_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("Select max(O_ID) from Owner ");
+            string id = dt.Rows[0][0].ToString();
+            var prefix = Regex.Match(id, "^\\D+").Value;
+            var number = Regex.Replace(id, "^\\D+", "");
+            var i = int.Parse(number) + 1;
+            var newString = prefix + i.ToString(new string('0', number.Length));
+            txt_oid.Text = newString;
+        }
     }
+ 
 }
