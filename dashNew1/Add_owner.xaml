@@ -77,7 +77,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="643.433,541,224,78" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="643.433,541,224,78" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1" Click="btn_save_Click">
             <TextBlock
                 Text="SAVE" />
         </Button>
@@ -85,7 +85,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="772.433,541,95,78" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="772.433,541,95,78" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1" Click="btn_cls_Click">
             <TextBlock
                 Text="CLEAR" />
         </Button>
@@ -93,7 +93,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="813.433,236,15,395" BorderBrush="{x:Null}" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="813.433,236,15,395" BorderBrush="{x:Null}" Grid.Column="1" Click="btn_upload_Click">
             <TextBlock
                 Text="UPLOAD" />
         </Button>
