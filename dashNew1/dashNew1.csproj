@@ -70,6 +70,9 @@
     <Compile Include="addCustomer.xaml.cs">
       <DependentUpon>addCustomer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Add_Insurnce.xaml.cs">
+      <DependentUpon>Add_Insurnce.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Add_owner.xaml.cs">
       <DependentUpon>Add_owner.xaml</DependentUpon>
     </Compile>
@@ -87,13 +90,32 @@
     <Compile Include="login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Owner_info.xaml.cs">
+      <DependentUpon>Owner_info.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Update_ownr.xaml.cs">
+      <DependentUpon>Update_ownr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Updt_vehicle.xaml.cs">
+      <DependentUpon>Updt_vehicle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle_info.xaml.cs">
+      <DependentUpon>Vehicle_info.xaml</DependentUpon>
     </Compile>
     <Compile Include="View_car.xaml.cs">
       <DependentUpon>View_car.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View_insurnce.xaml.cs">
+      <DependentUpon>View_insurnce.xaml</DependentUpon>
+    </Compile>
     <Page Include="addCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_Insurnce.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,11 +151,31 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Owner_info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Registration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Update_ownr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Updt_vehicle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vehicle_info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View_car.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View_insurnce.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

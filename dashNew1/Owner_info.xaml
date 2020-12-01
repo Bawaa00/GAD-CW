@@ -1,0 +1,106 @@
+﻿<Window x:Class="dashNew1.Owner_info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Owner_info" Height="700" Width="1300">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                <GradientStop Color="#FFDFD9ED" Offset="0.385"/>
+                <GradientStop Color="White" Offset="0.708"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Left" Height="178" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="1300">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF12005E" Offset="0.487"/>
+                    <GradientStop Color="#FFDFD9ED" Offset="0.92"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,95,22.6,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0">
+            <Rectangle.Effect>
+                <DropShadowEffect Opacity="0.6" Color="#FF4F4C4C"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Right" Height="62" Margin="0,0,-0.4,13.4"  VerticalAlignment="Bottom" Width="531">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                    <GradientStop Color="#FF4818B1" Offset="0.506"/>
+                    <GradientStop Color="#FFE2DCEE" Offset="0.962"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
+            <materialDesign:PackIcon
+                Kind="PagePrevious"
+                Height="24"
+                Width="24" />
+        </Button>
+
+        <Button
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
+            <materialDesign:PackIcon
+                Kind="Home"
+                Height="24"
+                Width="24" />
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0">
+            <materialDesign:PackIcon
+                Kind="Plus"
+                Height="30"
+                Width="30" />
+        </Button>
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="30,5,0,0" Height="70" Width="auto" Text="OWNERS " VerticalAlignment="Top"
+                   FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,120,0,0"  Text="Owner ID" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <ComboBox
+            materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
+            Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True">
+            <ComboBoxItem Content="Apple"/>
+            <ComboBoxItem Content="Banana"/>
+            <ComboBoxItem Content="Pear"/>
+            <ComboBoxItem Content="Orange"/>
+        </ComboBox>
+
+        <DataGrid
+            ItemsSource="{Binding Items2}"
+            CanUserAddRows="False"
+            SelectionUnit="Cell"
+            SelectionMode="Extended" Margin="20,191,20.6,91.4" />
+        <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1142,602,22.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            <TextBlock
+                Text="DELETE" />
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1010,602,154.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            <TextBlock
+                Text="UPDATE" />
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="1149,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+    </Grid>
+</Window>
