@@ -1,11 +1,11 @@
-﻿<Window x:Class="dashNew1.Add_Insurnce"
+﻿<Window x:Name="Add_Insurance_Form" x:Class="dashNew1.Add_Insurnce"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="Add_Insurnce" Height="611.493" Width="797.6">
+        Title="Add_Insurnce" Height="611.493" Width="797.6" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Add_Insurance_Form_Loaded">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -43,20 +43,20 @@
         <TextBlock HorizontalAlignment="Left" Margin="45,356,0,0"  Text="Address" VerticalAlignment="Top"
                    Height="39" FontSize="22" Foreground="White"/>
 
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <Button
+        <TextBox x:Name="txt_iid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_org" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_tel" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,115.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,115.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
             <TextBlock
                 Text="SAVE" />
         </Button>
-        <Button
+        <Button x:Name="btn_cls"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"

@@ -7,37 +7,40 @@
         mc:Ignorable="d"
         Title="addCustomer" Height="700" Width="1300" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Rectangle Fill="#320b86" HorizontalAlignment="Left" Height="671" Margin="0,0,0,0
-                   " VerticalAlignment="Top" Width="800"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="219*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#320b86" HorizontalAlignment="Left" Height="671" Margin="0,0,0,-2" VerticalAlignment="Top" Width="800" Grid.ColumnSpan="2"/>
         <Ellipse Fill="#FF4818B1" HorizontalAlignment="Left" Height="341" Margin="16,16,0,0" VerticalAlignment="Top" Width="341"/>
         <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="186" Margin="168,137,0,0" VerticalAlignment="Top" Width="186"/>
         <Ellipse Fill="#FF4818B1" HorizontalAlignment="Left" Height="202" Margin="48,360,0,0" VerticalAlignment="Top" Width="202"/>
-        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="223" Margin="512,28,0,0" VerticalAlignment="Top" Width="223"/>
-        <Ellipse Fill="#FF4818B1" HorizontalAlignment="Left" Height="342" Margin="363,269,0,0" VerticalAlignment="Top" Width="342"/>
-        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="144" Margin="376,261,0,0" VerticalAlignment="Top" Width="144"/>
+        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="223" Margin="95.634,28,0,0" VerticalAlignment="Top" Width="223" Grid.Column="1"/>
+        <Ellipse Fill="#FF4818B1" HorizontalAlignment="Left" Height="342" Margin="363,269,0,0" VerticalAlignment="Top" Width="342" Grid.ColumnSpan="2"/>
+        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="144" Margin="376,261,0,0" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"/>
         <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="173" Margin="64,364,0,0" VerticalAlignment="Top" Width="173"/>
-        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="80" Margin="345,478,0,0" VerticalAlignment="Top" Width="80"/>
-        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="198" Margin="484,402,0,0" VerticalAlignment="Top" Width="198"/>
-        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="117" Margin="532,324,0,0" VerticalAlignment="Top" Width="117"/>
-        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="156" Margin="568,186,0,0" VerticalAlignment="Top" Width="156"/>
+        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="80" Margin="345,478,0,0" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="198" Margin="67.634,402,0,0" VerticalAlignment="Top" Width="198" Grid.Column="1"/>
+        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="117" Margin="115.634,324,0,0" VerticalAlignment="Top" Width="117" Grid.Column="1"/>
+        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="156" Margin="151.634,186,0,0" VerticalAlignment="Top" Width="156" Grid.Column="1"/>
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="99" Margin="254,340,0,0" VerticalAlignment="Top" Width="99"/>
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="74" Margin="236,549,0,0" VerticalAlignment="Top" Width="74"/>
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="114" Margin="295,35,0,0" VerticalAlignment="Top" Width="114"/>
-        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="58" Margin="388,108,0,0" VerticalAlignment="Top" Width="58"/>
-        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="24" Margin="451,104,0,0" VerticalAlignment="Top" Width="24"/>
+        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="58" Margin="388,108,0,0" VerticalAlignment="Top" Width="58" Grid.ColumnSpan="2"/>
+        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="24" Margin="34.634,104,0,0" VerticalAlignment="Top" Width="24" Grid.Column="1"/>
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="59" Margin="50,538,0,0" VerticalAlignment="Top" Width="59"/>
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="25" Margin="95,600,0,0" VerticalAlignment="Top" Width="25"/>
         <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="11" Margin="124,575,0,0" VerticalAlignment="Top" Width="11"/>
-        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="117" Margin="427,143,0,0" VerticalAlignment="Top" Width="117"/>
+        <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="117" Margin="10.634,143,0,0" VerticalAlignment="Top" Width="117" Grid.Column="1"/>
         <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="117" Margin="18,173,0,0" VerticalAlignment="Top" Width="117"/>
         <Ellipse Fill="#320b86" HorizontalAlignment="Left" Height="55" Margin="62,62,0,0" VerticalAlignment="Top" Width="57"/>
-        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="71" Margin="364,235,0,0" VerticalAlignment="Top" Width="73"/>
-        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="99" Margin="675,562,0,0" VerticalAlignment="Top" Width="99"/>
-        <Ellipse Fill="#FF4818B1" HorizontalAlignment="Left" Height="59" Margin="723,8,0,0" VerticalAlignment="Top" Width="59"/>
-        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="25" Margin="758,64,0,0" VerticalAlignment="Top" Width="25"/>
-        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="11" Margin="758,241,0,0" VerticalAlignment="Top" Width="11"/>
-        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="99" Margin="454,491,0,0" VerticalAlignment="Top" Width="99"/>
-        <Rectangle HorizontalAlignment="Right" Height="61" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="383">
+        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="71" Margin="364,235,0,0" VerticalAlignment="Top" Width="73" Grid.ColumnSpan="2"/>
+        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="99" Margin="258.634,562,0,0" VerticalAlignment="Top" Width="99" Grid.Column="1"/>
+        <Ellipse Fill="#FF4818B1" HorizontalAlignment="Left" Height="59" Margin="306.634,8,0,0" VerticalAlignment="Top" Width="59" Grid.Column="1"/>
+        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="25" Margin="341.634,64,0,0" VerticalAlignment="Top" Width="25" Grid.Column="1"/>
+        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="11" Margin="341.634,241,0,0" VerticalAlignment="Top" Width="11" Grid.Column="1"/>
+        <Ellipse Fill="#FF4C13C8" HorizontalAlignment="Left" Height="99" Margin="37.634,491,0,0" VerticalAlignment="Top" Width="99" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Right" Height="61" VerticalAlignment="Top" Width="383" Grid.Column="1">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                     <GradientStop Color="#FF320B86" Offset="0.513"/>
@@ -49,7 +52,7 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,11.6,620.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,12,619" Grid.Column="1">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
@@ -59,7 +62,7 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,73.6,620.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,74,619" Grid.Column="1">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"
@@ -126,42 +129,42 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"
             materialDesign:ButtonAssist.CornerRadius="0 0 0 0" Margin="309,0,0,85"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Click="btn_cls_Click">
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Click="btn_cls_Click" Grid.ColumnSpan="2">
             <TextBlock
                 Text="CLEAR" FontSize="21" FontWeight="Heavy" Foreground="White" />
         </Button>
         <Button x:Name="btn_exit"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-            materialDesign:ButtonAssist.CornerRadius="0 15 15 0" Margin="493,0,0,85"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD">
+            materialDesign:ButtonAssist.CornerRadius="0 15 15 0" Margin="76.634,0,0,85"
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Grid.Column="1">
             <TextBlock
                 Text="EXIT" FontSize="21" FontWeight="Heavy" Foreground="White" />
         </Button>
         <TextBox x:Name="txt_id" 
-                 HorizontalAlignment="Left" Height="31.2" Margin="420,147,0,0" TextWrapping="Wrap" Foreground="White"
-                 VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+                 HorizontalAlignment="Left" Height="32" Margin="3.634,147,0,0" TextWrapping="Wrap" Foreground="White"
+                 VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_fName" 
-            HorizontalAlignment="Left" Height="32" Margin="420,207,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            HorizontalAlignment="Left" Height="32" Margin="3.634,207,0,0" TextWrapping="Wrap" Foreground="White"
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_lName" 
-            HorizontalAlignment="Left" Height="32" Margin="420,267,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            HorizontalAlignment="Left" Height="32" Margin="3.634,267,0,0" TextWrapping="Wrap" Foreground="White"
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_address" 
-            HorizontalAlignment="Left" Height="32" Margin="420,327,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            HorizontalAlignment="Left" Height="32" Margin="3.634,327,0,0" TextWrapping="Wrap" Foreground="White"
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_LicNum" 
-            HorizontalAlignment="Left" Height="32" Margin="420,387,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            HorizontalAlignment="Left" Height="32" Margin="3.634,387,0,0" TextWrapping="Wrap" Foreground="White"
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_NIC" 
-            HorizontalAlignment="Left" Height="32" Margin="420,447,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
-        <Image x:Name="img_cus" HorizontalAlignment="Right" Height="300" Margin="0,100,100,0" VerticalAlignment="Top" Width="300"/>
+            HorizontalAlignment="Left" Height="32" Margin="3.634,447,0,0" TextWrapping="Wrap" Foreground="White"
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
+        <Image x:Name="img_cus" HorizontalAlignment="Right" Height="300" Margin="0,100,100,0" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
         <Button x:Name="btn_upload"
             Style="{StaticResource MaterialDesignRaisedLightButton}"
             Height="50" Width="160" VerticalAlignment="Top" HorizontalAlignment="Right"
             materialDesign:ButtonAssist.CornerRadius="5"
-            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,280,0" Click="btn_upload_Click">
+            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,280,0" Click="btn_upload_Click" Grid.Column="1">
             <TextBlock
                 Text="UPLOAD" FontSize="18" />
         </Button>
@@ -169,16 +172,16 @@
             Style="{StaticResource MaterialDesignRaisedLightButton}"
             Height="50" Width="160" VerticalAlignment="Top" HorizontalAlignment="Right"
             materialDesign:ButtonAssist.CornerRadius="5"
-            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,60,0">
+            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,60,0" Grid.Column="1">
             <TextBlock
                 Text="SAVE" FontSize="18"/>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="859,0,0,101.4" TextWrapping="Wrap" Text="File Path :" VerticalAlignment="Bottom"
-                   FontSize="17" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="949,0,0,94.4"  VerticalAlignment="Bottom"
-                 Width="300" FontSize="17" FontWeight="Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="442.634,0,0,101" TextWrapping="Wrap" Text="File Path :" VerticalAlignment="Bottom"
+                   FontSize="17" FontWeight="Medium" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="532.634,0,0,94"  VerticalAlignment="Bottom"
+                 Width="300" FontSize="17" FontWeight="Light" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="240,49,0,0" TextWrapping="Wrap" Text="New Customer" VerticalAlignment="Top"
-                   FontSize="50" Foreground="White" Opacity="0.6"/>
+                   FontSize="50" Foreground="White" Opacity="0.6" Grid.ColumnSpan="2"/>
 
 
 

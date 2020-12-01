@@ -84,6 +84,7 @@ namespace dashNew1
             txt_LicNum.Clear();
             img_cus.Source = null;
         }
+
     }
 }
 
