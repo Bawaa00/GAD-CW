@@ -39,7 +39,7 @@ namespace dashNew1
         private void btn_Update_Click(object sender, RoutedEventArgs e)
         {
             string a = " update Driver set  L_num= '" + txt_Lnum.Text + "', D_name = '" + txt_Name.Text + "', " +
-                            " Tel=  '" + txt_Tp.Text + "', Address= '" + txt_Address.Text + "',path = '" + filepath + "' where Driver_ID  = '" + combo1.Text + "'";
+                            " Tel=  '" + txt_Tp.Text + "', Address= '" + txt_Address.Text + "',path = '" + filepath + "' where Driver_ID  = '" + cbox_did.Text + "'";
 
             string name = System.IO.Path.GetFileName(filepath);
             string destinationPath = GetDestinationPath(name);
@@ -58,13 +58,13 @@ namespace dashNew1
         private String GetDestinationPath(string filename)
         {
             String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
-            string dir = appStartPath + "\\" + combo1.Text;
+            string dir = appStartPath + "\\" + cbox_did.Text;
             // If directory does not exist, create it
             if (!Directory.Exists(dir))
             {
                 Directory.CreateDirectory(dir);
             }
-            appStartPath = String.Format(dir + "\\" + combo1.Text + ".jpg");
+            appStartPath = String.Format(dir + "\\" + cbox_did.Text + ".jpg");
             return appStartPath;
         }
 
@@ -92,7 +92,7 @@ namespace dashNew1
         {
 
             string constring = "Data Source=DESKTOP-7EJV26G;Initial Catalog=insertpic;Integrated Security=True";
-            string Query = "select * from Driver where Driver_ID='" + combo1.Text + "'  ;";
+            string Query = "select * from Driver where Driver_ID='" + cbox_did.Text + "'  ;";
             SqlConnection con = new SqlConnection(constring);
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             DataTable dt = new DataTable();
@@ -112,7 +112,7 @@ namespace dashNew1
 
         private void btn_Delete_Click(object sender, RoutedEventArgs e)
         {
-            string a = " Delete from Driver where Driver_ID = '" + combo1.Text + "'";
+            string a = " Delete from Driver where Driver_ID = '" + cbox_did.Text + "'";
 
             int line = obj.save_update_delete(a);
             if (line == 1)
@@ -122,7 +122,7 @@ namespace dashNew1
                 MessageBox.Show("Data cannot delete", "error", MessageBoxButton.OK, MessageBoxImage.Error);
 
 
-            combo1.Items.Clear();
+            cbox_did.Items.Clear();
             txt_Lnum.Clear();
             txt_Name.Clear();
             txt_Tp.Clear();
@@ -137,7 +137,7 @@ namespace dashNew1
 
         private void btn_Clear_Click(object sender, RoutedEventArgs e)
         {
-            combo1.Items.Clear();
+            cbox_did.Items.Clear();
             txt_Lnum.Clear();
             txt_Name.Clear();
             txt_Tp.Clear();
@@ -151,17 +151,18 @@ namespace dashNew1
             DataTable dt = new DataTable();
             // string a = "select * from Driver where Driver_ID='" + combo1.Text + "'";
             dt = obj.getData("select * from Driver ");
-            combo1.ItemsSource = dt.DefaultView;
-            combo1.DisplayMemberPath = "Driver_ID";
-            combo1.SelectedValuePath = "Driver_ID";
+            cbox_did.ItemsSource = dt.DefaultView;
+            cbox_did.DisplayMemberPath = "Driver_ID";
+            cbox_did.SelectedValuePath = "Driver_ID";
         }
 
-        private void combo1_DropDownClosed(object sender, EventArgs e)
+
+        private void cbox_did_DropDownClosed(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             //  string a = "select * from Driver where Driver_ID='" + combo1.Text + "'";
-            dt = obj.getData("select * from Driver where Driver_ID='" + combo1.Text + "'");
-            txt_Lnum.Text = combo1.Text;
+            dt = obj.getData("select * from Driver where Driver_ID='" + cbox_did.Text + "'");
+            txt_Lnum.Text = cbox_did.Text;
             txt_Lnum.Text = dt.Rows[0][1].ToString();
             txt_Name.Text = dt.Rows[0][2].ToString();
             txt_Tp.Text = dt.Rows[0][3].ToString();
