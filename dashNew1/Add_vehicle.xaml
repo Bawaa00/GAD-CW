@@ -192,7 +192,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="412,539,42,82" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="412,539,42,82" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1" Click="btn_save_Click">
             <TextBlock
                 Text="SAVE" />
         </Button>
