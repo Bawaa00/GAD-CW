@@ -50,12 +50,6 @@ namespace dashNew1
             obj.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Add_Insurnce obj = new Add_Insurnce();
-            obj.Show();
-        }
-
         private void Vehicle_Setup_Form_Loaded(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable();
@@ -63,6 +57,11 @@ namespace dashNew1
             cbox_oid.ItemsSource = dt.DefaultView;
             cbox_oid.DisplayMemberPath = "O_ID";
             cbox_oid.SelectedValuePath = "O_ID";
+            //DataTable dt2 = new DataTable();
+            dt = db.getData("select * from Insurance");
+            cbox_ins.ItemsSource = dt.DefaultView;
+            cbox_ins.DisplayMemberPath = "I_ID";
+            cbox_ins.SelectedValuePath = "I_ID";
         }
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
@@ -86,13 +85,19 @@ namespace dashNew1
             string destinationPath = GetDestinationPath(name);
             File.Copy(filepath, destinationPath, true);
 
-            string query = "Insert into Owner values ('" + txt_lno.Text + "','" + cbox_year.Text + "','" + cbox_make.Text + "','" + txt_model.Text + "','" + cbox_category.Text + "','"+txt_cpmonth.Text+"','"+txt_cpweek.Text+"','"+txt_extra.Text+"','"+cbox_oid.Text+"','"+txt_lenddt.Text+"','"+cbox_iid.Text+"','"+txt_sdate.Text+"','"+txt_edate.Text+"','"+destinationPath+"')";
+            string query = "Insert into Vehicle values ('" + txt_lno.Text + "','" + cbox_year.Text + "','" + cbox_make.Text + "','" + txt_model.Text + "','" + cbox_category.Text + "','"+txt_cpmonth.Text+"','"+txt_cpweek.Text+"','"+txt_extra.Text+"','"+cbox_oid.Text+"','"+txt_lndate.Text+"','"+cbox_ins.Text+ "','"+txt_sdate.Text+"','"+txt_exdate.Text+"','"+destinationPath+"')";
 
             int i = db.save_update_delete(query);
             if (i == 1)
                 MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void btn_add_ins_Click(object sender, RoutedEventArgs e)
+        {
+            Add_Insurnce obj = new Add_Insurnce();
+            obj.Show();
         }
     }
 }
