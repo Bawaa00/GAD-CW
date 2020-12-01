@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="Updt_vehicle" Height="700" Width="1300">
+        Title="Updt_vehicle" Height="869.6" Width="1300">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -13,7 +13,7 @@
                 <GradientStop Color="White" Offset="0.718"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle HorizontalAlignment="Left" Height="664" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="820" Margin="25,0,0,0" VerticalAlignment="Top" Width="269" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
         <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="1300">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,67.4"  VerticalAlignment="Bottom" Width="685">
+        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,20"  VerticalAlignment="Bottom" Width="685">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                     <GradientStop Color="#FF4818B1" Offset="0.503"/>
@@ -34,7 +34,7 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,59,822">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
@@ -44,18 +44,18 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,125,822">
             <materialDesign:PackIcon
                 Kind="Home"
-                Height="24"
-                Width="24" />
+                Height="25"
+                Width="25" />
         </Button>
 
         <Button
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="681,545,446.6,87.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="680,551,448,251" BorderBrush="{x:Null}">
             <TextBlock
                     Text="EDIT OWNER" />
         </Button>
@@ -63,17 +63,9 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="854,545,271.6,87.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="863,551,265,251" BorderBrush="{x:Null}">
             <TextBlock
                 Text="SEE OWNER" />
-        </Button>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="39,602,1043.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
-            <TextBlock
-                Text="EDIT INSURANCE" />
         </Button>
 
 
@@ -97,49 +89,94 @@
                    Height="38" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,553,0,0"  Text="Owner ID" VerticalAlignment="Top"
                    Height="38" FontSize="22" Foreground="White"/>
-        <ComboBox
+        <TextBlock HorizontalAlignment="Left" Margin="45,607,0,0"  Text="Lend Date" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,661,0,0"  Text="Insurance" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,715,0,0"  Text="Start date" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,769,0,0"  Text="Expiry Date" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <TextBox x:Name="txt_lno" HorizontalAlignment="Left" Height="38" Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
+        <ComboBox x:Name="cbox_year"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
-            Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            Margin="330,174,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
             IsEditable="True">
-            <ComboBoxItem>
-                Apple
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Banana
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Pear
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Orange
-            </ComboBoxItem>
+            <ComboBoxItem Content="2021"/>
+            <ComboBoxItem Content="2020"/>
+            <ComboBoxItem Content="2019"/>
+            <ComboBoxItem Content="2018"/>
+            <ComboBoxItem Content="2017" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2016" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2015" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2014" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2013" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2012" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2011" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2010" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2009" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2008" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2007" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2006" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2005" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2004" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2003" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2002" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2001" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2000" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1999" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1998" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1997" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1996" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1995" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1994" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1993" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1992" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1991" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1990" HorizontalAlignment="Left" Width="248"/>
         </ComboBox>
-        <TextBox HorizontalAlignment="Left" Height="38" Margin="330,174,0,0" VerticalAlignment="Top" Width="250" FontSize="21" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="38" Margin="330,228,0,0" VerticalAlignment="Top" Width="250" FontSize="21" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="38" Margin="330,283,0,0" VerticalAlignment="Top" Width="250" FontSize="21" IsEnabled="False"/>
-        <ComboBox
+        <ComboBox x:Name="cbox_make"
+            materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
+            Margin="330,228,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True">
+            <ComboBoxItem Content="Audi"/>
+            <ComboBoxItem Content="BMW"/>
+            <ComboBoxItem Content="FORD"/>
+            <ComboBoxItem Content="HONDA"/>
+            <ComboBoxItem Content="HYUNDAI" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="JAGUAR" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="KIA" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="LEXUS" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="MAZDA" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="MERCEDES" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="MITSUBISHI" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="NISSAN" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="PERADUA" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="PEUGEOT" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="RENAULT" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="SUZUKI" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="TOYOTA" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="VOLKSWAGAON" HorizontalAlignment="Left" Width="248"/>
+
+        </ComboBox>
+        <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="38" Margin="330,283,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
+        <ComboBox x:Name="cbox_category"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,337,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
             IsEditable="True">
-            <ComboBoxItem>
-                Apple
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Banana
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Pear
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Orange
-            </ComboBoxItem>
+            <ComboBoxItem Content="LUXUARY"/>
+            <ComboBoxItem Content="PREMIUM"/>
+            <ComboBoxItem Content="GENERAL"/>
+            <ComboBoxItem Content="SUV"/>
+            <ComboBoxItem Content="VAN" HorizontalAlignment="Left" Width="248"/>
         </ComboBox>
-        <TextBox HorizontalAlignment="Left" Height="38" Margin="330,391,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="38" Margin="330,445,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="38" Margin="330,499,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
-        <ComboBox
+        <TextBox x:Name="txt_cpweek" HorizontalAlignment="Left" Height="38" Margin="330,391,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
+        <TextBox x:Name="txt_cpmonth" HorizontalAlignment="Left" Height="38" Margin="330,445,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
+        <TextBox x:Name="txt_extra" HorizontalAlignment="Left" Height="38" Margin="330,499,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
+        <ComboBox x:Name="cbox_oid"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,553,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
@@ -157,13 +194,35 @@
                 Orange
             </ComboBoxItem>
         </ComboBox>
+        <TextBox x:Name="txt_lndate" HorizontalAlignment="Left" Height="38" Margin="330,607,0,0"   VerticalAlignment="Top" Width="250"/>
+        <ComboBox x:Name="cbox_ins"
+            materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
+            Margin="330,661,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True">
+            <ComboBoxItem>
+                Apple
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Banana
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Pear
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Orange
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="txt_sdate" HorizontalAlignment="Left" Height="38" Margin="330,715,0,0"  VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="txt_exdate" HorizontalAlignment="Left" Height="38" Margin="330,769,0,0"   VerticalAlignment="Top" Width="250"/>
 
-        <Image HorizontalAlignment="Left" Height="300" Margin="791,125,0,0" VerticalAlignment="Top" Width="300"/>
+
+        <Image HorizontalAlignment="Left" Height="388" Margin="695,125,0,0" VerticalAlignment="Top" Width="388"/>
         <Button
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1123,539,41.6,81.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1135,756,30,34" Background="#FF20A820" BorderBrush="{x:Null}">
             <TextBlock
                 Text="SAVE" />
         </Button>
@@ -183,5 +242,14 @@
             <TextBlock
                 Text="CHANGE" />
         </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="30"
+            materialDesign:ButtonAssist.CornerRadius="15"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="149,664,1030,146" Background="#FF20A820" BorderBrush="{x:Null}">
+            <TextBlock
+                Text="UPDATE" FontSize="15"/>
+        </Button>
+
     </Grid>
 </Window>

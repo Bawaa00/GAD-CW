@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Add_vehicle" Height="700" Width="1300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Add_vehicle" Height="869.6" Width="1300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                 <GradientStop Color="#FFDFD9ED" Offset="0.385"/>
                 <GradientStop Color="White" Offset="0.718"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle HorizontalAlignment="Left" Height="664" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="820" Margin="25,0,0,0" VerticalAlignment="Top" Width="269" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
         <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="1300">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,67.4"  VerticalAlignment="Bottom" Width="685">
+        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,20"  VerticalAlignment="Bottom" Width="685">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                     <GradientStop Color="#FF4818B1" Offset="0.503"/>
@@ -34,7 +34,7 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,59,822">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
@@ -44,7 +44,7 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,125,822">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="25"
@@ -55,7 +55,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="681,545,446.6,87.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="680,551,448,251" BorderBrush="{x:Null}">
             <TextBlock
                     Text="EDIT OWNER" />
         </Button>
@@ -63,17 +63,9 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="854,545,271.6,87.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="863,551,265,251" BorderBrush="{x:Null}">
             <TextBlock
                 Text="SEE OWNER" />
-        </Button>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="39,602,1043.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
-            <TextBlock
-                Text="ADD INSURANCE" />
         </Button>
 
 
@@ -96,6 +88,14 @@
         <TextBlock HorizontalAlignment="Left" Margin="45,499,0,0"  Text="Extra cost per milege" VerticalAlignment="Top"
                    Height="38" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,553,0,0"  Text="Owner ID" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,607,0,0"  Text="Lend Date" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,661,0,0"  Text="Insurance" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,715,0,0"  Text="Start date" VerticalAlignment="Top"
+                   Height="38" FontSize="22" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,769,0,0"  Text="Expiry Date" VerticalAlignment="Top"
                    Height="38" FontSize="22" Foreground="White"/>
         <TextBox x:Name="txt_lno" HorizontalAlignment="Left" Height="38" Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
         <ComboBox x:Name="cbox_year"
@@ -194,13 +194,35 @@
                 Orange
             </ComboBoxItem>
         </ComboBox>
+        <TextBox x:Name="txt_lndate" HorizontalAlignment="Left" Height="38" Margin="330,607,0,0"   VerticalAlignment="Top" Width="250"/>
+        <ComboBox x:Name="cbox_ins"
+            materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
+            Margin="330,661,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True">
+            <ComboBoxItem>
+                Apple
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Banana
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Pear
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Orange
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="txt_sdate" HorizontalAlignment="Left" Height="38" Margin="330,715,0,0"  VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="txt_exdate" HorizontalAlignment="Left" Height="38" Margin="330,769,0,0"   VerticalAlignment="Top" Width="250"/>
 
-        <Image HorizontalAlignment="Left" Height="300" Margin="791,125,0,0" VerticalAlignment="Top" Width="300"/>
+
+        <Image HorizontalAlignment="Left" Height="388" Margin="695,125,0,0" VerticalAlignment="Top" Width="388"/>
         <Button
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1123,539,41.6,81.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1135,756,30,34" Background="#FF20A820" BorderBrush="{x:Null}">
             <TextBlock
                 Text="SAVE" />
         </Button>
@@ -220,8 +242,14 @@
             <TextBlock
                 Text="CHANGE" />
         </Button>
-
-
+        <Button
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="30"
+            materialDesign:ButtonAssist.CornerRadius="15"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="149,664,1030,146" Background="#FF20A820" BorderBrush="{x:Null}">
+            <TextBlock
+                Text="ADD NEW" FontSize="15"/>
+        </Button>
 
 
     </Grid>
