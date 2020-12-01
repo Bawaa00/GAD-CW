@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Add_owner" Height="700" Width="1300">
+        Title="Add_owner" Height="700" Width="1300" ResizeMode="NoResize" SizeToContent="Width" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="149*"/>
+            <ColumnDefinition Width="497*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                 <GradientStop Color="#FFDFD9ED" Offset="0.321"/>
@@ -14,7 +18,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Rectangle HorizontalAlignment="Left" Height="664" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="1300" Margin="0,0,0,0">
+        <Rectangle HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="1300" Margin="0,0,-8,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                     <GradientStop Color="#FF12005E" Offset="0.481"/>
@@ -22,7 +26,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,67.4"  VerticalAlignment="Bottom" Width="615">
+        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,67"  VerticalAlignment="Bottom" Width="615" Grid.Column="1">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                     <GradientStop Color="#FF4818B1" Offset="0.503"/>
@@ -34,7 +38,7 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611" Grid.Column="1">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
@@ -44,7 +48,7 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,118,611" Grid.Column="1">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"
@@ -52,7 +56,7 @@
         </Button>
 
         <TextBlock HorizontalAlignment="Left" Margin="5,5,0,0" Height="70" Width="auto" Text="OWNER SETUP" VerticalAlignment="Top"
-                   FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts"/>
+                   FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,120,0,0"  Text="Owner ID" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,198,0,0"  Text="Owner name" VerticalAlignment="Top"
@@ -63,41 +67,41 @@
                    Height="39" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,488,0,0"  Text="Contact No." VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="330,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <Image HorizontalAlignment="Left" Height="300" Margin="791,125,0,0" VerticalAlignment="Top" Width="300"/>
-        <Button
+        <TextBox x:Name="txt_oid" HorizontalAlignment="Left" Height="40" Margin="32.433,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <TextBox x:Name="txt_oname" HorizontalAlignment="Left" Height="41" Margin="32.433,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <TextBox x:Name="txt_onic" HorizontalAlignment="Left" Height="40" Margin="32.433,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="32.433,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <TextBox x:Name="txt_contact" HorizontalAlignment="Left" Height="40" Margin="32.433,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <Image x:Name="img_owner" HorizontalAlignment="Left" Height="300" Margin="493.433,125,0,0" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
+        <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="941,541,223.6,79.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="643.433,541,224,78" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1">
             <TextBlock
                 Text="SAVE" />
         </Button>
-        <Button
+        <Button x:Name="btn_cls"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1070,541,94.6,79.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="772.433,541,95,78" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1">
             <TextBlock
                 Text="CLEAR" />
         </Button>
-        <Button
+        <Button x:Name="btn_upload"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="813.433,236,15,395" BorderBrush="{x:Null}" Grid.Column="1">
             <TextBlock
                 Text="UPLOAD" />
         </Button>
-        <Button
+        <Button x:Name="btn_change"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="813.433,280,15,351" BorderBrush="{x:Null}" Visibility="Hidden" Grid.Column="1">
             <TextBlock
                 Text="CHANGE" />
         </Button>

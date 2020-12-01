@@ -51,11 +51,11 @@
                 Width="25" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_edit_owner"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="681,545,446.6,87.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="681,545,446.6,87.4" BorderBrush="{x:Null}" Click="btn_edit_owner_Click">
             <TextBlock
                     Text="EDIT OWNER" />
         </Button>
@@ -71,8 +71,8 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="39,602,1043.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
-            <TextBlock
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="39,602,1043.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}" Click="Button_Click">
+            <TextBlock x:Name="btn_add_ins"
                 Text="ADD INSURANCE" />
         </Button>
 
@@ -195,8 +195,8 @@
             </ComboBoxItem>
         </ComboBox>
 
-        <Image HorizontalAlignment="Left" Height="300" Margin="791,125,0,0" VerticalAlignment="Top" Width="300"/>
-        <Button
+        <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="300" Margin="791,125,0,0" VerticalAlignment="Top" Width="300"/>
+        <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25"
@@ -204,7 +204,7 @@
             <TextBlock
                 Text="SAVE" />
         </Button>
-        <Button
+        <Button x:Name="btn_upload"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
@@ -212,11 +212,11 @@
             <TextBlock
                 Text="UPLOAD" />
         </Button>
-        <Button
+        <Button x:Name="btn_change"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}" Visibility="Hidden">
             <TextBlock
                 Text="CHANGE" />
         </Button>

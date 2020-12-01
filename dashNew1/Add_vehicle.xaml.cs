@@ -41,5 +41,17 @@ namespace dashNew1
             appStartPath = String.Format(dir + "\\" + txt_lno.Text + ".jpg");
             return appStartPath;
         }
+
+        private void btn_edit_owner_Click(object sender, RoutedEventArgs e)
+        {
+            Add_owner obj = new Add_owner();
+            obj.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Add_Insurnce obj = new Add_Insurnce();
+            obj.Show();
+        }
     }
 }
