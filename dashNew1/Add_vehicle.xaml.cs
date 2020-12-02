@@ -99,5 +99,11 @@ namespace dashNew1
             Add_Insurnce obj = new Add_Insurnce();
             obj.Show();
         }
+
+        private void btn_see_owner_Click(object sender, RoutedEventArgs e)
+        {
+            Owner_info obj = new Owner_info();
+            obj.Show();
+        }
     }
 }

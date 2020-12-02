@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace dashNew1
 {
@@ -22,6 +23,15 @@ namespace dashNew1
         public Owner_info()
         {
             InitializeComponent();
+        }
+
+        Connect_DB db = new Connect_DB();
+
+        private void dg_owners_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt=db.getData("select * from Owner");
+            dg_owners.ItemsSource = dt.DefaultView;
         }
     }
 }

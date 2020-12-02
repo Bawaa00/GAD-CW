@@ -60,11 +60,11 @@
             <TextBlock
                     Text="EDIT OWNER" />
         </Button>
-        <Button
+        <Button x:Name="btn_see_owner"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="863,551,265,251" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="863,551,265,251" BorderBrush="{x:Null}" Click="btn_see_owner_Click">
             <TextBlock
                 Text="SEE OWNER" />
         </Button>

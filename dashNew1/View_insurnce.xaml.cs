@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace dashNew1
 {
@@ -22,6 +23,15 @@ namespace dashNew1
         public View_insurnce()
         {
             InitializeComponent();
+        }
+        Connect_DB db = new Connect_DB();
+
+
+        private void view_ins_form_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Insurance");
+            dg_ins.ItemsSource = dt.DefaultView;
         }
     }
 }

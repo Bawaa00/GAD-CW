@@ -80,11 +80,11 @@
             <ComboBoxItem Content="Orange"/>
         </ComboBox>
 
-        <DataGrid
+        <DataGrid x:Name="dg_owners"
             ItemsSource="{Binding Items2}"
             CanUserAddRows="False"
             SelectionUnit="Cell"
-            SelectionMode="Extended" Margin="20,191,20.6,91.4" />
+            SelectionMode="Extended" Margin="20,191,20.6,91.4" Loaded="dg_owners_Loaded" />
         <Button
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
