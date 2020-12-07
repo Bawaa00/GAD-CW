@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace dashNew1
 {
@@ -22,6 +23,14 @@ namespace dashNew1
         public Update_Vehicle()
         {
             InitializeComponent();
+        }
+        Connect_DB db = new Connect_DB();
+
+        private void view_vehicle_form_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle");
+            dg_vehicle.ItemsSource = dt.DefaultView;
         }
     }
 }
