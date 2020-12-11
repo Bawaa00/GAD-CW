@@ -34,17 +34,17 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="30,5,0,0" Height="70" Width="auto" Text="ADD SERVICE" VerticalAlignment="Top"
                    FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,120,0,0"  Text="Repair ID" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="45,120,0,0"  Text="Service ID" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,182,0,0"  Text="Vehicle ID" VerticalAlignment="Top"
                    Height="41" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,244,0,0"  Text="Repair Details" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="45,244,0,0"  Text="Service Details" VerticalAlignment="Top"
                    Height="39" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,380,0,0"  Text="Repair Cost" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="45,380,0,0"  Text="Mileage at Servive" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,442,0,0"  Text="Claimed Amount" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="45,442,0,0"  Text="Next Service" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
-        <TextBox x:Name="txt_Rid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_Sid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <ComboBox x:Name="vehicle"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,182,0,0"
@@ -62,9 +62,9 @@
                 Orange
             </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="330,244,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_cost" HorizontalAlignment="Left" Height="40" Margin="330,380,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_claim" HorizontalAlignment="Left" Height="40" Margin="330,442,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_Sdetails" HorizontalAlignment="Left" Height="110" Margin="330,244,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_milge" HorizontalAlignment="Left" Height="40" Margin="330,380,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_nxt" HorizontalAlignment="Left" Height="40" Margin="330,442,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
