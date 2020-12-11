@@ -29,7 +29,7 @@ namespace dashNew1
         Hashcode hc = new Hashcode();
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            int i = db.save_update_delete("insert into User_login (U_name,U_pass,Fname,Lname) values ('" + txt_uname.Text + "','" + pbox_pass.Password + "','" + txt_fname.Text + "','" + txt_lname.Text + "')");
+            int i = db.save_update_delete("insert into User_Login (Uname,Upass,Fname,Lname) values ('" + txt_uname.Text + "','" + hc.PassHash(pbox_pass.Password) + "','" + txt_fname.Text + "','" + txt_lname.Text + "')");
             if (i == 1)
             {
                 MessageBox.Show("Data saved successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -194,7 +194,7 @@ namespace dashNew1
         private void txt_uname_KeyUp(object sender, KeyEventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("select * from User_login where U_name = '"+txt_uname.Text+"'");
+            dt = db.getData("select * from User_Login where Uname = '"+txt_uname.Text+"'");
             if (dt.Rows.Count == 1)
             {
                 txt_info.Visibility = Visibility.Visible;
