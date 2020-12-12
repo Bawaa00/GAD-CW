@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="repairs" Height="700" Width="1300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="repairs" Height="700" Width="1300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="view_repair_form_Loaded">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -57,7 +57,7 @@
         </Button>
         <Button x:Name="btn_add"
             Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0">
+            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0" Click="btn_add_Click">
             <materialDesign:PackIcon
                 Kind="Plus"
                 Height="30"
@@ -101,7 +101,7 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Width="150"
             ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,98,577.6,540.4">
+            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,98,577.6,540.4" Click="btn_lat_Click">
             SEARCH LATEST
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="1149,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
@@ -109,12 +109,12 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Width="150"
             ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,139,577.6,499.4" Content="SEARCH ALL"/>
+            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,139,577.6,499.4" Content="SEARCH ALL" Click="btn_search_Click"/>
         <Button x:Name="btn_view"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0 0 25 25"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="25,588,1127.6,32.4">
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="25,588,1127.6,32.4" Click="btn_view_Click">
             <TextBlock
                 Text="VIEW ALL" FontSize="18" />
         </Button>
