@@ -39,7 +39,6 @@ namespace dashNew1
                 dt = db.getData("exec view_accident");
                 dg_repair.ItemsSource = dt.DefaultView;
             }
-
         }
 
         private void view_repair_form_Loaded(object sender, RoutedEventArgs e)
