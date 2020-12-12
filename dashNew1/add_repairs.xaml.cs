@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -33,11 +34,32 @@ namespace dashNew1
             {
                 lbl_claim.Visibility = Visibility.Hidden;
                 txt_claim.Visibility = Visibility.Hidden;
+                DataTable dt = new DataTable();
+                dt = db.getData("Select max(r_ID) from Maintenance ");
+
+                string id = dt.Rows[0][0].ToString();
+                var prefix = Regex.Match(id, "^\\D+").Value;
+                var number = Regex.Replace(id, "^\\D+", "");
+                var i = int.Parse(number) + 1;
+                var newString = prefix + i.ToString(new string('0', number.Length));
+                txt_rid.Text = newString;
             }
-            else 
+            else if (cmb_type.SelectedIndex == 1 )
             {
                 lbl_claim.Visibility = Visibility.Visible;
                 txt_claim.Visibility = Visibility.Visible;
+
+                lbl_claim.Visibility = Visibility.Hidden;
+                txt_claim.Visibility = Visibility.Hidden;
+                DataTable dt = new DataTable();
+                dt = db.getData("Select max(R_ID) from Acc_repair ");
+
+                string id = dt.Rows[0][0].ToString();
+                var prefix = Regex.Match(id, "^\\D+").Value;
+                var number = Regex.Replace(id, "^\\D+", "");
+                var i = int.Parse(number) + 1;
+                var newString = prefix + i.ToString(new string('0', number.Length));
+                txt_rid.Text = newString;
             }
         }
 
@@ -56,13 +78,19 @@ namespace dashNew1
             {
                 string query = "Insert into Maintenance values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','"+ txt_cost.Text + "');";
                 int i = db.save_update_delete(query);
-                if (i == 1)
+                if (i == 1 || i== -1 )
                     MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 else
                     MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else if (cmb_type.SelectedIndex == 1)
             {
+                string query = "Insert into Acc_repair values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','" + txt_cost.Text + "','"+txt_claim.Text+"');";
+                int i = db.save_update_delete(query);
+                if (i == 1 || i == -1)
+                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
