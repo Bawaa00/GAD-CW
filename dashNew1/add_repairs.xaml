@@ -1,11 +1,11 @@
-﻿<Window x:Class="dashNew1.add_repairs"
+﻿<Window x:Name="add_repair_form" x:Class="dashNew1.add_repairs"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="add_repairs" Height="749.433" Width="892.575">
+        Title="add_repairs" Height="749.433" Width="892.575" Loaded="add_repair_form_Loaded">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -46,46 +46,28 @@
                    Height="40" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,502,0,0"  Text="Repair Cost" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,564,0,0"  Text="Claimed Amount" VerticalAlignment="Top"
+        <TextBlock x:Name="lbl_claim" HorizontalAlignment="Left" Margin="45,564,0,0"  Text="Claimed Amount" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
 
-        <ComboBox x:Name="txt_type"
+        <ComboBox x:Name="cmb_type"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,120,0,0"
-            IsEditable="True" >
+            IsEditable="True" SelectionChanged="cmb_type_SelectionChanged" >
             <ComboBoxItem>
-                Apple
+                Maintenence Repair
             </ComboBoxItem>
             <ComboBoxItem>
-                Banana
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Pear
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Orange
+                Accident Repair
             </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txt_Rid" HorizontalAlignment="Left" Height="40" Margin="330,182,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <ComboBox x:Name="vehicle"
+        <TextBox x:Name="txt_rid" HorizontalAlignment="Left" Height="40" Margin="330,182,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,244,0,0"
             IsEditable="True">
-            <ComboBoxItem>
-                Apple
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Banana
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Pear
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Orange
-            </ComboBoxItem>
         </ComboBox>
         <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="330,308,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <DatePicker x:Name="txt_Date" HorizontalAlignment="Left" Height="40" Margin="330,440,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <DatePicker x:Name="txt_date" HorizontalAlignment="Left" Height="40" Margin="330,440,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <TextBox x:Name="txt_cost" HorizontalAlignment="Left" Height="40" Margin="330,502,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <TextBox x:Name="txt_claim" HorizontalAlignment="Left" Height="40" Margin="330,564,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <Button x:Name="btn_save"
@@ -93,7 +75,7 @@
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,115.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,115.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
             <TextBlock
                 Text="SAVE" />
         </Button>
@@ -124,7 +106,7 @@
                 Height="24"
                 Width="24" />
         </Button>
-        <Button
+        <Button x:Name="btn_search"
             Style="{StaticResource MaterialDesignRaisedLightButton}" HorizontalAlignment="Left" VerticalAlignment="Top"
             ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="683,244,0,0">
             SEARCH VEHICLE
