@@ -23,5 +23,8 @@ namespace dashNew1
         {
             InitializeComponent();
         }
+
+        Connect_DB db = new Connect_DB();
+
     }
 }
