@@ -55,5 +55,10 @@ namespace dashNew1
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_Sid.Text = newString;
         }
+
+        private void txt_milge_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            txt_nxt.Text = (Int32.Parse(txt_milge.Text) + 2500).ToString();
+        }
     }
 }

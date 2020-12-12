@@ -51,7 +51,7 @@
             IsEditable="True">
         </ComboBox>
         <TextBox x:Name="txt_Sdetails" HorizontalAlignment="Left" Height="110" Margin="330,244,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_milge" HorizontalAlignment="Left" Height="40" Margin="330,380,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_milge" HorizontalAlignment="Left" Height="40" Margin="330,380,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_milge_TextChanged"/>
         <TextBox x:Name="txt_nxt" HorizontalAlignment="Left" Height="40" Margin="330,442,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
