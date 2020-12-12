@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -45,6 +46,14 @@ namespace dashNew1
             cmb_vid.ItemsSource = dt.DefaultView;
             cmb_vid.DisplayMemberPath = "L_Plate";
             cmb_vid.SelectedValuePath = "L_Plate";
+
+            dt = db.getData("Select max(S_ID) from Service");
+            string id = dt.Rows[0][0].ToString();
+            var prefix = Regex.Match(id, "^\\D+").Value;
+            var number = Regex.Replace(id, "^\\D+", "");
+            var i = int.Parse(number) + 1;
+            var newString = prefix + i.ToString(new string('0', number.Length));
+            txt_Sid.Text = newString;
         }
     }
 }
