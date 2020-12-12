@@ -49,5 +49,21 @@ namespace dashNew1
             cmb_vid.DisplayMemberPath = "L_Plate";
             cmb_vid.SelectedValuePath = "L_Plate";
         }
+
+        private void btn_save_Click(object sender, RoutedEventArgs e)
+        {
+            if (cmb_type.SelectedIndex == 0)
+            {
+                string query = "Insert into Maintenance values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','"+ txt_cost.Text + "');";
+                int i = db.save_update_delete(query);
+                if (i == 1)
+                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (cmb_type.SelectedIndex == 1)
+            {
+            }
+        }
     }
 }
