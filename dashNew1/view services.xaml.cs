@@ -33,7 +33,10 @@ namespace dashNew1
             dt = db.getData("select * from Service");
             dg_service.ItemsSource = dt.DefaultView;
 
-
+            dt = db.getData("select * from Vehicle");
+            cmb_vid.ItemsSource = dt.DefaultView;
+            cmb_vid.DisplayMemberPath = "L_Plate";
+            cmb_vid.SelectedValuePath = "L_Plate";
         }
 
         private void btn_view_Click(object sender, RoutedEventArgs e)

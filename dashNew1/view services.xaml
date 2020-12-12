@@ -78,10 +78,6 @@
             Margin="275,118,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
             IsEditable="True">
-            <ComboBoxItem Content="Apple"/>
-            <ComboBoxItem Content="Banana"/>
-            <ComboBoxItem Content="Pear"/>
-            <ComboBoxItem Content="Orange"/>
         </ComboBox>
 
         <DataGrid x:Name="dg_service"
