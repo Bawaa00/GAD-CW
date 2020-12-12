@@ -1,12 +1,16 @@
-﻿<Window x:Class="dashNew1.view_services"
+﻿<Window x:Name="view_services_form" x:Class="dashNew1.view_services"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="view_services" Height="700" Width="1300">
+        Title="view_services" Height="700" Width="1300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="view_services_form_Loaded">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="927*"/>
+            <ColumnDefinition Width="367*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                 <GradientStop Color="#FFDFD9ED" Offset="0.385"/>
@@ -14,7 +18,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Rectangle HorizontalAlignment="Left" Height="178" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="1300">
+        <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,-6,0" VerticalAlignment="Top" Width="1300" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                     <GradientStop Color="#FF12005E" Offset="0.487"/>
@@ -22,12 +26,12 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,95,22.6,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0">
+        <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,95,23,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0" Grid.Column="1">
             <Rectangle.Effect>
                 <DropShadowEffect Opacity="0.6" Color="#FF4F4C4C"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="62" Margin="0,0,-0.4,13.4"  VerticalAlignment="Bottom" Width="531">
+        <Rectangle HorizontalAlignment="Right" Height="62" Margin="0,0,0,13"  VerticalAlignment="Bottom" Width="531" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                     <GradientStop Color="#FF4818B1" Offset="0.506"/>
@@ -39,7 +43,7 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,50,612" Grid.Column="1">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
@@ -49,15 +53,15 @@
         <Button
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,118,613" Grid.Column="1">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"
                 Width="24" />
         </Button>
-        <Button
+        <Button x:Name="btn_add"
             Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0">
+            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="152.863,98,0,0" Grid.Column="1" Click="btn_add_Click">
             <materialDesign:PackIcon
                 Kind="Plus"
                 Height="30"
@@ -69,56 +73,52 @@
                    FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,120,0,0"  Text="Vehicle ID" VerticalAlignment="Top"
                    Height="38" FontSize="22" Foreground="White"/>
-        <ComboBox
+        <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="275,118,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
             IsEditable="True">
-            <ComboBoxItem Content="Apple"/>
-            <ComboBoxItem Content="Banana"/>
-            <ComboBoxItem Content="Pear"/>
-            <ComboBoxItem Content="Orange"/>
         </ComboBox>
 
-        <DataGrid
+        <DataGrid x:Name="dg_service"
             ItemsSource="{Binding Items2}"
             CanUserAddRows="False"
             SelectionUnit="Cell"
-            SelectionMode="Extended" Margin="20,191,20.6,91.4" />
-        <Button
+            SelectionMode="Extended" Margin="20,191,21,91" Grid.ColumnSpan="2" />
+        <Button x:Name="btn_delete"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1142,602,22.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="214.863,602,23,19" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1">
             <TextBlock
                 Text="DELETE" />
         </Button>
-        <Button
+        <Button x:Name="btn_update"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1010,602,154.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="82.863,602,155,19" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1">
             <TextBlock
                 Text="UPDATE" />
         </Button>
-        <Button
+        <Button x:Name="btn_latest"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Width="150"
             ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,98,577.6,540.4">
+            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,98,211.137,541" Click="btn_latest_Click">
             SEARCH LATEST
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="1149,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
-        <Button
+        <TextBlock HorizontalAlignment="Left" Margin="221.863,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Grid.Column="1"/>
+        <Button x:Name="btn_all"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Width="150"
             ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,139,577.6,499.4" Content="SEARCH ALL"/>
-        <Button
+            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,139,211.137,500" Content="SEARCH ALL" Click="btn_all_Click"/>
+        <Button x:Name="btn_view"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0 0 25 25"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="25,588,1127.6,32.4">
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="25,588,761.137,33" Click="btn_view_Click">
             <TextBlock
                 Text="VIEW ALL" FontSize="18" />
         </Button>
