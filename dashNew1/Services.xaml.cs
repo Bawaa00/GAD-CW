@@ -60,5 +60,11 @@ namespace dashNew1
         {
             txt_nxt.Text = (Int32.Parse(txt_milge.Text) + 2500).ToString();
         }
+
+        private void btn_search_Click(object sender, RoutedEventArgs e)
+        {
+            View_car obj = new View_car();
+            obj.Show();
+        }
     }
 }

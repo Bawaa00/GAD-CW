@@ -89,9 +89,9 @@
                 Height="24"
                 Width="24" />
         </Button>
-        <Button
+        <Button x:Name="btn_search"
             Style="{StaticResource MaterialDesignRaisedLightButton}" HorizontalAlignment="Left" VerticalAlignment="Top"
-            ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="683,182,0,0">
+            ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="683,182,0,0" Click="btn_search_Click">
             SEARCH VEHICLE
         </Button>
     </Grid>
