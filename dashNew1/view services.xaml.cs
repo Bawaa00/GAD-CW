@@ -30,7 +30,7 @@ namespace dashNew1
         private void view_services_form_Loaded(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("select * from Service");
+            dt = db.getData("exec view_service");
             dg_service.ItemsSource = dt.DefaultView;
 
             dt = db.getData("select * from Vehicle");
@@ -42,8 +42,28 @@ namespace dashNew1
         private void btn_view_Click(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("select * from Service");
+            dt = db.getData("exec view_service");
             dg_service.ItemsSource = dt.DefaultView;
+        }
+
+        private void btn_all_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("exec view_car_service '"+cmb_vid.Text+"'");
+            dg_service.ItemsSource = dt.DefaultView;
+        }
+
+        private void btn_latest_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("exec view_service_last '" + cmb_vid.Text + "'");
+            dg_service.ItemsSource = dt.DefaultView;
+        }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            Services obj = new Services();
+            obj.Show();
         }
     }
 }

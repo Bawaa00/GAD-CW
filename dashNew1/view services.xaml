@@ -26,7 +26,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="btn_add" HorizontalAlignment="Right" Height="60" Margin="0,95,23,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0" Grid.Column="1">
+        <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,95,23,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0" Grid.Column="1">
             <Rectangle.Effect>
                 <DropShadowEffect Opacity="0.6" Color="#FF4F4C4C"/>
             </Rectangle.Effect>
@@ -59,9 +59,9 @@
                 Height="24"
                 Width="24" />
         </Button>
-        <Button
+        <Button x:Name="btn_add"
             Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="152.863,98,0,0" Grid.Column="1">
+            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="152.863,98,0,0" Grid.Column="1" Click="btn_add_Click">
             <materialDesign:PackIcon
                 Kind="Plus"
                 Height="30"
@@ -105,7 +105,7 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Width="150"
             ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,98,211.137,541">
+            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,98,211.137,541" Click="btn_latest_Click">
             SEARCH LATEST
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="221.863,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Grid.Column="1"/>
@@ -113,7 +113,7 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Width="150"
             ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,139,211.137,500" Content="SEARCH ALL"/>
+            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,139,211.137,500" Content="SEARCH ALL" Click="btn_all_Click"/>
         <Button x:Name="btn_view"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50"
