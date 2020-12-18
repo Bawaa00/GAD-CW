@@ -79,21 +79,21 @@
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="39,92,0,0" TextWrapping="Wrap" Text="Booking ID" VerticalAlignment="Top" Height="34" 
                    FontSize="22" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="39,149,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_bid" HorizontalAlignment="Left" Height="34" Margin="39,149,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="287,92,0,0" TextWrapping="Wrap" Text="Booking Date" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <DatePicker HorizontalAlignment="Left" Height="34" Margin="287,149,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <DatePicker x:Name="date_book" HorizontalAlignment="Left" Height="34" Margin="287,149,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,92,0,0" TextWrapping="Wrap" Text="Pickup Date" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="Black"/>
-        <DatePicker HorizontalAlignment="Left" Height="34" Margin="659,92,0,0" Foreground="Black" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="Black"/>
+        <DatePicker x:Name="date_pick" HorizontalAlignment="Left" Height="34" Margin="659,92,0,0" Foreground="Black" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="Black"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,149,0,0" TextWrapping="Wrap" Text="Lend Date" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="Black"/>
-        <DatePicker HorizontalAlignment="Left" Height="34" Margin="659,149,0,0" Foreground="Black" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="Black"/>
+        <DatePicker x:Name="date_lend" HorizontalAlignment="Left" Height="34" Margin="659,149,0,0" Foreground="Black" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="Black"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="39,225,0,0" TextWrapping="Wrap" Text="Customer ID" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <ComboBox
+        <ComboBox x:Name="cmb_cusid"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="White" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,276,0,0" HorizontalAlignment="Left" 
             IsEditable="True">
@@ -112,10 +112,10 @@
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="287,225,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="287,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_cusFname" HorizontalAlignment="Left" Height="34" Margin="287,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,225,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="535,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_cusLname" HorizontalAlignment="Left" Height="34" Margin="535,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
         <Rectangle HorizontalAlignment="Left" Height="123" Margin="25,351,0,0" VerticalAlignment="Top" Width="837" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -139,8 +139,8 @@
             FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,358,0,0" TextWrapping="Wrap" Text="Model" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="287,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
-        <ComboBox
+        <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="34" Margin="287,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="White" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,410,0,0" HorizontalAlignment="Left" 
             IsEditable="True">
@@ -149,7 +149,7 @@
             <ComboBoxItem Content="Pear"/>
             <ComboBoxItem Content="Orange"/>
         </ComboBox>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="535,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="34" Margin="535,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
         <Rectangle HorizontalAlignment="Left" Height="123" Margin="25,484,0,0" VerticalAlignment="Top" Width="488" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -160,7 +160,7 @@
         </Rectangle>
         <TextBlock HorizontalAlignment="Left" Margin="39,491,0,0" TextWrapping="Wrap" Text="Driver ID" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <ComboBox
+        <ComboBox x:Name="cmb_did"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="White" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="283,491,0,0" HorizontalAlignment="Left" 
             IsEditable="True">
@@ -171,7 +171,7 @@
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="535,484,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="535,548,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="34" Margin="535,548,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
 
         <Button
             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -181,7 +181,7 @@
             <TextBlock
                 Text="VIEW DRIVERS" FontSize="18" />
         </Button>
-        <Button
+        <Button x:Name="btn_submit"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
@@ -189,7 +189,7 @@
             <TextBlock
                 Text="SUBMIT" FontSize="22" />
         </Button>
-        <Button
+        <Button x:Name="btn_report"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
@@ -197,7 +197,7 @@
             <TextBlock
                 Text="GET REPORT" FontSize="22" />
         </Button>
-        <Button
+        <Button x:Name="btn_bill"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
