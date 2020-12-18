@@ -39,9 +39,9 @@
         <TextBlock HorizontalAlignment="Left" Margin="45,182,0,0"  Text="Repair ID" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,244,0,0"  Text="Vehicle ID" VerticalAlignment="Top"
-                   Height="41" FontSize="22" Foreground="White"/>
+                   Height="40" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,308,0,0"  Text="Repair Details" VerticalAlignment="Top"
-                   Height="39" FontSize="22" Foreground="White"/>
+                   Height="40" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,440,0,0"  Text="Repair Date" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,502,0,0"  Text="Repair Cost" VerticalAlignment="Top"

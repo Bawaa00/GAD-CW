@@ -82,6 +82,9 @@
     <Compile Include="Add_vehicle.xaml.cs">
       <DependentUpon>Add_vehicle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Booking.xaml.cs">
+      <DependentUpon>Booking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connect_DB.cs" />
     <Compile Include="Driver_update.xaml.cs">
       <DependentUpon>Driver_update.xaml</DependentUpon>
@@ -108,6 +111,9 @@
     <Compile Include="Update_ownr.xaml.cs">
       <DependentUpon>Update_ownr.xaml</DependentUpon>
     </Compile>
+    <Compile Include="updt_booking.xaml.cs">
+      <DependentUpon>updt_booking.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Updt_vehicle.xaml.cs">
       <DependentUpon>Updt_vehicle.xaml</DependentUpon>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
     <Compile Include="view services.xaml.cs">
       <DependentUpon>view services.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view_bookings.xaml.cs">
+      <DependentUpon>view_bookings.xaml</DependentUpon>
     </Compile>
     <Compile Include="View_car.xaml.cs">
       <DependentUpon>View_car.xaml</DependentUpon>
@@ -140,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Add_vehicle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Booking.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +200,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="updt_booking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Updt_vehicle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,6 +213,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view services.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view_bookings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
