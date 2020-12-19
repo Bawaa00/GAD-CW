@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -45,6 +46,15 @@ namespace dashNew1
             cmb_did.SelectedValuePath = "D_ID";
 
             date_book.Text = DateTime.Now.ToString();
+
+            DataTable dt2 = new DataTable();
+            dt = db.getData("Select max(BK_NO) from Booking ");
+            string id = dt.Rows[0][0].ToString();
+            var prefix = Regex.Match(id, "^\\D+").Value;
+            var number = Regex.Replace(id, "^\\D+", "");
+            var i = int.Parse(number) + 1;
+            var newString = prefix + i.ToString(new string('0', number.Length));
+            txt_bid.Text = newString;
         }
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
@@ -53,13 +63,8 @@ namespace dashNew1
             string query2 = "Insert into Car_Booking values ('" + cmb_cusid.Text + "','" + cmb_vid.Text + "','" + cmb_did.Text + "','" + txt_bid.Text + "')";
 
             int i = db.save_update_delete(query1);
-            if (i == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
-
-            i = db.save_update_delete(query2);
-            if (i == 1)
+            int j = db.save_update_delete(query2);
+            if (i == 1 && j ==1)
                 MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
