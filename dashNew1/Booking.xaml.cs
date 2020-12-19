@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace dashNew1
 {
@@ -22,6 +23,45 @@ namespace dashNew1
         public Booking()
         {
             InitializeComponent();
+        }
+        Connect_DB db = new Connect_DB();
+
+        private void form_booking_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle");
+            cmb_vid.ItemsSource = dt.DefaultView;
+            cmb_vid.DisplayMemberPath = "L_Plate";
+            cmb_vid.SelectedValuePath = "L_Plate";
+
+            dt = db.getData("select * from Customer");
+            cmb_cusid.ItemsSource = dt.DefaultView;
+            cmb_cusid.DisplayMemberPath = "Cus_ID";
+            cmb_cusid.SelectedValuePath = "Cus_ID";
+
+            dt = db.getData("select * from Driver");
+            cmb_did.ItemsSource = dt.DefaultView;
+            cmb_did.DisplayMemberPath = "D_ID";
+            cmb_did.SelectedValuePath = "D_ID";
+        }
+
+        private void btn_submit_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Customer where Cus_ID='"+cmb_cusid.Text+"'");
+            txt_cusFname.Text = dt.Rows[0][1].ToString();
+            txt_cusLname.Text = dt.Rows[0][2].ToString();
+            dt = db.getData("select * from Vehicle where L_Plate='"+cmb_vid.Text+"'");
+            txt_make.Text = dt.Rows[0][1].ToString();
+            txt_model.Text = dt.Rows[0][2].ToString();
+            //dt = db.getData("select * from Driver where D_ID='"+cmb_did.Text+"'");
+            //txt_dname.Text = dt.Rows[0][1].ToString();
+
+        }
+
+        private void btn_addcus_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
