@@ -43,25 +43,44 @@ namespace dashNew1
             cmb_did.ItemsSource = dt.DefaultView;
             cmb_did.DisplayMemberPath = "D_ID";
             cmb_did.SelectedValuePath = "D_ID";
+
+            date_book.Text = DateTime.Now.ToString();
         }
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Customer where Cus_ID='"+cmb_cusid.Text+"'");
-            txt_cusFname.Text = dt.Rows[0][1].ToString();
-            txt_cusLname.Text = dt.Rows[0][2].ToString();
-            dt = db.getData("select * from Vehicle where L_Plate='"+cmb_vid.Text+"'");
-            txt_make.Text = dt.Rows[0][1].ToString();
-            txt_model.Text = dt.Rows[0][2].ToString();
-            //dt = db.getData("select * from Driver where D_ID='"+cmb_did.Text+"'");
-            //txt_dname.Text = dt.Rows[0][1].ToString();
+            string query1 = "Insert into Booking values ('" + txt_bid.Text + "','" + date_book.Text + "','" + date_pick.Text + "','" + date_lend.Text + "')";
+            string query2 = "Insert into Car_Booking values ('" + cmb_cusid.Text + "','" + cmb_vid.Text + "','" + cmb_did.Text + "','" + txt_bid.Text + "')";
 
+            int i = db.save_update_delete(query1);
+            if (i == 1)
+                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            i = db.save_update_delete(query2);
+            if (i == 1)
+                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btn_addcus_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btn_Fill_Click(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Customer where Cus_ID='" + cmb_cusid.Text + "'");
+            txt_cusFname.Text = dt.Rows[0][1].ToString();
+            txt_cusLname.Text = dt.Rows[0][2].ToString();
+            dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
+            txt_make.Text = dt.Rows[0][1].ToString();
+            txt_model.Text = dt.Rows[0][2].ToString();
+            dt = db.getData("select * from Driver where D_ID='"+cmb_did.Text+"'");
+            txt_dname.Text = dt.Rows[0][1].ToString();
         }
     }
 }
