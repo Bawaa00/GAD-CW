@@ -72,7 +72,8 @@ namespace dashNew1
 
         private void btn_addcus_Click(object sender, RoutedEventArgs e)
         {
-
+            addCustomer obj = new addCustomer();
+            obj.Show();
         }
 
         private void btn_Fill_Click(object sender, RoutedEventArgs e)
@@ -86,6 +87,17 @@ namespace dashNew1
             txt_model.Text = dt.Rows[0][2].ToString();
             dt = db.getData("select * from Driver where D_ID='"+cmb_did.Text+"'");
             txt_dname.Text = dt.Rows[0][1].ToString();
+        }
+
+        private void btn_view_v_Click(object sender, RoutedEventArgs e)
+        {
+            View_car obj = new View_car();
+            obj.Show();
+        }
+
+        private void btn_view_d_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

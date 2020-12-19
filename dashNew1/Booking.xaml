@@ -116,7 +116,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="Auto"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="681,360,33.4,321" Background="#FF61B73A" BorderBrush="#FF61B73A">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="681,360,33.4,321" Background="#FF61B73A" BorderBrush="#FF61B73A" Click="btn_view_v_Click">
             <TextBlock
                 Text="VIEW VEHICLES" FontSize="18" />
         </Button>
@@ -154,7 +154,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="Auto"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="66,554,648.4,127" Background="#FF61B73A" BorderBrush="#FF61B73A">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="66,554,648.4,127" Background="#FF61B73A" BorderBrush="#FF61B73A" Click="btn_view_d_Click">
             <TextBlock
                 Text="VIEW DRIVERS" FontSize="18" />
         </Button>
