@@ -230,5 +230,16 @@ namespace dashNew1
             obj.Show();
         }
 
+        private void v_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Booking obj = new Booking();
+            obj.Show();
+        }
+
+        private void v_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Updt_vehicle obj = new Updt_vehicle();
+            obj.Show();
+        }
     }
 }
