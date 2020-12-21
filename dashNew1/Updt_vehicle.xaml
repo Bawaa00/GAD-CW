@@ -250,17 +250,13 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True" SelectionChanged="cbox_lplate_SelectionChanged">
-        </ComboBox>
+            IsEditable="True" DropDownClosed="cbox_lplate_DropDownClosed"/>
         <Button x:Name="btn_search"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="Auto" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
             ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="607,119,646,681" BorderBrush="{x:Null}" Visibility="Hidden">
         </Button>
-        <Ellipse x:Name="md_elipse" HorizontalAlignment="Left" Height="32" Margin="601,126,0,0"  VerticalAlignment="Top" Width="35" Fill="#FF0EB0C0"/>
-        <materialDesign:PackIcon x:Name="md_search" Kind="Search" Margin="601,126,0,0" Height="32" Width="35" Foreground="White"
-                                 Background="{x:Null}" MouseDown="md_search_MouseDown"/>
         <DatePicker x:Name="txt_lndate" HorizontalAlignment="Left" Margin="330,607,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
         <DatePicker x:Name="txt_sdate" HorizontalAlignment="Left" Margin="330,715,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
         <DatePicker x:Name="txt_exdate" HorizontalAlignment="Left" Margin="330,769,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>

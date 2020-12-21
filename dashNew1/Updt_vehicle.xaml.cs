@@ -52,14 +52,25 @@ namespace dashNew1
             cbox_lplate.SelectedValuePath = "L_Plate";
         }
 
-        private void cbox_lplate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btn_upload_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Multiselect = false;
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            bool? result = open.ShowDialog();
+
+            if (result == true)
+            {
+                path = open.FileName; // Stores Original Path in Textbox    
+                ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
+                img_vehicle.Source = imgsource;
+            }
         }
 
-        private void md_search_MouseDown(object sender, MouseButtonEventArgs e)
+        private void cbox_lplate_DropDownClosed(object sender, EventArgs e)
         {
-             DataTable dt = new DataTable();
-            dt = db.getData("select * from Vehicle where L_Plate='"+cbox_lplate.Text.ToString()+"'");
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle where L_Plate='" + cbox_lplate.Text.ToString() + "'");
             cbox_year.Text = dt.Rows[0][1].ToString();
             cbox_make.Text = dt.Rows[0][2].ToString();
             txt_model.Text = dt.Rows[0][3].ToString();
@@ -75,21 +86,6 @@ namespace dashNew1
             path = dt.Rows[0][13].ToString();
             ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
             img_vehicle.Source = imgsource;
-        }
-
-        private void btn_upload_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Multiselect = false;
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            bool? result = open.ShowDialog();
-
-            if (result == true)
-            {
-                path = open.FileName; // Stores Original Path in Textbox    
-                ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
-                img_vehicle.Source = imgsource;
-            }
         }
     }
 }
