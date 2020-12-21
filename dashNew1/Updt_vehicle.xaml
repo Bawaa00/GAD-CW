@@ -1,11 +1,11 @@
-﻿<Window x:Class="dashNew1.Updt_vehicle"
+﻿<Window x:Name="form_vehicle_update" x:Class="dashNew1.Updt_vehicle"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="Updt_vehicle" Height="869.6" Width="1300">
+        Title="Updt_vehicle" Height="869.6" Width="1300" Loaded="form_vehicle_update_Loaded">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -51,7 +51,7 @@
                 Width="25" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_up_owners"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
@@ -59,7 +59,7 @@
             <TextBlock
                     Text="EDIT OWNER" />
         </Button>
-        <Button
+        <Button x:Name="btn_view_owners"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
@@ -97,7 +97,6 @@
                    Height="38" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,769,0,0"  Text="Expiry Date" VerticalAlignment="Top"
                    Height="38" FontSize="22" Foreground="White"/>
-        <TextBox x:Name="txt_lno" HorizontalAlignment="Left" Height="38" Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"/>
         <ComboBox x:Name="cbox_year"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,174,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
@@ -194,7 +193,6 @@
                 Orange
             </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txt_lndate" HorizontalAlignment="Left" Height="38" Margin="330,607,0,0"   VerticalAlignment="Top" Width="250"/>
         <ComboBox x:Name="cbox_ins"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,661,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
@@ -213,12 +211,10 @@
                 Orange
             </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txt_sdate" HorizontalAlignment="Left" Height="38" Margin="330,715,0,0"  VerticalAlignment="Top" Width="250"/>
-        <TextBox x:Name="txt_exdate" HorizontalAlignment="Left" Height="38" Margin="330,769,0,0"   VerticalAlignment="Top" Width="250"/>
 
 
-        <Image HorizontalAlignment="Left" Height="388" Margin="695,125,0,0" VerticalAlignment="Top" Width="388"/>
-        <Button
+        <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="388" Margin="695,125,0,0" VerticalAlignment="Top" Width="388"/>
+        <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25"
@@ -226,11 +222,11 @@
             <TextBlock
                 Text="SAVE" />
         </Button>
-        <Button
+        <Button x:Name="btn_upload"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}" Click="btn_upload_Click">
             <TextBlock
                 Text="UPLOAD" />
         </Button>
@@ -238,11 +234,11 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}" Visibility="Hidden">
             <TextBlock
                 Text="CHANGE" />
         </Button>
-        <Button
+        <Button x:Name="btn_up_ins"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="30"
             materialDesign:ButtonAssist.CornerRadius="15"
@@ -250,6 +246,24 @@
             <TextBlock
                 Text="UPDATE" FontSize="15"/>
         </Button>
+        <ComboBox x:Name="cbox_lplate"
+            materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
+            Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True" SelectionChanged="cbox_lplate_SelectionChanged">
+        </ComboBox>
+        <Button x:Name="btn_search"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            Height="Auto" Background="#FF0EB0C0"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="607,119,646,681" BorderBrush="{x:Null}" Visibility="Hidden">
+        </Button>
+        <Ellipse x:Name="md_elipse" HorizontalAlignment="Left" Height="32" Margin="601,126,0,0"  VerticalAlignment="Top" Width="35" Fill="#FF0EB0C0"/>
+        <materialDesign:PackIcon x:Name="md_search" Kind="Search" Margin="601,126,0,0" Height="32" Width="35" Foreground="White"
+                                 Background="{x:Null}" MouseDown="md_search_MouseDown"/>
+        <DatePicker x:Name="txt_lndate" HorizontalAlignment="Left" Margin="330,607,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
+        <DatePicker x:Name="txt_sdate" HorizontalAlignment="Left" Margin="330,715,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
+        <DatePicker x:Name="txt_exdate" HorizontalAlignment="Left" Margin="330,769,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
 
     </Grid>
 </Window>
