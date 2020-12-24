@@ -134,7 +134,7 @@
         <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="Black" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,410,0,0" HorizontalAlignment="Left" 
-            IsEditable="True">
+            IsEditable="True" DropDownClosed="cmb_vid_DropDownClosed">
           
         </ComboBox>
         <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="34" Margin="535,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
@@ -151,9 +151,7 @@
         <ComboBox x:Name="cmb_did"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="Black" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="283,491,0,0" HorizontalAlignment="Left" 
-            IsEditable="True">
-           
-        </ComboBox>
+            IsEditable="True" DropDownClosed="cmb_did_DropDownClosed"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,484,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
         <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="34" Margin="535,548,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>

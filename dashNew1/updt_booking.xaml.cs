@@ -25,10 +25,10 @@ namespace dashNew1
             InitializeComponent();
         }
         Connect_DB db = new Connect_DB();
-        DataTable dt = new DataTable();
 
         private void form_up_booking_Loaded(object sender, RoutedEventArgs e)
         {
+            DataTable dt = new DataTable();
             dt = db.getData("select * from Booking");
             cmb_bid.ItemsSource = dt.DefaultView;
             cmb_bid.DisplayMemberPath = "BK_No";
@@ -52,6 +52,7 @@ namespace dashNew1
 
         private void cmb_bid_DropDownClosed(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
             dt = db.getData("exec booking_vehicle '" + cmb_bid.Text + "'");
             date_book.Text = dt.Rows[0][1].ToString();
             date_pick.Text = dt.Rows[0][2].ToString();
@@ -99,7 +100,25 @@ namespace dashNew1
 
         private void cmb_cid_DropDownClosed(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Customer where Cus_ID='" + cmb_cid.Text + "'");
+            txt_fname.Text = dt.Rows[0][1].ToString();
+            txt_lname.Text = dt.Rows[0][2].ToString();
+        }
 
+        private void cmb_vid_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
+            txt_make.Text = dt.Rows[0][2].ToString();
+            txt_model.Text = dt.Rows[0][3].ToString();
+        }
+
+        private void cmb_did_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Driver where D_ID = '" + cmb_did.Text + "'");
+            txt_dname.Text = dt.Rows[0][2].ToString();
         }
     }
 }
