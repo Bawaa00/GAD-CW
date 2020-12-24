@@ -82,7 +82,7 @@
         <ComboBox x:Name="cmb_bid"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="Black" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,143,0,0" HorizontalAlignment="Left" 
-            IsEditable="True" DropDownClosed="cmb_bid_DropDownClosed">
+            IsEditable="True" DropDownClosed="cmb_bid_DropDownClosed" IsReadOnly="True">
         </ComboBox>
 
         <TextBlock HorizontalAlignment="Left" Margin="287,92,0,0" TextWrapping="Wrap" Text="Booking Date" VerticalAlignment="Top" Height="34" 
@@ -103,10 +103,10 @@
             IsEditable="True" DropDownClosed="cmb_cid_DropDownClosed"/>
         <TextBlock HorizontalAlignment="Left" Margin="287,225,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="34" Margin="287,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="34" Margin="287,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke" IsReadOnly="True"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,225,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <TextBox x:Name="txt_lname" HorizontalAlignment="Left" Height="34" Margin="535,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_lname" HorizontalAlignment="Left" Height="34" Margin="535,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke" IsReadOnly="True"/>
         <Rectangle HorizontalAlignment="Left" Height="123" Margin="25,351,0,0" VerticalAlignment="Top" Width="837" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -130,14 +130,14 @@
             FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,358,0,0" TextWrapping="Wrap" Text="Model" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="34" Margin="287,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="34" Margin="287,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke" IsReadOnly="True"/>
         <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="Black" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,410,0,0" HorizontalAlignment="Left" 
             IsEditable="True" DropDownClosed="cmb_vid_DropDownClosed">
           
         </ComboBox>
-        <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="34" Margin="535,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="34" Margin="535,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke" IsReadOnly="True"/>
         <Rectangle HorizontalAlignment="Left" Height="123" Margin="25,484,0,0" VerticalAlignment="Top" Width="488" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -154,7 +154,7 @@
             IsEditable="True" DropDownClosed="cmb_did_DropDownClosed"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,484,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
-        <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="34" Margin="535,548,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+        <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="34" Margin="535,548,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke" IsReadOnly="True"/>
 
         <Button x:Name="btn_view_driver"
             Style="{StaticResource MaterialDesignRaisedButton}"
