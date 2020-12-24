@@ -73,7 +73,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="Auto"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="731,228,33.4,453" Background="#FF61B73A" BorderBrush="#FF61B73A">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="731,228,33.4,453" Background="#FF61B73A" BorderBrush="#FF61B73A" Click="btn_add_cus_Click">
             <TextBlock
             Text="ADD NEW" FontSize="18" />
         </Button>
@@ -100,7 +100,7 @@
         <ComboBox x:Name="cmb_cid"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="Black" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,276,0,0" HorizontalAlignment="Left" 
-            IsEditable="True"/>
+            IsEditable="True" DropDownClosed="cmb_cid_DropDownClosed"/>
         <TextBlock HorizontalAlignment="Left" Margin="287,225,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
         <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="34" Margin="287,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
@@ -120,7 +120,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="Auto"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="681,360,33.4,321" Background="#FF61B73A" BorderBrush="#FF61B73A">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="681,360,33.4,321" Background="#FF61B73A" BorderBrush="#FF61B73A" Click="btn_view_Click">
             <TextBlock
                 Text="VIEW VEHICLES" FontSize="18" />
         </Button>
@@ -162,7 +162,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="Auto"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="66,554,648.4,127" Background="#FF61B73A" BorderBrush="#FF61B73A">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="66,554,648.4,127" Background="#FF61B73A" BorderBrush="#FF61B73A" Click="btn_view_driver_Click">
             <TextBlock
                 Text="VIEW DRIVERS" FontSize="18" />
         </Button>
@@ -170,7 +170,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="247,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="247,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198" Click="btn_update_Click">
             <TextBlock
                 Text="UPDATE" FontSize="22" />
         </Button>

@@ -25,9 +25,10 @@ namespace dashNew1
             InitializeComponent();
         }
         Connect_DB db = new Connect_DB();
+        DataTable dt = new DataTable();
+
         private void form_up_booking_Loaded(object sender, RoutedEventArgs e)
         {
-            DataTable dt = new DataTable();
             dt = db.getData("select * from Booking");
             cmb_bid.ItemsSource = dt.DefaultView;
             cmb_bid.DisplayMemberPath = "BK_No";
@@ -51,7 +52,6 @@ namespace dashNew1
 
         private void cmb_bid_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
             dt = db.getData("exec booking_vehicle '" + cmb_bid.Text + "'");
             date_book.Text = dt.Rows[0][1].ToString();
             date_pick.Text = dt.Rows[0][2].ToString();
@@ -64,6 +64,42 @@ namespace dashNew1
             txt_model.Text = dt.Rows[0][9].ToString();
             cmb_did.Text = dt.Rows[0][10].ToString();
             txt_dname.Text = dt.Rows[0][11].ToString();
+        }
+
+        private void btn_add_cus_Click(object sender, RoutedEventArgs e)
+        {
+            addCustomer obj = new addCustomer();
+            obj.Show();
+        }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            Update_Vehicle obj = new Update_Vehicle();
+            obj.Show();
+        }
+
+        private void btn_view_driver_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            string a = " update Booking set  BK_date = '"+date_book.Text+"', S_date='"+date_pick.Text+"', L_date='"+date_lend.Text+ "' where BK_No = '" + cmb_bid.Text + "'";
+            string b = " update Car_Booking set VNO='" + cmb_vid.Text + "' , DNO = '" + cmb_did.Text + "' , BNO = '"+cmb_bid.Text+ "' where  CNO = '" + cmb_cid.Text + "'";
+
+            int x = db.save_update_delete(a);
+            int y = db.save_update_delete(b);
+            if (x == 1 && y == 1 )
+                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            else
+                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void cmb_cid_DropDownClosed(object sender, EventArgs e)
+        {
+
         }
     }
 }
