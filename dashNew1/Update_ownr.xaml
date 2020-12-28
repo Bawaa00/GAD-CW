@@ -78,7 +78,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="804,541,360.6,79.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="804,541,360.6,79.4" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
             <TextBlock
                 Text="SAVE" />
         </Button>
@@ -102,7 +102,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}" Click="btn_upload_Click">
             <TextBlock
                 Text="UPLOAD" />
         </Button>
