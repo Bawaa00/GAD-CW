@@ -98,5 +98,18 @@ namespace dashNew1
             else
                 MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_clr_Click(object sender, RoutedEventArgs e)
+        {
+            txt_nic.Clear();
+            txt_name.Clear();
+            txt_address.Clear();
+            txt_contact.Clear();
+        }
     }
 }
