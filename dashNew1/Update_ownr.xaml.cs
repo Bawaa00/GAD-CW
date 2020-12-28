@@ -83,13 +83,12 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            string a = " update Owner set  O_ID= '" + cmb_oid.Text + "', O_NIC = '" + txt_nic.Text + "', " +
-                           " O_Name=  '" + txt_name.Text + "', O_Address= '" + txt_address.Text + "',O_Tel = '"+txt_contact.Text+"' ,O_path = '" + path + "' where Driver_ID  = '" + cmb_oid.Text + "'";
-
-            string name = System.IO.Path.GetFileName(path);
+            string a = " Update Owner set  O_ID= '" + cmb_oid.Text + "', O_NIC = '" + txt_nic.Text + "', " +
+                           " O_Name=  '" + txt_name.Text + "', O_Address= '" + txt_address.Text + "',O_Tel = '"+txt_contact.Text+"' ,O_path = '" + path + "' where O_ID  = '" + cmb_oid.Text + "'";
+/* string name = System.IO.Path.GetFileName(path);
             string destinationPath = GetDestinationPath(name);
-
-            File.Copy(path, destinationPath, true);
+            
+            File.Copy(path, destinationPath, true);*/
             //txt_did.Text = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
 
             int line = db.save_update_delete(a);

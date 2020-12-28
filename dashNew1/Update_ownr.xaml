@@ -67,7 +67,7 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True" DropDownClosed="cmb_oid_DropDownClosed">
+            IsEditable="True" DropDownClosed="cmb_oid_DropDownClosed" IsReadOnly="True">
         </ComboBox>
         <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <TextBox x:Name="txt_nic" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
@@ -102,7 +102,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}" Click="btn_upload_Click">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}" Click="btn_upload_Click" Visibility="Hidden">
             <TextBlock
                 Text="UPLOAD" />
         </Button>
@@ -110,7 +110,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}" Visibility="Hidden">
             <TextBlock
                 Text="CHANGE" />
         </Button>
