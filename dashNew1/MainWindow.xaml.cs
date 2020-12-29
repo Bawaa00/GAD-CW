@@ -241,5 +241,11 @@ namespace dashNew1
             Updt_vehicle obj = new Updt_vehicle();
             obj.Show();
         }
+
+        private void c_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            view_bookings obj = new view_bookings();
+            obj.Show();
+        }
     }
 }
