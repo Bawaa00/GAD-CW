@@ -102,7 +102,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}" Click="btn_upload_Click" Visibility="Hidden">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}" Click="btn_upload_Click">
             <TextBlock
                 Text="UPLOAD" />
         </Button>
@@ -110,7 +110,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}" Visibility="Hidden">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}" Click="Button_Click">
             <TextBlock
                 Text="CHANGE" />
         </Button>

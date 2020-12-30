@@ -84,7 +84,7 @@
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="cus_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
-                    Margin="228,186,0,0" VerticalAlignment="Top" Width="170" MouseEnter="cus_option_panel_MouseEnter" MouseLeave="cus_option_panel_MouseLeave">
+                    Margin="228,186,0,0" VerticalAlignment="Top" Width="170" MouseEnter="cus_option_panel_MouseEnter" MouseLeave="cus_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>

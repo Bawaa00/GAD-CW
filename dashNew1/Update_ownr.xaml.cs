@@ -62,8 +62,13 @@ namespace dashNew1
             txt_address.Text = dt.Rows[0][3].ToString();
             txt_contact.Text = dt.Rows[0][4].ToString();
             path = dt.Rows[0][5].ToString();
-            ImageSource imgsource = new BitmapImage(new Uri(path));
-            img_owner.Source = imgsource;
+
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.CacheOption = BitmapCacheOption.OnLoad;
+            image.UriSource = new Uri(path);
+            image.EndInit();
+            img_owner.Source = image;
         }
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
@@ -76,20 +81,25 @@ namespace dashNew1
             if (result == true)
             {
                 path = open.FileName; // Stores Original Path in Textbox    
-                ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
-                img_owner.Source = imgsource;
+               /* ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
+                img_owner.Source = imgsource;*/
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = new Uri(path);
+                image.EndInit();
+                img_owner.Source = image;
             }
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            string a = " Update Owner set  O_ID= '" + cmb_oid.Text + "', O_NIC = '" + txt_nic.Text + "', " +
-                           " O_Name=  '" + txt_name.Text + "', O_Address= '" + txt_address.Text + "',O_Tel = '"+txt_contact.Text+"' ,O_path = '" + path + "' where O_ID  = '" + cmb_oid.Text + "'";
-/* string name = System.IO.Path.GetFileName(path);
+            string a = "update Owner set O_ID='"+cmb_oid.Text+"' , O_NIC = '"+txt_nic.Text+"' , O_path = '"+path+"' , O_Tel = "+txt_contact.Text+" ,O_Name = '" + txt_name.Text + "', O_Address = '"+txt_address.Text+"' where O_ID = '" + cmb_oid.Text + "' ";
+            string name = System.IO.Path.GetFileName(path);
             string destinationPath = GetDestinationPath(name);
             
-            File.Copy(path, destinationPath, true);*/
-            //txt_did.Text = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            File.Copy(path, destinationPath, true);
+           // txt_did.Text = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
 
             int line = db.save_update_delete(a);
             if (line == 1)
@@ -110,6 +120,11 @@ namespace dashNew1
             txt_name.Clear();
             txt_address.Clear();
             txt_contact.Clear();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
