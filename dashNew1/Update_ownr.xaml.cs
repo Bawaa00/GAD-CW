@@ -120,11 +120,8 @@ namespace dashNew1
             txt_name.Clear();
             txt_address.Clear();
             txt_contact.Clear();
+            img_owner.Source = null;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }
