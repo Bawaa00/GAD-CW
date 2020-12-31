@@ -58,7 +58,7 @@
             materialDesign:ButtonAssist.CornerRadius="10"
             ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="680,551,448,251" BorderBrush="{x:Null}" Click="btn_edit_owner_Click" Grid.ColumnSpan="2">
             <TextBlock
-                    Text="EDIT OWNER" />
+                    Text="ADD OWNER" />
         </Button>
         <Button x:Name="btn_see_owner"
             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -66,7 +66,7 @@
             materialDesign:ButtonAssist.CornerRadius="10"
             ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="863,551,265,251" BorderBrush="{x:Null}" Click="btn_see_owner_Click">
             <TextBlock
-                Text="SEE OWNER" />
+                Text="VIEW OWNERS" />
         </Button>
 
 
