@@ -120,5 +120,11 @@ namespace dashNew1
             dt = db.getData("select * from Driver where D_ID = '" + cmb_did.Text + "'");
             txt_dname.Text = dt.Rows[0][2].ToString();
         }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            //Application.Current.MainWindow.Show();
+            //this.Close();
+        }
     }
 }

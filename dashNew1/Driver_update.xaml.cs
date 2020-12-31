@@ -184,20 +184,7 @@ namespace dashNew1
          }
 
 
-         private void combo1_DropDownClosed(object sender, EventArgs e)
-         {
-             DataTable dt = new DataTable();
-             //  string a = "select * from Driver where Driver_ID='" + combo1.Text + "'";
-             dt = obj.getData("select * from Driver where Driver_ID='" + combo1.Text + "'");
-             txt_Lnum.Text = combo1.Text;
-             txt_Lnum.Text = dt.Rows[0][1].ToString();
-             txt_Name.Text = dt.Rows[0][2].ToString();
-             txt_Tp.Text = dt.Rows[0][3].ToString();
-             txt_Address.Text = dt.Rows[0][4].ToString();
-             filepath = dt.Rows[0][5].ToString();
-             ImageSource imgsource = new BitmapImage(new Uri(filepath));
-             img.Source = imgsource;
-         }
+        
         */
 
     }
