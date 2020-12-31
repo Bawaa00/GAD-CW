@@ -65,7 +65,7 @@
             <TextBlock
                 Text="CLEAR" />
         </Button>
-        <Button
+        <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right" VerticalAlignment="Top"
             ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,100.2,0">
@@ -74,10 +74,10 @@
                 Height="24"
                 Width="24" />
         </Button>
-        <Button
+        <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,44.2,523.6">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,44.2,523.6" Click="btn_back_Click">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"

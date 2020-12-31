@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace dashNew1
 {
@@ -22,6 +23,108 @@ namespace dashNew1
         public updt_booking()
         {
             InitializeComponent();
+        }
+        Connect_DB db = new Connect_DB();
+
+        private void form_up_booking_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Booking");
+            cmb_bid.ItemsSource = dt.DefaultView;
+            cmb_bid.DisplayMemberPath = "BK_No";
+            cmb_bid.SelectedValuePath = "BK_No";
+
+            dt = db.getData("select * from Vehicle");
+            cmb_vid.ItemsSource = dt.DefaultView;
+            cmb_vid.DisplayMemberPath = "L_Plate";
+            cmb_vid.SelectedValuePath = "L_Plate";
+
+            dt = db.getData("select * from Customer");
+            cmb_cid.ItemsSource = dt.DefaultView;
+            cmb_cid.DisplayMemberPath = "Cus_ID";
+            cmb_cid.SelectedValuePath = "Cus_ID";
+
+            dt = db.getData("select * from Driver");
+            cmb_did.ItemsSource = dt.DefaultView;
+            cmb_did.DisplayMemberPath = "D_ID";
+            cmb_did.SelectedValuePath = "D_ID";
+        }
+
+        private void cmb_bid_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("exec booking_vehicle '" + cmb_bid.Text + "'");
+            date_book.Text = dt.Rows[0][1].ToString();
+            date_pick.Text = dt.Rows[0][2].ToString();
+            date_lend.Text = dt.Rows[0][3].ToString();
+            cmb_cid.Text = dt.Rows[0][4].ToString();
+            txt_fname.Text = dt.Rows[0][5].ToString();
+            txt_lname.Text = dt.Rows[0][6].ToString();
+            cmb_vid.Text = dt.Rows[0][7].ToString();
+            txt_make.Text = dt.Rows[0][8].ToString();
+            txt_model.Text = dt.Rows[0][9].ToString();
+            cmb_did.Text = dt.Rows[0][10].ToString();
+            txt_dname.Text = dt.Rows[0][11].ToString();
+        }
+
+        private void btn_add_cus_Click(object sender, RoutedEventArgs e)
+        {
+            addCustomer obj = new addCustomer();
+            obj.Show();
+        }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            Update_Vehicle obj = new Update_Vehicle();
+            obj.Show();
+        }
+
+        private void btn_view_driver_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            string a = " update Booking set  BK_date = '"+date_book.Text+"', S_date='"+date_pick.Text+"', L_date='"+date_lend.Text+ "' where BK_No = '" + cmb_bid.Text + "'";
+            string b = " update Car_Booking set VNO='" + cmb_vid.Text + "' , DNO = '" + cmb_did.Text + "' , BNO = '"+cmb_bid.Text+ "' where  CNO = '" + cmb_cid.Text + "'";
+
+            int x = db.save_update_delete(a);
+            int y = db.save_update_delete(b);
+            if (x == 1 && y == 1 )
+                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            else
+                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void cmb_cid_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Customer where Cus_ID='" + cmb_cid.Text + "'");
+            txt_fname.Text = dt.Rows[0][1].ToString();
+            txt_lname.Text = dt.Rows[0][2].ToString();
+        }
+
+        private void cmb_vid_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
+            txt_make.Text = dt.Rows[0][2].ToString();
+            txt_model.Text = dt.Rows[0][3].ToString();
+        }
+
+        private void cmb_did_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Driver where D_ID = '" + cmb_did.Text + "'");
+            txt_dname.Text = dt.Rows[0][2].ToString();
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            //Application.Current.MainWindow.Show();
+            //this.Close();
         }
     }
 }
