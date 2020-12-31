@@ -34,7 +34,7 @@ namespace dashNew1
         private void view_booking_Loaded(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable();  
-           dt = db.getData("select BK_No as 'BOOK ID', BK_date as 'BOOK DATE', Booking.S_date,L_date,Cus_ID,F_name,S_name,L_Plate,Make,Model,D_ID,D_name" +
+           dt = db.getData("select BK_No as 'BOOK ID', BK_date as 'BOOK DATE', Booking.S_date as'PICKUP DATE',L_date as 'LEND DATE',Cus_ID as 'CUSTOMER ID',F_name as 'FIRST NAME',S_name as 'SURENAME',L_Plate as 'LICEN PLATE',Make  as 'MAKE',Model  as 'MODEL',D_ID  as 'DRIVER ID',D_name  as 'DRIVER NAME'" +
                " from Car_Booking,Booking,Vehicle,Driver,Customer" +
                " where BK_No = BNO and CNO = Cus_ID and VNO = L_Plate and DNO = D_ID;");
             dg_owners.ItemsSource = dt.DefaultView;
