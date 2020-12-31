@@ -50,5 +50,10 @@ namespace dashNew1
             else
                 MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -36,7 +36,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button
+        <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
             ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
