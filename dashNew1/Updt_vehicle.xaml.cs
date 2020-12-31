@@ -31,7 +31,7 @@ namespace dashNew1
         string path;
         string old_id;
 
-       /* private String GetDestinationPath(string filename)
+        private String GetDestinationPath(string filename)
         {
             String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             string dir = appStartPath + "\\" + cbox_lplate.Text;
@@ -42,7 +42,7 @@ namespace dashNew1
             }
             appStartPath = String.Format(dir + "\\" + cbox_lplate.Text + ".jpg");
             return appStartPath;
-        }*/
+        }
 
         private void form_vehicle_update_Loaded(object sender, RoutedEventArgs e)
         {
@@ -72,8 +72,15 @@ namespace dashNew1
             if (result == true)
             {
                 path = open.FileName; // Stores Original Path in Textbox    
-                ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
-                img_vehicle.Source = imgsource;
+                /*ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
+                img_vehicle.Source = imgsource;*/
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = new Uri(path);
+                image.EndInit();
+                img_vehicle.Source = image;
+
             }
         }
 
@@ -95,20 +102,26 @@ namespace dashNew1
             txt_sdate.Text = dt.Rows[0][11].ToString();
             txt_exdate.Text = dt.Rows[0][12].ToString();
             path = dt.Rows[0][13].ToString();
-            ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
-            img_vehicle.Source = imgsource;
+           /* ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
+            img_vehicle.Source = imgsource;*/
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.CacheOption = BitmapCacheOption.OnLoad;
+            image.UriSource = new Uri(path);
+            image.EndInit();
+            img_vehicle.Source = image;
+
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            img_vehicle.Source = null;
             string q = "update Vehicle set L_Plate='"+cbox_lplate.Text+ "',Year='" + cbox_year.Text + "',Make='" + cbox_make.Text + "',Model='" + txt_model.Text + "',Category='" + cbox_category.Text + "'" +
                 ",Cost_Per_Month='" + txt_cpmonth.Text + "',Cost_Per_Week='" + txt_cpweek.Text + "',Extra_Cost='" + txt_extra.Text + "',O_ID='" + cbox_oid.Text + "',Lend_Date='" + txt_lndate.Text + "'," +
-                "S_date='" + txt_sdate.Text + "',E_date='" + txt_exdate.Text + "' where L_Plate = '" + old_id+"'";
+                "S_date='" + txt_sdate.Text + "',E_date='" + txt_exdate.Text + "', V_Path = '"+path+"'  where L_Plate = '" + old_id+"'";
 
-          /*  string name = System.IO.Path.GetFileName(path);
+            string name = System.IO.Path.GetFileName(path);
             string destinationPath = GetDestinationPath(name);
-            File.Copy(path, destinationPath, true);*/
+            File.Copy(path, destinationPath, true);
 
             int i = db.save_update_delete(q);
             if (i == 1)
@@ -116,6 +129,18 @@ namespace dashNew1
 
             else
                 MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void btn_up_owner_Click(object sender, RoutedEventArgs e)
+        {
+            Owner_info obj = new Owner_info();
+            obj.Show();
+        }
+
+        private void btn_up_ins_Click(object sender, RoutedEventArgs e)
+        {
+            View_insurnce obj = new View_insurnce();
+            obj.Show();
         }
     }
 }

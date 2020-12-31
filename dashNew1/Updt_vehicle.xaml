@@ -57,7 +57,7 @@
             materialDesign:ButtonAssist.CornerRadius="10"
             ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="680,551,448,251" BorderBrush="{x:Null}">
             <TextBlock
-                    Text="EDIT OWNER" />
+                    Text="ADD OWNER" />
         </Button>
         <Button x:Name="btn_view_owners"
             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -65,7 +65,7 @@
             materialDesign:ButtonAssist.CornerRadius="10"
             ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="863,551,265,251" BorderBrush="{x:Null}">
             <TextBlock
-                Text="SEE OWNER" />
+                Text="VIEW OWNER" />
         </Button>
 
 
@@ -219,9 +219,9 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="30"
             materialDesign:ButtonAssist.CornerRadius="15"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="149,664,1030,146" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="149,664,1030,146" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_up_ins_Click">
             <TextBlock
-                Text="UPDATE" FontSize="15"/>
+                Text="VIEW" FontSize="15"/>
         </Button>
         <ComboBox x:Name="cbox_lplate"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
@@ -237,6 +237,14 @@
         <DatePicker x:Name="txt_lndate" HorizontalAlignment="Left" Margin="330,607,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
         <DatePicker x:Name="txt_sdate" HorizontalAlignment="Left" Margin="330,715,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
         <DatePicker x:Name="txt_exdate" HorizontalAlignment="Left" Margin="330,769,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
+        <Button x:Name="btn_up_owner"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="30"
+            materialDesign:ButtonAssist.CornerRadius="15"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="149,553,1030,256" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_up_owner_Click">
+            <TextBlock
+                Text="VIEW" FontSize="15"/>
+        </Button>
 
     </Grid>
 </Window>
