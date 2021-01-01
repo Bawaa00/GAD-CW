@@ -45,18 +45,27 @@ namespace dashNew1
 
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
-        {   
-            string name = System.IO.Path.GetFileName(filepath);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(filepath, destinationPath, true);
+        {
+            try
+            {
+                string name = System.IO.Path.GetFileName(filepath);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(filepath, destinationPath, true);
 
-            string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','"+destinationPath+"')";
+                string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','" + destinationPath + "')";
 
-            int i = db.save_update_delete(query);
-            if (i == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                int i = db.save_update_delete(query);
+                if (i == 1)
+                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); }
 
         }
 
