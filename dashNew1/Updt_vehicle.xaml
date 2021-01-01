@@ -55,7 +55,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="680,551,448,251" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="680,551,448,251" BorderBrush="{x:Null}" Visibility="Hidden">
             <TextBlock
                     Text="ADD OWNER" />
         </Button>
@@ -63,7 +63,7 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="863,551,265,251" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="863,551,265,251" BorderBrush="{x:Null}" Visibility="Hidden">
             <TextBlock
                 Text="VIEW OWNER" />
         </Button>
@@ -180,7 +180,7 @@
             Margin="330,553,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
             IsEditable="True">
-        
+
         </ComboBox>
         <ComboBox x:Name="cbox_ins"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
@@ -244,6 +244,14 @@
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="149,553,1030,256" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_up_owner_Click">
             <TextBlock
                 Text="VIEW" FontSize="15"/>
+        </Button>
+        <Button x:Name="btn_del"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="956,756,209,33" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_del_Click">
+            <TextBlock
+                Text="DELETE" />
         </Button>
 
     </Grid>

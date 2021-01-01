@@ -72,8 +72,6 @@ namespace dashNew1
             if (result == true)
             {
                 path = open.FileName; // Stores Original Path in Textbox    
-                /*ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
-                img_vehicle.Source = imgsource;*/
                 BitmapImage image = new BitmapImage();
                 image.BeginInit();
                 image.CacheOption = BitmapCacheOption.OnLoad;
@@ -102,8 +100,6 @@ namespace dashNew1
             txt_sdate.Text = dt.Rows[0][11].ToString();
             txt_exdate.Text = dt.Rows[0][12].ToString();
             path = dt.Rows[0][13].ToString();
-           /* ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
-            img_vehicle.Source = imgsource;*/
             BitmapImage image = new BitmapImage();
             image.BeginInit();
             image.CacheOption = BitmapCacheOption.OnLoad;
@@ -115,13 +111,13 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            string q = "update Vehicle set L_Plate='"+cbox_lplate.Text+ "',Year='" + cbox_year.Text + "',Make='" + cbox_make.Text + "',Model='" + txt_model.Text + "',Category='" + cbox_category.Text + "'" +
-                ",Cost_Per_Month='" + txt_cpmonth.Text + "',Cost_Per_Week='" + txt_cpweek.Text + "',Extra_Cost='" + txt_extra.Text + "',O_ID='" + cbox_oid.Text + "',Lend_Date='" + txt_lndate.Text + "'," +
-                "S_date='" + txt_sdate.Text + "',E_date='" + txt_exdate.Text + "', V_Path = '"+path+"'  where L_Plate = '" + old_id+"'";
-
             string name = System.IO.Path.GetFileName(path);
             string destinationPath = GetDestinationPath(name);
             File.Copy(path, destinationPath, true);
+
+            string q = "update Vehicle set L_Plate='"+cbox_lplate.Text+ "',Year='" + cbox_year.Text + "',Make='" + cbox_make.Text + "',Model='" + txt_model.Text + "',Category='" + cbox_category.Text + "'" +
+                ",Cost_Per_Month='" + txt_cpmonth.Text + "',Cost_Per_Week='" + txt_cpweek.Text + "',Extra_Cost='" + txt_extra.Text + "',O_ID='" + cbox_oid.Text + "',Lend_Date='" + txt_lndate.Text + "'," +
+                "S_date='" + txt_sdate.Text + "',E_date='" + txt_exdate.Text + "', V_Path = '"+destinationPath+"'  where L_Plate = '" + old_id+"'"; 
 
             int i = db.save_update_delete(q);
             if (i == 1)
@@ -141,6 +137,16 @@ namespace dashNew1
         {
             View_insurnce obj = new View_insurnce();
             obj.Show();
+        }
+
+        private void btn_del_Click(object sender, RoutedEventArgs e)
+        {
+            int i = db.save_update_delete("delete from Vehicle where L_Plate='" + cbox_lplate.Text + "'");
+            if (i == 1)
+                MessageBox.Show("Data Deleted Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            else
+                MessageBox.Show("Data Cannot Delete", "error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
