@@ -140,7 +140,7 @@
             Margin="330,228,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
             IsEditable="True">
-            <ComboBoxItem Content="Audi"/>
+            <ComboBoxItem Content="AUDI"/>
             <ComboBoxItem Content="BMW"/>
             <ComboBoxItem Content="FORD"/>
             <ComboBoxItem Content="HONDA"/>
