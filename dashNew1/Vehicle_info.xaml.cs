@@ -41,7 +41,7 @@ namespace dashNew1
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            Update_Vehicle obj = new Update_Vehicle();
+            Updt_vehicle obj = new Updt_vehicle();
             obj.Show();
         }
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="view_bookings" Height="700" Width="1300" Loaded="view_booking_Loaded">
+        Title="view_bookings" Height="700" Width="1300" Loaded="view_booking_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -27,7 +27,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="btn_add" HorizontalAlignment="Right" Height="60" Margin="0,95,22.6,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0" Grid.Column="2">
+        <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,95,22.6,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0" Grid.Column="2">
             <Rectangle.Effect>
                 <DropShadowEffect Opacity="0.6" Color="#FF4F4C4C"/>
             </Rectangle.Effect>
@@ -60,9 +60,9 @@
                 Height="24"
                 Width="24" />
         </Button>
-        <Button x:Name="btn_add1"
+        <Button x:Name="btn_add"
             Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="400,98,0,0" Grid.Column="2" Click="btn_add1_Click">
+            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="400,98,0,0" Grid.Column="2" Click="btn_add_Click">
             <materialDesign:PackIcon
                 Kind="Plus"
                 Height="30"
@@ -72,14 +72,14 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="28.8,5,0,0" Height="70" Width="auto" Text="BOOKINGS " VerticalAlignment="Top"
                    FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="43.8,120,0,0"  Text="Booking ID" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="43.8,120,0,0"  Text="Search" VerticalAlignment="Top"
                    Height="38" FontSize="22" Foreground="White" Grid.Column="1"/>
-        <ComboBox x:Name="cmb_view"
-            materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
-            Margin="328.8,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+        <ComboBox x:Name="cmb_bkid"
+            materialDesign:HintAssist.Hint="Book ID" HorizontalAlignment="Left" Height="38" 
+            Margin="274,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True" Grid.Column="1">
-            
+            IsEditable="True" Grid.Column="1" DropDownClosed="cmb_bkid_DropDownClosed">
+
         </ComboBox>
 
         <DataGrid x:Name="dg_owners"
@@ -87,13 +87,13 @@
             CanUserAddRows="False"
             SelectionUnit="Cell"
             SelectionMode="Extended" Margin="18.8,191,20.6,91.4" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button
+        <Button x:Name="btn_view"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="462,602,22.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="2">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="462,602,22.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="2" Click="btn_view_Click">
             <TextBlock
-                Text="DELETE" />
+                Text="VIEW ALL" />
         </Button>
         <Button x:Name="btn_update"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
@@ -104,5 +104,15 @@
                 Text="UPDATE" />
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="469,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Grid.Column="2"/>
+        <ComboBox x:Name="cmb_lpate"
+            materialDesign:HintAssist.Hint="Plate No" HorizontalAlignment="Left" Height="38" 
+            Margin="549,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True" Grid.Column="1" Grid.ColumnSpan="2" DropDownClosed="cmb_lpate_DropDownClosed"/>
+        <ComboBox x:Name="cmb_cusno"
+            materialDesign:HintAssist.Hint="Customer" HorizontalAlignment="Left" Height="38" 
+            Margin="140,121,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True" Grid.Column="2" DropDownClosed="cmb_cusno_DropDownClosed"/>
     </Grid>
 </Window>
