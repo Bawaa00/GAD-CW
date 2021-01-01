@@ -83,10 +83,10 @@ namespace dashNew1
             txt_cusFname.Text = dt.Rows[0][1].ToString();
             txt_cusLname.Text = dt.Rows[0][2].ToString();
             dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
-            txt_make.Text = dt.Rows[0][1].ToString();
-            txt_model.Text = dt.Rows[0][2].ToString();
+            txt_make.Text = dt.Rows[0][2].ToString();
+            txt_model.Text = dt.Rows[0][3].ToString();
             dt = db.getData("select * from Driver where D_ID='"+cmb_did.Text+"'");
-            txt_dname.Text = dt.Rows[0][1].ToString();
+            txt_dname.Text = dt.Rows[0][2].ToString();
         }
 
         private void btn_view_v_Click(object sender, RoutedEventArgs e)
