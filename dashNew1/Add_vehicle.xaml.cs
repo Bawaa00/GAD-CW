@@ -94,13 +94,13 @@ namespace dashNew1
                 MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        private void btn_add_ins_Click(object sender, RoutedEventArgs e)
+        private void btn_view_ins_Click(object sender, RoutedEventArgs e)
         {
-            Add_Insurnce obj = new Add_Insurnce();
+            View_insurnce obj = new View_insurnce();
             obj.Show();
         }
 
-        private void btn_see_owner_Click(object sender, RoutedEventArgs e)
+        private void btn_add_ins_Click(object sender, RoutedEventArgs e)
         {
             Owner_info obj = new Owner_info();
             obj.Show();
