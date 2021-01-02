@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.IO;
 using System.Diagnostics;
+using System.Data;
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -85,6 +87,33 @@ namespace dashNew1
             img_cus.Source = null;
         }
 
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Add_Customer_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("Select max(Cus_ID) from Customer");
+            string id = dt.Rows[0][0].ToString();
+            var prefix = Regex.Match(id, "^\\D+").Value;
+            var number = Regex.Replace(id, "^\\D+", "");
+            var i = int.Parse(number) + 1;
+            var newString = prefix + i.ToString(new string('0', number.Length));
+            txt_id.Text = newString;
+        }
     }
 }
 
