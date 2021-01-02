@@ -96,6 +96,9 @@
     <Compile Include="login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Messagebox.xaml.cs">
+      <DependentUpon>Messagebox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Owner_info.xaml.cs">
       <DependentUpon>Owner_info.xaml</DependentUpon>
     </Compile>
@@ -180,6 +183,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Messagebox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Owner_info.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
