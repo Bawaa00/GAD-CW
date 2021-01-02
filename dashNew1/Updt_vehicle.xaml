@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="Updt_vehicle" Height="869.6" Width="1300" Loaded="form_vehicle_update_Loaded">
+        Title="Update Vehicle" Height="869.6" Width="1300" Loaded="form_vehicle_update_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -140,7 +140,7 @@
             Margin="330,228,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
             IsEditable="True">
-            <ComboBoxItem Content="Audi"/>
+            <ComboBoxItem Content="AUDI"/>
             <ComboBoxItem Content="BMW"/>
             <ComboBoxItem Content="FORD"/>
             <ComboBoxItem Content="HONDA"/>

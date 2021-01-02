@@ -187,7 +187,7 @@ namespace dashNew1
 
         private void v_opt2_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            View_car obj = new View_car();
+            Update_Vehicle obj = new Update_Vehicle();
             //this.Hide();
             obj.Show();
         }

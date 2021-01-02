@@ -1,12 +1,16 @@
-﻿<Window x:Class="dashNew1.Owner_info"
+﻿<Window x:Name="form_owner_info" x:Class="dashNew1.Owner_info"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Owner_info" Height="700" Width="1300">
+        Title="Owner_info" Height="700" Width="1300" Loaded="form_owner_info_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="569*"/>
+            <ColumnDefinition Width="723*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                 <GradientStop Color="#FFDFD9ED" Offset="0.385"/>
@@ -14,7 +18,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Rectangle HorizontalAlignment="Left" Height="178" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="1300">
+        <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,-8,0" VerticalAlignment="Top" Width="1300" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                     <GradientStop Color="#FF12005E" Offset="0.487"/>
@@ -22,12 +26,12 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,95,22.6,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0">
+        <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,95,23,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0" Grid.Column="1">
             <Rectangle.Effect>
                 <DropShadowEffect Opacity="0.6" Color="#FF4F4C4C"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="62" Margin="0,0,-0.4,13.4"  VerticalAlignment="Bottom" Width="531">
+        <Rectangle HorizontalAlignment="Right" Height="62" Margin="0,0,0,13"  VerticalAlignment="Bottom" Width="531" Grid.Column="1">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                     <GradientStop Color="#FF4818B1" Offset="0.506"/>
@@ -36,28 +40,28 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button
+        <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611" Grid.Column="1" Click="btn_back_Click">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
                 Width="24" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,118,611" Grid.Column="1" Click="btn_home_Click">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"
                 Width="24" />
         </Button>
-        <Button
+        <Button x:Name="btn_add"
             Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0">
+            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="511,98,0,0" Grid.Column="1" Click="btn_add_Click">
             <materialDesign:PackIcon
                 Kind="Plus"
                 Height="30"
@@ -69,38 +73,34 @@
                    FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,120,0,0"  Text="Owner ID" VerticalAlignment="Top"
                    Height="38" FontSize="22" Foreground="White"/>
-        <ComboBox
+        <ComboBox x:Name="cmb_oid"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True">
-            <ComboBoxItem Content="Apple"/>
-            <ComboBoxItem Content="Banana"/>
-            <ComboBoxItem Content="Pear"/>
-            <ComboBoxItem Content="Orange"/>
+            IsEditable="True" Grid.ColumnSpan="2" DropDownClosed="cmb_oid_DropDownClosed">
         </ComboBox>
 
         <DataGrid x:Name="dg_owners"
             ItemsSource="{Binding Items2}"
             CanUserAddRows="False"
             SelectionUnit="Cell"
-            SelectionMode="Extended" Margin="20,191,20.6,91.4" Loaded="dg_owners_Loaded" />
-        <Button
+            SelectionMode="Extended" Margin="20,191,21,91" Loaded="dg_owners_Loaded" Grid.ColumnSpan="2" />
+        <Button x:Name="btn_delete"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1142,602,22.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="573,602,23,17" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1">
             <TextBlock
                 Text="DELETE" />
         </Button>
-        <Button
+        <Button x:Name="btn_update"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1010,602,154.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="441,602,155,17" Background="#FF20A820" BorderBrush="{x:Null}" Grid.Column="1" Click="btn_update_Click">
             <TextBlock
                 Text="UPDATE" />
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="1149,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="580,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" Grid.Column="1"/>
     </Grid>
 </Window>

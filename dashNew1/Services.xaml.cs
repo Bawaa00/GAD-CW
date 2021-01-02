@@ -63,7 +63,7 @@ namespace dashNew1
 
         private void btn_search_Click(object sender, RoutedEventArgs e)
         {
-            View_car obj = new View_car();
+            Update_Vehicle obj = new Update_Vehicle();
             obj.Show();
         }
     }

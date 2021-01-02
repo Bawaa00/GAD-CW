@@ -84,28 +84,31 @@ namespace dashNew1
 
         private void cbox_lplate_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Vehicle where L_Plate='" + cbox_lplate.Text.ToString() + "'");
-            old_id = dt.Rows[0][0].ToString();
-            cbox_year.Text = dt.Rows[0][1].ToString();
-            cbox_make.Text = dt.Rows[0][2].ToString();
-            txt_model.Text = dt.Rows[0][3].ToString();
-            cbox_category.Text = dt.Rows[0][4].ToString();
-            txt_cpweek.Text = dt.Rows[0][6].ToString();
-            txt_cpmonth.Text = dt.Rows[0][5].ToString();
-            txt_extra.Text = dt.Rows[0][7].ToString();
-            cbox_oid.Text = dt.Rows[0][8].ToString();
-            txt_lndate.Text = dt.Rows[0][9].ToString();
-            cbox_ins.Text = dt.Rows[0][10].ToString();
-            txt_sdate.Text = dt.Rows[0][11].ToString();
-            txt_exdate.Text = dt.Rows[0][12].ToString();
-            path = dt.Rows[0][13].ToString();
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.CacheOption = BitmapCacheOption.OnLoad;
-            image.UriSource = new Uri(path);
-            image.EndInit();
-            img_vehicle.Source = image;
+            if (cbox_lplate.Text != "")
+            {
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Vehicle where L_Plate='" + cbox_lplate.Text.ToString() + "'");
+                old_id = dt.Rows[0][0].ToString();
+                cbox_year.Text = dt.Rows[0][1].ToString();
+                cbox_make.Text = dt.Rows[0][2].ToString();
+                txt_model.Text = dt.Rows[0][3].ToString();
+                cbox_category.Text = dt.Rows[0][4].ToString();
+                txt_cpweek.Text = dt.Rows[0][6].ToString();
+                txt_cpmonth.Text = dt.Rows[0][5].ToString();
+                txt_extra.Text = dt.Rows[0][7].ToString();
+                cbox_oid.Text = dt.Rows[0][8].ToString();
+                txt_lndate.Text = dt.Rows[0][9].ToString();
+                cbox_ins.Text = dt.Rows[0][10].ToString();
+                txt_sdate.Text = dt.Rows[0][11].ToString();
+                txt_exdate.Text = dt.Rows[0][12].ToString();
+                path = dt.Rows[0][13].ToString();
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = new Uri(path);
+                image.EndInit();
+                img_vehicle.Source = image;
+            }
 
         }
 

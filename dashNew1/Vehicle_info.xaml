@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="Update_Vehicle" Height="700" Width="1300" Loaded="view_vehicle_form_Loaded">
+        Title="View Vehicles" Height="700" Width="1300" Loaded="view_vehicle_form_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -13,7 +13,7 @@
                 <GradientStop Color="White" Offset="0.708"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle HorizontalAlignment="Left" Height="178" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="178" Margin="18,0,0,0" VerticalAlignment="Top" Width="224" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
         <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="1300">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -36,7 +36,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button
+        <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
             ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
@@ -46,7 +46,7 @@
                 Width="24" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
             ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
@@ -56,9 +56,9 @@
                 Width="24" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_add"
             Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0">
+            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0" Click="btn_add_Click">
             <materialDesign:PackIcon
                 Kind="Plus"
                 Height="30"
@@ -68,25 +68,13 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="30,5,0,0" Height="70" Width="auto" Text="VEHICLES" VerticalAlignment="Top"
                    FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,120,0,0"  Text="License plate" VerticalAlignment="Top"
-                   Height="38" FontSize="22" Foreground="White"/>
-        <ComboBox
-            materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
-            Margin="330,120,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
-            materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True">
-            <ComboBoxItem Content="Apple"/>
-            <ComboBoxItem Content="Banana"/>
-            <ComboBoxItem Content="Pear"/>
-            <ComboBoxItem Content="Orange"/>
-        </ComboBox>
 
         <DataGrid x:Name="dg_vehicle"
             ItemsSource="{Binding Items2}"
             CanUserAddRows="False"
             SelectionUnit="Cell"
             SelectionMode="Extended" Margin="20,191,20.6,91.4" />
-        <Button
+        <Button x:Name="btn_del"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
@@ -94,15 +82,91 @@
             <TextBlock
                 Text="DELETE" />
         </Button>
-        <Button
+        <Button x:Name="btn_update"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1010,602,154.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1010,602,154.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_update_Click">
             <TextBlock
                 Text="UPDATE" />
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="1149,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
-        
+        <ComboBox x:Name="cmb_year"
+            materialDesign:HintAssist.Hint="Model" HorizontalAlignment="Left" Height="38" 
+            Margin="807,124,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True" DropDownClosed="cmb_year_DropDownClosed">
+            <ComboBoxItem Content="2021"/>
+            <ComboBoxItem Content="2020"/>
+            <ComboBoxItem Content="2019"/>
+            <ComboBoxItem Content="2018"/>
+            <ComboBoxItem Content="2017" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2016" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2015" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2014" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2013" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2012" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2011" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2010" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2009" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2008" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2007" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2006" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2005" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2004" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2003" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2002" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2001" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2000" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1999" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1998" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1997" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1996" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1995" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1994" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1993" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1992" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1991" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="1990" HorizontalAlignment="Left" Width="248"/>
+        </ComboBox>
+        <ComboBox x:Name="cmb_make"
+            materialDesign:HintAssist.Hint="Make" HorizontalAlignment="Left" Height="38" 
+            Margin="534,124,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True" DropDownClosed="cmb_make_DropDownClosed">
+            <ComboBoxItem Content="AUDI"/>
+            <ComboBoxItem Content="BMW"/>
+            <ComboBoxItem Content="FORD"/>
+            <ComboBoxItem Content="HONDA"/>
+            <ComboBoxItem Content="HYUNDAI" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="JAGUAR" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="KIA" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="LEXUS" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="MAZDA" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="MERCEDES" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="MITSUBISHI" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="NISSAN" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="PERADUA" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="PEUGEOT" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="RENAULT" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="SUZUKI" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="TOYOTA" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="VOLKSWAGAON" HorizontalAlignment="Left" Width="248"/>
+
+        </ComboBox>
+        <ComboBox x:Name="cmb_category"
+            materialDesign:HintAssist.Hint="Category" HorizontalAlignment="Left" Height="38" 
+            Margin="251,124,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
+            materialDesign:HintAssist.HintOpacity=".26"
+            IsEditable="True" DropDownClosed="cmb_category_DropDownClosed">
+            <ComboBoxItem Content="LUXUARY"/>
+            <ComboBoxItem Content="PREMIUM"/>
+            <ComboBoxItem Content="GENERAL"/>
+            <ComboBoxItem Content="SUV"/>
+            <ComboBoxItem Content="VAN" HorizontalAlignment="Left" Width="248"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="89,124,0,0"  Text="Search" VerticalAlignment="Top"
+            Height="38" FontSize="22" Foreground="White" RenderTransformOrigin="0.735,0.592"/>
+
     </Grid>
 </Window>
