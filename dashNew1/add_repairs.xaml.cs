@@ -74,23 +74,30 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             if (cmb_type.SelectedIndex == 0)
             {
-                string query = "Insert into Maintenance values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','"+ txt_cost.Text + "');";
+                string query = "Insert into Maintenance values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','" + txt_cost.Text + "');";
                 int i = db.save_update_delete(query);
-                if (i == 1 || i== -1 )
-                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (i == 1 || i == -1)
+                    msg.Show();
                 else
-                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                {
+                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.Show();
+                }
             }
             else if (cmb_type.SelectedIndex == 1)
             {
-                string query = "Insert into Acc_repair values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','" + txt_cost.Text + "','"+txt_claim.Text+"');";
+                string query = "Insert into Acc_repair values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','" + txt_cost.Text + "','" + txt_claim.Text + "');";
                 int i = db.save_update_delete(query);
                 if (i == 1 || i == -1)
-                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    msg.Show();
                 else
-                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                {
+                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.Show();
+                }
             }
         }
     }
