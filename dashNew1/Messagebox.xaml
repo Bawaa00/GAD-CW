@@ -20,7 +20,7 @@
             <TextBlock x:Name="txt_msg" Foreground="Gray" Width="200" Margin="15,52" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-            <Button x:Name="btn_cancel"  Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Content="NO" Visibility="Hidden" Click="btn_cancel_Click"/>
+            <Button x:Name="btn_cancel"  Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Content="NO" Visibility="Hidden"/>
             <Button x:Name="btn_ok" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Content="OK" Click="btn_ok_Click"/>
         </StackPanel>
     </Grid>

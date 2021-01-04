@@ -48,16 +48,11 @@ namespace dashNew1
             txt_msg.Text = msg;
         }
 
-        public void  informationMsg(string msg)
+        public void informationMsg(string msg)
         {
             icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.InfoCircle;
             txt_msg.Text = msg;
         }
 
-        private string btn_cancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            return "N";
-        }
     }
 }

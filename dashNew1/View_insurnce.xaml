@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="View_insurnce" Height="700" Width="1300" Loaded="view_ins_form_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+        Title="View_insurnce" Height="700" Width="1300" Loaded="view_ins_form_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
