@@ -23,5 +23,41 @@ namespace dashNew1
         {
             InitializeComponent();
         }
+
+        private void btn_ok_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        public void errorMsg(string msg)
+        {
+            icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Error;
+            txt_msg.Text = msg;
+        }
+
+        public void warningMsg(string msg)
+        {
+            icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Warning;
+            txt_msg.Text = msg;
+        }
+
+        public void confimationMsg(string msg)
+        {
+            btn_cancel.Visibility = Visibility.Visible;
+            icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Report;
+            txt_msg.Text = msg;
+        }
+
+        public void  informationMsg(string msg)
+        {
+            icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.InfoCircle;
+            txt_msg.Text = msg;
+        }
+
+        private string btn_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            return "N";
+        }
     }
 }

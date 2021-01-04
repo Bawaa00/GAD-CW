@@ -13,17 +13,15 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Messagebox" Height="160" Width="320" WindowStyle="None">
+        Title="Messagebox" Height="160" Width="320" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Width="300" Height="150" HorizontalAlignment="Center">
-            <StackPanel Orientation="Horizontal" Margin="15">
-                <materialDesign:PackIcon Kind="CheckCircle" Foreground="{StaticResource PrimaryHueMidBrush}" Width="50" Height="50"/>
-            <TextBlock Foreground="Gray" Width="200" Margin="15 5" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Margin="15">
+            <materialDesign:PackIcon x:Name="icon" Kind="CheckCircle" Foreground="{StaticResource PrimaryHueMidBrush}" Width="50" Height="50"/>
+            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="200" Margin="15,52" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
         </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Visibility="Hidden">
-                    Deny
-                </Button>
-            <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Content="OK" Opacity="1"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
+            <Button x:Name="btn_cancel"  Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Content="NO" Visibility="Hidden" Click="btn_cancel_Click"/>
+            <Button x:Name="btn_ok" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Content="OK" Click="btn_ok_Click"/>
         </StackPanel>
-        </Grid>
+    </Grid>
 </Window>
