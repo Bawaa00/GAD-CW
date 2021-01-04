@@ -52,7 +52,7 @@ namespace dashNew1
             }
             else
             {
-                msg.errorMsg("Sorry, couldn't save your data.Plese try again");
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
                 msg.Show();
             }
         }
