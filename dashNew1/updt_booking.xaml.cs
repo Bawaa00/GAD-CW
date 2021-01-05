@@ -86,16 +86,22 @@ namespace dashNew1
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             string a = " update Booking set  BK_date = '"+date_book.Text+"', S_date='"+date_pick.Text+"', L_date='"+date_lend.Text+ "' where BK_No = '" + cmb_bid.Text + "'";
             string b = " update Car_Booking set VNO='" + cmb_vid.Text + "' , DNO = '" + cmb_did.Text + "' , BNO = '"+cmb_bid.Text+ "' where  CNO = '" + cmb_cid.Text + "'";
 
             int x = db.save_update_delete(a);
             int y = db.save_update_delete(b);
             if (x == 1 && y == 1 )
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
+            {
+                msg.informationMsg("Data Updated Successfully!");
+                msg.Show();
+            }
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Unable to Update Data.Please check again");
+                msg.Show();
+            }
         }
 
         private void cmb_cid_DropDownClosed(object sender, EventArgs e)
