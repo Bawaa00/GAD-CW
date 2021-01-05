@@ -114,6 +114,7 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             string name = System.IO.Path.GetFileName(path);
             string destinationPath = GetDestinationPath(name);
             File.Copy(path, destinationPath, true);
@@ -124,10 +125,15 @@ namespace dashNew1
 
             int i = db.save_update_delete(q);
             if (i == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
+            {
+                msg.informationMsg("Data Updated Successfully!");
+                msg.Show();
+            }
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Unable to Update Data.Please check again");
+                msg.Show();
+            }
         }
 
         private void btn_up_owner_Click(object sender, RoutedEventArgs e)
