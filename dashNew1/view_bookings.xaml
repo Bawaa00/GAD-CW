@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="view_bookings" Height="700" Width="1300" Loaded="view_booking_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="View Bookings" Height="700" Width="1300" Loaded="view_booking_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

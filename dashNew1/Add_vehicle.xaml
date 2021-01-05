@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Add_vehicle" Height="869.6" Width="1300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Vehicle_Setup_Form_Loaded">
+        Title="Add Vehicle" Height="869.6" Width="1300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Vehicle_Setup_Form_Loaded">
     <Grid Margin="0,0,0,0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -32,20 +32,20 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button
+        <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,59,822">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,59,822" Click="btn_back_Click">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
                 Width="24" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,125,822">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,125,822" Click="btn_home_Click">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="25"

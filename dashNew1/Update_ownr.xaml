@@ -31,20 +31,20 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button
+        <Button x:Name="btn_back1"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4" Click="btn_back1_Click">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
                 Width="24" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4" Click="btn_home_Click">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"

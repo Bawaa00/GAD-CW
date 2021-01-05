@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Driver" Height="700" Width="900" WindowStartupLocation="CenterScreen" Loaded="DRIVER_UPDATE_DELETE_Loaded">
+        Title="Update Driver" Height="700" Width="900" WindowStartupLocation="CenterScreen" Loaded="DRIVER_UPDATE_DELETE_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"/>

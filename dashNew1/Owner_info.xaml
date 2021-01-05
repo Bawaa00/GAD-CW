@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Owner_info" Height="700" Width="1300" Loaded="form_owner_info_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="View Owners" Height="700" Width="1300" Loaded="form_owner_info_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="569*"/>

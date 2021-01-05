@@ -61,5 +61,11 @@ namespace dashNew1
         {
             this.Close();
         }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
     }
 }

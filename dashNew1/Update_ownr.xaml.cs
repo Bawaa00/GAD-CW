@@ -129,5 +129,15 @@ namespace dashNew1
             img_owner.Source = null;
         }
 
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

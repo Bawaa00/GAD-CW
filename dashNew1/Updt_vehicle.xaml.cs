@@ -157,5 +157,16 @@ namespace dashNew1
             else
                 MessageBox.Show("Data Cannot Delete", "error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

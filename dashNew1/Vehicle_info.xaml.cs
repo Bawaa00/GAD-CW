@@ -71,5 +71,16 @@ namespace dashNew1
             dt = db.getData("select L_Plate as 'License No',Year,Make,Model,Category,Cost_Per_Month as 'Monthly Charge(Rs.)',Cost_Per_Week as 'Weekly Charge(Rs.)',Extra_Cost , O_ID as 'Owner ID', Lend_Date as 'Lend Date' , InsID as 'Insurance ID' , S_date as 'Start Date' , E_date as  'Expiery Date' , V_Path as 'File Path' from Vehicle where Year = '" + cmb_year.Text + "'");
             dg_vehicle.ItemsSource = dt.DefaultView;
         }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

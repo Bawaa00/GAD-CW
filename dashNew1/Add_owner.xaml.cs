@@ -99,6 +99,17 @@ namespace dashNew1
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_oid.Text = newString;
         }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
  
 }
