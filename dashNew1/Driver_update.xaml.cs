@@ -84,14 +84,20 @@ namespace dashNew1
 
         private void btn_Delete_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             string a = " Delete from Driver where D_ID = '" + cbox_did.Text + "'";
 
             int line = obj.save_update_delete(a);
             if (line == 1)
-                MessageBox.Show("Data delete Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
+            {
+                msg.informationMsg("Data deleted successfully");
+                msg.Show();
+            }
             else
-                MessageBox.Show("Data cannot delete", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Sorry, couldn't delete your data.Please try again");
+                msg.Show();
+            }
 
 
             cbox_did.Items.Clear();

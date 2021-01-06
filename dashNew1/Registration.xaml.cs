@@ -29,14 +29,18 @@ namespace dashNew1
         Hashcode hc = new Hashcode();
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             int i = db.save_update_delete("insert into User_Login (Uname,Upass,Fname,Lname) values ('" + txt_uname.Text + "','" + hc.PassHash(pbox_pass.Password) + "','" + txt_fname.Text + "','" + txt_lname.Text + "')");
             if (i == 1)
             {
-                MessageBox.Show("Data saved successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
+                msg.informationMsg("Account Successfully Registered!");
+                msg.Show();
             }
             else
-                MessageBox.Show("Data not saved", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.Show();
+            }
         }
 
         private void md_icon_MouseEnter(object sender, MouseEventArgs e)

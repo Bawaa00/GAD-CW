@@ -59,15 +59,19 @@ namespace dashNew1
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             string query1 = "Insert into Booking values ('" + txt_bid.Text + "','" + date_book.Text + "','" + date_pick.Text + "','" + date_lend.Text + "')";
             string query2 = "Insert into Car_Booking values ('" + cmb_cusid.Text + "','" + cmb_vid.Text + "','" + cmb_did.Text + "','" + txt_bid.Text + "')";
 
             int i = db.save_update_delete(query1);
             int j = db.save_update_delete(query2);
-            if (i == 1 && j ==1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (i == 1 && j == 1)
+                msg.Show();
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.Show();
+            }
         }
 
         private void btn_addcus_Click(object sender, RoutedEventArgs e)
@@ -98,6 +102,17 @@ namespace dashNew1
         private void btn_view_d_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -47,7 +47,8 @@ namespace dashNew1
 
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
-        {   
+        {
+            Messagebox msg = new Messagebox();
             string name = System.IO.Path.GetFileName(filepath);
             string destinationPath = GetDestinationPath(name);
             File.Copy(filepath, destinationPath, true);
@@ -56,9 +57,12 @@ namespace dashNew1
 
             int i = db.save_update_delete(query);
             if (i == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                msg.Show();
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.Show();
+            }
 
         }
 

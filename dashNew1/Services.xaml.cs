@@ -30,13 +30,17 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             string query = "Insert into Service values ('" + cmb_vid.Text + "','" + txt_Sid.Text + "','" + txt_Sdetails.Text + "','" + txt_milge.Text + "','" + txt_nxt.Text + "')";
 
             int i = db.save_update_delete(query);
             if (i == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                msg.Show();
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.Show();
+            }
         }
 
         private void add_service_form_Loaded(object sender, RoutedEventArgs e)
@@ -65,6 +69,17 @@ namespace dashNew1
         {
             Update_Vehicle obj = new Update_Vehicle();
             obj.Show();
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

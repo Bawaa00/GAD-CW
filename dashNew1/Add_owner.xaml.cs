@@ -61,6 +61,7 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             string name = System.IO.Path.GetFileName(filepath);
             string destinationPath = GetDestinationPath(name);
             File.Copy(filepath, destinationPath, true);
@@ -69,9 +70,12 @@ namespace dashNew1
 
             int i = db.save_update_delete(query);
             if (i == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                msg.Show();
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.Show();
+            }
         }
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
@@ -94,6 +98,17 @@ namespace dashNew1
             var i = int.Parse(number) + 1;
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_oid.Text = newString;
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
  

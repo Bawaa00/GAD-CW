@@ -60,10 +60,10 @@
                 Height="24"
                 Width="24" />
         </Button>
-        <Button
+        <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"  VerticalAlignment="Top"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,34.4,0" >
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,34.4,0" Click="btn_back_Click" >
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"

@@ -43,17 +43,29 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             string query = "Insert into Insurance values ('" + txt_iid.Text + "','" + txt_org.Text + "','" + txt_address.Text + "','" + txt_tel.Text + "')";
             int i = db.save_update_delete(query);
             if (i == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            {   
+                msg.Show();
+            }
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                msg.Show();
+            }
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
         }
     }
 }

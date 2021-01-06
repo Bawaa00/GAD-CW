@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="View_insurnce" Height="700" Width="1300" Loaded="view_ins_form_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+        Title="View Insurance" Height="700" Width="1300" Loaded="view_ins_form_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -39,17 +39,17 @@
         <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4" Click="btn_back_Click">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
                 Width="24" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4" Click="btn_home_Click">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"

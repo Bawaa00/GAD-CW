@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="Add_Insurnce" Height="611.493" Width="797.6" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Add_Insurance_Form_Loaded">
+        Title="Add Insurnce" Height="611.493" Width="797.6" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Add_Insurance_Form_Loaded">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -68,7 +68,7 @@
         <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right" VerticalAlignment="Top"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,100.2,0">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,100.2,0" Click="btn_home_Click">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"

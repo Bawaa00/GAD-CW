@@ -181,70 +181,77 @@ namespace dashNew1
         private void v_opt1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Add_vehicle obj = new Add_vehicle();
-           // this.Hide();
+            this.Close();
             obj.Show();
         }
 
         private void v_opt2_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Update_Vehicle obj = new Update_Vehicle();
-            //this.Hide();
+            this.Close();
             obj.Show();
         }
 
         private void c_opt1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             addCustomer obj = new addCustomer();
-            //this.Hide();
+            this.Close();
             obj.Show();
         }
 
         private void d_opt3_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Driver obj = new Driver();
-           // this.Hide();
+            this.Close();
             obj.Show();
         }
 
         private void s_opt1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Services obj = new Services();
+            this.Close();
             obj.Show();
         }
 
         private void s_opt2_MouseDown(object sender, MouseButtonEventArgs e)
         {
             view_services obj = new view_services();
+            this.Close();
             obj.Show();
         }
 
         private void r_opt1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             add_repairs obj = new add_repairs();
+            this.Close();
             obj.Show();
         }
 
         private void r_opt2_MouseDown(object sender, MouseButtonEventArgs e)
         {
             repairs obj = new repairs();
+            this.Close();
             obj.Show();
         }
 
         private void v_opt4_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Booking obj = new Booking();
+            this.Close();
             obj.Show();
         }
 
         private void v_opt3_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Updt_vehicle obj = new Updt_vehicle();
+            this.Close();
             obj.Show();
         }
 
         private void c_opt4_MouseDown(object sender, MouseButtonEventArgs e)
         {
             view_bookings obj = new view_bookings();
+            this.Close();
             obj.Show();
         }
     }

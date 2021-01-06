@@ -94,6 +94,7 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
+            Messagebox msg = new Messagebox();
             string a = "update Owner set O_ID='"+cmb_oid.Text+"' , O_NIC = '"+txt_nic.Text+"' , O_path = '"+path+"' , O_Tel = "+txt_contact.Text+" ,O_Name = '" + txt_name.Text + "', O_Address = '"+txt_address.Text+"' where O_ID = '" + cmb_oid.Text + "' ";
             string name = System.IO.Path.GetFileName(path);
             string destinationPath = GetDestinationPath(name);
@@ -103,10 +104,15 @@ namespace dashNew1
 
             int line = db.save_update_delete(a);
             if (line == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
+            {
+                msg.informationMsg("Data Updated Successfully!");
+                msg.Show();
+            }
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Unable to Update Data.Please check again");
+                msg.Show();
+            }
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
@@ -123,5 +129,15 @@ namespace dashNew1
             img_owner.Source = null;
         }
 
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
