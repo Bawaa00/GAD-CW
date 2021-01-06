@@ -86,10 +86,14 @@ namespace dashNew1
             dt = db.getData("select COUNT(Cus_ID) from Customer");
             label_customer.Content = dt.Rows[0][0].ToString();
 
-            dt = db.getData("select * from Vehicle");
+            string lnum;
+            dt = db.getData("select L_Plate,COUNT(L_Plate) from Car_Booking,Vehicle where L_Plate = VNO group by L_Plate");
+            lnum = dt.Rows[0][0].ToString();
+            dt = db.getData("select * from Vehicle where L_Plate = '"+lnum+"'");
             lbl_year.Content = dt.Rows[0][1].ToString();
             lbl_make.Content = dt.Rows[0][2].ToString();
             lbl_model.Content = dt.Rows[0][3].ToString();
+            lbl_cat.Content = dt.Rows[0][4].ToString();
             path =dt.Rows[0][13].ToString();
             BitmapImage image = new BitmapImage();
             image.BeginInit();
@@ -319,6 +323,22 @@ namespace dashNew1
         private void btn_acnt_MouseDown(object sender, MouseButtonEventArgs e)
         {
             acnt_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void btn_v_vehicle_Click(object sender, RoutedEventArgs e)
+        {
+            Update_Vehicle obj = new Update_Vehicle();
+            obj.Show();
+        }
+
+        private void btn_v_driver_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_v_cus_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
