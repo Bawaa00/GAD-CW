@@ -16,6 +16,7 @@ using System.Windows.Threading;
 using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.Charts;
+using System.Data;
 
 namespace dashNew1
 {
@@ -36,9 +37,19 @@ namespace dashNew1
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
-            sidePanel.Width = 50;    
-            
+            sidePanel.Width = 50;
 
+            this.PieChart();
+            labelData();
+        }
+
+        Connect_DB db = new Connect_DB();
+        public Func<ChartPoint, string> PointLabel { get; set; }
+
+        public void PieChart()
+        {
+            PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
+            DataContext = this;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -62,6 +73,30 @@ namespace dashNew1
                 }
 
             }
+        }
+        
+        public void labelData()
+        {
+            string path; 
+            DataTable dt = new DataTable();
+            dt = db.getData("select COUNT(L_Plate) from Vehicle");
+            label_vehicle.Content = dt.Rows[0][0].ToString();
+            dt = db.getData("select COUNT(D_ID) from Driver");
+            label_driver.Content = dt.Rows[0][0].ToString();
+            dt = db.getData("select COUNT(Cus_ID) from Customer");
+            label_customer.Content = dt.Rows[0][0].ToString();
+
+            dt = db.getData("select * from Vehicle");
+            lbl_year.Content = dt.Rows[0][1].ToString();
+            lbl_make.Content = dt.Rows[0][2].ToString();
+            lbl_model.Content = dt.Rows[0][3].ToString();
+            path =dt.Rows[0][13].ToString();
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.CacheOption = BitmapCacheOption.OnLoad;
+            image.UriSource = new Uri(path);
+            image.EndInit();
+            img_vehicle.Source = image;
         }
 
         private void SidePanel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -258,6 +293,32 @@ namespace dashNew1
             view_bookings obj = new view_bookings();
             this.Close();
             obj.Show();
+        }
+
+        private void a_opt1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void a_opt2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Registration obj = new Registration();
+            obj.Show();
+        }
+
+        private void acnt_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void acnt_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            acnt_option_panel.Visibility = Visibility.Collapsed;
+        }
+
+        private void btn_acnt_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            acnt_option_panel.Visibility = Visibility.Visible;
         }
     }
 }

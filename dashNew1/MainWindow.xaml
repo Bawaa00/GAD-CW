@@ -18,10 +18,10 @@
 
     <Grid>
         <Grid x:Name="headPanel" VerticalAlignment="Top" Height="50" Background="#12005e">
-            <Button
+            <Button x:Name="btn_acnt"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                 HorizontalAlignment="Right"
-                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,45.6,5" Background="#FF4818B1" BorderBrush="#FF4818B1">
+                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,45.6,5" Background="#FF4818B1" BorderBrush="#FF4818B1" MouseDown="btn_acnt_MouseDown">
                 <materialDesign:PackIcon
                     Kind="Account"
                     Height="24"
@@ -72,6 +72,9 @@
         </Grid>
 
         <Grid>
+            <materialDesign:Card HorizontalAlignment="Left" Margin="664,248,0,0" VerticalAlignment="Top" Height="392" Width="595">
+                <Label Content="MOST BOOKED VEHICLE" HorizontalAlignment="Left" Margin="68,18,0,0" VerticalAlignment="Top" Width="221" Foreground="#FF4818B1" FontWeight="Bold" FontSize="18"/>
+            </materialDesign:Card>
             <materialDesign:Card Margin="260,248,674.7,31" />
             <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Margin="291.94,307,707.56,60.76">
                 <lvc:PieChart.Series>
@@ -83,18 +86,17 @@
                 </lvc:PieChart.Series>
             </lvc:PieChart>
             <materialDesign:Card HorizontalAlignment="Left" Margin="260,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
-                <materialDesign:PackIcon Kind="DirectionsCar" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
                 <materialDesign:Card.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFDE39A6"/>
                         <GradientStop Color="#FF7D27FF" Offset="1"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
+                <materialDesign:PackIcon Kind="DirectionsCar" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
             </materialDesign:Card>
             <Label Content="Total No of Vehicles" HorizontalAlignment="Left" Margin="276.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
-            <Label Content="00" HorizontalAlignment="Left" Margin="342.94,141.1,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
+            <Label x:Name="label_vehicle" Content="00" HorizontalAlignment="Left" Margin="342.94,141.1,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
             <materialDesign:Card HorizontalAlignment="Left" Margin="618.94,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
-                <materialDesign:PackIcon Kind="Accessibility" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
                 <materialDesign:Card.Background>
 
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -102,22 +104,38 @@
                         <GradientStop Color="#FFDE2644"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
+                <materialDesign:PackIcon Kind="Accessibility" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
             </materialDesign:Card>
             <Label Content="Total No of Drivers" HorizontalAlignment="Left" Margin="631.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
-            <Label Content="00" HorizontalAlignment="Left" Margin="703.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
+            <Label x:Name="label_driver" Content="00" HorizontalAlignment="Left" Margin="703.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
             <materialDesign:Card HorizontalAlignment="Left" Margin="966.94,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
-                <materialDesign:PackIcon Kind="People" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
                 <materialDesign:Card.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF00E4FF"/>
                         <GradientStop Color="#FF016CFD" Offset="1"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
+                <materialDesign:PackIcon Kind="People" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
             </materialDesign:Card>
             <Label Content="Total No of Customers" HorizontalAlignment="Left" Margin="982.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
-            <Label Content="00" HorizontalAlignment="Left" Margin="1047.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
+            <Label x:Name="label_customer" Content="00" HorizontalAlignment="Left" Margin="1047.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
             <Label Content="CAR CATEGORIES" HorizontalAlignment="Left" Margin="276.94,265.8,0,0" VerticalAlignment="Top" Foreground="#FF4818B1" FontSize="18" Background="White" FontWeight="Bold"/>
+            <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="303" Margin="704,307,0,0" VerticalAlignment="Top" Width="362"/>
+
+            <Label x:Name="lbl_make" Content="MAKE" HorizontalAlignment="Stretch" Margin="1116,381,60,0" VerticalAlignment="Top" Height="40" Foreground="#FF4818B1" FontWeight="Bold" FontSize="18"/>
+            <Label x:Name="lbl_model" Content="MODEL" HorizontalAlignment="Stretch" Margin="1116,466,60,0" VerticalAlignment="Top" Height="36" Foreground="#FF4818B1" FontWeight="Bold" FontSize="18"/>
+            <Label x:Name="lbl_year" Content="YEAR" HorizontalAlignment="Stretch" Margin="1116,307,60,0" VerticalAlignment="Top" Height="35" FontWeight="Bold" Foreground="#FF4818B1" FontSize="18"/>
         </Grid>
+        <StackPanel x:Name="acnt_option_panel" HorizontalAlignment="Left" Height="110" Background="#FFECDFF3" 
+                    Margin="1081,50,0,0" VerticalAlignment="Top" Width="170"  Visibility="Hidden" MouseEnter="acnt_option_panel_MouseEnter" MouseLeave="acnt_option_panel_MouseLeave">
+            <StackPanel.Effect>
+                <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
+            </StackPanel.Effect>
+            <TextBlock x:Name="a_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="a_opt1_MouseLeftButtonDown"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Update Account"
+                                                                     FontWeight="Medium"/></TextBlock>
+            <TextBlock x:Name="a_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="a_opt2_MouseLeftButtonDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Registration"
+                    FontWeight="Medium"/></TextBlock>
+        </StackPanel>
         <StackPanel x:Name="car_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
                     Margin="228,120,0,0" VerticalAlignment="Top" Width="170" MouseEnter="car_option_panel_MouseEnter" MouseLeave="car_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
@@ -132,8 +150,8 @@
             <TextBlock x:Name="v_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt4_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Book Vehicle"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="cus_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
-                    Margin="228,186,0,0" VerticalAlignment="Top" Width="170" MouseEnter="cus_option_panel_MouseEnter" MouseLeave="cus_option_panel_MouseLeave" Visibility="Hidden">
+        <StackPanel x:Name="cus_option_panel" HorizontalAlignment="Left" Height="auto" 
+                    Margin="228,186,0,0" VerticalAlignment="Top" Width="170" MouseEnter="cus_option_panel_MouseEnter" MouseLeave="cus_option_panel_MouseLeave" Visibility="Hidden" Background="#FFECDFF3">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
@@ -188,6 +206,6 @@
             <TextBlock x:Name="r_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
-        
+
     </Grid>
 </Window>
