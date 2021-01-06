@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -139,6 +140,41 @@
             <TextBlock x:Name="r_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
+        <materialDesign:Card Margin="253.94,331,710.06,26" />
+       
+        <materialDesign:Card HorizontalAlignment="Left" Margin="260,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
+            <materialDesign:PackIcon Kind="DirectionsCar" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+            <materialDesign:Card.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDE39A6" Offset="0"/>
+                    <GradientStop Color="#FF7D27FF" Offset="1"/>
+                </LinearGradientBrush>
+            </materialDesign:Card.Background>
+        </materialDesign:Card>
+        <Label Content="Total No of Vehicles" HorizontalAlignment="Left" Margin="276.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+        <Label Content="00" HorizontalAlignment="Left" Margin="342.94,141.1,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
+        <materialDesign:Card HorizontalAlignment="Left" Margin="618.94,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
+            <materialDesign:PackIcon Kind="Accessibility" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+            <materialDesign:Card.Background>
 
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDE39A6" Offset="0"/>
+                    <GradientStop Color="#FF7D27FF" Offset="1"/>
+                </LinearGradientBrush>
+            </materialDesign:Card.Background>
+        </materialDesign:Card>
+        <Label Content="Total No of Drivers" HorizontalAlignment="Left" Margin="631.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+        <Label Content="00" HorizontalAlignment="Left" Margin="703.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
+        <materialDesign:Card HorizontalAlignment="Left" Margin="966.94,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
+            <materialDesign:PackIcon Kind="People" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+            <materialDesign:Card.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDE39A6" Offset="0"/>
+                    <GradientStop Color="#FF7D27FF" Offset="1"/>
+                </LinearGradientBrush>
+            </materialDesign:Card.Background>
+        </materialDesign:Card>
+        <Label Content="Total No of Vehicles" HorizontalAlignment="Left" Margin="982.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+        <Label Content="00" HorizontalAlignment="Left" Margin="1047.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
     </Grid>
 </Window>

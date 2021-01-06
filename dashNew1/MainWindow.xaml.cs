@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.Charts;
 
 namespace dashNew1
 {
@@ -33,7 +36,9 @@ namespace dashNew1
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
-            sidePanel.Width = 50;            
+            sidePanel.Width = 50;    
+            
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)
