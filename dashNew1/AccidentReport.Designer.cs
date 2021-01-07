@@ -28,11 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.btn_load = new MetroFramework.Controls.MetroTile();
             this.btn_search = new MetroFramework.Controls.MetroTile();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.cmb_lplate = new MetroFramework.Controls.MetroComboBox();
             this.reportViewerAcc = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataSet_Service = new dashNew1.DataSet_Service();
+            this.Acc_repairBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Acc_repairTableAdapter = new dashNew1.DataSet_ServiceTableAdapters.Acc_repairTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet_Service)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Acc_repairBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_load
@@ -40,7 +47,7 @@
             this.btn_load.ActiveControl = null;
             this.btn_load.BackColor = System.Drawing.Color.Purple;
             this.btn_load.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_load.Location = new System.Drawing.Point(992, 74);
+            this.btn_load.Location = new System.Drawing.Point(1142, 74);
             this.btn_load.Name = "btn_load";
             this.btn_load.Size = new System.Drawing.Size(113, 48);
             this.btn_load.TabIndex = 7;
@@ -50,6 +57,7 @@
             this.btn_load.UseCustomForeColor = true;
             this.btn_load.UseSelectable = true;
             this.btn_load.UseStyleColors = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // btn_search
             // 
@@ -66,6 +74,7 @@
             this.btn_search.UseCustomForeColor = true;
             this.btn_search.UseSelectable = true;
             this.btn_search.UseStyleColors = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // metroLabel1
             // 
@@ -93,17 +102,35 @@
             // 
             // reportViewerAcc
             // 
+            reportDataSource2.Name = "DataSetAccident";
+            reportDataSource2.Value = this.Acc_repairBindingSource;
+            this.reportViewerAcc.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewerAcc.LocalReport.ReportEmbeddedResource = "dashNew1.ReportAccident.rdlc";
             this.reportViewerAcc.Location = new System.Drawing.Point(23, 137);
             this.reportViewerAcc.Name = "reportViewerAcc";
             this.reportViewerAcc.ServerReport.BearerToken = null;
-            this.reportViewerAcc.Size = new System.Drawing.Size(1082, 497);
+            this.reportViewerAcc.Size = new System.Drawing.Size(1232, 497);
             this.reportViewerAcc.TabIndex = 8;
+            // 
+            // DataSet_Service
+            // 
+            this.DataSet_Service.DataSetName = "DataSet_Service";
+            this.DataSet_Service.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Acc_repairBindingSource
+            // 
+            this.Acc_repairBindingSource.DataMember = "Acc_repair";
+            this.Acc_repairBindingSource.DataSource = this.DataSet_Service;
+            // 
+            // Acc_repairTableAdapter
+            // 
+            this.Acc_repairTableAdapter.ClearBeforeFill = true;
             // 
             // AccidentReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 657);
+            this.ClientSize = new System.Drawing.Size(1288, 657);
             this.Controls.Add(this.reportViewerAcc);
             this.Controls.Add(this.btn_load);
             this.Controls.Add(this.btn_search);
@@ -113,6 +140,8 @@
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Accident Report";
             this.Load += new System.EventHandler(this.AccidentReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet_Service)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Acc_repairBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +154,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroComboBox cmb_lplate;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAcc;
+        private System.Windows.Forms.BindingSource Acc_repairBindingSource;
+        private DataSet_Service DataSet_Service;
+        private DataSet_ServiceTableAdapters.Acc_repairTableAdapter Acc_repairTableAdapter;
     }
 }

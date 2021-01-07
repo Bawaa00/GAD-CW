@@ -324,6 +324,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportAccident.rdlc" />
     <EmbeddedResource Include="Report_Service.rdlc" />
     <EmbeddedResource Include="ServiceReport.resx">
       <DependentUpon>ServiceReport.cs</DependentUpon>
