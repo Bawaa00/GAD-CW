@@ -350,12 +350,14 @@ namespace dashNew1
 
         private void r_opt4_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            MaintenanceReport obj = new MaintenanceReport();
+            obj.Show();
         }
 
         private void r_opt5_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            AccidentReport obj = new AccidentReport();
+            obj.Show();
         }
     }
 }
