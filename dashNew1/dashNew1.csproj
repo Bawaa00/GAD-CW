@@ -111,6 +111,9 @@
     <Compile Include="addCustomer.xaml.cs">
       <DependentUpon>addCustomer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="add_driver.xaml.cs">
+      <DependentUpon>add_driver.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Add_Insurnce.xaml.cs">
       <DependentUpon>Add_Insurnce.xaml</DependentUpon>
     </Compile>
@@ -200,6 +203,10 @@
       <DependentUpon>View_insurnce.xaml</DependentUpon>
     </Compile>
     <Page Include="addCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_driver.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
