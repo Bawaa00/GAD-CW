@@ -368,10 +368,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pngtree-vector-car-icon-png-image_515825.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pngtree-vector-car-icon-png-image_515736.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
