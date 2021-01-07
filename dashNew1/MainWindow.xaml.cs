@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.Charts;
+using System.Data;
 
 namespace dashNew1
 {
@@ -33,7 +37,19 @@ namespace dashNew1
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
-            sidePanel.Width = 50;            
+            sidePanel.Width = 50;
+
+            this.PieChart();
+            labelData();
+        }
+
+        Connect_DB db = new Connect_DB();
+        public Func<ChartPoint, string> PointLabel { get; set; }
+
+        public void PieChart()
+        {
+            PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
+            DataContext = this;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -57,6 +73,34 @@ namespace dashNew1
                 }
 
             }
+        }
+        
+        public void labelData()
+        {
+            string path; 
+            DataTable dt = new DataTable();
+            dt = db.getData("select COUNT(L_Plate) from Vehicle");
+            label_vehicle.Content = dt.Rows[0][0].ToString();
+            dt = db.getData("select COUNT(D_ID) from Driver");
+            label_driver.Content = dt.Rows[0][0].ToString();
+            dt = db.getData("select COUNT(Cus_ID) from Customer");
+            label_customer.Content = dt.Rows[0][0].ToString();
+
+            string lnum;
+            dt = db.getData("select L_Plate,COUNT(L_Plate) from Car_Booking,Vehicle where L_Plate = VNO group by L_Plate");
+            lnum = dt.Rows[0][0].ToString();
+            dt = db.getData("select * from Vehicle where L_Plate = '"+lnum+"'");
+            lbl_year.Content = dt.Rows[0][1].ToString();
+            lbl_make.Content = dt.Rows[0][2].ToString();
+            lbl_model.Content = dt.Rows[0][3].ToString();
+            lbl_cat.Content = dt.Rows[0][4].ToString();
+            path =dt.Rows[0][13].ToString();
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.CacheOption = BitmapCacheOption.OnLoad;
+            image.UriSource = new Uri(path);
+            image.EndInit();
+            img_vehicle.Source = image;
         }
 
         private void SidePanel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -255,10 +299,54 @@ namespace dashNew1
             obj.Show();
         }
 
+
+        private void a_opt1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void a_opt2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Registration obj = new Registration();
+            obj.Show();
+        }
+
+        private void acnt_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void acnt_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            acnt_option_panel.Visibility = Visibility.Collapsed;
+        }
+
+        private void btn_acnt_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            acnt_option_panel.Visibility = Visibility.Visible;
+        }
+
+        private void btn_v_vehicle_Click(object sender, RoutedEventArgs e)
+        {
+            Update_Vehicle obj = new Update_Vehicle();
+            obj.Show();
+        }
+
+        private void btn_v_driver_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_v_cus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void s_opt4_MouseDown(object sender, MouseButtonEventArgs e)
         {
             ServiceReport obj = new ServiceReport();
             obj.Show();
         }
+
     }
 }

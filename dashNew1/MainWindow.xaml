@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -17,10 +18,10 @@
 
     <Grid>
         <Grid x:Name="headPanel" VerticalAlignment="Top" Height="50" Background="#12005e">
-            <Button
+            <Button x:Name="btn_acnt"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                 HorizontalAlignment="Right"
-                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,45.6,5" Background="#FF4818B1" BorderBrush="#FF4818B1">
+                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,45.6,5" Background="#FF4818B1" BorderBrush="#FF4818B1" MouseDown="btn_acnt_MouseDown">
                 <materialDesign:PackIcon
                     Kind="Account"
                     Height="24"
@@ -69,74 +70,191 @@
             </StackPanel>
 
         </Grid>
-        <StackPanel x:Name="car_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
+
+        <Grid>
+            <materialDesign:Card HorizontalAlignment="Left" Margin="664,248,0,0" VerticalAlignment="Top" Height="377" Width="595" Background="White">
+                <Rectangle HorizontalAlignment="Left" Height="60" Margin="1048,307,-641,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                            <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                            <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                            <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </materialDesign:Card>
+            <materialDesign:Card Margin="260,248,674.7,31" />
+            <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Margin="291.94,307,707.56,60.76">
+                <lvc:PieChart.Series>
+                    <lvc:PieSeries Title="LUXUARY" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="PREMIUM" Values="20" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="SUV" Values="15" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="GENERAL" Values="35" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                    <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                </lvc:PieChart.Series>
+            </lvc:PieChart>
+            <materialDesign:Card HorizontalAlignment="Left" Margin="260,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
+
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFDE39A6"/>
+                        <GradientStop Color="#FF7D27FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+                <materialDesign:PackIcon Kind="DirectionsCar" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+            </materialDesign:Card>
+            <Label Content="Total No of Vehicles" HorizontalAlignment="Left" Margin="276.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+            <Label x:Name="label_vehicle" Content="00" HorizontalAlignment="Left" Margin="342.94,141.1,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
+            <materialDesign:Card HorizontalAlignment="Left" Margin="618.94,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
+                <materialDesign:Card.Background>
+
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFEA04D" Offset="1"/>
+                        <GradientStop Color="#FFDE2644"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+                <materialDesign:PackIcon Kind="Accessibility" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+            </materialDesign:Card>
+            <Label Content="Total No of Drivers" HorizontalAlignment="Left" Margin="631.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+            <Label x:Name="label_driver" Content="00" HorizontalAlignment="Left" Margin="703.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
+            <materialDesign:Card HorizontalAlignment="Left" Margin="966.94,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00E4FF"/>
+                        <GradientStop Color="#FF016CFD" Offset="1"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+                <materialDesign:PackIcon Kind="People" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+            </materialDesign:Card>
+            <Label Content="Total No of Customers" HorizontalAlignment="Left" Margin="982.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+            <Label x:Name="label_customer" Content="00" HorizontalAlignment="Left" Margin="1047.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
+            <Label Content="CAR CATEGORIES" HorizontalAlignment="Left" Margin="276.94,265.8,0,0" VerticalAlignment="Top" Foreground="#FF4818B1" FontSize="18" Background="White" FontWeight="Bold"/>
+            <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="287" Margin="687,307,0,0" VerticalAlignment="Top" Width="347" OpacityMask="Black" Stretch="Fill"/>
+
+
+            <Rectangle HorizontalAlignment="Left" Height="60" Margin="1056,307,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                        <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                        <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                        <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="60" Margin="1056,534,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                        <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                        <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                        <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="60" Margin="1056,384,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                        <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                        <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                        <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="60" Margin="1054,460,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                        <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                        <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                        <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Label x:Name="lbl_model" Content="MODEL" HorizontalAlignment="Left" Margin="1070,546,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
+            <Label x:Name="lbl_make" Content="MAKE" HorizontalAlignment="Left" Margin="1070,474,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
+            <Label x:Name="lbl_year" Content="YEAR" HorizontalAlignment="Left" Margin="1070,397,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
+            <Label x:Name="lbl_cat" Content="CATEGORY" HorizontalAlignment="Left" Margin="1070,320,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
+            <Label Content="MOST BOOKED VEHICLE" HorizontalAlignment="Left" Margin="721,266,0,0" VerticalAlignment="Top" Width="278" Foreground="#FF4C28B9" FontWeight="Bold" FontSize="18"/>
+            <Button x:Name="btn_v_vehicle"  Content="VIEW ALL" HorizontalAlignment="Left" Margin="452,183,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_v_vehicle_Click" />
+            <Button x:Name="btn_v_driver" Content="VIEW ALL" HorizontalAlignment="Left" Margin="815,183,0,0" VerticalAlignment="Top" Width="96" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_v_driver_Click"/>
+            <Button x:Name="btn_v_cus" Content="VIEW ALL" HorizontalAlignment="Left" Margin="1162,183,0,0" VerticalAlignment="Top" Width="97" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_v_cus_Click"/>
+        </Grid>
+        <StackPanel x:Name="acnt_option_panel" HorizontalAlignment="Left" Height="110" Background="#FF4818B1" 
+                    Margin="1081,50,0,0" VerticalAlignment="Top" Width="170" MouseEnter="acnt_option_panel_MouseEnter" MouseLeave="acnt_option_panel_MouseLeave" Visibility="Hidden">
+            <StackPanel.Effect>
+                <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
+            </StackPanel.Effect>
+            <TextBlock x:Name="a_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="a_opt1_MouseLeftButtonDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Update Account"
+                                                                     FontWeight="Medium"/></TextBlock>
+            <TextBlock x:Name="a_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="a_opt2_MouseLeftButtonDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Registration"
+                    FontWeight="Medium"/></TextBlock>
+        </StackPanel>
+        <StackPanel x:Name="car_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
                     Margin="228,120,0,0" VerticalAlignment="Top" Width="170" MouseEnter="car_option_panel_MouseEnter" MouseLeave="car_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="v_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt1_MouseDown"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Vehicle"
+            <TextBlock x:Name="v_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt1_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Vehicle"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="v_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt2_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Vehicles"
+            <TextBlock x:Name="v_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt2_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Vehicles"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="v_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt3_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
+            <TextBlock x:Name="v_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt3_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="v_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt4_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Book Vehicle"
+            <TextBlock x:Name="v_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt4_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Book Vehicle"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="cus_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
-                    Margin="228,186,0,0" VerticalAlignment="Top" Width="170" MouseEnter="cus_option_panel_MouseEnter" MouseLeave="cus_option_panel_MouseLeave" Visibility="Hidden">
+        <StackPanel x:Name="cus_option_panel" HorizontalAlignment="Left" Height="auto" 
+                    Margin="228,176,0,0" VerticalAlignment="Top" Width="170" MouseEnter="cus_option_panel_MouseEnter" MouseLeave="cus_option_panel_MouseLeave" Background="#FF4818B1" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="c_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt1_MouseDown"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Customer"
+            <TextBlock x:Name="c_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt1_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Customer"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="c_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Customer"
+            <TextBlock x:Name="c_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Customer"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="c_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search Customer"
+            <TextBlock x:Name="c_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search Customer"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="c_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt4_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Bookings"
+            <TextBlock x:Name="c_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt4_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Bookings"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="d_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
+        <StackPanel x:Name="d_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
                     Margin="228,230,0,0" VerticalAlignment="Top" Width="170" MouseEnter="d_option_panel_MouseEnter" MouseLeave="d_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="d_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Driver"
+            <TextBlock x:Name="d_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Driver"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="d_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Drivers"
+            <TextBlock x:Name="d_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Drivers"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="d_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="d_opt3_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
+            <TextBlock x:Name="d_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="d_opt3_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Delete"
+            <TextBlock Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Delete"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="s_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
+        <StackPanel x:Name="s_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
                     Margin="228,286,0,0" VerticalAlignment="Top" Width="170" MouseEnter="s_option_panel_MouseEnter" MouseLeave="s_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="s_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt1_MouseDown"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Service"
+            <TextBlock x:Name="s_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt1_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Service"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="s_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt2_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Services"
+            <TextBlock x:Name="s_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt2_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Services"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="s_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
+            <TextBlock x:Name="s_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
                     FontWeight="Medium"/></TextBlock>
             <TextBlock x:Name="s_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt4_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="repair_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
-                    Margin="228,346,0,0" VerticalAlignment="Top" Width="170" MouseEnter="repair_option_panel_MouseEnter" MouseLeave="reapair_option_panel_MouseLeave" Visibility="Hidden">
+        <StackPanel x:Name="repair_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
+                    Margin="228,342,0,0" VerticalAlignment="Top" Width="170" MouseEnter="repair_option_panel_MouseEnter" MouseLeave="reapair_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="r_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="r_opt1_MouseDown"><LineBreak/><Run  BaselineAlignment="Top" FontSize="18" Text="Add Repair"
+            <TextBlock x:Name="r_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="r_opt1_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Top" FontSize="18" Text="Add Repair"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="r_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="r_opt2_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Repairs"
+            <TextBlock x:Name="r_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="r_opt2_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Repairs"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="r_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
+            <TextBlock x:Name="r_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="r_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
+            <TextBlock x:Name="r_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
 
