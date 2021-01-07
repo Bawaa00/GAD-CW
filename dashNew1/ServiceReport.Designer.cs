@@ -29,27 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ServiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet_Service = new dashNew1.DataSet_Service();
             this.cmb_lplate = new MetroFramework.Controls.MetroComboBox();
+            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rENT_VEHICLESDataSet = new dashNew1.RENT_VEHICLESDataSet();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.btn_search = new MetroFramework.Controls.MetroTile();
             this.btn_load = new MetroFramework.Controls.MetroTile();
-            this.rENT_VEHICLESDataSet = new dashNew1.RENT_VEHICLESDataSet();
-            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicleTableAdapter = new dashNew1.RENT_VEHICLESDataSetTableAdapters.VehicleTableAdapter();
             this.reportViewerService = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSet_Service = new dashNew1.DataSet_Service();
-            this.ServiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServiceTableAdapter = new dashNew1.DataSet_ServiceTableAdapters.ServiceTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.rENT_VEHICLESDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet_Service)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet_Service)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rENT_VEHICLESDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ServiceBindingSource
+            // 
+            this.ServiceBindingSource.DataMember = "Service";
+            this.ServiceBindingSource.DataSource = this.DataSet_Service;
+            // 
+            // DataSet_Service
+            // 
+            this.DataSet_Service.DataSetName = "DataSet_Service";
+            this.DataSet_Service.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmb_lplate
             // 
             this.cmb_lplate.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vehicleBindingSource, "L_Plate", true));
+            this.cmb_lplate.DisplayMember = "L_Plate";
             this.cmb_lplate.FormattingEnabled = true;
             this.cmb_lplate.ItemHeight = 23;
             this.cmb_lplate.Location = new System.Drawing.Point(135, 78);
@@ -61,6 +72,16 @@
             this.cmb_lplate.UseSelectable = true;
             this.cmb_lplate.UseStyleColors = true;
             this.cmb_lplate.ValueMember = "L_Plate";
+            // 
+            // vehicleBindingSource
+            // 
+            this.vehicleBindingSource.DataMember = "Vehicle";
+            this.vehicleBindingSource.DataSource = this.rENT_VEHICLESDataSet;
+            // 
+            // rENT_VEHICLESDataSet
+            // 
+            this.rENT_VEHICLESDataSet.DataSetName = "RENT_VEHICLESDataSet";
+            this.rENT_VEHICLESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroLabel1
             // 
@@ -105,25 +126,15 @@
             this.btn_load.UseStyleColors = true;
             this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
-            // rENT_VEHICLESDataSet
-            // 
-            this.rENT_VEHICLESDataSet.DataSetName = "RENT_VEHICLESDataSet";
-            this.rENT_VEHICLESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vehicleBindingSource
-            // 
-            this.vehicleBindingSource.DataMember = "Vehicle";
-            this.vehicleBindingSource.DataSource = this.rENT_VEHICLESDataSet;
-            // 
             // vehicleTableAdapter
             // 
             this.vehicleTableAdapter.ClearBeforeFill = true;
             // 
             // reportViewerService
             // 
-            reportDataSource2.Name = "DataSet_Report";
-            reportDataSource2.Value = this.ServiceBindingSource;
-            this.reportViewerService.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet_Report";
+            reportDataSource1.Value = this.ServiceBindingSource;
+            this.reportViewerService.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerService.LocalReport.ReportEmbeddedResource = "dashNew1.Report_Service.rdlc";
             this.reportViewerService.Location = new System.Drawing.Point(34, 136);
             this.reportViewerService.Name = "reportViewerService";
@@ -131,16 +142,6 @@
             this.reportViewerService.ServerReport.BearerToken = null;
             this.reportViewerService.Size = new System.Drawing.Size(1057, 485);
             this.reportViewerService.TabIndex = 4;
-            // 
-            // DataSet_Service
-            // 
-            this.DataSet_Service.DataSetName = "DataSet_Service";
-            this.DataSet_Service.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ServiceBindingSource
-            // 
-            this.ServiceBindingSource.DataMember = "Service";
-            this.ServiceBindingSource.DataSource = this.DataSet_Service;
             // 
             // ServiceTableAdapter
             // 
@@ -162,10 +163,10 @@
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Service Report";
             this.Load += new System.EventHandler(this.ServiceReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.rENT_VEHICLESDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet_Service)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServiceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet_Service)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rENT_VEHICLESDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -192,13 +192,13 @@
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="v_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt1_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Vehicle"
+            <TextBlock x:Name="v_opt1" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt1_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Vehicle"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="v_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt2_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Vehicles"
+            <TextBlock x:Name="v_opt2" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt2_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Vehicles"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="v_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt3_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
+            <TextBlock x:Name="v_opt3" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt3_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="v_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt4_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Book Vehicle"
+            <TextBlock x:Name="v_opt4" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt4_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Book Vehicle"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="cus_option_panel" HorizontalAlignment="Left" Height="auto" 
@@ -206,13 +206,10 @@
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="c_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt1_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Customer"
-                                                                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="c_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Customer"
-                    FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="c_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search Customer"
-                    FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="c_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt4_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Bookings"
+            <TextBlock x:Name="c_opt1" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt1_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="Add Customer"/></TextBlock>
+            <TextBlock x:Name="c_opt2" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="View Customer"/></TextBlock>
+            <TextBlock x:Name="c_opt3" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="Search Customer"/></TextBlock>
+            <TextBlock x:Name="c_opt4" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt4_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Bookings"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="d_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
@@ -220,13 +217,13 @@
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="d_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Driver"
+            <TextBlock x:Name="d_opt1" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Driver"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="d_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Drivers"
+            <TextBlock x:Name="d_opt2" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Drivers"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="d_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="d_opt3_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
+            <TextBlock x:Name="d_opt3" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="d_opt3_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Delete"
+            <TextBlock Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Delete"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="s_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
@@ -234,28 +231,26 @@
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="s_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt1_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Service"
+            <TextBlock x:Name="s_opt1" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt1_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Add Service"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="s_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt2_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Services"
+            <TextBlock x:Name="s_opt2" Height="54" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="s_opt2_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Services"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="s_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
+            <TextBlock x:Name="s_opt3" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="s_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt4_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
+            <TextBlock x:Name="s_opt4" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt4_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="repair_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
-                    Margin="228,342,0,0" VerticalAlignment="Top" Width="170" MouseEnter="repair_option_panel_MouseEnter" MouseLeave="reapair_option_panel_MouseLeave" Visibility="Hidden">
+        <StackPanel x:Name="repair_option_panel" HorizontalAlignment="Left" Height="270" Background="#FF4818B1" 
+                    Margin="228,342,0,0" VerticalAlignment="Top" Width="181" MouseEnter="repair_option_panel_MouseEnter" MouseLeave="reapair_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="r_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="r_opt1_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Top" FontSize="18" Text="Add Repair"
+            <TextBlock x:Name="r_opt1" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="r_opt1_MouseDown" Foreground="#DDFFFFFF" Width="181" TextAlignment="Center"><LineBreak/><Run  BaselineAlignment="Top" FontSize="18" Text="Add Repair"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="r_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="r_opt2_MouseDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Repairs"
-                    FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="r_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
-                    FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="r_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
-                    FontWeight="Medium"/></TextBlock>
+            <TextBlock x:Name="r_opt2" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="r_opt2_MouseDown" Foreground="#DDFFFFFF" Width="181" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="View Repairs"/></TextBlock>
+            <TextBlock x:Name="r_opt3" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="181" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="Search and Update"/></TextBlock>
+            <TextBlock x:Name="r_opt4" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" TextAlignment="Center" Width="181" MouseDown="r_opt4_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="Maintenance Reports"/></TextBlock>
+            <TextBlock x:Name="r_opt5" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="181" TextAlignment="Center" MouseDown="r_opt5_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="Accident Reports"/></TextBlock>
         </StackPanel>
 
     </Grid>
