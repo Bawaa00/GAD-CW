@@ -86,7 +86,8 @@ namespace dashNew1
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-
+            update_customer obj = new update_customer();
+            obj.Show();
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
