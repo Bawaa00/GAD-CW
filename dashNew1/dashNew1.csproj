@@ -175,6 +175,9 @@
       <DependentUpon>Services.xaml</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="update_customer.xaml.cs">
+      <DependentUpon>update_customer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Update_ownr.xaml.cs">
       <DependentUpon>Update_ownr.xaml</DependentUpon>
     </Compile>
@@ -264,6 +267,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Services.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="update_customer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
