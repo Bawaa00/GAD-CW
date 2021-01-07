@@ -348,5 +348,14 @@ namespace dashNew1
             obj.Show();
         }
 
+        private void r_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void r_opt5_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
