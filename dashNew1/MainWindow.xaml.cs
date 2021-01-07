@@ -28,7 +28,7 @@ namespace dashNew1
         DispatcherTimer timer;
         double panelWidth;
         Brush tab;
-        bool hidden=true;
+        bool hidden = true;
         public MainWindow()
         {
             InitializeComponent();
@@ -54,13 +54,13 @@ namespace dashNew1
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if(hidden==true)
+            if (hidden == true)
             {
                 sidePanel.Width += 1;
-                if(sidePanel.Width >= panelWidth)
+                if (sidePanel.Width >= panelWidth)
                 {
                     timer.Stop();
-                    hidden = false;  
+                    hidden = false;
                 }
             }
             else
@@ -74,10 +74,10 @@ namespace dashNew1
 
             }
         }
-        
+
         public void labelData()
         {
-            string path; 
+            string path;
             DataTable dt = new DataTable();
             dt = db.getData("select COUNT(L_Plate) from Vehicle");
             label_vehicle.Content = dt.Rows[0][0].ToString();
@@ -89,12 +89,12 @@ namespace dashNew1
             string lnum;
             dt = db.getData("select L_Plate,COUNT(L_Plate) from Car_Booking,Vehicle where L_Plate = VNO group by L_Plate");
             lnum = dt.Rows[0][0].ToString();
-            dt = db.getData("select * from Vehicle where L_Plate = '"+lnum+"'");
+            dt = db.getData("select * from Vehicle where L_Plate = '" + lnum + "'");
             lbl_year.Content = dt.Rows[0][1].ToString();
             lbl_make.Content = dt.Rows[0][2].ToString();
             lbl_model.Content = dt.Rows[0][3].ToString();
             lbl_cat.Content = dt.Rows[0][4].ToString();
-            path =dt.Rows[0][13].ToString();
+            path = dt.Rows[0][13].ToString();
             BitmapImage image = new BitmapImage();
             image.BeginInit();
             image.CacheOption = BitmapCacheOption.OnLoad;
@@ -105,7 +105,7 @@ namespace dashNew1
 
         private void SidePanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(e.LeftButton==MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
@@ -116,13 +116,13 @@ namespace dashNew1
             timer.Start();
         }*/
 
-      
+
 
         private void collapse(object sender, RoutedEventArgs e)
         {
             timer.Start();
         }
-        
+
         private void Cars_MouseDown(object sender, MouseButtonEventArgs e)
         {
             car_option_panel.Visibility = Visibility.Visible;
@@ -140,10 +140,10 @@ namespace dashNew1
 
         private void Customers_MouseLeave(object sender, MouseEventArgs e)
         {
-           cus_option_panel.Visibility = Visibility.Hidden;
+            cus_option_panel.Visibility = Visibility.Hidden;
         }
 
-       private void driver_MouseDown(object sender, MouseButtonEventArgs e)
+        private void driver_MouseDown(object sender, MouseButtonEventArgs e)
         {
             d_option_panel.Visibility = Visibility.Visible;
         }
@@ -321,7 +321,7 @@ namespace dashNew1
             acnt_option_panel.Visibility = Visibility.Collapsed;
         }
 
-        private void btn_acnt_MouseDown(object sender, MouseButtonEventArgs e)
+        private void btn_acnt_Click(object sender, RoutedEventArgs e)
         {
             acnt_option_panel.Visibility = Visibility.Visible;
         }
@@ -358,6 +358,33 @@ namespace dashNew1
         {
             AccidentReport obj = new AccidentReport();
             obj.Show();
+        }
+
+       
+
+        private void btn_mic_on_Click(object sender, RoutedEventArgs e)
+        {
+            Messagebox msg = new Messagebox();
+            btn_mic_on.Visibility = Visibility.Hidden;
+            btn_mic_off.Visibility = Visibility.Visible;
+            msg.informationMsg("Voice Command Activated");
+            msg.Show();
+        }
+
+        private void btn_mic_off_Click(object sender, RoutedEventArgs e)
+        {
+            Messagebox msg = new Messagebox();
+            try 
+            { 
+            btn_mic_on.Visibility = Visibility.Visible;
+            btn_mic_off.Visibility = Visibility.Hidden;
+            msg.informationMsg("Voice Command Disabled");
+            msg.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
