@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.48958in</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.36458in</Width>
+              <Width>1.40625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.64583in</Width>
+              <Width>4.84375in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.76042in</Width>
+              <Width>1.78125in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96875in</Width>
+              <Width>1.69792in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -34,7 +34,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Licence Plate</Value>
+                              <Value>Repair ID</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -75,7 +75,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Service ID</Value>
+                              <Value>Licence Plate</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -157,7 +157,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Serviced At (Km)</Value>
+                              <Value>Date</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -198,7 +198,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Next Service (Km)</Value>
+                              <Value>Cost (Rs.)</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -237,14 +237,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="VNo">
+                    <Textbox Name="R_id">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!VNo.Value</Value>
+                              <Value>=Fields!R_id.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -256,7 +256,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>VNo</rd:DefaultName>
+                      <rd:DefaultName>R_id</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -272,14 +272,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="S_ID">
+                    <Textbox Name="vno">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!S_ID.Value</Value>
+                              <Value>=Fields!vno.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -291,7 +291,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>S_ID</rd:DefaultName>
+                      <rd:DefaultName>vno</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -307,14 +307,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="s_details">
+                    <Textbox Name="R_details">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!s_details.Value</Value>
+                              <Value>=Fields!R_details.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -326,7 +326,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>s_details</rd:DefaultName>
+                      <rd:DefaultName>R_details</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -342,14 +342,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="S_milage">
+                    <Textbox Name="R_date">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!S_milage.Value</Value>
+                              <Value>=Fields!R_date.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -361,7 +361,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>S_milage</rd:DefaultName>
+                      <rd:DefaultName>R_date</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -377,14 +377,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nxt_milage">
+                    <Textbox Name="COST">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nxt_milage.Value</Value>
+                              <Value>=Fields!COST.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -396,7 +396,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nxt_milage</rd:DefaultName>
+                      <rd:DefaultName>COST</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -408,7 +408,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -434,9 +433,9 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet_Report</DataSetName>
+        <DataSetName>DataSetMaintain</DataSetName>
         <Height>0.5in</Height>
-        <Width>10.22916in</Width>
+        <Width>10.72917in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -447,7 +446,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>10.22917in</Width>
+  <Width>10.72917in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -462,47 +461,47 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>234caf74-d3c5-4b64-890b-ccb4f69620c3</rd:DataSourceID>
+      <rd:DataSourceID>cff11e5e-df6f-4bbc-abff-365ee1788ab3</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet_Report">
+    <DataSet Name="DataSetMaintain">
       <Query>
         <DataSourceName>DataSet_Service</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="VNo">
-          <DataField>VNo</DataField>
+        <Field Name="R_id">
+          <DataField>R_id</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="S_ID">
-          <DataField>S_ID</DataField>
+        <Field Name="vno">
+          <DataField>vno</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="s_details">
-          <DataField>s_details</DataField>
+        <Field Name="R_details">
+          <DataField>R_details</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="S_milage">
-          <DataField>S_milage</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="R_date">
+          <DataField>R_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Nxt_milage">
-          <DataField>Nxt_milage</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="COST">
+          <DataField>COST</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet_Service</rd:DataSetName>
         <rd:SchemaPath>D:\NIBM\GAD\CW\gitCW\dashNew1\DataSet_Service.xsd</rd:SchemaPath>
-        <rd:TableName>Service</rd:TableName>
+        <rd:TableName>Maintenance</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ServiceTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>MaintenanceTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>8d54ed24-7d2f-4bda-9ca8-df929d0d4fb9</rd:ReportID>
+  <rd:ReportID>2916328e-c2a4-4a39-8733-198ebfcb6fe7</rd:ReportID>
 </Report>

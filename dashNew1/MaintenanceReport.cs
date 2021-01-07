@@ -16,5 +16,33 @@ namespace dashNew1
         {
             InitializeComponent();
         }
+
+        Connect_DB db = new Connect_DB();
+
+        private void MaintenanceReport_Load(object sender, EventArgs e)
+        {
+            DataRow dr;
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle");
+            dr = dt.NewRow();
+            dt.Rows.InsertAt(dr, 0);
+            cmb_lplate.ValueMember = "L_Plate";
+
+            cmb_lplate.DisplayMember = "L_Plate";
+            cmb_lplate.DataSource = dt;
+        }
+
+        private void btn_load_Click(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'DataSet_Service.Maintenance' table. You can move, or remove it, as needed.
+            this.MaintenanceTableAdapter.Fill(this.DataSet_Service.Maintenance);
+            this.reportViewerMR.RefreshReport();
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            this.MaintenanceTableAdapter.FillBy(this.DataSet_Service.Maintenance,cmb_lplate.Text);
+            this.reportViewerMR.RefreshReport();
+        }
     }
 }

@@ -28,15 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewerMR = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btn_load = new MetroFramework.Controls.MetroTile();
             this.btn_search = new MetroFramework.Controls.MetroTile();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.cmb_lplate = new MetroFramework.Controls.MetroComboBox();
+            this.DataSet_Service = new dashNew1.DataSet_Service();
+            this.MaintenanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MaintenanceTableAdapter = new dashNew1.DataSet_ServiceTableAdapters.MaintenanceTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet_Service)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaintenanceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewerMR
             // 
+            reportDataSource3.Name = "DataSetMaintain";
+            reportDataSource3.Value = this.MaintenanceBindingSource;
+            this.reportViewerMR.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewerMR.LocalReport.ReportEmbeddedResource = "dashNew1.ReportMaintenance.rdlc";
             this.reportViewerMR.Location = new System.Drawing.Point(28, 117);
             this.reportViewerMR.Name = "reportViewerMR";
             this.reportViewerMR.ServerReport.BearerToken = null;
@@ -58,6 +69,7 @@
             this.btn_load.UseCustomForeColor = true;
             this.btn_load.UseSelectable = true;
             this.btn_load.UseStyleColors = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // btn_search
             // 
@@ -74,6 +86,7 @@
             this.btn_search.UseCustomForeColor = true;
             this.btn_search.UseSelectable = true;
             this.btn_search.UseStyleColors = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // metroLabel1
             // 
@@ -99,6 +112,20 @@
             this.cmb_lplate.UseStyleColors = true;
             this.cmb_lplate.ValueMember = "L_Plate";
             // 
+            // DataSet_Service
+            // 
+            this.DataSet_Service.DataSetName = "DataSet_Service";
+            this.DataSet_Service.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // MaintenanceBindingSource
+            // 
+            this.MaintenanceBindingSource.DataMember = "Maintenance";
+            this.MaintenanceBindingSource.DataSource = this.DataSet_Service;
+            // 
+            // MaintenanceTableAdapter
+            // 
+            this.MaintenanceTableAdapter.ClearBeforeFill = true;
+            // 
             // MaintenanceReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +139,9 @@
             this.Name = "MaintenanceReport";
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Maintenance Report";
+            this.Load += new System.EventHandler(this.MaintenanceReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet_Service)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaintenanceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +154,8 @@
         private MetroFramework.Controls.MetroTile btn_search;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroComboBox cmb_lplate;
+        private System.Windows.Forms.BindingSource MaintenanceBindingSource;
+        private DataSet_Service DataSet_Service;
+        private DataSet_ServiceTableAdapters.MaintenanceTableAdapter MaintenanceTableAdapter;
     }
 }
