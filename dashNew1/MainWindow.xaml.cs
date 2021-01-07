@@ -299,6 +299,7 @@ namespace dashNew1
             obj.Show();
         }
 
+
         private void a_opt1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
@@ -340,5 +341,12 @@ namespace dashNew1
         {
 
         }
+
+        private void s_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ServiceReport obj = new ServiceReport();
+            obj.Show();
+        }
+
     }
 }
