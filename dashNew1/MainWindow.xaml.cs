@@ -254,5 +254,11 @@ namespace dashNew1
             this.Close();
             obj.Show();
         }
+
+        private void s_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ServiceReport obj = new ServiceReport();
+            obj.Show();
+        }
     }
 }

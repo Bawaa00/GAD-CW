@@ -122,7 +122,7 @@
                     FontWeight="Medium"/></TextBlock>
             <TextBlock x:Name="s_opt3" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Search and Update"
                     FontWeight="Medium"/></TextBlock>
-            <TextBlock Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
+            <TextBlock x:Name="s_opt4" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="s_opt4_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Reports"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="repair_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FFECDFF3" 
