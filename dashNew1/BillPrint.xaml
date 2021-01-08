@@ -78,7 +78,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="264,275,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="264,326,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
             <Label Content="PAYMENT METHOD" HorizontalAlignment="Left" Margin="47,322,0,0" VerticalAlignment="Top"/>
-            <TextBlock x:Name="txt_allo" HorizontalAlignment="Left" Margin="328.585,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right" Text="3000"/>
+            <TextBlock x:Name="txt_allo" HorizontalAlignment="Left" Margin="328.585,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
             <TextBlock x:Name="txt_pay" HorizontalAlignment="Left" Margin="328.585,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
             <TextBlock x:Name="txt_tot" HorizontalAlignment="Left" Margin="328.585,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
             <TextBlock x:Name="txt_extra" HorizontalAlignment="Left" Margin="328.585,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
