@@ -3,47 +3,89 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
         Title="Bill" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Width="700" Height="1000" Loaded="Window_BillPrint_Loaded">
     <Grid>
-        <Label Content="AVIS RENT-A-VEHICLE" HorizontalAlignment="Left" Margin="233,31.416,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF4818B1" FontWeight="Bold"/>
-        <Label Content="NO.5D , PERERA MAWATHA" HorizontalAlignment="Left" Margin="263,57,0,0" VerticalAlignment="Top"/>
-        <Label Content="011-25698155" HorizontalAlignment="Left" Margin="301,99,0,0" VerticalAlignment="Top"/>
-        <Label Content="avis_rentv@gmail.com" HorizontalAlignment="Left" Margin="282.583,123,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="dt_current" Content="DATE" HorizontalAlignment="Left" Margin="511,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.143,0.5" Width="132"/>
-        <Label Content="BOOKING ID" HorizontalAlignment="Left" Margin="46.766,165,0,0" VerticalAlignment="Top"/>
-        <Label Content="CUSTOMER ID" HorizontalAlignment="Left" Margin="46.766,207,0,0" VerticalAlignment="Top"/>
-        <Label Content="LICENSE PLATE" HorizontalAlignment="Left" Margin="46.766,251,0,0" VerticalAlignment="Top"/>
-        <Label Content="DRIVER NAME" HorizontalAlignment="Left" Margin="46.766,297,0,0" VerticalAlignment="Top"/>
-        <Label Content="PICKUP DATE" HorizontalAlignment="Left" Margin="46.766,340,0,0" VerticalAlignment="Top"/>
-        <Label Content="BOOKING DATE" HorizontalAlignment="Left" Margin="263,165,0,0" VerticalAlignment="Top"/>
-        <Label Content="FIRST NAME" HorizontalAlignment="Left" Margin="263,207,0,0" VerticalAlignment="Top"/>
-        <Label Content="SURNAME" HorizontalAlignment="Left" Margin="488,207,0,0" VerticalAlignment="Top"/>
-        <Label Content="MAKE" HorizontalAlignment="Left" Margin="263,251,0,0" VerticalAlignment="Top"/>
-        <Label Content="MODEL" HorizontalAlignment="Left" Margin="431,251,0,0" VerticalAlignment="Top"/>
-        <Label Content="DRIVER ID" HorizontalAlignment="Left" Margin="263,297,0,0" VerticalAlignment="Top"/>
-        <Label Content="LEND DATE" HorizontalAlignment="Left" Margin="253,340,0,0" VerticalAlignment="Top"/>
-        <Label Content="HANDOVER DATE" HorizontalAlignment="Left" Margin="488,340,0,0" VerticalAlignment="Top"/>
-        <Label Content="ALLOCATED MILAGE" HorizontalAlignment="Left" Margin="47.766,435,0,0" VerticalAlignment="Top"/>
-        <Label Content="MILAGE USED" HorizontalAlignment="Left" Margin="47.766,473,0,0" VerticalAlignment="Top"/>
-        <Label Content="EXTRA MILAGE" HorizontalAlignment="Left" Margin="47.766,513,0,0" VerticalAlignment="Top"/>
-        <Label Content="EXTRA COST" HorizontalAlignment="Left" Margin="47.766,552,0,0" VerticalAlignment="Top"/>
-        <Label Content="TOTAL COST" HorizontalAlignment="Left" Margin="47.766,595,0,0" VerticalAlignment="Top"/>
-        <Label Content="ADVANCE PAYMENT" HorizontalAlignment="Left" Margin="46.766,638,0,0" VerticalAlignment="Top"/>
-        <Label Content="PAYMENT METHOD" HorizontalAlignment="Left" Margin="46,726,0,0" VerticalAlignment="Top"/>
-        <Grid x:Name="grid_Head" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="695" Margin="1,0,-2,0">
+        <Grid x:Name="grid_Head" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="695" Margin="1,-0.627,-2,0">
             <Grid HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="151" Margin="48,0,0,0"/>
-            <Label Content="KADAWATHA" HorizontalAlignment="Left" Margin="304,73,0,0" VerticalAlignment="Top"/>
+            <Label Content="KADAWATHA" HorizontalAlignment="Left" Margin="304,73,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="AVIS RENT-A-VEHICLE" HorizontalAlignment="Left" Margin="232,31.416,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF4818B1" FontWeight="Bold"/>
+            <Label Content="NO.5D , PERERA MAWATHA" HorizontalAlignment="Left" Margin="262,57,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="011-25698155" HorizontalAlignment="Left" Margin="300,99,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="avis_rentv@gmail.com" HorizontalAlignment="Left" Margin="280.583,123,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label x:Name="dt_current" Content="DATE" HorizontalAlignment="Left" Margin="510,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.143,0.5" Width="132"/>
+            <Button x:Name="btn_print"
+                Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                HorizontalAlignment="Right"
+                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,26,23,86" Background="#FF4818B1" BorderBrush="#FF4818B1" Click="btn_print_Click">
+                <materialDesign:PackIcon
+                    Kind="Printer"
+                    Height="24"
+                    Width="24" />
+            </Button>
         </Grid>
-        <Grid x:Name="grid_info" HorizontalAlignment="Left" Height="251" Margin="0,152,0,0" VerticalAlignment="Top" Width="695">
-            <Path Data="M41,0 L616,0" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Margin="46,0,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
+        <Grid x:Name="grid_info" HorizontalAlignment="Left" Height="251" Margin="0,151.333,-1,0" VerticalAlignment="Top" Width="695">
+            <Path Data="M41,0 L616,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="2" Margin="46,0,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
+            <TextBox x:Name="txt_bkid" HorizontalAlignment="Left" Height="23" Margin="128.916,14.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_cusid" HorizontalAlignment="Left" Height="23" Margin="134.916,56.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_lplate" HorizontalAlignment="Left" Height="23" Margin="134.916,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115.575"/>
+            <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="23" Margin="137.916,146.668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_bkdate" HorizontalAlignment="Left" Height="23" Margin="360.416,14.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="23" Margin="333.748,56.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_sname" HorizontalAlignment="Left" Height="23" Margin="525.332,57.167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122.668"/>
+            <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="23" Margin="315.583,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="23" Margin="525.332,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="_did" HorizontalAlignment="Left" Height="23" Margin="329.25,146.668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_dt_pick" HorizontalAlignment="Left" Height="23" Margin="128.916,190.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_dt_hand" HorizontalAlignment="Left" Height="23" Margin="562.238,190.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98.666"/>
+            <Label Content="BOOKING ID" HorizontalAlignment="Left" Margin="45.257,15.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="CUSTOMER ID" HorizontalAlignment="Left" Margin="45.257,57.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="LICENSE PLATE" HorizontalAlignment="Left" Margin="45.257,101.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="DRIVER NAME" HorizontalAlignment="Left" Margin="45.257,147.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="PICKUP DATE" HorizontalAlignment="Left" Margin="45.257,190.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="BOOKING DATE" HorizontalAlignment="Left" Margin="255.491,15.501,0,0" VerticalAlignment="Top"/>
+            <Label Content="FIRST NAME" HorizontalAlignment="Left" Margin="255.491,57.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="SURNAME" HorizontalAlignment="Left" Margin="455.491,57.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="MAKE" HorizontalAlignment="Left" Margin="255.491,101.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="MODEL" HorizontalAlignment="Left" Margin="470.891,101.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="DRIVER ID" HorizontalAlignment="Left" Margin="255.489,147.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="LEND DATE" HorizontalAlignment="Left" Margin="255.491,190.001,0,0" VerticalAlignment="Top"/>
+            <Label Content="HANDOVER DATE" HorizontalAlignment="Left" Margin="455.491,190.001,0,0" VerticalAlignment="Top"/>
         </Grid>
         <Grid x:Name="grid_calculate" HorizontalAlignment="Left" Height="563" Margin="0,408,0,0" VerticalAlignment="Top" Width="694">
-            <Label Content="DUE PAYMENT" HorizontalAlignment="Left" Margin="47,271,0,0" VerticalAlignment="Top"/>
+            <Label Content="DUE PAYMENT (Rs.)" HorizontalAlignment="Left" Margin="47,271,0,0" VerticalAlignment="Top"/>
             <Label Content="COMPANY OFFICER" HorizontalAlignment="Left" Margin="73,484,0,0" VerticalAlignment="Top"/>
             <Label Content="CUSTOMER" HorizontalAlignment="Left" Margin="514,484,0,0" VerticalAlignment="Top"/>
-            <Path Data="M46,0 L647,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="1" Margin="46,0,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
+            <Path Data="M46,0 L647,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="2" Margin="46,0,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
+            <Path Data="M46,0 L647,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="2" Margin="46,376.667,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
+            <TextBox x:Name="txt_dt_lend" HorizontalAlignment="Left" Height="23" Margin="328.585,-66.335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Path Data="M47.766,478.66667 L223.66667,477.33333" Fill="#FF080808" HorizontalAlignment="Left" Height="1" Margin="46,478,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="10" VerticalAlignment="Top" Width="185.901"/>
+            <Path Data="M47.766,478.66667 L223.66667,477.33333" Fill="#FF080808" HorizontalAlignment="Left" Height="1" Margin="451.433,478,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="185.901"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,31,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+            <Label Content="ALLOCATED MILEAGE (KM)" HorizontalAlignment="Left" Margin="48,27,0,0" VerticalAlignment="Top"/>
+            <Label Content="MILEAGE USED (KM)" HorizontalAlignment="Left" Margin="48,65,0,0" VerticalAlignment="Top"/>
+            <Label Content="EXTRA MILEAGE (KM)" HorizontalAlignment="Left" Margin="48,105,0,0" VerticalAlignment="Top"/>
+            <Label Content="EXTRA COST (Rs.)" HorizontalAlignment="Left" Margin="48,144,0,0" VerticalAlignment="Top"/>
+            <Label Content="TOTAL COST (Rs.)" HorizontalAlignment="Left" Margin="48,187,0,0" VerticalAlignment="Top"/>
+            <Label Content="ADVANCE PAYMENT (Rs.)" HorizontalAlignment="Left" Margin="47,230,0,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,69,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,109,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,148,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,191,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,234,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,275,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="264,326,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
+            <Label Content="PAYMENT METHOD" HorizontalAlignment="Left" Margin="47,322,0,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="328.585,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right" Text="3000"/>
+            <TextBlock x:Name="txt_pay" HorizontalAlignment="Left" Margin="328.585,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
+            <TextBlock x:Name="txt_adv" HorizontalAlignment="Left" Margin="328.585,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
+            <TextBlock x:Name="txt_tot" HorizontalAlignment="Left" Margin="328.585,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
+            <TextBlock x:Name="txt_extra" HorizontalAlignment="Left" Margin="328.585,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
+            <TextBlock x:Name="txt_km_extra" HorizontalAlignment="Left" Margin="328.585,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
+            <TextBlock x:Name="txt_km_use" HorizontalAlignment="Left" Margin="328.585,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
+            <TextBlock x:Name="txt_pay_method" HorizontalAlignment="Left" Margin="328.585,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
         </Grid>
     </Grid>
 </Window>

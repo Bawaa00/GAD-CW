@@ -28,5 +28,23 @@ namespace dashNew1
         {
             dt_current.Content = DateTime.Now.ToString();
         }
+
+        private void btn_print_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.IsEnabled = false;
+
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(this, "test");
+                }
+            }
+            finally
+            {
+                this.IsEnabled = true;
+            }
+        }
     }
 }
