@@ -1,0 +1,101 @@
+﻿<Window x:Name="UPDATE_SERVICE" x:Class="dashNew1.update_service"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:dashNew1"
+        mc:Ignorable="d"
+        Title="update_service" Height="639.468" Width="896.835" Loaded="UPDATE_SERVICE_Loaded">
+    <Grid Margin="0,0,3.8,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                <GradientStop Color="#FFDFD9ED" Offset="0.167"/>
+                <GradientStop Color="White" Offset="0.683"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Left" Height="596" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="790" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#FF12005E" Offset="0.474"/>
+                    <GradientStop Color="#FFDFD9ED" Offset="0.92"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0.4,23"  VerticalAlignment="Bottom" Width="561" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                    <GradientStop Color="#FF4818B1" Offset="0.503"/>
+                    <GradientStop Color="#FFDFD9ED" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBlock HorizontalAlignment="Left" Margin="30,5,0,0" Height="70" Width="auto" Text="UPDATE SERVICE" VerticalAlignment="Top"
+                   FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,120,0,0"  Text="Service ID" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,182,0,0"  Text="Vehicle ID" VerticalAlignment="Top"
+                   Height="41" FontSize="22" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,244,0,0"  Text="Service Details" VerticalAlignment="Top"
+                   Height="39" FontSize="22" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,380,0,0"  Text="Mileage at Service" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,442,0,0"  Text="Next Service" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_Sdetails" HorizontalAlignment="Left" Height="110" Margin="330,244,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_milge" HorizontalAlignment="Left" Height="40" Margin="330,380,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_nxt" HorizontalAlignment="Left" Height="40" Margin="330,442,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_update"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="121"
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,122.4,35.6" Background="#FF20A820" BorderBrush="{x:Null}" Grid.ColumnSpan="2" Click="btn_update_Click">
+            <TextBlock
+                Text="UPDATE" FontFamily="Segoe UI Black" FontSize="20" />
+        </Button>
+        <Button x:Name="btn_delete"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="112"
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10.4,35.6" Background="#FF20A820" BorderBrush="{x:Null}" Grid.ColumnSpan="2" Click="btn_delete_Click">
+            <TextBlock
+                Text="DELETE" FontFamily="Segoe UI Black" FontSize="20" />
+        </Button>
+        <Button x:Name="BTN_HOME"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right" VerticalAlignment="Top"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,99.8,0" Grid.ColumnSpan="2" Click="BTN_HOME_Click">
+            <materialDesign:PackIcon
+                Kind="Home"
+                Height="24"
+                Width="24" />
+        </Button>
+        <Button x:Name="BTN_BACK"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"  VerticalAlignment="Top"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,34.8,0" Grid.ColumnSpan="2" Click="BTN_BACK_Click" >
+            <materialDesign:PackIcon
+                Kind="PagePrevious"
+                Height="24"
+                Width="24" />
+        </Button>
+        <Button  x:Name="BTN_CLEAR"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            Height="Auto" Background="#FF20A820"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="330,518,415.4,29.6" BorderBrush="{x:Null}" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Click="BTN_CLEAR_Click">
+            <TextBlock
+                Text="CLEAR" FontFamily="Segoe UI Black" FontSize="20" />
+        </Button>
+        <ComboBox x:Name="cmb_updateser" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" DropDownClosed="cmb_updateser_DropDownClosed"/>
+        <TextBox x:Name="txt_vehiclenum" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="38" Margin="330,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331"/>
+    </Grid>
+</Window>

@@ -184,6 +184,9 @@
     <Compile Include="Update_ownr.xaml.cs">
       <DependentUpon>Update_ownr.xaml</DependentUpon>
     </Compile>
+    <Compile Include="update_service.xaml.cs">
+      <DependentUpon>update_service.xaml</DependentUpon>
+    </Compile>
     <Compile Include="updt_booking.xaml.cs">
       <DependentUpon>updt_booking.xaml</DependentUpon>
     </Compile>
@@ -288,6 +291,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Update_ownr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="update_service.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
