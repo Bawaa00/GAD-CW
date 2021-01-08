@@ -34,12 +34,12 @@
             <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="23" Margin="137.916,146.668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
             <TextBox x:Name="txt_bkdate" HorizontalAlignment="Left" Height="23" Margin="360.416,14.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
             <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="23" Margin="333.748,56.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-            <TextBox x:Name="txt_sname" HorizontalAlignment="Left" Height="23" Margin="525.332,57.167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122.668" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_sname" HorizontalAlignment="Left" Height="23" Margin="525,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" IsReadOnlyCaretVisible="True"/>
             <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="23" Margin="315.583,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
             <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="23" Margin="525.332,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
             <TextBox x:Name="txt_did" HorizontalAlignment="Left" Height="23" Margin="329.25,146.668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
             <TextBox x:Name="txt_dt_pick" HorizontalAlignment="Left" Height="23" Margin="128.916,190.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
-            <TextBox x:Name="txt_dt_hand" HorizontalAlignment="Left" Height="23" Margin="562.238,190.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98.666" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_dt_hand" HorizontalAlignment="Left" Height="23" Margin="562,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" IsReadOnlyCaretVisible="True"/>
             <Label Content="BOOKING ID" HorizontalAlignment="Left" Margin="45.257,15.001,0,0" VerticalAlignment="Top"/>
             <Label Content="CUSTOMER ID" HorizontalAlignment="Left" Margin="45.257,57.001,0,0" VerticalAlignment="Top"/>
             <Label Content="LICENSE PLATE" HorizontalAlignment="Left" Margin="45.257,101.001,0,0" VerticalAlignment="Top"/>
@@ -53,6 +53,7 @@
             <Label Content="DRIVER ID" HorizontalAlignment="Left" Margin="255.489,147.001,0,0" VerticalAlignment="Top"/>
             <Label Content="LEND DATE" HorizontalAlignment="Left" Margin="255.491,190.001,0,0" VerticalAlignment="Top"/>
             <Label Content="HANDOVER DATE" HorizontalAlignment="Left" Margin="455.491,190.001,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txt_dt_lend" HorizontalAlignment="Left" Height="23" Margin="329,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True" RenderTransformOrigin="-0.126,1.283"/>
         </Grid>
         <Grid x:Name="grid_calculate" HorizontalAlignment="Left" Height="563" Margin="0,408,0,0" VerticalAlignment="Top" Width="694">
             <Label Content="DUE PAYMENT (Rs.)" HorizontalAlignment="Left" Margin="47,271,0,0" VerticalAlignment="Top"/>
@@ -60,7 +61,6 @@
             <Label Content="CUSTOMER" HorizontalAlignment="Left" Margin="514,484,0,0" VerticalAlignment="Top"/>
             <Path Data="M46,0 L647,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="2" Margin="46,0,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
             <Path Data="M46,0 L647,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="2" Margin="46,376.667,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
-            <TextBox x:Name="txt_dt_lend" HorizontalAlignment="Left" Height="23" Margin="328.585,-66.335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
             <Path Data="M47.766,478.66667 L223.66667,477.33333" Fill="#FF080808" HorizontalAlignment="Left" Height="1" Margin="46,478,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="10" VerticalAlignment="Top" Width="185.901"/>
             <Path Data="M47.766,478.66667 L223.66667,477.33333" Fill="#FF080808" HorizontalAlignment="Left" Height="1" Margin="451.433,478,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="185.901"/>
             <TextBlock HorizontalAlignment="Left" Margin="264,31,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
@@ -78,14 +78,21 @@
             <TextBlock HorizontalAlignment="Left" Margin="264,275,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="264,326,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>
             <Label Content="PAYMENT METHOD" HorizontalAlignment="Left" Margin="47,322,0,0" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="328.585,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right" Text="3000"/>
+            <TextBlock x:Name="txt_allo" HorizontalAlignment="Left" Margin="328.585,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right" Text="3000"/>
             <TextBlock x:Name="txt_pay" HorizontalAlignment="Left" Margin="328.585,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
-            <TextBlock x:Name="txt_adv" HorizontalAlignment="Left" Margin="328.585,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
             <TextBlock x:Name="txt_tot" HorizontalAlignment="Left" Margin="328.585,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
             <TextBlock x:Name="txt_extra" HorizontalAlignment="Left" Margin="328.585,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
             <TextBlock x:Name="txt_km_extra" HorizontalAlignment="Left" Margin="328.585,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
-            <TextBlock x:Name="txt_km_use" HorizontalAlignment="Left" Margin="328.585,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
-            <TextBlock x:Name="txt_pay_method" HorizontalAlignment="Left" Margin="328.585,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90.623" TextAlignment="Right"/>
+            <TextBox x:Name="txt_km" HorizontalAlignment="Left" Height="23" Margin="329,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextAlignment="Right"/>
+            <TextBox x:Name="txt_adv_pay" HorizontalAlignment="Left" Height="23" Margin="329,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" TextAlignment="Right"/>
+            <ComboBox x:Name="cmb_pay_method" HorizontalAlignment="Left" Margin="329,314,0,0" VerticalAlignment="Top" Width="90" Background="{x:Null}" BorderBrush="{x:Null}" >
+                <ComboBoxItem Content="CASH" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem Content="CARD" HorizontalAlignment="Left" Width="118"/>
+            </ComboBox>
+            <Button x:Name="btn_cal"
+                Style="{StaticResource MaterialDesignOutlinedButton}"
+                HorizontalAlignment="Right"
+                ToolTip="MaterialDesignOutlinedButton" Margin="0,341,57,191"  BorderBrush="#FF4818B1" Width="113" Height="Auto" Content="CALCULATE" Click="btn_cal_Click"/>
         </Grid>
     </Grid>
 </Window>

@@ -120,14 +120,14 @@ namespace dashNew1
             BillPrint obj = new BillPrint();
             obj.txt_bkid.Text = this.txt_bid.Text;
             obj.txt_bkdate.Text = this.date_book.Text;
-            obj.txt_cusid.Text = this.cmb_vid.Text;
+            obj.txt_cusid.Text = this.cmb_cusid.Text;
             obj.txt_fname.Text = this.txt_cusFname.Text;
             obj.txt_sname.Text = this.txt_cusLname.Text;
             obj.txt_did.Text = this.cmb_did.Text;
             obj.txt_dname.Text = this.txt_dname.Text;
             obj.txt_dt_lend.Text = this.date_lend.Text;
             obj.txt_dt_pick.Text = this.date_pick.Text;
-            obj.txt_lplate.Text = this.cmb_did.Text;
+            obj.txt_lplate.Text = this.cmb_vid.Text;
             obj.txt_make.Text = this.txt_make.Text;
             obj.txt_model.Text = this.txt_model.Text;
             obj.Show();
