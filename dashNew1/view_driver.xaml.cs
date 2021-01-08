@@ -87,7 +87,8 @@ namespace dashNew1
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-
+            add_driver obj = new add_driver();
+            obj.Show();
         }
 
         private void btn_home_Click(object sender, RoutedEventArgs e)

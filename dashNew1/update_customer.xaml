@@ -175,7 +175,7 @@
                 Text="UPLOAD" FontSize="22" FontFamily="Segoe UI Black"/>
 
         </Button>
-        <ComboBox x:Name="CMB_UPDATE" HorizontalAlignment="Left" Margin="377,150,0,0" VerticalAlignment="Top" Width="347" DropDownClosed="CMB_UPDATE_DropDownClosed"/>
+        <ComboBox x:Name="CMB_UPDATE" HorizontalAlignment="Left" Margin="420,150,0,0" VerticalAlignment="Top" Width="304" DropDownClosed="CMB_UPDATE_DropDownClosed" FontSize="20" FontFamily="Segoe UI Black"/>
 
 
     </Grid>

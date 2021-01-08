@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
         Title="view_driver" Height="704.431" Width="1308.861" Loaded="view_driver1_Loaded">
-    <Grid>
+    <Grid Height="694" Margin="0,0,0.4,-18.8" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="13*"/>

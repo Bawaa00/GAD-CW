@@ -11,13 +11,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Drawing;
 using Microsoft.Win32;
 using System.IO;
-using MaterialDesignThemes.Wpf;
 using System.Diagnostics;
 using System.Data;
-using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+
 
 namespace dashNew1
 {
@@ -30,7 +29,7 @@ namespace dashNew1
         {
             InitializeComponent();
         }
-        Connect_DB obj = new Connect_DB();
+        Connect_DB db = new Connect_DB();
         string filepath;
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
@@ -46,7 +45,7 @@ namespace dashNew1
             File.Copy(filepath, destinationPath, true);
             
 
-            int line = obj.save_update_delete(a);
+            int line = db.save_update_delete(a);
             if (line == 1)
                 MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
@@ -102,6 +101,18 @@ namespace dashNew1
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void add_driver1_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("Select max(D_ID) from Driver");
+            string id = dt.Rows[0][0].ToString();
+            var prefix = Regex.Match(id, "^\\D+").Value;
+            var number = Regex.Replace(id, "^\\D+", "");
+            var i = int.Parse(number) + 1;
+            var newString = prefix + i.ToString(new string('0', number.Length));
+            txt_Did.Text = newString;
         }
     }
 }

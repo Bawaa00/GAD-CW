@@ -40,7 +40,7 @@ namespace dashNew1
             sidePanel.Width = 50;
 
             this.PieChart();
-            labelData();
+            //labelData();
         }
 
         Connect_DB db = new Connect_DB();
@@ -75,7 +75,7 @@ namespace dashNew1
             }
         }
 
-        public void labelData()
+       /* public void labelData()
         {
             string path;
             DataTable dt = new DataTable();
@@ -102,7 +102,7 @@ namespace dashNew1
             image.EndInit();
             img_vehicle.Source = image;
         }
-
+       */
         private void SidePanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -334,11 +334,15 @@ namespace dashNew1
 
         private void btn_v_driver_Click(object sender, RoutedEventArgs e)
         {
-
+            view_driver obj = new view_driver();
+            obj.Show();
+                
         }
 
         private void btn_v_cus_Click(object sender, RoutedEventArgs e)
         {
+            view_customer obj = new view_customer();
+            obj.Show();
 
         }
 
