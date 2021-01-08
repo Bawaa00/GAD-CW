@@ -96,7 +96,7 @@
         <ComboBox x:Name="cmb_cusid"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="Black" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,276,0,0" HorizontalAlignment="Left" 
-            IsEditable="True"/>
+            IsEditable="True" DropDownClosed="cmb_cusid_DropDownClosed"/>
         <TextBlock HorizontalAlignment="Left" Margin="287,225,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
         <TextBox x:Name="txt_cusFname" HorizontalAlignment="Left" Height="34" Margin="287,282,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
@@ -130,7 +130,7 @@
         <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" BorderBrush="White" Foreground="Black" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,410,0,0" HorizontalAlignment="Left" 
-            IsEditable="True"/>
+            IsEditable="True" DropDownClosed="cmb_vid_DropDownClosed"/>
         <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="34" Margin="535,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
         <Rectangle HorizontalAlignment="Left" Height="123" Margin="25,484,0,0" VerticalAlignment="Top" Width="488" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
@@ -145,7 +145,7 @@
         <ComboBox x:Name="cmb_did"
             materialDesign:HintAssist.Hint="Search" BorderBrush="WhiteSmoke" Foreground="Black" FontSize="22" VerticalAlignment="Top"
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="283,491,0,0" HorizontalAlignment="Left" 
-            IsEditable="True"/>
+            IsEditable="True" DropDownClosed="cmb_did_DropDownClosed"/>
         <TextBlock HorizontalAlignment="Left" Margin="535,484,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="34" 
             FontSize="22" Foreground="White"/>
         <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="34" Margin="535,548,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
@@ -162,33 +162,17 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="247,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198" Click="btn_submit_Click">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="655,0,0,28" Background="#FF61B73A" BorderBrush="#FF61B73A" Width="198" Click="btn_submit_Click">
             <TextBlock
                 Text="SUBMIT" FontSize="22" />
-        </Button>
-        <Button x:Name="btn_report"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-            materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="451,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="197">
-            <TextBlock
-                Text="GET REPORT" FontSize="22" />
         </Button>
         <Button x:Name="btn_bill"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="654,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198" Click="btn_bill_Click">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="436,0,0,28" Background="#FF61B73A" BorderBrush="#FF61B73A" Width="198" Click="btn_bill_Click">
             <TextBlock
                 Text="GENERATE BILL" FontSize="22" />
-        </Button>
-        <Button x:Name="btn_fill"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-            materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="30,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198" Click="btn_Fill_Click">
-            <TextBlock
-                Text="FILL DATA" FontSize="22" />
         </Button>
 
 
