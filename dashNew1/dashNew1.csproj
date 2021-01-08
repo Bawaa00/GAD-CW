@@ -80,6 +80,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -122,6 +123,9 @@
     </Compile>
     <Compile Include="Add_vehicle.xaml.cs">
       <DependentUpon>Add_vehicle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BillPrint.xaml.cs">
+      <DependentUpon>BillPrint.xaml</DependentUpon>
     </Compile>
     <Compile Include="Booking.xaml.cs">
       <DependentUpon>Booking.xaml</DependentUpon>
@@ -216,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Add_vehicle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BillPrint.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

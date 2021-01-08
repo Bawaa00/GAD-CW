@@ -17,6 +17,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.Charts;
 using System.Data;
+using System.Speech;
 
 namespace dashNew1
 {
