@@ -26,14 +26,15 @@ namespace dashNew1
 
         private void Window_BillPrint_Loaded(object sender, RoutedEventArgs e)
         {
-            dt_current.Content = DateTime.Now.ToString();
+            dt_current.Content = DateTime.Now.ToShortDateString();
+            txt_dt_hand.Text = DateTime.Now.ToShortDateString();
         }
 
         private void btn_print_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                this.IsEnabled = false;
+                //this.IsEnabled = false;
 
                 PrintDialog printDialog = new PrintDialog();
                 if (printDialog.ShowDialog() == true)
@@ -43,7 +44,7 @@ namespace dashNew1
             }
             finally
             {
-                this.IsEnabled = true;
+               // this.IsEnabled = true;
             }
         }
     }

@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Bill" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Width="700" Height="1000" Loaded="Window_BillPrint_Loaded">
     <Grid>
-        <Grid x:Name="grid_Head" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="695" Margin="1,-0.627,-2,0">
+        <Grid x:Name="grid_Head" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="694" Margin="1,-1,-1,0">
             <Grid HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="151" Margin="48,0,0,0"/>
             <Label Content="KADAWATHA" HorizontalAlignment="Left" Margin="304,73,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
             <Label Content="AVIS RENT-A-VEHICLE" HorizontalAlignment="Left" Margin="232,31.416,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF4818B1" FontWeight="Bold"/>
@@ -28,18 +28,18 @@
         </Grid>
         <Grid x:Name="grid_info" HorizontalAlignment="Left" Height="251" Margin="0,151.333,-1,0" VerticalAlignment="Top" Width="695">
             <Path Data="M41,0 L616,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="2" Margin="46,0,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
-            <TextBox x:Name="txt_bkid" HorizontalAlignment="Left" Height="23" Margin="128.916,14.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_cusid" HorizontalAlignment="Left" Height="23" Margin="134.916,56.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_lplate" HorizontalAlignment="Left" Height="23" Margin="134.916,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115.575"/>
-            <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="23" Margin="137.916,146.668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_bkdate" HorizontalAlignment="Left" Height="23" Margin="360.416,14.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="23" Margin="333.748,56.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_sname" HorizontalAlignment="Left" Height="23" Margin="525.332,57.167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122.668"/>
-            <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="23" Margin="315.583,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="23" Margin="525.332,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="_did" HorizontalAlignment="Left" Height="23" Margin="329.25,146.668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_dt_pick" HorizontalAlignment="Left" Height="23" Margin="128.916,190.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txt_dt_hand" HorizontalAlignment="Left" Height="23" Margin="562.238,190.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98.666"/>
+            <TextBox x:Name="txt_bkid" HorizontalAlignment="Left" Height="23" Margin="128.916,14.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_cusid" HorizontalAlignment="Left" Height="23" Margin="134.916,56.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_lplate" HorizontalAlignment="Left" Height="23" Margin="134.916,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115.575" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_dname" HorizontalAlignment="Left" Height="23" Margin="137.916,146.668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_bkdate" HorizontalAlignment="Left" Height="23" Margin="360.416,14.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_fname" HorizontalAlignment="Left" Height="23" Margin="333.748,56.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_sname" HorizontalAlignment="Left" Height="23" Margin="525.332,57.167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122.668" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_make" HorizontalAlignment="Left" Height="23" Margin="315.583,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="23" Margin="525.332,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_did" HorizontalAlignment="Left" Height="23" Margin="329.25,146.668,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_dt_pick" HorizontalAlignment="Left" Height="23" Margin="128.916,190.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
+            <TextBox x:Name="txt_dt_hand" HorizontalAlignment="Left" Height="23" Margin="562.238,190.001,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98.666" IsReadOnlyCaretVisible="True"/>
             <Label Content="BOOKING ID" HorizontalAlignment="Left" Margin="45.257,15.001,0,0" VerticalAlignment="Top"/>
             <Label Content="CUSTOMER ID" HorizontalAlignment="Left" Margin="45.257,57.001,0,0" VerticalAlignment="Top"/>
             <Label Content="LICENSE PLATE" HorizontalAlignment="Left" Margin="45.257,101.001,0,0" VerticalAlignment="Top"/>
@@ -60,7 +60,7 @@
             <Label Content="CUSTOMER" HorizontalAlignment="Left" Margin="514,484,0,0" VerticalAlignment="Top"/>
             <Path Data="M46,0 L647,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="2" Margin="46,0,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
             <Path Data="M46,0 L647,0" Fill="#FF4818B1" HorizontalAlignment="Left" Height="2" Margin="46,376.667,0,0" Stretch="Fill" Stroke="#FF4818B1" VerticalAlignment="Top" Width="602" StrokeThickness="10"/>
-            <TextBox x:Name="txt_dt_lend" HorizontalAlignment="Left" Height="23" Margin="328.585,-66.335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txt_dt_lend" HorizontalAlignment="Left" Height="23" Margin="328.585,-66.335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True"/>
             <Path Data="M47.766,478.66667 L223.66667,477.33333" Fill="#FF080808" HorizontalAlignment="Left" Height="1" Margin="46,478,0,0" Stretch="Fill" Stroke="Black" StrokeThickness="10" VerticalAlignment="Top" Width="185.901"/>
             <Path Data="M47.766,478.66667 L223.66667,477.33333" Fill="#FF080808" HorizontalAlignment="Left" Height="1" Margin="451.433,478,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="185.901"/>
             <TextBlock HorizontalAlignment="Left" Margin="264,31,0,0" TextWrapping="Wrap" Text="=" VerticalAlignment="Top"/>

@@ -178,7 +178,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="654,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="654,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198" Click="btn_bill_Click">
             <TextBlock
                 Text="GENERATE BILL" FontSize="22" />
         </Button>
