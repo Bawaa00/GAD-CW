@@ -17,7 +17,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.Charts;
 using System.Data;
-using System.Speech;
+using System.Speech.Recognition;
 
 namespace dashNew1
 {
@@ -44,6 +44,7 @@ namespace dashNew1
             labelData();
         }
 
+        SpeechRecognitionEngine recEngin = new SpeechRecognitionEngine();
         Connect_DB db = new Connect_DB();
         public Func<ChartPoint, string> PointLabel { get; set; }
 
@@ -368,6 +369,7 @@ namespace dashNew1
             Messagebox msg = new Messagebox();
             btn_mic_on.Visibility = Visibility.Hidden;
             btn_mic_off.Visibility = Visibility.Visible;
+            recEngin.RecognizeAsync(RecognizeMode.Multiple);
             msg.informationMsg("Voice Command Activated");
             msg.Show();
         }
@@ -379,6 +381,7 @@ namespace dashNew1
             { 
             btn_mic_on.Visibility = Visibility.Visible;
             btn_mic_off.Visibility = Visibility.Hidden;
+            recEngin.RecognizeAsyncStop();
             msg.informationMsg("Voice Command Disabled");
             msg.Show();
             }
@@ -386,6 +389,36 @@ namespace dashNew1
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void RecEngin_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            switch (e.Result.Text)
+            {
+                case "goto add vehicle":
+                    Add_vehicle obj = new Add_vehicle();
+                    obj.Show();
+                    break;
+                case "goto view vehicle":
+                    Update_Vehicle obj1 = new Update_Vehicle();
+                    obj1.Show();
+                    break;
+
+            }
+        }
+
+        private void Form_MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Choices command = new Choices();
+            command.Add(new string[] { "goto add vehicle","goto view vehicle" });
+            GrammarBuilder gbiulder = new GrammarBuilder();
+            gbiulder.Append(command);
+            Grammar grammar = new Grammar(gbiulder);
+
+
+            recEngin.LoadGrammarAsync(grammar);
+            recEngin.SetInputToDefaultAudioDevice();
+            recEngin.SpeechRecognized += RecEngin_SpeechRecognized;
         }
     }
 }
