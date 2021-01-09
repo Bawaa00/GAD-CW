@@ -44,7 +44,7 @@ namespace dashNew1
             labelData();
         }
 
-        SpeechRecognitionEngine recEngin = new SpeechRecognitionEngine();
+        voiceCommands vc = new voiceCommands(); 
         Connect_DB db = new Connect_DB();
         public Func<ChartPoint, string> PointLabel { get; set; }
 
@@ -367,58 +367,33 @@ namespace dashNew1
         private void btn_mic_on_Click(object sender, RoutedEventArgs e)
         {
             Messagebox msg = new Messagebox();
-            btn_mic_on.Visibility = Visibility.Hidden;
-            btn_mic_off.Visibility = Visibility.Visible;
-            recEngin.RecognizeAsync(RecognizeMode.Multiple);
-            msg.informationMsg("Voice Command Activated");
-            msg.Show();
-        }
-
-        private void btn_mic_off_Click(object sender, RoutedEventArgs e)
-        {
-            Messagebox msg = new Messagebox();
-            try 
-            { 
-            btn_mic_on.Visibility = Visibility.Visible;
-            btn_mic_off.Visibility = Visibility.Hidden;
-            recEngin.RecognizeAsyncStop();
-            msg.informationMsg("Voice Command Disabled");
-            msg.Show();
+            try
+            {
+                btn_mic_on.Visibility = Visibility.Hidden;
+                btn_mic_off.Visibility = Visibility.Visible;
+                vc.stopVoice();
+                msg.informationMsg("Voice Command Disabled");
+                msg.Show();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void RecEngin_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        private void btn_mic_off_Click(object sender, RoutedEventArgs e)
         {
-            switch (e.Result.Text)
-            {
-                case "goto add vehicle":
-                    Add_vehicle obj = new Add_vehicle();
-                    obj.Show();
-                    break;
-                case "goto view vehicle":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
-                    break;
-
-            }
+            Messagebox msg = new Messagebox();
+            btn_mic_on.Visibility = Visibility.Visible;
+            btn_mic_off.Visibility = Visibility.Hidden;
+            vc.startVoice();
+            msg.informationMsg("Voice Command Activated");
+            msg.Show();
         }
 
         private void Form_MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Choices command = new Choices();
-            command.Add(new string[] { "goto add vehicle","goto view vehicle" });
-            GrammarBuilder gbiulder = new GrammarBuilder();
-            gbiulder.Append(command);
-            Grammar grammar = new Grammar(gbiulder);
-
-
-            recEngin.LoadGrammarAsync(grammar);
-            recEngin.SetInputToDefaultAudioDevice();
-            recEngin.SpeechRecognized += RecEngin_SpeechRecognized;
+            vc.loadCommands();
         }
     }
 }

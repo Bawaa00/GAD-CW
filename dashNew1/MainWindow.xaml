@@ -30,7 +30,7 @@
             <Button x:Name="btn_mic_on"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                 HorizontalAlignment="Right"
-                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,100,5" Background="#FF4818B1" BorderBrush="#FF4818B1" Click="btn_mic_on_Click">
+                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,100,5" Background="#FF4818B1" BorderBrush="#FF4818B1" Click="btn_mic_on_Click" Visibility="Hidden">
                 <materialDesign:PackIcon
                     Kind="Microphone"
                     Height="24"
@@ -39,7 +39,7 @@
             <Button x:Name="btn_mic_off"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                 HorizontalAlignment="Right"
-                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,100,5" Background="#FF4818B1" BorderBrush="#FF4818B1" Visibility="Hidden" Click="btn_mic_off_Click">
+                ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,100,5" Background="#FF4818B1" BorderBrush="#FF4818B1" Click="btn_mic_off_Click">
                 <materialDesign:PackIcon
                     Kind="MicOff"
                     Height="24"

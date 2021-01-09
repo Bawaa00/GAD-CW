@@ -203,6 +203,7 @@
     <Compile Include="View_insurnce.xaml.cs">
       <DependentUpon>View_insurnce.xaml</DependentUpon>
     </Compile>
+    <Compile Include="voiceCommands.cs" />
     <Page Include="addCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
