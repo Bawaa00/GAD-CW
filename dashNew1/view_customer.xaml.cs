@@ -58,7 +58,7 @@ namespace dashNew1
         {
             CMB_CUSNAME.Text = "";
             DataTable dt = new DataTable();
-            dt = db.getData("select Cus_ID as 'CUSTOMER ID', Customer.F_name as 'FIRST NAME',Customer.S_name as'SURENAME',Customer.Cus_address as 'ADDRESS',Customer.Cus_Tel as 'TELEPHONE',Customer.NIC as 'NIC',Car_Booking.BNO as 'BOOKING ID',VNO as 'VEHICLE LICEN PLATE',Model  as 'MODEL',D_ID  as 'DRIVER ID',D_name  as 'DRIVER NAME'" +
+            dt = db.getData("select Cus_ID as 'CUSTOMER ID', Customer.F_name as 'FIRST NAME', Customer.S_name as'SURENAME', Customer.Cus_address as 'ADDRESS', Customer.Cus_Tel as 'TELEPHONE', Customer.NIC as 'NIC', Car_Booking.BNO as 'BOOKING ID'" +
                 " from Car_Booking,Booking,Vehicle,Driver,Customer" +
                 " where BK_No = BNO and CNO = Cus_ID and VNO = L_Plate and DNO = D_ID and Cus_ID = '" + CMD_CUSID.Text + "'");
             dg_owners.ItemsSource = dt.DefaultView;
@@ -69,7 +69,7 @@ namespace dashNew1
             CMD_CUSID.Text = "";
 
             DataTable dt = new DataTable();
-            dt = db.getData("select Cus_ID as 'CUSTOMER ID', Customer.F_name as 'FIRST NAME',Customer.S_name as'SURENAME',Customer.Cus_address as 'ADDRESS',Customer.Cus_Tel as 'TELEPHONE',Customer.NIC as 'NIC',Car_Booking.BNO as 'BOOKING ID',VNO as 'VEHICLE LICEN PLATE',Model  as 'MODEL',D_ID  as 'DRIVER ID',D_name  as 'DRIVER NAME'" +
+            dt = db.getData("select Cus_ID as 'CUSTOMER ID', Customer.F_name as 'FIRST NAME', Customer.S_name as'SURENAME', Customer.Cus_address as 'ADDRESS', Customer.Cus_Tel as 'TELEPHONE', Customer.NIC as 'NIC', Car_Booking.BNO as 'BOOKING ID'" +
                 " from Car_Booking,Booking,Vehicle,Driver,Customer" +
                 " where BK_No = BNO and CNO = Cus_ID and VNO = L_Plate and DNO = D_ID and F_name='" + CMB_CUSNAME.Text + "'");
             dg_owners.ItemsSource = dt.DefaultView;
@@ -78,7 +78,7 @@ namespace dashNew1
         private void btn_view_Click(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("select Cus_ID as 'CUSTOMER ID', Customer.F_name as 'FIRST NAME',Customer.S_name as'SURENAME',Customer.Cus_address as 'ADDRESS',Customer.Cus_Tel as 'TELEPHONE',Customer.NIC as 'NIC',Car_Booking.BNO as 'BOOKING ID',VNO as 'VEHICLE LICEN PLATE',Model  as 'MODEL',D_ID  as 'DRIVER ID',D_name  as 'DRIVER NAME'" +
+            dt = db.getData("select Cus_ID as 'CUSTOMER ID', Customer.F_name as 'FIRST NAME', Customer.S_name as'SURENAME', Customer.Cus_address as 'ADDRESS', Customer.Cus_Tel as 'TELEPHONE', Customer.NIC as 'NIC', Car_Booking.BNO as 'BOOKING ID'" +
                 " from Car_Booking,Booking,Vehicle,Driver,Customer" +
                 " where BK_No = BNO and CNO = Cus_ID and VNO = L_Plate and DNO = D_ID;");
             dg_owners.ItemsSource = dt.DefaultView;
