@@ -33,5 +33,44 @@ namespace dashNew1
             dt=db.getData("select * from Owner");
             dg_owners.ItemsSource = dt.DefaultView;
         }
+
+        private void form_owner_info_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Owner;");
+            cmb_oid.ItemsSource = dt.DefaultView;
+            cmb_oid.DisplayMemberPath = "O_ID";
+            cmb_oid.SelectedValuePath = "O_ID";
+        }
+
+        private void cmb_oid_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Owner where O_ID = '"+cmb_oid.Text+"' ");
+            dg_owners.ItemsSource = dt.DefaultView;
+        }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            Update_ownr obj = new Update_ownr();
+            obj.Show();
+        }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            Add_owner obj = new Add_owner();
+            obj.Show();
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -63,24 +63,35 @@ namespace dashNew1
         {
             try
             {
+               
                 string name = System.IO.Path.GetFileName(filepath);
                 string destinationPath = GetDestinationPath(name);
                 File.Copy(filepath, destinationPath, true);
-
+                
                 string query = "Insert into Owner values ('" + txt_oid.Text + "','" + txt_onic.Text + "','" + txt_oname.Text + "','" + txt_address.Text + "','" + txt_contact.Text + "','" + destinationPath + "')";
 
                 int i = db.save_update_delete(query);
                 if (i == 1)
-                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                {   
+                     Messagebox msg = new Messagebox();
+                     msg.Show();
+                }
                 else
-                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                {
+                  Messagebox msg = new Messagebox();
+                  msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                  msg.Show();
+                }   
             }
             catch (ArgumentNullException ex)
             {
                 MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
-            { MessageBox.Show(ex.Message); }
+            { 
+                MessageBox.Show(ex.Message); 
+            }
+
         }
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
@@ -103,6 +114,17 @@ namespace dashNew1
             var i = int.Parse(number) + 1;
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_oid.Text = newString;
+        }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
  

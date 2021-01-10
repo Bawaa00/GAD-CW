@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Driver" Height="700" Width="900" WindowStartupLocation="CenterScreen" Loaded="DRIVER_UPDATE_DELETE_Loaded">
+        Title="Update Driver" Height="700" Width="900" WindowStartupLocation="CenterScreen" Loaded="DRIVER_UPDATE_DELETE_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"/>
@@ -19,19 +19,19 @@
         <Ellipse Fill="#FF320B86" HorizontalAlignment="Left" Height="60" Margin="47.827,562,0,0" Stroke="#FF320B86" StrokeThickness="2" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2" Grid.Column="1"/>
         <Rectangle Fill="#FF320B86" HorizontalAlignment="Right" Height="670" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="350" Grid.Column="3"/>
 
-        <Button
+        <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,11.6,620.4" Grid.Column="3">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,11.6,620.4" Grid.Column="3" Click="btn_back_Click">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
                 Width="24" />
         </Button>
-        <Button
+        <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,68.6,620.4" Grid.Column="3">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,68.6,620.4" Grid.Column="3" Click="btn_home_Click">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"
@@ -48,14 +48,14 @@
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium" Grid.ColumnSpan="2" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="39.827,305,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <TextBox x:Name="txt_Lnum" HorizontalAlignment="Left" Height="30" Margin="23.2,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="18" FontWeight="Medium" Grid.Column="3"/>
-        <TextBox x:Name="txt_Name" HorizontalAlignment="Left" Height="30" Margin="23.2,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="18" FontWeight="Medium" Grid.Column="3"/>
-        <TextBox x:Name="txt_Tp" HorizontalAlignment="Left" Height="30" Margin="23.2,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="18" FontWeight="Medium" Grid.Column="3"/>
-        <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="30" Margin="23.2,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="18" FontWeight="Medium" Grid.Column="3"/>
+        <TextBox x:Name="txt_Lnum" HorizontalAlignment="Left" Height="33" Margin="23.2,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+            FontSize="21" Grid.Column="3"/>
+        <TextBox x:Name="txt_Name" HorizontalAlignment="Left" Height="33" Margin="23.2,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+            FontSize="21" Grid.Column="3"/>
+        <TextBox x:Name="txt_Tp" HorizontalAlignment="Left" Height="33" Margin="23.2,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+            FontSize="21" Grid.Column="3"/>
+        <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="33" Margin="23.2,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+            FontSize="21" Grid.Column="3"/>
 
 
         <Button x:Name="btn_Update"
@@ -76,7 +76,7 @@
         </Button>
         <Button x:Name="btn_cancel"
             Style="{StaticResource MaterialDesignFlatButton}"
-            ToolTip="MaterialDesignFlatButton" Width="100" Margin="23.2,359,593.6,279.4" BorderBrush="#FF320B86" Click="btn_cancel_Click" Grid.Column="3">
+            ToolTip="MaterialDesignFlatButton" Width="100" Margin="23,361,592,276" BorderBrush="#FF320B86" Click="btn_cancel_Click" Grid.Column="3">
             CANCEL
         </Button>
         <Button x:Name="btn_Clear"
@@ -84,9 +84,9 @@
             ToolTip="MaterialDesignFlatButton" Width="100" Margin="160.2,361,456.6,277.4" BorderBrush="#FF320B86" Content="CLEAR ALL" Click="btn_Clear_Click" Grid.Column="3"/>
         <TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" Width="160" Height="50" Text="DRIVER" VerticalAlignment="Top"
                    FontSize="40" FontWeight="Bold" Foreground="#FF8F6AE0" Opacity="0.8" TextAlignment="Center" Grid.ColumnSpan="3"/>
-        <Image x:Name="img" HorizontalAlignment="Right" Height="300" Margin="0,90,24.6,0" VerticalAlignment="Top" Width="300" Grid.Column="3"/>
+        <Image x:Name="img" HorizontalAlignment="Right" Height="292" Margin="0,90,25,0" VerticalAlignment="Top" Width="300" Grid.Column="3"/>
         <Button x:Name="btn_upload" Content="Browse" HorizontalAlignment="Left" Margin="507.2,387,0,0" VerticalAlignment="Top" Width="84" Click="btn_upload_Click" Grid.Column="3"/>
-        <ComboBox x:Name="cbox_did" HorizontalAlignment="Left" Margin="23.2,90,0,0" VerticalAlignment="Top" Width="220" Grid.Column="3" DropDownClosed="cbox_did_DropDownClosed"/>
+        <ComboBox x:Name="cbox_did" HorizontalAlignment="Left" Margin="23,85,0,0" VerticalAlignment="Top" Width="220" Grid.Column="3" DropDownClosed="cbox_did_DropDownClosed" FontSize="20"/>
 
 
     </Grid>

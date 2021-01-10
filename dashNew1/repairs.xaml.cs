@@ -82,5 +82,16 @@ namespace dashNew1
             add_repairs obj = new add_repairs();
             obj.Show();
         }
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

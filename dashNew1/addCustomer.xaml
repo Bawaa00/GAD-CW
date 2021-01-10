@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="addCustomer" Height="700" Width="1300" WindowStartupLocation="CenterScreen">
+        Title="Add Customer" Height="700" Width="1300" WindowStartupLocation="CenterScreen" Loaded="Add_Customer_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="104*"/>
@@ -49,20 +49,20 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button
+        <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,12,619" Grid.Column="1">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,12,619" Grid.Column="1" Click="btn_back_Click">
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
                 Width="24" />
         </Button>
 
-        <Button
+        <Button x:Name="btn_home"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,74,619" Grid.Column="1">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,74,619" Grid.Column="1" Click="btn_home_Click">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"
@@ -137,7 +137,7 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"
             materialDesign:ButtonAssist.CornerRadius="0 15 15 0" Margin="76.634,0,0,85"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Grid.Column="1" Click="btn_exit_Click">
             <TextBlock
                 Text="EXIT" FontSize="21" FontWeight="Heavy" Foreground="White" />
         </Button>
@@ -164,22 +164,10 @@
             Style="{StaticResource MaterialDesignRaisedLightButton}"
             Height="50" Width="160" VerticalAlignment="Top" HorizontalAlignment="Right"
             materialDesign:ButtonAssist.CornerRadius="5"
-            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,280,0" Click="btn_upload_Click" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,162,0" Click="btn_upload_Click" Grid.Column="1">
             <TextBlock
                 Text="UPLOAD" FontSize="18" />
         </Button>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedLightButton}"
-            Height="50" Width="160" VerticalAlignment="Top" HorizontalAlignment="Right"
-            materialDesign:ButtonAssist.CornerRadius="5"
-            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,60,0" Grid.Column="1">
-            <TextBlock
-                Text="SAVE" FontSize="18"/>
-        </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="442.634,0,0,101" TextWrapping="Wrap" Text="File Path :" VerticalAlignment="Bottom"
-                   FontSize="17" FontWeight="Medium" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="33" Margin="532.634,0,0,94"  VerticalAlignment="Bottom"
-                 Width="300" FontSize="17" FontWeight="Light" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="240,49,0,0" TextWrapping="Wrap" Text="New Customer" VerticalAlignment="Top"
                    FontSize="50" Foreground="White" Opacity="0.6" Grid.ColumnSpan="2"/>
 

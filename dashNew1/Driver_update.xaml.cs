@@ -38,14 +38,13 @@ namespace dashNew1
 
         private void btn_Update_Click(object sender, RoutedEventArgs e)
         {
-            string a = " update Driver set  L_num= '" + txt_Lnum.Text + "', D_name = '" + txt_Name.Text + "', " +
-                            " Tel=  '" + txt_Tp.Text + "', Address= '" + txt_Address.Text + "',path = '" + filepath + "' where Driver_ID  = '" + cbox_did.Text + "'";
 
             string name = System.IO.Path.GetFileName(filepath);
             string destinationPath = GetDestinationPath(name);
+            string a = " update Driver set  L_num= '" + txt_Lnum.Text + "', D_name = '" + txt_Name.Text + "', " +
+                            " Tel=  '" + txt_Tp.Text + "', Address= '" + txt_Address.Text + "',D_Path = '" + destinationPath + "' where D_ID  = '" + cbox_did.Text + "'";
 
             File.Copy(filepath, destinationPath, true);
-            //txt_did.Text = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
 
             int line = obj.save_update_delete(a);
             if (line == 1)
@@ -68,9 +67,6 @@ namespace dashNew1
             return appStartPath;
         }
 
-
-
-
         private void btn_upload_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -86,40 +82,22 @@ namespace dashNew1
             }
         }
 
-
-
-        private void btn_Click(object sender, RoutedEventArgs e)
-        {
-
-            string constring = "Data Source=DESKTOP-7EJV26G;Initial Catalog=insertpic;Integrated Security=True";
-            string Query = "select * from Driver where Driver_ID='" + cbox_did.Text + "'  ;";
-            SqlConnection con = new SqlConnection(constring);
-            SqlDataAdapter da = new SqlDataAdapter(Query, con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            txt_Lnum.Text = dt.Rows[0][1].ToString();
-            txt_Name.Text = dt.Rows[0][2].ToString();
-            txt_Tp.Text = dt.Rows[0][3].ToString();
-            txt_Address.Text = dt.Rows[0][4].ToString();
-            string path = dt.Rows[0][5].ToString();
-            ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
-            img.Source = imgsource;
-
-        }
-
-
-
         private void btn_Delete_Click(object sender, RoutedEventArgs e)
         {
-            string a = " Delete from Driver where Driver_ID = '" + cbox_did.Text + "'";
+            Messagebox msg = new Messagebox();
+            string a = " Delete from Driver where D_ID = '" + cbox_did.Text + "'";
 
             int line = obj.save_update_delete(a);
             if (line == 1)
-                MessageBox.Show("Data delete Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
+            {
+                msg.informationMsg("Data deleted successfully");
+                msg.Show();
+            }
             else
-                MessageBox.Show("Data cannot delete", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                msg.errorMsg("Sorry, couldn't delete your data.Please try again");
+                msg.Show();
+            }
 
 
             cbox_did.Items.Clear();
@@ -143,25 +121,22 @@ namespace dashNew1
             txt_Tp.Clear();
             txt_Address.Clear();
             img.Source = null;
-
         }
 
         private void DRIVER_UPDATE_DELETE_Loaded(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable();
-            // string a = "select * from Driver where Driver_ID='" + combo1.Text + "'";
-            dt = obj.getData("select * from Driver ");
+            dt = obj.getData("select * from Driver");
             cbox_did.ItemsSource = dt.DefaultView;
-            cbox_did.DisplayMemberPath = "Driver_ID";
-            cbox_did.SelectedValuePath = "Driver_ID";
+            cbox_did.DisplayMemberPath = "D_ID";
+            cbox_did.SelectedValuePath = "D_ID";
         }
 
 
         private void cbox_did_DropDownClosed(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            //  string a = "select * from Driver where Driver_ID='" + combo1.Text + "'";
-            dt = obj.getData("select * from Driver where Driver_ID='" + cbox_did.Text + "'");
+            dt = obj.getData("select * from Driver where D_ID='" + cbox_did.Text + "'");
             txt_Lnum.Text = cbox_did.Text;
             txt_Lnum.Text = dt.Rows[0][1].ToString();
             txt_Name.Text = dt.Rows[0][2].ToString();
@@ -172,33 +147,15 @@ namespace dashNew1
             img.Source = imgsource;
         }
 
-        /* private void Driver_window_Loaded(object sender, RoutedEventArgs e)
-         {
-             DataTable dt = new DataTable();
-             // string a = "select * from Driver where Driver_ID='" + combo1.Text + "'";
-             dt = obj.getData("select * from Driver ");
-             combo1.ItemsSource = dt.DefaultView;
-             combo1.DisplayMemberPath = "Driver_ID";
-             combo1.SelectedValuePath = "Driver_ID";
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow obj = new MainWindow();
+            obj.Show();
+        }
 
-         }
-
-
-         private void combo1_DropDownClosed(object sender, EventArgs e)
-         {
-             DataTable dt = new DataTable();
-             //  string a = "select * from Driver where Driver_ID='" + combo1.Text + "'";
-             dt = obj.getData("select * from Driver where Driver_ID='" + combo1.Text + "'");
-             txt_Lnum.Text = combo1.Text;
-             txt_Lnum.Text = dt.Rows[0][1].ToString();
-             txt_Name.Text = dt.Rows[0][2].ToString();
-             txt_Tp.Text = dt.Rows[0][3].ToString();
-             txt_Address.Text = dt.Rows[0][4].ToString();
-             filepath = dt.Rows[0][5].ToString();
-             ImageSource imgsource = new BitmapImage(new Uri(filepath));
-             img.Source = imgsource;
-         }
-        */
-
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

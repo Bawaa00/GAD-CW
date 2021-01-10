@@ -91,29 +91,49 @@ namespace dashNew1
          
                 int i = db.save_update_delete(query);
                 if (i == 1)
-                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    { 
+                      Messagebox msg = new Messagebox();
+                      msg.Show();
+                    }
                 else
-                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
-
+                   {
+                      Messagebox msg = new Messagebox();
+                      msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                      msg.Show();
+                   
+                   }
             }
             catch (ArgumentNullException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            /*catch (Exception ex)
-            { MessageBox.Show(ex.Message); }*/
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); 
+            }
+
+        }
+
+        private void btn_view_ins_Click(object sender, RoutedEventArgs e)
+        {
+            View_insurnce obj = new View_insurnce();
+            obj.Show();
         }
 
         private void btn_add_ins_Click(object sender, RoutedEventArgs e)
         {
-            Add_Insurnce obj = new Add_Insurnce();
+            Owner_info obj = new Owner_info();
             obj.Show();
         }
 
-        private void btn_see_owner_Click(object sender, RoutedEventArgs e)
+        private void btn_home_Click(object sender, RoutedEventArgs e)
         {
-            Owner_info obj = new Owner_info();
+            MainWindow obj = new MainWindow();
             obj.Show();
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
