@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 using System.Data;
+using Microsoft.Win32;
 
 namespace dashNew1
 {
@@ -43,17 +44,29 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
-            string query = "Insert into Insurance values ('" + txt_iid.Text + "','" + txt_org.Text + "','" + txt_address.Text + "','" + txt_tel.Text + "')";
-            int i = db.save_update_delete(query);
-            if (i == 1)
-            {   
-                msg.Show();
-            }
-            else
+
+            try
             {
-                msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                msg.Show();
+                string query = "Insert into Insurance values ('" + txt_iid.Text + "','" + txt_org.Text + "','" + txt_address.Text + "','" + txt_tel.Text + "')";
+                int i = db.save_update_delete(query);
+                if (i == 1)
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.Show();
+                }
+                else
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.Show();
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); 
             }
         }
 
@@ -66,6 +79,7 @@ namespace dashNew1
         {
             MainWindow obj = new MainWindow();
             obj.Show();
+
         }
     }
 }

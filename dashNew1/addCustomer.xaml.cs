@@ -48,20 +48,34 @@ namespace dashNew1
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
-            string name = System.IO.Path.GetFileName(filepath);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(filepath, destinationPath, true);
-
-            string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','"+destinationPath+"')";
-
-            int i = db.save_update_delete(query);
-            if (i == 1)
-                msg.Show();
-            else
+            try
             {
-                msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                msg.Show();
+                string name = System.IO.Path.GetFileName(filepath);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(filepath, destinationPath, true);
+
+                string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','" + destinationPath + "')";
+
+
+                int i = db.save_update_delete(query);
+                if (i == 1)
+                    { 
+                      Messagebox msg = new Messagebox();
+                      msg.Show();
+                    }
+                else
+                   {
+                      Messagebox msg = new Messagebox();
+                      msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                      msg.Show();
+                   }
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); 
             }
 
         }

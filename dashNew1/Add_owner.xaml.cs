@@ -61,21 +61,37 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
-            string name = System.IO.Path.GetFileName(filepath);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(filepath, destinationPath, true);
-
-            string query = "Insert into Owner values ('" + txt_oid.Text + "','" + txt_onic.Text + "','" + txt_oname.Text + "','" + txt_address.Text + "','" + txt_contact.Text + "','" + destinationPath + "')";
-
-            int i = db.save_update_delete(query);
-            if (i == 1)
-                msg.Show();
-            else
+            try
             {
-                msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                msg.Show();
+               
+                string name = System.IO.Path.GetFileName(filepath);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(filepath, destinationPath, true);
+                
+                string query = "Insert into Owner values ('" + txt_oid.Text + "','" + txt_onic.Text + "','" + txt_oname.Text + "','" + txt_address.Text + "','" + txt_contact.Text + "','" + destinationPath + "')";
+
+                int i = db.save_update_delete(query);
+                if (i == 1)
+                {   
+                     Messagebox msg = new Messagebox();
+                     msg.Show();
+                }
+                else
+                {
+                  Messagebox msg = new Messagebox();
+                  msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                  msg.Show();
+                }   
             }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            { 
+                MessageBox.Show(ex.Message); 
+            }
+
         }
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)

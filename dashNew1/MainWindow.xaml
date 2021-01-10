@@ -219,6 +219,7 @@
             <TextBlock x:Name="v_opt4" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="v_opt4_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Book Vehicle"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
+
         <StackPanel x:Name="cus_option_panel" HorizontalAlignment="Left" Height="auto" 
                     Margin="228,176,0,0" VerticalAlignment="Top" Width="170" MouseEnter="cus_option_panel_MouseEnter" MouseLeave="cus_option_panel_MouseLeave" Background="#FF4818B1" Visibility="Hidden">
             <StackPanel.Effect>

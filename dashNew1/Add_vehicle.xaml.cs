@@ -81,21 +81,36 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
-            string name = System.IO.Path.GetFileName(filepath);
+            try
+            {
+                string name = System.IO.Path.GetFileName(filepath);
             string destinationPath = GetDestinationPath(name);
             File.Copy(filepath, destinationPath, true);
 
             string query = "Insert into Vehicle values ('" + txt_lno.Text + "','" + cbox_year.Text + "','" + cbox_make.Text + "','" + txt_model.Text + "','" + cbox_category.Text + "','"+txt_cpmonth.Text+"','"+txt_cpweek.Text+"','"+txt_extra.Text+"','"+cbox_oid.Text+"','"+txt_lndate.Text+"','"+cbox_ins.Text+ "','"+txt_sdate.Text+"','"+txt_exdate.Text+"','"+destinationPath+"')";
-
-            int i = db.save_update_delete(query);
-            if (i == 1)
-                msg.Show();
-            else
-            {
-                msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                msg.Show();
+         
+                int i = db.save_update_delete(query);
+                if (i == 1)
+                    { 
+                      Messagebox msg = new Messagebox();
+                      msg.Show();
+                    }
+                else
+                   {
+                      Messagebox msg = new Messagebox();
+                      msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                      msg.Show();
+                   
+                   }
             }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); 
+            }
+
         }
 
         private void btn_view_ins_Click(object sender, RoutedEventArgs e)

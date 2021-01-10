@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 using System.Text.RegularExpressions;
+using Microsoft.Win32;
 
 namespace dashNew1
 {
@@ -74,30 +75,48 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
-            if (cmb_type.SelectedIndex == 0)
+
+            try
             {
-                string query = "Insert into Maintenance values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','" + txt_cost.Text + "');";
-                int i = db.save_update_delete(query);
-                if (i == 1 || i == -1)
-                    msg.Show();
-                else
+                if (cmb_type.SelectedIndex == 0)
                 {
-                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                    msg.Show();
+                    string query = "Insert into Maintenance values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','" + txt_cost.Text + "');";
+                    int i = db.save_update_delete(query);
+                if (i == 1 || i == -1)
+                    { 
+                      Messagebox msg = new Messagebox();
+                      msg.Show();
+                    }
+                else
+                   {
+                      Messagebox msg = new Messagebox();
+                      msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                      msg.Show();
+                   }
+                }
+                else if (cmb_type.SelectedIndex == 1)
+                {
+                    string query = "Insert into Acc_repair values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','" + txt_cost.Text + "','" + txt_claim.Text + "');";
+                    int i = db.save_update_delete(query);
+                    if (i == 1 || i == -1)
+                    { 
+                      Messagebox msg = new Messagebox();
+                      msg.Show();
+                    }
+                else
+                   {
+                      Messagebox msg = new Messagebox();
+                      msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                      msg.Show();
+                   }
                 }
             }
-            else if (cmb_type.SelectedIndex == 1)
+            catch (ArgumentNullException ex)
             {
-                string query = "Insert into Acc_repair values ('" + txt_rid.Text + "','" + cmb_vid.Text + "','" + txt_details.Text + "','" + txt_date.Text + "','" + txt_cost.Text + "','" + txt_claim.Text + "');";
-                int i = db.save_update_delete(query);
-                if (i == 1 || i == -1)
-                    msg.Show();
-                else
-                {
-                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                    msg.Show();
-                }
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message); 
             }
         }
 
