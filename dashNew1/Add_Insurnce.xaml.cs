@@ -52,6 +52,9 @@ namespace dashNew1
                 if (i == 1)
                 {
                     Messagebox msg = new Messagebox();
+                    Add_Insurnce obj = new Add_Insurnce();
+                    this.Close();
+                    obj.Show();
                     msg.Show();
                 }
                 else
@@ -80,6 +83,13 @@ namespace dashNew1
             MainWindow obj = new MainWindow();
             obj.Show();
 
+        }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            txt_org.Clear();
+            txt_tel.Clear();
+            txt_address.Clear();
         }
     }
 }
