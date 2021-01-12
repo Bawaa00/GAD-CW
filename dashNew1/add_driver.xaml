@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
         mc:Ignorable="d"
-        Title="add_driver" Height="699.714" Width="1078.02" Loaded="add_driver1_Loaded">
+        Title="Add Driver" Height="699.714" Width="1078.02" Loaded="add_driver1_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,-6,-19.6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="261*"/>
@@ -37,17 +37,17 @@
                 Width="24" />
         </Button>
 
-        <TextBlock HorizontalAlignment="Left" Margin="50,85,0,0" TextWrapping="Wrap" Text="Driver ID" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="50,108,0,0" TextWrapping="Wrap" Text="Driver ID" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
-        <TextBlock HorizontalAlignment="Left" Margin="41,206,0,0" TextWrapping="Wrap" Text="License No." VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="50,211,0,0" TextWrapping="Wrap" Text="License No." VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
-        <TextBlock HorizontalAlignment="Left" Margin="61,151,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="50,156,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
-        <TextBlock HorizontalAlignment="Left" Margin="61,270,0,0" TextWrapping="Wrap" Text="Telephone" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="50,275,0,0" TextWrapping="Wrap" Text="Telephone" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
-        <TextBlock HorizontalAlignment="Left" Margin="50,355,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="52,344,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
-        <TextBox x:Name="txt_Did" HorizontalAlignment="Left" Height="30" Margin="200,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+        <TextBox x:Name="txt_Did" HorizontalAlignment="Left" Height="30" Margin="198,103,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
                  FontSize="18" FontWeight="Medium"/>
         <TextBox x:Name="txt_Lnum" HorizontalAlignment="Left" Height="30" Margin="200,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
@@ -55,7 +55,7 @@
             FontSize="18" FontWeight="Medium"/>
         <TextBox x:Name="txt_Tp" HorizontalAlignment="Left" Height="30" Margin="200,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
-        <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="30" Margin="200,344,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+        <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="81" Margin="200,344,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
 
 
@@ -78,7 +78,7 @@
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" Width="160" Height="50" Text="DRIVER" VerticalAlignment="Top"
                    FontSize="40" FontWeight="Bold" Foreground="#FF8F6AE0" Opacity="0.8" TextAlignment="Center"/>
-        <Image x:Name="imd_addDriver" HorizontalAlignment="Right" Height="300" Margin="0,90,24.4,0" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
+        <Image x:Name="imd_addDriver" HorizontalAlignment="Right" Height="300" Margin="0,103,44,0" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
         <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="Auto"
