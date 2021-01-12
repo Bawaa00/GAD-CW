@@ -61,6 +61,7 @@ namespace dashNew1
                 var i = int.Parse(number) + 1;
                 var newString = prefix + i.ToString(new string('0', number.Length));
                 txt_rid.Text = newString;
+
             }
         }
 
@@ -71,11 +72,14 @@ namespace dashNew1
             cmb_vid.ItemsSource = dt.DefaultView;
             cmb_vid.DisplayMemberPath = "L_Plate";
             cmb_vid.SelectedValuePath = "L_Plate";
+            txt_details.Clear();
+            txt_date.Text = "";
+            txt_cost.Clear();
+            txt_claim.Clear();
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
                 if (cmb_type.SelectedIndex == 0)
@@ -85,7 +89,8 @@ namespace dashNew1
                 if (i == 1 || i == -1)
                     { 
                       Messagebox msg = new Messagebox();
-                      msg.Show();
+                        add_repair_form_Loaded(this, null);
+                        msg.Show();
                     }
                 else
                    {
@@ -101,6 +106,7 @@ namespace dashNew1
                     if (i == 1 || i == -1)
                     { 
                       Messagebox msg = new Messagebox();
+                      add_repair_form_Loaded(this, null);
                       msg.Show();
                     }
                 else
@@ -129,6 +135,17 @@ namespace dashNew1
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            add_repair_form_Loaded(this,null);
+        }
+
+        private void btn_search_Click(object sender, RoutedEventArgs e)
+        {
+            Update_Vehicle obj = new Update_Vehicle();
+            obj.Show();
         }
     }
 }

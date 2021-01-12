@@ -52,7 +52,7 @@
         <ComboBox x:Name="cmb_type"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,120,0,0"
-            IsEditable="True" SelectionChanged="cmb_type_SelectionChanged" >
+            IsEditable="True" SelectionChanged="cmb_type_SelectionChanged" IsReadOnly="True" >
             <ComboBoxItem>
                 Maintenence Repair
             </ComboBoxItem>
@@ -60,11 +60,11 @@
                 Accident Repair
             </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txt_rid" HorizontalAlignment="Left" Height="40" Margin="330,182,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_rid" HorizontalAlignment="Left" Height="40" Margin="330,182,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True"/>
         <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,244,0,0"
-            IsEditable="True">
+            IsEditable="True" IsReadOnly="True">
         </ComboBox>
         <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="330,308,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <DatePicker x:Name="txt_date" HorizontalAlignment="Left" Height="40" Margin="330,440,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
@@ -84,7 +84,7 @@
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_cls_Click">
             <TextBlock
                 Text="CLEAR" />
         </Button>
@@ -108,7 +108,7 @@
         </Button>
         <Button x:Name="btn_search"
             Style="{StaticResource MaterialDesignRaisedLightButton}" HorizontalAlignment="Left" VerticalAlignment="Top"
-            ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="683,244,0,0">
+            ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="683,244,0,0" Click="btn_search_Click">
             SEARCH VEHICLE
         </Button>
     </Grid>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:dashNew1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
         mc:Ignorable="d"
-        Title="Add Driver" Height="699.714" Width="1078.02" Loaded="add_driver1_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Add Driver" Height="699.714" Width="1078.02" Loaded="add_driver1_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid Margin="0,0,-6,-19.6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="261*"/>
@@ -48,7 +48,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="52,344,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
         <TextBox x:Name="txt_Did" HorizontalAlignment="Left" Height="30" Margin="198,103,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-                 FontSize="18" FontWeight="Medium"/>
+                 FontSize="18" FontWeight="Medium" IsReadOnly="True"/>
         <TextBox x:Name="txt_Lnum" HorizontalAlignment="Left" Height="30" Margin="200,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="18" FontWeight="Medium"/>
         <TextBox x:Name="txt_Name" HorizontalAlignment="Left" Height="30" Margin="200,151,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
