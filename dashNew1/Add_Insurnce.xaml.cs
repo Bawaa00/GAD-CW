@@ -33,13 +33,16 @@ namespace dashNew1
             DataTable dt = new DataTable();
             dt = db.getData("Select max(I_ID) from Insurance ");
 
-
             string id = dt.Rows[0][0].ToString();
             var prefix = Regex.Match(id, "^\\D+").Value;
             var number = Regex.Replace(id, "^\\D+", "");
             var i = int.Parse(number) + 1;
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_iid.Text = newString;
+            txt_org.Clear();
+            txt_tel.Clear();
+            txt_address.Clear();
+
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
@@ -52,9 +55,7 @@ namespace dashNew1
                 if (i == 1)
                 {
                     Messagebox msg = new Messagebox();
-                    Add_Insurnce obj = new Add_Insurnce();
-                    this.Close();
-                    obj.Show();
+                    Add_Insurance_Form_Loaded(this, null);
                     msg.Show();
                 }
                 else
@@ -82,14 +83,11 @@ namespace dashNew1
         {
             MainWindow obj = new MainWindow();
             obj.Show();
-
         }
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
         {
-            txt_org.Clear();
-            txt_tel.Clear();
-            txt_address.Clear();
+            Add_Insurance_Form_Loaded(this, null);
         }
     }
 }
