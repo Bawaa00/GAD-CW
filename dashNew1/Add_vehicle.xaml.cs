@@ -62,6 +62,16 @@ namespace dashNew1
             cbox_ins.ItemsSource = dt.DefaultView;
             cbox_ins.DisplayMemberPath = "I_ID";
             cbox_ins.SelectedValuePath = "I_ID";
+
+            txt_lno.Clear();
+            txt_model.Clear();
+            txt_cpmonth.Clear();
+            txt_cpweek.Clear();
+            txt_extra.Clear();
+            txt_lndate.Text = "";
+            txt_sdate.Text = "";
+            txt_exdate.Text = "";
+            cbox_category.Text = "";
         }
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
@@ -93,6 +103,7 @@ namespace dashNew1
                 if (i == 1)
                     { 
                       Messagebox msg = new Messagebox();
+                      Vehicle_Setup_Form_Loaded(this, null);
                       msg.Show();
                     }
                 else
@@ -134,6 +145,11 @@ namespace dashNew1
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            Vehicle_Setup_Form_Loaded(this, null);
         }
     }
 }
