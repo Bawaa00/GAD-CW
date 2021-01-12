@@ -42,90 +42,90 @@ namespace dashNew1
                     addCustomer obj4 = new addCustomer();
                     obj4.Show();
                     break;
-              /*  case "goto view customer":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                /*case "goto view customer":
+                    Update_Vehicle obj5 = new Update_Vehicle();
+                    obj5.Show();
                     break;
                 case "goto update customer":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
-                    break;
+                    Update_Vehicle obj6 = new Update_Vehicle();
+                    obj6.Show();
+                    break;*/
                 case "goto view bookings":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    view_bookings obj7 = new view_bookings();
+                    obj7.Show();
                     break;
-                case "goto add driver":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                /*case "goto add driver":
+                    Update_Vehicle obj8 = new Update_Vehicle();
+                    obj8.Show();
                     break;
                 case "goto view driver":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
-                    break;
+                    Update_Vehicle obj9 = new Update_Vehicle();
+                    obj9.Show();
+                    break;*/
                 case "goto update driver":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    Driver obj10 = new Driver();
+                    obj10.Show();
                     break;
                 case "goto add service":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    Services obj11 = new Services();
+                    obj11.Show();
                     break;
                 case "goto view service":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    view_services obj12 = new view_services();
+                    obj12.Show();
                     break;
-                case "goto update service":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
-                    break;
+                /*case "goto update service":
+                    Update_Vehicle obj13 = new Update_Vehicle();
+                    obj13.Show();
+                    break;*/
                 case "goto serivce report":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    ServiceReport obj14 = new ServiceReport();
+                    obj14.Show();
                     break;
                 case "goto add repairs":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    add_repairs obj15 = new add_repairs();
+                    obj15.Show();
                     break;
                 case "goto view repairs":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    repairs obj16  = new repairs();
+                    obj16.Show();
                     break;
-                case "goto update repairs":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
-                    break;
+                /*case "goto update repairs":
+                    Update_Vehicle obj17 = new Update_Vehicle();
+                    obj17.Show();
+                    break;*/
                 case "goto maintenance report":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    MaintenanceReport obj18 = new MaintenanceReport();
+                    obj18.Show();
                     break;
                 case "goto accident report":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    AccidentReport obj19 = new AccidentReport();
+                    obj19.Show();
                     break;
                 case "goto add insurance":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    Add_Insurnce obj20 = new Add_Insurnce();
+                    obj20.Show();
                     break;
                 case "goto view insurance":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    View_insurnce obj21 = new View_insurnce();
+                    obj21.Show();
                     break;
-                case "goto update insurance":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
-                    break;
+                /*case "goto update insurance":
+                    Update_Vehicle obj22 = new Update_Vehicle();
+                    obj22.Show();
+                    break;*/
                 case "goto add owner":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    Add_owner obj23 = new Add_owner();
+                    obj23.Show();
                     break;
                 case "goto view owner":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
+                    Owner_info obj24 = new Owner_info();
+                    obj24.Show();
                     break;
                 case "goto update owner":
-                    Update_Vehicle obj1 = new Update_Vehicle();
-                    obj1.Show();
-                    break;*/
+                    Update_ownr obj25 = new Update_ownr();
+                    obj25.Show();
+                    break;
 
             }
         }
@@ -133,7 +133,10 @@ namespace dashNew1
         public void loadCommands()
         {
             Choices command = new Choices();
-            command.Add(new string[] { "goto add vehicle", "goto view vehicle", "goto update vehicle", "goto book vehicle", "goto add customer" });
+            command.Add(new string[] { "goto add vehicle", "goto view vehicle", "goto update vehicle", "goto book vehicle", "goto add customer" , "goto view customer" , 
+                "goto update customer" , "goto view bookings", "goto add driver", "goto view driver", "goto update driver", "goto add service", "goto view service", 
+                "goto update service", "goto serivce report", "goto add repairs", "goto view repairs", "goto update repairs", "goto maintenance report", "goto accident report",
+                "goto add insurance", "goto view insurance", "goto update insurance", "goto add owner", "goto view owner", "goto update owner" });
             GrammarBuilder gbiulder = new GrammarBuilder();
             gbiulder.Append(command);
             Grammar grammar = new Grammar(gbiulder);
