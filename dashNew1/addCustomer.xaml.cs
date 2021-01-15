@@ -54,7 +54,7 @@ namespace dashNew1
                 string destinationPath = GetDestinationPath(name);
                 File.Copy(filepath, destinationPath, true);
 
-                string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','" + destinationPath + "')";
+                string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,Cus_Tel,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','"+txt_contact.Text+"','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','" + destinationPath + "')";
 
 
                 int i = db.save_update_delete(query);

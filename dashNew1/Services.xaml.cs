@@ -30,14 +30,20 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
+            
             string query = "Insert into Service values ('" + cmb_vid.Text + "','" + txt_Sid.Text + "','" + txt_Sdetails.Text + "','" + txt_milge.Text + "','" + txt_nxt.Text + "')";
 
             int i = db.save_update_delete(query);
             if (i == 1)
+            {
+                Messagebox msg = new Messagebox();
                 msg.Show();
+                add_service_form_Loaded(this, null);
+            }
+               
             else
             {
+                Messagebox msg = new Messagebox();
                 msg.errorMsg("Sorry, couldn't save your data.Please try again");
                 msg.Show();
             }
@@ -58,11 +64,39 @@ namespace dashNew1
             var i = int.Parse(number) + 1;
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_Sid.Text = newString;
+
+            txt_Sdetails.Clear();
+            txt_nxt.Clear();
+            txt_milge.Clear();
+            cmb_vid.Text = "";
         }
 
         private void txt_milge_TextChanged(object sender, TextChangedEventArgs e)
         {
-            txt_nxt.Text = (Int32.Parse(txt_milge.Text) + 2500).ToString();
+            try
+            {
+                txt_nxt.Text = (Int32.Parse(txt_milge.Text) + 2500).ToString();
+            }
+            catch(System.OverflowException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Number too large");
+                msg.Show();
+                txt_milge.Clear();
+                txt_nxt.Clear();
+            }
+            catch(System.FormatException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please input a number");
+                msg.Show();
+                txt_milge.Clear();
+                txt_nxt.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_search_Click(object sender, RoutedEventArgs e)
@@ -74,12 +108,18 @@ namespace dashNew1
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
             MainWindow obj = new MainWindow();
+            this.Close();
             obj.Show();
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_cls_Click(object sender, RoutedEventArgs e)
+        {
+            add_service_form_Loaded(this, null);
         }
     }
 }
