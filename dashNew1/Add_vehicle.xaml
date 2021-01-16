@@ -14,6 +14,8 @@
             </LinearGradientBrush>
         </Grid.Background>
 
+        <Rectangle HorizontalAlignment="Left" Height="820" Margin="25,0,0,0" VerticalAlignment="Top" Width="269" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
+
         <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="1300">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -22,8 +24,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-
-        <Rectangle HorizontalAlignment="Left" Height="820" Margin="25,0,0,0" VerticalAlignment="Top" Width="269" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
 
         <Button x:Name="btn_edit_owner"
             Style="{StaticResource MaterialDesignRaisedButton}"
