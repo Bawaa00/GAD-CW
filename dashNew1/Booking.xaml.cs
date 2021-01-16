@@ -58,17 +58,21 @@ namespace dashNew1
         }
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
-        {
-            Messagebox msg = new Messagebox();
+        { 
             string query1 = "Insert into Booking values ('" + txt_bid.Text + "','" + date_book.Text + "','" + date_pick.Text + "','" + date_lend.Text + "')";
             string query2 = "Insert into Car_Booking values ('" + cmb_cusid.Text + "','" + cmb_vid.Text + "','" + cmb_did.Text + "','" + txt_bid.Text + "')";
 
             int i = db.save_update_delete(query1);
             int j = db.save_update_delete(query2);
             if (i == 1 && j == 1)
+            {
+                Messagebox msg = new Messagebox();
                 msg.Show();
+                btn_bill.Visibility = Visibility.Visible;
+            }
             else
             {
+                Messagebox msg = new Messagebox();
                 msg.errorMsg("Sorry, couldn't save your data.Please try again");
                 msg.Show();
             }
@@ -78,19 +82,6 @@ namespace dashNew1
         {
             addCustomer obj = new addCustomer();
             obj.Show();
-        }
-
-        private void btn_Fill_Click(object sender, RoutedEventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Customer where Cus_ID='" + cmb_cusid.Text + "'");
-            txt_cusFname.Text = dt.Rows[0][1].ToString();
-            txt_cusLname.Text = dt.Rows[0][2].ToString();
-            dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
-            txt_make.Text = dt.Rows[0][2].ToString();
-            txt_model.Text = dt.Rows[0][3].ToString();
-            dt = db.getData("select * from Driver where D_ID='"+cmb_did.Text+"'");
-            txt_dname.Text = dt.Rows[0][2].ToString();
         }
 
         private void btn_view_v_Click(object sender, RoutedEventArgs e)
@@ -113,6 +104,47 @@ namespace dashNew1
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_bill_Click(object sender, RoutedEventArgs e)
+        {
+            BillPrint obj = new BillPrint();
+            obj.txt_bkid.Text = this.txt_bid.Text;
+            obj.txt_bkdate.Text = this.date_book.Text;
+            obj.txt_cusid.Text = this.cmb_cusid.Text;
+            obj.txt_fname.Text = this.txt_cusFname.Text;
+            obj.txt_sname.Text = this.txt_cusLname.Text;
+            obj.txt_did.Text = this.cmb_did.Text;
+            obj.txt_dname.Text = this.txt_dname.Text;
+            obj.txt_dt_lend.Text = this.date_lend.Text;
+            obj.txt_dt_pick.Text = this.date_pick.Text;
+            obj.txt_lplate.Text = this.cmb_vid.Text;
+            obj.txt_make.Text = this.txt_make.Text;
+            obj.txt_model.Text = this.txt_model.Text;
+            obj.Show();
+        }
+
+        private void cmb_cusid_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Customer where Cus_ID='" + cmb_cusid.Text + "'");
+            txt_cusFname.Text = dt.Rows[0][1].ToString();
+            txt_cusLname.Text = dt.Rows[0][2].ToString();
+        }
+
+        private void cmb_vid_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
+            txt_make.Text = dt.Rows[0][2].ToString();
+            txt_model.Text = dt.Rows[0][3].ToString();
+        }
+
+        private void cmb_did_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Driver where D_ID='" + cmb_did.Text + "'");
+            txt_dname.Text = dt.Rows[0][2].ToString();
         }
     }
 }

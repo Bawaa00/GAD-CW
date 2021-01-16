@@ -17,6 +17,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.Charts;
 using System.Data;
+using System.Speech.Recognition;
 
 namespace dashNew1
 {
@@ -43,6 +44,7 @@ namespace dashNew1
             //labelData();
         }
 
+        voiceCommands vc = new voiceCommands(); 
         Connect_DB db = new Connect_DB();
         public Func<ChartPoint, string> PointLabel { get; set; }
 
@@ -369,26 +371,33 @@ namespace dashNew1
         private void btn_mic_on_Click(object sender, RoutedEventArgs e)
         {
             Messagebox msg = new Messagebox();
-            btn_mic_on.Visibility = Visibility.Hidden;
-            btn_mic_off.Visibility = Visibility.Visible;
-            msg.informationMsg("Voice Command Activated");
-            msg.Show();
+            try
+            {
+                btn_mic_on.Visibility = Visibility.Hidden;
+                btn_mic_off.Visibility = Visibility.Visible;
+                vc.stopVoice();
+                msg.informationMsg("Voice Command Disabled");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_mic_off_Click(object sender, RoutedEventArgs e)
         {
             Messagebox msg = new Messagebox();
-            try 
-            { 
             btn_mic_on.Visibility = Visibility.Visible;
             btn_mic_off.Visibility = Visibility.Hidden;
-            msg.informationMsg("Voice Command Disabled");
+            vc.startVoice();
+            msg.informationMsg("Voice Command Activated");
             msg.Show();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        }
+
+        private void Form_MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            vc.loadCommands();
         }
     }
 }
