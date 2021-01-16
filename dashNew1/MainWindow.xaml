@@ -103,13 +103,6 @@
             </materialDesign:Card>
             <materialDesign:Card Margin="260,248,674.7,31" />
             <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Margin="291.94,307,707.56,60.76">
-                <lvc:PieChart.Series>
-                    <lvc:PieSeries Title="LUXUARY" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                    <lvc:PieSeries Title="PREMIUM" Values="20" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                    <lvc:PieSeries Title="SUV" Values="15" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                    <lvc:PieSeries Title="GENERAL" Values="35" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                    <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                </lvc:PieChart.Series>
             </lvc:PieChart>
             <materialDesign:Card HorizontalAlignment="Left" Margin="260,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
 

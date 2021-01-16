@@ -40,6 +40,7 @@ namespace dashNew1
             sidePanel.Width = 50;
 
             this.PieChart();
+
             labelData();
         }
 
@@ -49,6 +50,12 @@ namespace dashNew1
         public void PieChart()
         {
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle_Category");
+            SeriesCollection series = new SeriesCollection();
+            foreach(DataRow row in dt.Rows)
+                series.Add(new PieSeries() { Title = row["category"].ToString(), Values = new ChartValues<int> { Convert.ToInt32(row["Total"]) }, DataLabels = true, LabelPoint = PointLabel });
+            piechart.Series = series;
             DataContext = this;
         }
 
