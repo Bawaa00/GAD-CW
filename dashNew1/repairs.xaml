@@ -27,34 +27,6 @@
                 <DropShadowEffect Opacity="0.6" Color="#FF4F4C4C"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="62" Margin="0,0,-0.4,13.4"  VerticalAlignment="Bottom" Width="531">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
-                    <GradientStop Color="#FF4818B1" Offset="0.506"/>
-                    <GradientStop Color="#FFE2DCEE" Offset="0.962"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-
-        <Button x:Name="btn_back"
-            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4" Click="btn_back_Click">
-            <materialDesign:PackIcon
-                Kind="PagePrevious"
-                Height="24"
-                Width="24" />
-        </Button>
-
-        <Button x:Name="btn_home"
-            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4" Click="btn_home_Click">
-            <materialDesign:PackIcon
-                Kind="Home"
-                Height="24"
-                Width="24" />
-        </Button>
         <Button x:Name="btn_add"
             Style="{StaticResource MaterialDesignFloatingActionLightButton}"
             ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0" Click="btn_add_Click">
@@ -81,43 +53,7 @@
             CanUserAddRows="False"
             SelectionUnit="Cell"
             SelectionMode="Extended" Margin="0,195,41,88" />
-        <Button x:Name="btn_delete"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1142,602,22.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
-            <TextBlock
-                Text="DELETE" />
-        </Button>
-        <Button x:Name="btn_update"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1010,602,154.6,18.4" Background="#FF20A820" BorderBrush="{x:Null}">
-            <TextBlock
-                Text="UPDATE" />
-        </Button>
-        <Button x:Name="btn_lat"
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            Width="150"
-            ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,98,577.6,540.4" Click="btn_lat_Click">
-            SEARCH LATEST
-        </Button>
         <TextBlock HorizontalAlignment="Left" Margin="1149,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
-        <Button x:Name="btn_search"
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            Width="150"
-            ToolTip="Resource name: MaterialDesignRaisedAccentButton"
-            materialDesign:RippleAssist.Feedback="#DD000000" Margin="566,139,577.6,499.4" Content="SEARCH ALL" Click="btn_search_Click"/>
-        <Button x:Name="btn_view"
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="0 0 25 25"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="25,588,1127.6,32.4" Click="btn_view_Click">
-            <TextBlock
-                Text="VIEW ALL" FontSize="18" />
-        </Button>
         <ComboBox x:Name="cmb_type"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="275,84,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
@@ -128,5 +64,71 @@
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="45,84,0,0"  Text="Repair Type" VerticalAlignment="Top"
             Height="38" FontSize="22" Foreground="White"/>
+        <Grid HorizontalAlignment="Left" Height="75" Margin="1104,0,0,0" VerticalAlignment="Top" Width="167">
+            <Button x:Name="btn_home"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,92,17" Click="btn_home_Click">
+                <materialDesign:PackIcon
+                Kind="Home"
+                Height="24"
+                Width="24" />
+            </Button>
+            <Button x:Name="btn_back"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,25,17" Click="btn_back_Click">
+                <materialDesign:PackIcon
+                Kind="PagePrevious"
+                Height="24"
+                Width="24" />
+            </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="105" Margin="550,85,0,0" VerticalAlignment="Top" Width="185">
+            <Button x:Name="btn_lat"
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="150"
+            ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+            materialDesign:RippleAssist.Feedback="#DD000000" Margin="18,17,17,56" Click="btn_lat_Click" Content="SEARCH LATEST"/>
+            <Button x:Name="btn_search"
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="150"
+            ToolTip="Resource name: MaterialDesignRaisedAccentButton"
+            materialDesign:RippleAssist.Feedback="#DD000000" Margin="18,54,17,19" Content="SEARCH ALL" Click="btn_search_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="0,571,0,0" VerticalAlignment="Top" Width="1294">
+            <Rectangle HorizontalAlignment="Right" Height="62" Margin="0,0,0,18"  VerticalAlignment="Bottom" Width="531">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                        <GradientStop Color="#FF4818B1" Offset="0.506"/>
+                        <GradientStop Color="#FFE2DCEE" Offset="0.962"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Button x:Name="btn_view"
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="0 0 25 25"
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="31,23,1122,27" Click="btn_view_Click">
+                <TextBlock
+                Text="VIEW ALL" FontSize="18" />
+            </Button>
+            <Button x:Name="btn_update"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1010,27,156,23" Background="#FF20A820" BorderBrush="{x:Null}">
+                <TextBlock
+                Text="UPDATE" />
+            </Button>
+            <Button x:Name="btn_delete"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1143,27,22,23" Background="#FF20A820" BorderBrush="{x:Null}">
+                <TextBlock
+                Text="DELETE" />
+            </Button>
+        </Grid>
     </Grid>
 </Window>
