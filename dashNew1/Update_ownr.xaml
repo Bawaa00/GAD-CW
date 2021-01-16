@@ -22,14 +22,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,67.4"  VerticalAlignment="Bottom" Width="615">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
-                    <GradientStop Color="#FF4818B1" Offset="0.503"/>
-                    <GradientStop Color="#FFDFD9ED" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
 
         <Button x:Name="btn_back1"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
@@ -74,30 +66,6 @@
         <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <TextBox x:Name="txt_contact" HorizontalAlignment="Left" Height="40" Margin="330,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <Image x:Name="img_owner" HorizontalAlignment="Left" Height="300" Margin="791,125,0,0" VerticalAlignment="Top" Width="300"/>
-        <Button x:Name="btn_save"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="804,541,360.6,79.4" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
-            <TextBlock
-                Text="SAVE" />
-        </Button>
-        <Button x:Name="btn_clr"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="937,541,227.6,79.4" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_clr_Click">
-            <TextBlock
-                Text="CLEAR" />
-        </Button>
-        <Button x:Name="btn_back"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1070,541,94.6,79.4" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_back_Click">
-            <TextBlock
-                Text="BACK" />
-        </Button>
         <Button x:Name="btn_upload"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
@@ -114,5 +82,39 @@
             <TextBlock
                 Text="CHANGE" />
         </Button>
+        <Grid HorizontalAlignment="Left" Height="172" Margin="685,528,0,0" VerticalAlignment="Top" Width="615">
+            <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,35"  VerticalAlignment="Bottom" Width="615">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                        <GradientStop Color="#FF4818B1" Offset="0.503"/>
+                        <GradientStop Color="#FFDFD9ED" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Button x:Name="btn_back"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="396,68,84,54" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_back_Click">
+                <TextBlock
+                Text="BACK" />
+            </Button>
+            <Button x:Name="btn_clr"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="0"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="258,68,222,54" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_clr_Click">
+                <TextBlock
+                Text="CLEAR" />
+            </Button>
+            <Button x:Name="btn_save"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="120,68,360,54" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
+                <TextBlock
+                Text="SAVE" />
+            </Button>
+        </Grid>
     </Grid>
 </Window>
