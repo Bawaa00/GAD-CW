@@ -202,9 +202,6 @@
     <Compile Include="view_bookings.xaml.cs">
       <DependentUpon>view_bookings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View_car.xaml.cs">
-      <DependentUpon>View_car.xaml</DependentUpon>
-    </Compile>
     <Compile Include="view_customer.xaml.cs">
       <DependentUpon>view_customer.xaml</DependentUpon>
     </Compile>
@@ -315,10 +312,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view_bookings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View_car.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
