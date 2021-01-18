@@ -22,11 +22,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,95,22.6,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0">
-            <Rectangle.Effect>
-                <DropShadowEffect Opacity="0.6" Color="#FF4F4C4C"/>
-            </Rectangle.Effect>
-        </Rectangle>
         <Rectangle HorizontalAlignment="Right" Height="62" Margin="0,0,-0.4,13.4"  VerticalAlignment="Bottom" Width="531">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -35,34 +30,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-
-        <Button x:Name="btn_back"
-            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,50,611.4" Click="btn_back_Click">
-            <materialDesign:PackIcon
-                Kind="PagePrevious"
-                Height="24"
-                Width="24" />
-        </Button>
-
-        <Button x:Name="btn_home"
-            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,117.6,612.4" Click="btn_home_Click">
-            <materialDesign:PackIcon
-                Kind="Home"
-                Height="24"
-                Width="24" />
-        </Button>
-        <Button x:Name="btn_add"
-            Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1080,98,0,0" Click="btn_add_Click">
-            <materialDesign:PackIcon
-                Kind="Plus"
-                Height="30"
-                Width="30" />
-        </Button>
 
 
         <TextBlock HorizontalAlignment="Left" Margin="30,5,0,0" Height="70" Width="auto" Text="INSURANCE" VerticalAlignment="Top"
@@ -78,10 +45,45 @@
 
         <DataGrid x:Name="dg_ins"
             ItemsSource="{Binding Items2}"
-            CanUserAddRows="False"
-            SelectionUnit="Cell"
-            SelectionMode="Extended" Margin="20,191,20.6,91.4" SelectionChanged="dg_ins_SelectionChanged" />
-        <TextBlock HorizontalAlignment="Left" Margin="1149,111,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+            CanUserAddRows="False" Margin="20,191,20.6,91.4" SelectionChanged="dg_ins_SelectionChanged" />
+        <Grid HorizontalAlignment="Left" Height="181" Margin="1052,5,0,0" VerticalAlignment="Top" Width="242">
+            <Rectangle HorizontalAlignment="Right" Height="60" Margin="0,90,27,0" VerticalAlignment="Top" Width="194" Fill="#FFEAE6E6" RadiusX="30" RadiusY="30" StrokeThickness="0">
+                <Rectangle.Effect>
+                    <DropShadowEffect Opacity="0.6" Color="#FF4F4C4C"/>
+                </Rectangle.Effect>
+            </Rectangle>
+
+            <Button x:Name="btn_back"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,14,54,127" Click="btn_back_Click">
+                <materialDesign:PackIcon
+                Kind="PagePrevious"
+                Height="24"
+                Width="24" />
+            </Button>
+
+            <Button x:Name="btn_home"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,13,122,128" Click="btn_home_Click">
+                <materialDesign:PackIcon
+                Kind="Home"
+                Height="24"
+                Width="24" />
+            </Button>
+            <Button x:Name="btn_add"
+            Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+            ToolTip="MaterialDesignFloatingActionLightButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="24,93,0,0" Click="btn_add_Click">
+                <materialDesign:PackIcon
+                Kind="Plus"
+                Height="30"
+                Width="30" />
+            </Button>
+
+
+            <TextBlock HorizontalAlignment="Left" Margin="93,106,0,0" TextWrapping="Wrap" Text="ADD NEW" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        </Grid>
         <Button x:Name="btn_del"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
