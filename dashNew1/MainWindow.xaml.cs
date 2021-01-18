@@ -17,6 +17,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.Charts;
 using System.Data;
+using System.Speech.Recognition;
 
 namespace dashNew1
 {
@@ -40,15 +41,23 @@ namespace dashNew1
             sidePanel.Width = 50;
 
             this.PieChart();
-            //labelData();
+
+            labelData();
         }
 
+        voiceCommands vc = new voiceCommands(); 
         Connect_DB db = new Connect_DB();
         public Func<ChartPoint, string> PointLabel { get; set; }
 
         public void PieChart()
         {
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
+            DataTable dt = new DataTable();
+            dt = db.getData("select * from Vehicle_Category");
+            SeriesCollection series = new SeriesCollection();
+            foreach(DataRow row in dt.Rows)
+                series.Add(new PieSeries() { Title = row["category"].ToString(), Values = new ChartValues<int> { Convert.ToInt32(row["Total"]) }, DataLabels = true, LabelPoint = PointLabel });
+            piechart.Series = series;
             DataContext = this;
         }
 
@@ -369,26 +378,33 @@ namespace dashNew1
         private void btn_mic_on_Click(object sender, RoutedEventArgs e)
         {
             Messagebox msg = new Messagebox();
-            btn_mic_on.Visibility = Visibility.Hidden;
-            btn_mic_off.Visibility = Visibility.Visible;
-            msg.informationMsg("Voice Command Activated");
-            msg.Show();
+            try
+            {
+                btn_mic_on.Visibility = Visibility.Hidden;
+                btn_mic_off.Visibility = Visibility.Visible;
+                vc.stopVoice();
+                msg.informationMsg("Voice Command Disabled");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_mic_off_Click(object sender, RoutedEventArgs e)
         {
             Messagebox msg = new Messagebox();
-            try 
-            { 
             btn_mic_on.Visibility = Visibility.Visible;
             btn_mic_off.Visibility = Visibility.Hidden;
-            msg.informationMsg("Voice Command Disabled");
+            vc.startVoice();
+            msg.informationMsg("Voice Command Activated");
             msg.Show();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        }
+
+        private void Form_MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            vc.loadCommands();
         }
     }
 }

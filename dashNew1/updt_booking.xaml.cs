@@ -86,7 +86,7 @@ namespace dashNew1
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
+           
             string a = " update Booking set  BK_date = '"+date_book.Text+"', S_date='"+date_pick.Text+"', L_date='"+date_lend.Text+ "' where BK_No = '" + cmb_bid.Text + "'";
             string b = " update Car_Booking set VNO='" + cmb_vid.Text + "' , DNO = '" + cmb_did.Text + "' , BNO = '"+cmb_bid.Text+ "' where  CNO = '" + cmb_cid.Text + "'";
 
@@ -94,11 +94,14 @@ namespace dashNew1
             int y = db.save_update_delete(b);
             if (x == 1 && y == 1 )
             {
+                Messagebox msg = new Messagebox();
                 msg.informationMsg("Data Updated Successfully!");
                 msg.Show();
+                btn_bill.Visibility = Visibility.Visible;
             }
             else
             {
+                Messagebox msg = new Messagebox();
                 msg.errorMsg("Unable to Update Data.Please check again");
                 msg.Show();
             }
@@ -136,6 +139,24 @@ namespace dashNew1
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_bill_Click(object sender, RoutedEventArgs e)
+        {
+            BillPrint obj = new BillPrint();
+            obj.txt_bkid.Text = this.cmb_bid.Text;
+            obj.txt_bkdate.Text = this.date_book.Text;
+            obj.txt_cusid.Text = this.cmb_cid.Text;
+            obj.txt_fname.Text = this.txt_fname.Text;
+            obj.txt_sname.Text = this.txt_lname.Text;
+            obj.txt_did.Text = this.cmb_did.Text;
+            obj.txt_dname.Text = this.txt_dname.Text;
+            obj.txt_dt_lend.Text = this.date_lend.Text;
+            obj.txt_dt_pick.Text = this.date_pick.Text;
+            obj.txt_lplate.Text = this.cmb_vid.Text;
+            obj.txt_make.Text = this.txt_make.Text;
+            obj.txt_model.Text = this.txt_model.Text;
+            obj.Show();
         }
     }
 }

@@ -69,6 +69,7 @@ namespace dashNew1
         }
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
+
         {
             try
             {
@@ -81,6 +82,7 @@ namespace dashNew1
                 {
                     Messagebox msg = new Messagebox();
                     form_booking_Loaded(this, null);
+                    btn_bill.Visibility = Visibility.Visible;
                     msg.Show();
                 }
 
@@ -94,6 +96,7 @@ namespace dashNew1
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+
             }
             
         }
@@ -103,7 +106,6 @@ namespace dashNew1
             addCustomer obj = new addCustomer();
             obj.Show();
         }
-
 
         private void btn_view_v_Click(object sender, RoutedEventArgs e)
         {
@@ -126,6 +128,25 @@ namespace dashNew1
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+
+        private void btn_bill_Click(object sender, RoutedEventArgs e)
+        {
+            BillPrint obj = new BillPrint();
+            obj.txt_bkid.Text = this.txt_bid.Text;
+            obj.txt_bkdate.Text = this.date_book.Text;
+            obj.txt_cusid.Text = this.cmb_cusid.Text;
+            obj.txt_fname.Text = this.txt_cusFname.Text;
+            obj.txt_sname.Text = this.txt_cusLname.Text;
+            obj.txt_did.Text = this.cmb_did.Text;
+            obj.txt_dname.Text = this.txt_dname.Text;
+            obj.txt_dt_lend.Text = this.date_lend.Text;
+            obj.txt_dt_pick.Text = this.date_pick.Text;
+            obj.txt_lplate.Text = this.cmb_vid.Text;
+            obj.txt_make.Text = this.txt_make.Text;
+            obj.txt_model.Text = this.txt_model.Text;
+            obj.Show();
         }
 
         private void cmb_cusid_DropDownClosed(object sender, EventArgs e)

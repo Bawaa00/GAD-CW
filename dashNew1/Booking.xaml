@@ -132,6 +132,7 @@
             materialDesign:HintAssist.HintOpacity=".26" Width="213" Height="40" Margin="39,410,0,0" HorizontalAlignment="Left" 
             IsEditable="True" DropDownClosed="cmb_vid_DropDownClosed"/>
         <TextBox x:Name="txt_model" HorizontalAlignment="Left" Height="36" Margin="535,415,0,0" Foreground="White" FontSize="22" VerticalAlignment="Top" Width="213" BorderBrush="WhiteSmoke"/>
+
         <Rectangle HorizontalAlignment="Left" Height="123" Margin="25,484,0,0" VerticalAlignment="Top" Width="488" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -170,7 +171,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="654,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="436,0,0,28" Background="#FF61B73A" BorderBrush="#FF61B73A" Width="198" Click="btn_bill_Click">
             <TextBlock
                 Text="GENERATE BILL" FontSize="22" />
         </Button>
