@@ -44,7 +44,7 @@
                    Height="40" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,442,0,0"  Text="Next Service" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
-        <TextBox x:Name="txt_Sid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_Sid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True"/>
         <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,182,0,0"
@@ -67,7 +67,7 @@
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_cls_Click">
             <TextBlock
                 Text="CLEAR" />
         </Button>

@@ -55,27 +55,50 @@ namespace dashNew1
             var i = int.Parse(number) + 1;
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_bid.Text = newString;
+
+            cmb_cusid.Text = "";
+            cmb_vid.Text = "";
+            cmb_did.Text = "";
+            date_lend.Text = "";
+            date_pick.Text = "";
+            txt_cusFname.Clear();
+            txt_cusLname.Clear();
+            txt_dname.Clear();
+            txt_make.Clear();
+            txt_model.Clear();
         }
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
-        { 
-            string query1 = "Insert into Booking values ('" + txt_bid.Text + "','" + date_book.Text + "','" + date_pick.Text + "','" + date_lend.Text + "')";
-            string query2 = "Insert into Car_Booking values ('" + cmb_cusid.Text + "','" + cmb_vid.Text + "','" + cmb_did.Text + "','" + txt_bid.Text + "')";
 
-            int i = db.save_update_delete(query1);
-            int j = db.save_update_delete(query2);
-            if (i == 1 && j == 1)
+        {
+            try
             {
-                Messagebox msg = new Messagebox();
-                msg.Show();
-                btn_bill.Visibility = Visibility.Visible;
+                string query1 = "Insert into Booking values ('" + txt_bid.Text + "','" + date_book.Text + "','" + date_pick.Text + "','" + date_lend.Text + "')";
+                string query2 = "Insert into Car_Booking values ('" + cmb_cusid.Text + "','" + cmb_vid.Text + "','" + cmb_did.Text + "','" + txt_bid.Text + "')";
+
+                int i = db.save_update_delete(query1);
+                int j = db.save_update_delete(query2);
+                if (i == 1 && j == 1)
+                {
+                    Messagebox msg = new Messagebox();
+                    form_booking_Loaded(this, null);
+                    btn_bill.Visibility = Visibility.Visible;
+                    msg.Show();
+                }
+
+                else
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.Show();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                Messagebox msg = new Messagebox();
-                msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                msg.Show();
+                MessageBox.Show(ex.Message);
+
             }
+            
         }
 
         private void btn_addcus_Click(object sender, RoutedEventArgs e)
@@ -86,13 +109,14 @@ namespace dashNew1
 
         private void btn_view_v_Click(object sender, RoutedEventArgs e)
         {
-            View_car obj = new View_car();
+            Update_Vehicle obj = new Update_Vehicle();
             obj.Show();
         }
 
         private void btn_view_d_Click(object sender, RoutedEventArgs e)
         {
-
+            view_driver obj = new view_driver();
+            obj.Show();
         }
 
         private void btn_home_Click(object sender, RoutedEventArgs e)
@@ -105,6 +129,7 @@ namespace dashNew1
         {
             this.Close();
         }
+
 
         private void btn_bill_Click(object sender, RoutedEventArgs e)
         {

@@ -13,6 +13,18 @@
                 <GradientStop Color="White" Offset="0.718"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <Grid HorizontalAlignment="Left" Height="512" Margin="653,98,0,0" VerticalAlignment="Top" Width="641">
+            <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="388" Margin="40,33,0,0" VerticalAlignment="Top" Width="388"/>
+            <Button x:Name="btn_upload"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            Height="38" Background="#FF0EB0C0"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="450,217,23,257" BorderBrush="{x:Null}" Click="btn_upload_Click">
+                <TextBlock
+                Text="UPLOAD" />
+            </Button>
+        </Grid>
+
         <Rectangle HorizontalAlignment="Left" Height="820" Margin="25,0,0,0" VerticalAlignment="Top" Width="269" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
         <Rectangle HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="1300">
             <Rectangle.Fill>
@@ -22,34 +34,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,0,20"  VerticalAlignment="Bottom" Width="685">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
-                    <GradientStop Color="#FF4818B1" Offset="0.503"/>
-                    <GradientStop Color="#FFDFD9ED" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-
-        <Button x:Name="btn_back"
-            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,59,822" Click="btn_back_Click">
-            <materialDesign:PackIcon
-                Kind="PagePrevious"
-                Height="24"
-                Width="24" />
-        </Button>
-
-        <Button x:Name="btn_home"
-            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,125,822" Click="btn_home_Click">
-            <materialDesign:PackIcon
-                Kind="Home"
-                Height="25"
-                Width="25" />
-        </Button>
 
         <Button x:Name="btn_up_owners"
             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -179,34 +163,12 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,553,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True">
-
-        </ComboBox>
+            IsEditable="True"/>
         <ComboBox x:Name="cbox_ins"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,661,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True">
-        </ComboBox>
-
-
-        <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="388" Margin="695,125,0,0" VerticalAlignment="Top" Width="388"/>
-        <Button x:Name="btn_save"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1135,756,30,34" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
-            <TextBlock
-                Text="SAVE" />
-        </Button>
-        <Button x:Name="btn_upload"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            Height="38" Background="#FF0EB0C0"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,236,14.6,396.4" BorderBrush="{x:Null}" Click="btn_upload_Click">
-            <TextBlock
-                Text="UPLOAD" />
-        </Button>
+            IsEditable="True"/>
         <Button
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"
@@ -214,14 +176,6 @@
             ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="1111,280,14.6,352.4" BorderBrush="{x:Null}" Visibility="Hidden">
             <TextBlock
                 Text="CHANGE" />
-        </Button>
-        <Button x:Name="btn_up_ins"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="30"
-            materialDesign:ButtonAssist.CornerRadius="15"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="149,664,1030,146" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_up_ins_Click">
-            <TextBlock
-                Text="VIEW" FontSize="15"/>
         </Button>
         <ComboBox x:Name="cbox_lplate"
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
@@ -232,27 +186,74 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="Auto" Background="#FF0EB0C0"
             materialDesign:ButtonAssist.CornerRadius="10"
-            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="607,119,646,681" BorderBrush="{x:Null}" Visibility="Hidden">
-        </Button>
+            ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="607,119,646,681" BorderBrush="{x:Null}" Visibility="Hidden"/>
         <DatePicker x:Name="txt_lndate" HorizontalAlignment="Left" Margin="330,607,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
         <DatePicker x:Name="txt_sdate" HorizontalAlignment="Left" Margin="330,715,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
         <DatePicker x:Name="txt_exdate" HorizontalAlignment="Left" Margin="330,769,0,0" VerticalAlignment="Top" Height="38" Width="250" FontSize="21"/>
-        <Button x:Name="btn_up_owner"
+        <Grid HorizontalAlignment="Left" Height="146" Margin="149,553,0,0" VerticalAlignment="Top" Width="115">
+            <Button x:Name="btn_up_owner"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="30"
             materialDesign:ButtonAssist.CornerRadius="15"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="149,553,1030,256" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_up_owner_Click">
-            <TextBlock
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="0,0,0,116" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_up_owner_Click">
+                <TextBlock
                 Text="VIEW" FontSize="15"/>
-        </Button>
-        <Button x:Name="btn_del"
+            </Button>
+            <Button x:Name="btn_up_ins"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="30"
+            materialDesign:ButtonAssist.CornerRadius="15"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="0,112,0,4" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_up_ins_Click">
+                <TextBlock
+                Text="VIEW" FontSize="15"/>
+            </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="110" Margin="607,731,0,0" VerticalAlignment="Top" Width="687">
+            <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,2,25"  VerticalAlignment="Bottom" Width="685">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
+                        <GradientStop Color="#FF4818B1" Offset="0.503"/>
+                        <GradientStop Color="#FFDFD9ED" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="956,756,209,33" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_del_Click">
-            <TextBlock
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="526,24,32,36" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
+                <TextBlock
+                Text="SAVE" />
+            </Button>
+            <Button x:Name="btn_del"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}"
+            Height="50"
+            materialDesign:ButtonAssist.CornerRadius="25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="355,24,203,36" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_del_Click">
+                <TextBlock
                 Text="DELETE" />
-        </Button>
+            </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="80" Margin="1111,0,0,0" VerticalAlignment="Top" Width="142">
+            <Button x:Name="btn_home"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,80,19" Click="btn_home_Click">
+                <materialDesign:PackIcon
+                Kind="Home"
+                Height="25"
+                Width="25" />
+            </Button>
+            <Button x:Name="btn_back"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,21,18,19" Click="btn_back_Click">
+                <materialDesign:PackIcon
+                Kind="PagePrevious"
+                Height="24"
+                Width="24" />
+            </Button>
+        </Grid>
 
     </Grid>
 </Window>

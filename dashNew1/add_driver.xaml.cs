@@ -40,17 +40,22 @@ namespace dashNew1
 
             string a = "insert into  Driver values  ('" + txt_Did.Text + "','" + txt_Lnum.Text + "','" + txt_Name.Text + "','" + txt_Tp.Text + "','" + txt_Address.Text + "','" + filepath + "')";
 
-           
-
-            File.Copy(filepath, destinationPath, true);
+          
+           File.Copy(filepath, destinationPath, true);
             
 
             int line = db.save_update_delete(a);
             if (line == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
+            {
+                Messagebox msg = new Messagebox();
+                add_driver1_Loaded(this, null);
+                msg.Show();   
+            }
             else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Unable to save data. Please try again");          
+            }
         }
 
         private String GetDestinationPath(string filename)
@@ -83,13 +88,7 @@ namespace dashNew1
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
         {
-            txt_Did.Clear();
-            txt_Lnum.Clear();
-            txt_Name.Clear();
-            txt_Tp.Clear();
-            txt_Address.Clear();
-            imd_addDriver.Source = null;
-
+            add_driver1_Loaded(this,null);
         }
 
         private void btn_home_Click(object sender, RoutedEventArgs e)
@@ -113,6 +112,11 @@ namespace dashNew1
             var i = int.Parse(number) + 1;
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_Did.Text = newString;
+            txt_Lnum.Clear();
+            txt_Name.Clear();
+            txt_Tp.Clear();
+            txt_Address.Clear();
+            imd_addDriver.Source = null;
         }
     }
 }

@@ -54,6 +54,7 @@ namespace dashNew1
 
         private void btn_del_Click(object sender, RoutedEventArgs e)
         {
+            id = dg_ins.SelectedValue.ToString();
            int i = db.save_update_delete("delete from Insurance where I_ID = '" + id + "'");
             if (i == 1)
                 MessageBox.Show("Data Deleted Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -64,7 +65,7 @@ namespace dashNew1
 
         private void dg_ins_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            id = dg_ins.SelectedValue.ToString();
+          
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)

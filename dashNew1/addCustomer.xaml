@@ -103,7 +103,7 @@
         </TextBlock>
         <TextBlock
             Foreground="White" FontSize="21" VerticalAlignment="Top" HorizontalAlignment="Left"
-            Margin="120,387,0,0" >
+            Margin="117,465,0,0" >
             <InlineUIContainer>
                         <materialDesign:PackIcon Kind="ChevronRight" Margin="3" Height="25" Width="25"
                             Foreground="White"/>
@@ -111,7 +111,7 @@
         </TextBlock>
         <TextBlock
             Foreground="White" FontSize="21" VerticalAlignment="Top" HorizontalAlignment="Left"
-            Margin="120,447,0,0" >
+            Margin="117,525,0,0" >
             <InlineUIContainer>
                         <materialDesign:PackIcon Kind="ChevronRight" Margin="3" Height="25" Width="25"
                             Foreground="White"/>
@@ -120,56 +120,58 @@
         <Button x:Name="btn_submit"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-            materialDesign:ButtonAssist.CornerRadius="15 0 0 15" Margin="125,0,0,85"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Click="btn_submit_Click">
+            materialDesign:ButtonAssist.CornerRadius="15 0 0 15" Margin="476,0,0,22"
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF20A820" Click="btn_submit_Click" Grid.Column="1" Foreground="White" BorderBrush="{x:Null}">
             <TextBlock
                 Text="SUBMIT" FontSize="21" FontWeight="Heavy" Foreground="White" />
         </Button>
         <Button x:Name="btn_cls"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-            materialDesign:ButtonAssist.CornerRadius="0 0 0 0" Margin="309,0,0,85"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Click="btn_cls_Click" Grid.ColumnSpan="2">
+            materialDesign:ButtonAssist.CornerRadius="0 15 15 0" Margin="660,0,0,22"
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF20A820" Click="btn_cls_Click" Grid.Column="1" Foreground="White" BorderBrush="{x:Null}">
             <TextBlock
                 Text="CLEAR" FontSize="21" FontWeight="Heavy" Foreground="White" />
         </Button>
-        <Button x:Name="btn_exit"
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            Height="50" Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-            materialDesign:ButtonAssist.CornerRadius="0 15 15 0" Margin="76.634,0,0,85"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF039FBD" Grid.Column="1" Click="btn_exit_Click">
-            <TextBlock
-                Text="EXIT" FontSize="21" FontWeight="Heavy" Foreground="White" />
-        </Button>
+
         <TextBox x:Name="txt_id" 
-                 HorizontalAlignment="Left" Height="32" Margin="3.634,147,0,0" TextWrapping="Wrap" Foreground="White"
-                 VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
+                 HorizontalAlignment="Left" Height="36" Margin="3.634,147,0,0" TextWrapping="Wrap" Foreground="White"
+                 VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1" IsReadOnly="True"/>
         <TextBox x:Name="txt_fName" 
-            HorizontalAlignment="Left" Height="32" Margin="3.634,207,0,0" TextWrapping="Wrap" Foreground="White"
+            HorizontalAlignment="Left" Height="36" Margin="3.634,207,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_lName" 
-            HorizontalAlignment="Left" Height="32" Margin="3.634,267,0,0" TextWrapping="Wrap" Foreground="White"
+            HorizontalAlignment="Left" Height="36" Margin="3.634,267,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_address" 
-            HorizontalAlignment="Left" Height="32" Margin="3.634,327,0,0" TextWrapping="Wrap" Foreground="White"
+            HorizontalAlignment="Left" Height="112" Margin="4,327,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_LicNum" 
-            HorizontalAlignment="Left" Height="32" Margin="3.634,387,0,0" TextWrapping="Wrap" Foreground="White"
+            HorizontalAlignment="Left" Height="36" Margin="1,465,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <TextBox x:Name="txt_NIC" 
-            HorizontalAlignment="Left" Height="32" Margin="3.634,447,0,0" TextWrapping="Wrap" Foreground="White"
+            HorizontalAlignment="Left" Height="36" Margin="0,525,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
         <Image x:Name="img_cus" HorizontalAlignment="Right" Height="300" Margin="0,100,100,0" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
         <Button x:Name="btn_upload"
             Style="{StaticResource MaterialDesignRaisedLightButton}"
             Height="50" Width="160" VerticalAlignment="Top" HorizontalAlignment="Right"
             materialDesign:ButtonAssist.CornerRadius="5"
-            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,162,0" Click="btn_upload_Click" Grid.Column="1">
+            ToolTip="MaterialDesignRaisedLightButton with Round Corners" Margin="0,440,162,0" Click="btn_upload_Click" Grid.Column="1" BorderBrush="{x:Null}">
             <TextBlock
                 Text="UPLOAD" FontSize="18" />
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="240,49,0,0" TextWrapping="Wrap" Text="New Customer" VerticalAlignment="Top"
                    FontSize="50" Foreground="White" Opacity="0.6" Grid.ColumnSpan="2"/>
+        <TextBlock
+            Foreground="White" FontSize="21" VerticalAlignment="Top" HorizontalAlignment="Left"
+            Margin="117,583,0,0" Width="137" ><InlineUIContainer>
+                <materialDesign:PackIcon Kind="ChevronRight" Margin="3" Height="25" Width="25"
+                    Foreground="White"/>
+            </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="20" Text=" Contact"/></TextBlock>
+        <TextBox x:Name="txt_contact" 
+            HorizontalAlignment="Left" Height="36" Margin="1,583,0,0" TextWrapping="Wrap" Foreground="White"
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" Grid.Column="1"/>
 
 
 

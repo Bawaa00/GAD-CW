@@ -19,25 +19,6 @@
         <Ellipse Fill="#FF320B86" HorizontalAlignment="Left" Height="60" Margin="47.827,562,0,0" Stroke="#FF320B86" StrokeThickness="2" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2" Grid.Column="1"/>
         <Rectangle Fill="#FF320B86" HorizontalAlignment="Right" Height="670" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="350" Grid.Column="3"/>
 
-        <Button x:Name="btn_back"
-            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,11.6,620.4" Grid.Column="3" Click="btn_back_Click">
-            <materialDesign:PackIcon
-                Kind="PagePrevious"
-                Height="24"
-                Width="24" />
-        </Button>
-        <Button x:Name="btn_home"
-            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,10,68.6,620.4" Grid.Column="3" Click="btn_home_Click">
-            <materialDesign:PackIcon
-                Kind="Home"
-                Height="24"
-                Width="24" />
-        </Button>
-
         <TextBlock HorizontalAlignment="Left" Margin="39.827,85,0,0" TextWrapping="Wrap" Text="Driver ID" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium" Grid.ColumnSpan="2" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="39.827,140,0,0" TextWrapping="Wrap" Text="License No." VerticalAlignment="Top"
@@ -56,24 +37,6 @@
             FontSize="21" Grid.Column="3"/>
         <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="33" Margin="23.2,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
             FontSize="21" Grid.Column="3"/>
-
-
-        <Button x:Name="btn_Update"
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            Height="50" Width="160"
-            materialDesign:ButtonAssist.CornerRadius="25 25 0 0"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="466.2,445,90.6,175.4" Click="btn_Update_Click" Grid.Column="3">
-            <TextBlock
-                Text="UPDATE" FontSize="21" FontWeight="Bold" />
-        </Button>
-        <Button x:Name="btn_Delete"
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            Height="50" Width="160"
-            materialDesign:ButtonAssist.CornerRadius="0 0 25 25"
-            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="466.2,498,90.6,122.4" Click="btn_Delete_Click" Grid.Column="3">
-            <TextBlock
-                Text="DELETE" FontSize="21" FontWeight="Bold" />
-        </Button>
         <Button x:Name="btn_cancel"
             Style="{StaticResource MaterialDesignFlatButton}"
             ToolTip="MaterialDesignFlatButton" Width="100" Margin="23,361,592,276" BorderBrush="#FF320B86" Click="btn_cancel_Click" Grid.Column="3">
@@ -87,6 +50,44 @@
         <Image x:Name="img" HorizontalAlignment="Right" Height="292" Margin="0,90,25,0" VerticalAlignment="Top" Width="300" Grid.Column="3"/>
         <Button x:Name="btn_upload" Content="Browse" HorizontalAlignment="Left" Margin="507.2,387,0,0" VerticalAlignment="Top" Width="84" Click="btn_upload_Click" Grid.Column="3"/>
         <ComboBox x:Name="cbox_did" HorizontalAlignment="Left" Margin="23,85,0,0" VerticalAlignment="Top" Width="220" Grid.Column="3" DropDownClosed="cbox_did_DropDownClosed" FontSize="20"/>
+        <Grid Grid.Column="3" HorizontalAlignment="Left" Height="48" Margin="602,5,0,0" VerticalAlignment="Top" Width="104">
+            <Button x:Name="btn_home"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,59,3" Click="btn_home_Click">
+                <materialDesign:PackIcon
+                Kind="Home"
+                Height="24"
+                Width="24" />
+            </Button>
+            <Button x:Name="btn_back"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            HorizontalAlignment="Right"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,5,4,3" Click="btn_back_Click">
+                <materialDesign:PackIcon
+                Kind="PagePrevious"
+                Height="24"
+                Width="24" />
+            </Button>
+        </Grid>
+        <Grid Grid.Column="3" HorizontalAlignment="Left" Height="123" Margin="455,433,0,0" VerticalAlignment="Top" Width="182">
+            <Button x:Name="btn_Update"
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Height="50" Width="160"
+            materialDesign:ButtonAssist.CornerRadius="25 25 0 0"
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="10,10,12,63" Click="btn_Update_Click">
+                <TextBlock
+                Text="UPDATE" FontSize="21" FontWeight="Bold" />
+            </Button>
+            <Button x:Name="btn_Delete"
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Height="50" Width="160"
+            materialDesign:ButtonAssist.CornerRadius="0 0 25 25"
+            ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Margin="10,63,12,10" Click="btn_Delete_Click">
+                <TextBlock
+                Text="DELETE" FontSize="21" FontWeight="Bold" />
+            </Button>
+        </Grid>
 
 
     </Grid>

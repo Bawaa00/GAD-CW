@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
         Title="Add Insurnce" Height="611.493" Width="797.6" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Add_Insurance_Form_Loaded">
-    <Grid>
+    <Grid Margin="0,0,0,0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                 <GradientStop Color="#FFDFD9ED" Offset="0.167"/>
@@ -43,7 +43,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="45,356,0,0"  Text="Address" VerticalAlignment="Top"
                    Height="39" FontSize="22" Foreground="White"/>
 
-        <TextBox x:Name="txt_iid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_iid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True"/>
         <TextBox x:Name="txt_org" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <TextBox x:Name="txt_tel" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
@@ -61,7 +61,7 @@
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_cls_Click">
             <TextBlock
                 Text="CLEAR" />
         </Button>
@@ -76,8 +76,8 @@
         </Button>
         <Button x:Name="btn_back"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-            HorizontalAlignment="Right"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,18,44.2,523.6" Click="btn_back_Click">
+            HorizontalAlignment="Right" VerticalAlignment="Top"
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,44,0" Click="btn_back_Click" >
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"

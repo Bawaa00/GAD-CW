@@ -75,6 +75,7 @@ namespace dashNew1
                 {   
                      Messagebox msg = new Messagebox();
                      msg.Show();
+                     owner_form_Loaded(this, null);
                 }
                 else
                 {
@@ -96,12 +97,7 @@ namespace dashNew1
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
         {
-            txt_oid.Clear();
-            txt_onic.Clear();
-            txt_oname.Clear();
-            txt_address.Clear();
-            txt_contact.Clear();
-            img_owner.Source = null;
+            owner_form_Loaded(this, null);
         }
 
         private void owner_form_Loaded(object sender, RoutedEventArgs e)
@@ -114,6 +110,11 @@ namespace dashNew1
             var i = int.Parse(number) + 1;
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_oid.Text = newString;
+            txt_onic.Clear();
+            txt_oname.Clear();
+            txt_address.Clear();
+            txt_contact.Clear();
+            img_owner.Source = null;
         }
 
         private void btn_home_Click(object sender, RoutedEventArgs e)

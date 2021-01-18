@@ -54,13 +54,14 @@ namespace dashNew1
                 string destinationPath = GetDestinationPath(name);
                 File.Copy(filepath, destinationPath, true);
 
-                string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','" + destinationPath + "')";
+                string query = "Insert into Customer (Cus_ID,F_Name,S_name,Cus_address,Cus_Tel,L_Num,NIC,Cus_Path) values ('" + txt_id.Text + "','" + txt_fName.Text + "','" + txt_lName.Text + "','" + txt_address.Text + "','"+txt_contact.Text+"','" + txt_LicNum.Text + "','" + txt_NIC.Text + "','" + destinationPath + "')";
 
 
                 int i = db.save_update_delete(query);
                 if (i == 1)
                     { 
                       Messagebox msg = new Messagebox();
+                      Add_Customer_Loaded(this, null);
                       msg.Show();
                     }
                 else
@@ -97,12 +98,7 @@ namespace dashNew1
 
         private void btn_cls_Click(object sender, RoutedEventArgs e)
         {
-            txt_id.Clear();
-            txt_fName.Clear();
-            txt_lName.Clear();
-            txt_address.Clear();
-            txt_LicNum.Clear();
-            img_cus.Source = null;
+            Add_Customer_Loaded(this, null);
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
@@ -131,6 +127,14 @@ namespace dashNew1
             var i = int.Parse(number) + 1;
             var newString = prefix + i.ToString(new string('0', number.Length));
             txt_id.Text = newString;
+
+            txt_fName.Clear();
+            txt_lName.Clear();
+            txt_address.Clear();
+            txt_NIC.Clear();
+            txt_LicNum.Clear();
+            txt_contact.Clear();
+            img_cus.Source = null;
         }
     }
 }
