@@ -34,27 +34,38 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            string name = System.IO.Path.GetFileName(filepath);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(filepath, destinationPath, true);
-
-            string a = "insert into  Driver values  ('" + txt_Did.Text + "','" + txt_Lnum.Text + "','" + txt_Name.Text + "','" + txt_Tp.Text + "','" + txt_Address.Text + "','" + filepath + "')";
-
-          
-           File.Copy(filepath, destinationPath, true);
-            
-
-            int line = db.save_update_delete(a);
-            if (line == 1)
+            try
             {
-                Messagebox msg = new Messagebox();
-                add_driver1_Loaded(this, null);
-                msg.Show();   
+                string name = System.IO.Path.GetFileName(filepath);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(filepath, destinationPath, true);
+
+                string a = "insert into  Driver values  ('" + txt_Did.Text + "','" + txt_Lnum.Text + "','" + txt_Name.Text + "','" + txt_Tp.Text + "','" + txt_Address.Text + "','" + filepath + "')";
+
+
+                File.Copy(filepath, destinationPath, true);
+
+
+                int line = db.save_update_delete(a);
+                if (line == 1)
+                {
+                    Messagebox msg = new Messagebox();
+                    add_driver1_Loaded(this, null);
+                    msg.Show();
+                }
+                else
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Unable to save data. Please try again");
+                }
             }
-            else
+            catch (ArgumentNullException ex)
             {
-                Messagebox msg = new Messagebox();
-                msg.errorMsg("Unable to save data. Please try again");          
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

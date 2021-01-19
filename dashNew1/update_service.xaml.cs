@@ -34,17 +34,28 @@ namespace dashNew1
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            string a = " update Service set  VNo= '" + txt_vehiclenum.Text + "', s_details = '" + txt_Sdetails.Text + "', " +
-                                                  " S_milage=  '" + txt_milge.Text + "', Nxt_milage= '" + txt_nxt.Text + "' where S_ID  = '" + cmb_updateser.Text + "'";
+            try
+            {
+                string a = " update Service set  VNo= '" + txt_vehiclenum.Text + "', s_details = '" + txt_Sdetails.Text + "', " +
+                                                      " S_milage=  '" + txt_milge.Text + "', Nxt_milage= '" + txt_nxt.Text + "' where S_ID  = '" + cmb_updateser.Text + "'";
 
 
 
-            int line = db.save_update_delete(a);
-            if (line == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                int line = db.save_update_delete(a);
+                if (line == 1)
+                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                else
+                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void UPDATE_SERVICE_Loaded(object sender, RoutedEventArgs e)
