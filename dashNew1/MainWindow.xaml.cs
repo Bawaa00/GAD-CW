@@ -40,7 +40,8 @@ namespace dashNew1
             panelWidth = sidePanel.Width;
             sidePanel.Width = 50;
 
-            this.PieChart();
+            //this.PieChart();
+
 
            // labelData();
         }
@@ -49,7 +50,7 @@ namespace dashNew1
         Connect_DB db = new Connect_DB();
         public Func<ChartPoint, string> PointLabel { get; set; }
 
-        public void PieChart()
+       /* public void PieChart()
         {
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
             DataTable dt = new DataTable();
@@ -59,7 +60,7 @@ namespace dashNew1
                 series.Add(new PieSeries() { Title = row["category"].ToString(), Values = new ChartValues<int> { Convert.ToInt32(row["Total"]) }, DataLabels = true, LabelPoint = PointLabel });
             piechart.Series = series;
             DataContext = this;
-        }
+        }*/
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -83,6 +84,7 @@ namespace dashNew1
 
             }
         }
+
 
        /* public void labelData()
         {

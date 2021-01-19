@@ -77,11 +77,23 @@ namespace dashNew1
 
         private void btn_view_Click(object sender, RoutedEventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select Cus_ID as 'CUSTOMER ID', Customer.F_name as 'FIRST NAME', Customer.S_name as'SURENAME', Customer.Cus_address as 'ADDRESS', Customer.Cus_Tel as 'TELEPHONE', Customer.NIC as 'NIC', Car_Booking.BNO as 'BOOKING ID'" +
-                " from Car_Booking,Booking,Vehicle,Driver,Customer" +
-                " where BK_No = BNO and CNO = Cus_ID and VNO = L_Plate and DNO = D_ID;");
-            dg_owners.ItemsSource = dt.DefaultView;
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = db.getData("select Cus_ID as 'CUSTOMER ID', Customer.F_name as 'FIRST NAME', Customer.S_name as'SURENAME', Customer.Cus_address as 'ADDRESS', Customer.Cus_Tel as 'TELEPHONE', Customer.NIC as 'NIC', Car_Booking.BNO as 'BOOKING ID'" +
+                    " from Car_Booking,Booking,Vehicle,Driver,Customer" +
+                    " where BK_No = BNO and CNO = Cus_ID and VNO = L_Plate and DNO = D_ID;");
+                dg_owners.ItemsSource = dt.DefaultView;
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)

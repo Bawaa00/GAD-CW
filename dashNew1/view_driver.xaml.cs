@@ -64,11 +64,22 @@ namespace dashNew1
 
         private void CMB_DNAME_DropDownClosed(object sender, EventArgs e)
         {
-            CMB_DID.Text = "";
-            DataTable dt = new DataTable();
-            dt = db.getData("select D_ID as 'DRIVER ID', D_name as 'NAME',Driver.L_Num as'LICENS NUMBER',Driver.Tel as 'TELEPHONE',Driver.Address as 'ADDRESS'" +
-                " from Driver where D_name = '" + CMB_DNAME.Text + "'");
-            dg_owners.ItemsSource = dt.DefaultView;
+            try
+            {
+                CMB_DID.Text = "";
+                DataTable dt = new DataTable();
+                dt = db.getData("select D_ID as 'DRIVER ID', D_name as 'NAME',Driver.L_Num as'LICENS NUMBER',Driver.Tel as 'TELEPHONE',Driver.Address as 'ADDRESS'" +
+                    " from Driver where D_name = '" + CMB_DNAME.Text + "'");
+                dg_owners.ItemsSource = dt.DefaultView;
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_view_Click(object sender, RoutedEventArgs e)

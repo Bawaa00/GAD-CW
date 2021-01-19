@@ -67,24 +67,35 @@ namespace dashNew1
 
         private void BTN_UPDATE_Click(object sender, RoutedEventArgs e)
         {
-            string name = System.IO.Path.GetFileName(filepath);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(filepath, destinationPath, true);
+            try
+            {
+                string name = System.IO.Path.GetFileName(filepath);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(filepath, destinationPath, true);
 
-            string a = " update Customer set  F_name= '" + TXT_FIRSTNAME.Text + "', S_name = '" + TXT_LASTNAME.Text + "', " +
-                            "Cus_address=  '" + TXT_ADDRESS.Text + "', L_Num= '" + TXT_LICENNUM.Text + "',NIC= '" + TXT_NIC.Text + "',Cus_Path = '" + filepath + "' where Cus_ID  = '" + CMB_UPDATE.Text + "'";
+                string a = " update Customer set  F_name= '" + TXT_FIRSTNAME.Text + "', S_name = '" + TXT_LASTNAME.Text + "', " +
+                                "Cus_address=  '" + TXT_ADDRESS.Text + "', L_Num= '" + TXT_LICENNUM.Text + "',NIC= '" + TXT_NIC.Text + "',Cus_Path = '" + filepath + "' where Cus_ID  = '" + CMB_UPDATE.Text + "'";
 
 
 
-            File.Copy(filepath, destinationPath, true);
-            
+                File.Copy(filepath, destinationPath, true);
 
-            int line = db.save_update_delete(a);
-            if (line == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                int line = db.save_update_delete(a);
+                if (line == 1)
+                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                else
+                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private String GetDestinationPath(string filename)
