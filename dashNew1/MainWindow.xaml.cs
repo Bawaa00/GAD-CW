@@ -42,7 +42,8 @@ namespace dashNew1
 
             //this.PieChart();
 
-            //labelData();
+
+           // labelData();
         }
 
         voiceCommands vc = new voiceCommands(); 
@@ -84,7 +85,8 @@ namespace dashNew1
             }
         }
 
-        /*public void labelData()
+
+       /* public void labelData()
         {
             string path;
             DataTable dt = new DataTable();
