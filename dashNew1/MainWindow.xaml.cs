@@ -17,7 +17,6 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.Charts;
 using System.Data;
-using System.Speech.Recognition;
 
 namespace dashNew1
 {
@@ -26,67 +25,57 @@ namespace dashNew1
     /// </summary>
     public partial class MainWindow : Window
     {
-        DispatcherTimer timer;
-        double panelWidth;
-        Brush tab;
-        bool hidden = true;
+        //DispatcherTimer timer;
+        //double panelWidth;
+        //Brush tab;
+        //bool hidden = true;
         public MainWindow()
         {
             InitializeComponent();
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(10);
-            timer.Tick += Timer_Tick;
+            /* timer = new DispatcherTimer();
+             timer.Interval = new TimeSpan(10);
+             timer.Tick += Timer_Tick;
 
-            panelWidth = sidePanel.Width;
-            sidePanel.Width = 50;
+             panelWidth = sidePanel.Width;
+             sidePanel.Width = 50;*/
 
-            //this.PieChart();
-
-
-           // labelData();
+            this.PieChart();
+            //labelData();
         }
 
-        voiceCommands vc = new voiceCommands(); 
         Connect_DB db = new Connect_DB();
         public Func<ChartPoint, string> PointLabel { get; set; }
 
-       /* public void PieChart()
+        public void PieChart()
         {
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Vehicle_Category");
-            SeriesCollection series = new SeriesCollection();
-            foreach(DataRow row in dt.Rows)
-                series.Add(new PieSeries() { Title = row["category"].ToString(), Values = new ChartValues<int> { Convert.ToInt32(row["Total"]) }, DataLabels = true, LabelPoint = PointLabel });
-            piechart.Series = series;
             DataContext = this;
-        }*/
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            if (hidden == true)
-            {
-                sidePanel.Width += 1;
-                if (sidePanel.Width >= panelWidth)
-                {
-                    timer.Stop();
-                    hidden = false;
-                }
-            }
-            else
-            {
-                sidePanel.Width -= 1;
-                if (sidePanel.Width <= 50)
-                {
-                    timer.Stop();
-                    hidden = true;
-                }
-
-            }
         }
 
+        /*  private void Timer_Tick(object sender, EventArgs e)
+          {
+              if (hidden == true)
+              {
+                  sidePanel.Width += 1;
+                  if (sidePanel.Width >= panelWidth)
+                  {
+                      timer.Stop();
+                      hidden = false;
+                  }
+              }
+              else
+              {
+                  sidePanel.Width -= 1;
+                  if (sidePanel.Width <= 50)
+                  {
+                      timer.Stop();
+                      hidden = true;
+                  }
 
-       /* public void labelData()
+              }
+          }*/
+
+        public void labelData()
         {
             string path;
             DataTable dt = new DataTable();
@@ -112,15 +101,15 @@ namespace dashNew1
             image.UriSource = new Uri(path);
             image.EndInit();
             img_vehicle.Source = image;
-        }*/
-       
-        private void SidePanel_MouseDown(object sender, MouseButtonEventArgs e)
+        }
+
+        /*private void SidePanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
-        }
+        }*/
 
         /*private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -129,10 +118,10 @@ namespace dashNew1
 
 
 
-        private void collapse(object sender, RoutedEventArgs e)
+        /*private void collapse(object sender, RoutedEventArgs e)
         {
             timer.Start();
-        }
+        }*/
 
         private void Cars_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -347,7 +336,7 @@ namespace dashNew1
         {
             view_driver obj = new view_driver();
             obj.Show();
-                
+
         }
 
         private void btn_v_cus_Click(object sender, RoutedEventArgs e)
@@ -375,16 +364,24 @@ namespace dashNew1
             obj.Show();
         }
 
-       
+
 
         private void btn_mic_on_Click(object sender, RoutedEventArgs e)
         {
             Messagebox msg = new Messagebox();
+            btn_mic_on.Visibility = Visibility.Hidden;
+            btn_mic_off.Visibility = Visibility.Visible;
+            msg.informationMsg("Voice Command Activated");
+            msg.Show();
+        }
+
+        private void btn_mic_off_Click(object sender, RoutedEventArgs e)
+        {
+            Messagebox msg = new Messagebox();
             try
             {
-                btn_mic_on.Visibility = Visibility.Hidden;
-                btn_mic_off.Visibility = Visibility.Visible;
-                vc.stopVoice();
+                btn_mic_on.Visibility = Visibility.Visible;
+                btn_mic_off.Visibility = Visibility.Hidden;
                 msg.informationMsg("Voice Command Disabled");
                 msg.Show();
             }
@@ -394,19 +391,36 @@ namespace dashNew1
             }
         }
 
-        private void btn_mic_off_Click(object sender, RoutedEventArgs e)
+        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
-            btn_mic_on.Visibility = Visibility.Visible;
-            btn_mic_off.Visibility = Visibility.Hidden;
-            vc.startVoice();
-            msg.informationMsg("Voice Command Activated");
-            msg.Show();
+            ButtonOpenMenu.Visibility = Visibility.Visible;
+            ButtonCloseMenu.Visibility = Visibility.Collapsed;
         }
 
-        private void Form_MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
-            vc.loadCommands();
+            ButtonOpenMenu.Visibility = Visibility.Collapsed;
+            ButtonCloseMenu.Visibility = Visibility.Visible;
+        }
+
+        private void d_opt1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void d_opt2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void s_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void r_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
