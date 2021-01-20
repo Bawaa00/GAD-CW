@@ -254,8 +254,8 @@
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
             <TextBlock x:Name="c_opt1" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt1_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="Add Customer"/></TextBlock>
-            <TextBlock x:Name="c_opt2" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="View Customer"/></TextBlock>
-            <TextBlock x:Name="c_opt3" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="Search Customer"/></TextBlock>
+            <TextBlock x:Name="c_opt2" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center" MouseDown="c_opt2_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="View Customer"/></TextBlock>
+            <TextBlock x:Name="c_opt3" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center" MouseDown="c_opt3_MouseDown"><LineBreak/><Run BaselineAlignment="Center" FontWeight="Medium" FontSize="18" Text="Search Customer"/></TextBlock>
             <TextBlock x:Name="c_opt4" Height="54" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="c_opt4_MouseDown" Foreground="#DDFFFFFF" Width="170" TextAlignment="Center"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="View Bookings"
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>

@@ -40,7 +40,7 @@ namespace dashNew1
              sidePanel.Width = 50;*/
 
             this.PieChart();
-            //labelData();
+            labelData();
         }
 
         Connect_DB db = new Connect_DB();
@@ -122,6 +122,8 @@ namespace dashNew1
         {
             timer.Start();
         }*/
+
+        //Side Panel Buttons
 
         private void Cars_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -222,6 +224,8 @@ namespace dashNew1
             repair_option_panel.Visibility = Visibility.Hidden;
         }
 
+        //Vehicle Sub Menu
+
         private void v_opt1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Add_vehicle obj = new Add_vehicle();
@@ -236,9 +240,63 @@ namespace dashNew1
             obj.Show();
         }
 
+        private void v_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Updt_vehicle obj = new Updt_vehicle();
+            this.Close();
+            obj.Show();
+        }
+
+        private void v_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Booking obj = new Booking();
+            this.Close();
+            obj.Show();
+        }
+
+        //Customer Sub Menu
+
         private void c_opt1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             addCustomer obj = new addCustomer();
+            this.Close();
+            obj.Show();
+        }
+
+        private void c_opt2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            view_customer obj = new view_customer();
+            this.Close();
+            obj.Show();
+        }
+
+        private void c_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            update_customer obj = new update_customer();
+            this.Close();
+            obj.Show();
+        }
+
+        private void c_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            view_bookings obj = new view_bookings();
+            this.Close();
+            obj.Show();
+        }
+
+        //Driver Sub Menu
+
+        private void d_opt1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            add_driver obj = new add_driver();
+            this.Close();
+            obj.Show();
+        }
+
+
+        private void d_opt2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            view_driver obj = new view_driver();
             this.Close();
             obj.Show();
         }
@@ -249,6 +307,8 @@ namespace dashNew1
             this.Close();
             obj.Show();
         }
+
+        //Service Sub Menu
 
         private void s_opt1_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -264,6 +324,23 @@ namespace dashNew1
             obj.Show();
         }
 
+        private void s_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            update_service obj = new update_service();
+            this.Close();
+            obj.Show();
+        }
+
+
+
+        private void s_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ServiceReport obj = new ServiceReport();
+            obj.Show();
+        }
+
+        //Repair Sub Menu
+
         private void r_opt1_MouseDown(object sender, MouseButtonEventArgs e)
         {
             add_repairs obj = new add_repairs();
@@ -278,27 +355,27 @@ namespace dashNew1
             obj.Show();
         }
 
-        private void v_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+
+        private void r_opt3_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Booking obj = new Booking();
+            update_repair obj = new update_repair();
             this.Close();
             obj.Show();
         }
 
-        private void v_opt3_MouseDown(object sender, MouseButtonEventArgs e)
+        private void r_opt4_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Updt_vehicle obj = new Updt_vehicle();
-            this.Close();
+            MaintenanceReport obj = new MaintenanceReport();
             obj.Show();
         }
 
-        private void c_opt4_MouseDown(object sender, MouseButtonEventArgs e)
+        private void r_opt5_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            view_bookings obj = new view_bookings();
-            this.Close();
+            AccidentReport obj = new AccidentReport();
             obj.Show();
         }
 
+        //Account Sub Menu
 
         private void a_opt1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -313,7 +390,7 @@ namespace dashNew1
 
         private void acnt_option_panel_MouseEnter(object sender, MouseEventArgs e)
         {
-
+            acnt_option_panel.Visibility = Visibility.Visible;
         }
 
         private void acnt_option_panel_MouseLeave(object sender, MouseEventArgs e)
@@ -325,6 +402,8 @@ namespace dashNew1
         {
             acnt_option_panel.Visibility = Visibility.Visible;
         }
+
+        //Dashboard View Cards
 
         private void btn_v_vehicle_Click(object sender, RoutedEventArgs e)
         {
@@ -345,25 +424,6 @@ namespace dashNew1
             obj.Show();
 
         }
-
-        private void s_opt4_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            ServiceReport obj = new ServiceReport();
-            obj.Show();
-        }
-
-        private void r_opt4_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MaintenanceReport obj = new MaintenanceReport();
-            obj.Show();
-        }
-
-        private void r_opt5_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            AccidentReport obj = new AccidentReport();
-            obj.Show();
-        }
-
 
 
         private void btn_mic_on_Click(object sender, RoutedEventArgs e)
@@ -403,24 +463,6 @@ namespace dashNew1
             ButtonCloseMenu.Visibility = Visibility.Visible;
         }
 
-        private void d_opt1_MouseDown(object sender, MouseButtonEventArgs e)
-        {
 
-        }
-
-        private void d_opt2_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void s_opt3_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void r_opt3_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 }
