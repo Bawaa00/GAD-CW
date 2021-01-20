@@ -111,6 +111,7 @@ namespace dashNew1
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
             MainWindow obj = new MainWindow();
+            this.Close();
             obj.Show();
 
         }

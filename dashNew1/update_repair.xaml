@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="update_repair" Height="750.949" Width="1020.253" Loaded="update_repair1_Loaded">
+        Title="update_repair" Height="750.949" Width="1020.253" Loaded="update_repair1_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,3.6,-2">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">

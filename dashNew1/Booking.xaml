@@ -163,7 +163,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="436,0,0,30" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198" Click="btn_submit_Click">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="664,0,0,28" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198" Click="btn_submit_Click">
             <TextBlock
                 Text="SUBMIT" FontSize="22" />
         </Button>
@@ -171,7 +171,7 @@
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"
             materialDesign:ButtonAssist.CornerRadius="25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="436,0,0,28" Background="#FF61B73A" BorderBrush="#FF61B73A" Width="198" Click="btn_bill_Click">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="436,0,0,28" Background="#FF29790B" BorderBrush="#FF61B73A" Width="198" Click="btn_bill_Click" Visibility="Hidden">
             <TextBlock
                 Text="GENERATE BILL" FontSize="22" />
         </Button>
