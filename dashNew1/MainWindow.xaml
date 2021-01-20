@@ -22,11 +22,19 @@
                 <EasingDoubleKeyFrame KeyTime="0" Value="56"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="228"/>
             </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" Storyboard.TargetName="dash">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="140"/>
+            </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="sidePanelClose">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="sidePanel">
                 <EasingDoubleKeyFrame KeyTime="0" Value="228"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="56"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" Storyboard.TargetName="dash">
+                <EasingDoubleKeyFrame KeyTime="0" Value="140"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
@@ -117,8 +125,46 @@
         </Grid>
 
         <Grid>
-            <materialDesign:Card HorizontalAlignment="Left" Margin="664,248,0,0" VerticalAlignment="Top" Height="377" Width="595" Background="White">
-                <Rectangle HorizontalAlignment="Left" Height="60" Margin="1048,307,-641,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+            <Grid x:Name="dash" HorizontalAlignment="Left" Height="601" Margin="62,60,0,0" VerticalAlignment="Top" Width="1175">
+                <Grid.RenderTransform>
+                    <TranslateTransform />
+                </Grid.RenderTransform>
+                <materialDesign:Card HorizontalAlignment="Left" Margin="32,17,0,0" VerticalAlignment="Top" Height="136" Width="291">
+
+                    <materialDesign:Card.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFDE39A6"/>
+                            <GradientStop Color="#FF7D27FF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </materialDesign:Card.Background>
+                    <materialDesign:PackIcon Kind="DirectionsCar" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+                </materialDesign:Card>
+                <Label Content="Total No of Vehicles" HorizontalAlignment="Left" Margin="48,34,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+                <Label x:Name="label_vehicle" Content="00" HorizontalAlignment="Left" Margin="114,80,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44" Width="56" FontSize="40" FontWeight="Bold"/>
+                <Button x:Name="btn_v_vehicle"  Content="VIEW ALL" HorizontalAlignment="Left" Margin="224,122,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_v_vehicle_Click" />
+                <materialDesign:Card Margin="33,185,747,24" />
+                <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Margin="65,244,780,54">
+                    <lvc:PieChart.Series>
+                        <lvc:PieSeries Title="LUXUARY" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                        <lvc:PieSeries Title="PREMIUM" Values="20" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                        <lvc:PieSeries Title="SUV" Values="15" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                        <lvc:PieSeries Title="GENERAL" Values="35" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                        <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                    </lvc:PieChart.Series>
+                </lvc:PieChart>
+                <Label Content="CAR CATEGORIES" HorizontalAlignment="Left" Margin="50,203,0,0" VerticalAlignment="Top" Foreground="#FF4818B1" FontSize="18" Background="White" FontWeight="Bold"/>
+                <materialDesign:Card HorizontalAlignment="Left" Margin="470,196,0,0" VerticalAlignment="Top" Height="377" Width="595" Background="White">
+                    <Rectangle HorizontalAlignment="Left" Height="60" Margin="1048,307,-641,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                                <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                                <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </materialDesign:Card>
+                <Rectangle HorizontalAlignment="Left" Height="60" Margin="862,255,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
                     <Rectangle.Fill>
                         <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                             <GradientStop Color="#FF512DA8" Offset="0.256"/>
@@ -127,100 +173,65 @@
                         </LinearGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-            </materialDesign:Card>
-            <materialDesign:Card Margin="260,248,674.7,31" />
-            <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Margin="291.94,307,707.56,60.76">
-                <lvc:PieChart.Series>
-                    <lvc:PieSeries Title="LUXUARY" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                    <lvc:PieSeries Title="PREMIUM" Values="20" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                    <lvc:PieSeries Title="SUV" Values="15" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                    <lvc:PieSeries Title="GENERAL" Values="35" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                    <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                </lvc:PieChart.Series>
-            </lvc:PieChart>
-            <materialDesign:Card HorizontalAlignment="Left" Margin="260,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
+                <Rectangle HorizontalAlignment="Left" Height="60" Margin="862,482,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                            <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                            <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                            <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle HorizontalAlignment="Left" Height="60" Margin="862,332,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                            <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                            <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                            <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle HorizontalAlignment="Left" Height="60" Margin="860,408,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                            <GradientStop Color="#FF512DA8" Offset="0.256"/>
+                            <GradientStop Color="#FFA0A7CB" Offset="1"/>
+                            <GradientStop Color="#FF828BC2" Offset="0.792"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="287" Margin="497,255,0,0" VerticalAlignment="Top" Width="347" OpacityMask="Black" Stretch="Fill"/>
+                <Label x:Name="lbl_model" Content="MODEL" HorizontalAlignment="Left" Margin="876,494,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
+                <Label x:Name="lbl_make" Content="MAKE" HorizontalAlignment="Left" Margin="876,422,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
+                <Label x:Name="lbl_year" Content="YEAR" HorizontalAlignment="Left" Margin="876,345,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
+                <Label x:Name="lbl_cat" Content="CATEGORY" HorizontalAlignment="Left" Margin="876,268,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
+                <Label Content="MOST BOOKED VEHICLE" HorizontalAlignment="Left" Margin="527,214,0,0" VerticalAlignment="Top" Width="278" Foreground="#FF4C28B9" FontWeight="Bold" FontSize="18"/>
+                <materialDesign:Card HorizontalAlignment="Left" Margin="399,17,0,0" VerticalAlignment="Top" Height="136" Width="292">
+                    <materialDesign:Card.Background>
 
-                <materialDesign:Card.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFDE39A6"/>
-                        <GradientStop Color="#FF7D27FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </materialDesign:Card.Background>
-                <materialDesign:PackIcon Kind="DirectionsCar" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
-            </materialDesign:Card>
-            <Label Content="Total No of Vehicles" HorizontalAlignment="Left" Margin="276.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
-            <Label x:Name="label_vehicle" Content="00" HorizontalAlignment="Left" Margin="342.94,141.1,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
-            <materialDesign:Card HorizontalAlignment="Left" Margin="618.94,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
-                <materialDesign:Card.Background>
-
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFEA04D" Offset="1"/>
-                        <GradientStop Color="#FFDE2644"/>
-                    </LinearGradientBrush>
-                </materialDesign:Card.Background>
-                <materialDesign:PackIcon Kind="Accessibility" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
-            </materialDesign:Card>
-            <Label Content="Total No of Drivers" HorizontalAlignment="Left" Margin="631.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
-            <Label x:Name="label_driver" Content="00" HorizontalAlignment="Left" Margin="703.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
-            <materialDesign:Card HorizontalAlignment="Left" Margin="966.94,78.875,0,0" VerticalAlignment="Top" Height="136" Width="291.8">
-                <materialDesign:Card.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF00E4FF"/>
-                        <GradientStop Color="#FF016CFD" Offset="1"/>
-                    </LinearGradientBrush>
-                </materialDesign:Card.Background>
-                <materialDesign:PackIcon Kind="People" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
-            </materialDesign:Card>
-            <Label Content="Total No of Customers" HorizontalAlignment="Left" Margin="982.94,96.4,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
-            <Label x:Name="label_customer" Content="00" HorizontalAlignment="Left" Margin="1047.94,146,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44.9" Width="55.06" FontSize="40" FontWeight="Bold"/>
-            <Label Content="CAR CATEGORIES" HorizontalAlignment="Left" Margin="276.94,265.8,0,0" VerticalAlignment="Top" Foreground="#FF4818B1" FontSize="18" Background="White" FontWeight="Bold"/>
-            <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="287" Margin="687,307,0,0" VerticalAlignment="Top" Width="347" OpacityMask="Black" Stretch="Fill"/>
-
-
-            <Rectangle HorizontalAlignment="Left" Height="60" Margin="1056,307,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
-                        <GradientStop Color="#FF512DA8" Offset="0.256"/>
-                        <GradientStop Color="#FFA0A7CB" Offset="1"/>
-                        <GradientStop Color="#FF828BC2" Offset="0.792"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Rectangle HorizontalAlignment="Left" Height="60" Margin="1056,534,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
-                        <GradientStop Color="#FF512DA8" Offset="0.256"/>
-                        <GradientStop Color="#FFA0A7CB" Offset="1"/>
-                        <GradientStop Color="#FF828BC2" Offset="0.792"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Rectangle HorizontalAlignment="Left" Height="60" Margin="1056,384,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
-                        <GradientStop Color="#FF512DA8" Offset="0.256"/>
-                        <GradientStop Color="#FFA0A7CB" Offset="1"/>
-                        <GradientStop Color="#FF828BC2" Offset="0.792"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Rectangle HorizontalAlignment="Left" Height="60" Margin="1054,460,0,0" VerticalAlignment="Top" Width="188" RadiusX="20" RadiusY="20">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
-                        <GradientStop Color="#FF512DA8" Offset="0.256"/>
-                        <GradientStop Color="#FFA0A7CB" Offset="1"/>
-                        <GradientStop Color="#FF828BC2" Offset="0.792"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Label x:Name="lbl_model" Content="MODEL" HorizontalAlignment="Left" Margin="1070,546,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
-            <Label x:Name="lbl_make" Content="MAKE" HorizontalAlignment="Left" Margin="1070,474,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
-            <Label x:Name="lbl_year" Content="YEAR" HorizontalAlignment="Left" Margin="1070,397,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
-            <Label x:Name="lbl_cat" Content="CATEGORY" HorizontalAlignment="Left" Margin="1070,320,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
-            <Label Content="MOST BOOKED VEHICLE" HorizontalAlignment="Left" Margin="721,266,0,0" VerticalAlignment="Top" Width="278" Foreground="#FF4C28B9" FontWeight="Bold" FontSize="18"/>
-            <Button x:Name="btn_v_vehicle"  Content="VIEW ALL" HorizontalAlignment="Left" Margin="452,183,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_v_vehicle_Click" />
-            <Button x:Name="btn_v_driver" Content="VIEW ALL" HorizontalAlignment="Left" Margin="815,183,0,0" VerticalAlignment="Top" Width="96" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_v_driver_Click"/>
-            <Button x:Name="btn_v_cus" Content="VIEW ALL" HorizontalAlignment="Left" Margin="1162,183,0,0" VerticalAlignment="Top" Width="97" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_v_cus_Click"/>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFEA04D" Offset="1"/>
+                            <GradientStop Color="#FFDE2644"/>
+                        </LinearGradientBrush>
+                    </materialDesign:Card.Background>
+                    <materialDesign:PackIcon Kind="Accessibility" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+                </materialDesign:Card>
+                <Label Content="Total No of Drivers" HorizontalAlignment="Left" Margin="413,34,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+                <Label x:Name="label_driver" Content="00" HorizontalAlignment="Left" Margin="485,84,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="45" Width="54" FontSize="40" FontWeight="Bold"/>
+                <Button x:Name="btn_v_driver" Content="VIEW ALL" HorizontalAlignment="Left" Margin="595,121,0,0" VerticalAlignment="Top" Width="96" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_v_driver_Click"/>
+                <materialDesign:Card HorizontalAlignment="Left" Margin="772,18,0,0" VerticalAlignment="Top" Height="136" Width="292">
+                    <materialDesign:Card.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF00E4FF"/>
+                            <GradientStop Color="#FF016CFD" Offset="1"/>
+                        </LinearGradientBrush>
+                    </materialDesign:Card.Background>
+                    <materialDesign:PackIcon Kind="People" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
+                </materialDesign:Card>
+                <Label Content="Total No of Customers" HorizontalAlignment="Left" Margin="788,35,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+                <Label x:Name="label_customer" Content="00" HorizontalAlignment="Left" Margin="853,85,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="45" Width="55" FontSize="40" FontWeight="Bold"/>
+                <Button x:Name="btn_v_cus" Content="VIEW ALL" HorizontalAlignment="Left" Margin="967,122,0,0" VerticalAlignment="Top" Width="97" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_v_cus_Click"/>
+            </Grid>
 
         </Grid>
         <StackPanel x:Name="acnt_option_panel" HorizontalAlignment="Left" Height="110" Background="#FF4818B1" 
