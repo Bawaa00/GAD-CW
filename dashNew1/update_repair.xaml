@@ -5,16 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="update_repair" Height="750.949" Width="1020.253" Loaded="update_repair1_Loaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="update_repair" Height="750.949" Width="1020.253" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,3.6,-2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="988*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                 <GradientStop Color="#FFDFD9ED" Offset="0.167"/>
                 <GradientStop Color="White" Offset="0.683"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle HorizontalAlignment="Left" Height="696" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="790">
+        <Rectangle HorizontalAlignment="Left" Height="696" Margin="2.5,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="790" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                     <GradientStop Color="#FF12005E" Offset="0.474"/>
@@ -23,7 +27,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,-0.6,22.6"  VerticalAlignment="Bottom" Width="561">
+        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,-0.6,23"  VerticalAlignment="Bottom" Width="561" Grid.Column="1">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                     <GradientStop Color="#FF4818B1" Offset="0.503"/>
@@ -32,27 +36,27 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock HorizontalAlignment="Left" Margin="30,5,0,0" Height="70" Width="auto" Text="UPDATE REPAIR" VerticalAlignment="Top"
-                   FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,158,0,0"  Text="Repair Type" VerticalAlignment="Top"
-                   Height="40" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,96,0,0"  Text="Repair ID" VerticalAlignment="Top"
-                   Height="40" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,244,0,0"  Text="Vehicle ID" VerticalAlignment="Top"
-                   Height="40" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,308,0,0"  Text="Repair Details" VerticalAlignment="Top"
-                   Height="40" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,440,0,0"  Text="Repair Date" VerticalAlignment="Top"
-                   Height="40" FontSize="22" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="45,502,0,0"  Text="Repair Cost" VerticalAlignment="Top"
-                   Height="40" FontSize="22" Foreground="White"/>
-        <TextBlock x:Name="lbl_claim" HorizontalAlignment="Left" Margin="45,564,0,0"  Text="Claimed Amount" VerticalAlignment="Top"
-                   Height="40" FontSize="22" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="7.5,5,0,0" Height="70" Width="auto" Text="UPDATE REPAIR" VerticalAlignment="Top"
+                   FontSize="50" TextAlignment="Center" Foreground="White" Opacity="0.6" FontFamily="ROG Fonts" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22.5,96,0,0"  Text="Repair Type" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22.5,158,0,0"  Text="Repair ID" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22.5,244,0,0"  Text="Vehicle ID" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22.5,308,0,0"  Text="Repair Details" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22.5,440,0,0"  Text="Repair Date" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22.5,502,0,0"  Text="Repair Cost" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.Column="1"/>
+        <TextBlock x:Name="lbl_claim" HorizontalAlignment="Left" Margin="22.5,564,0,0"  Text="Claimed Amount" VerticalAlignment="Top"
+                   Height="40" FontSize="22" Foreground="White" Grid.Column="1"/>
 
         <ComboBox x:Name="cmb_type"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
-            materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,169,0,0"
-            IsEditable="True" SelectionChanged="cmb_type_SelectionChanged" >
+            materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="307.5,96,0,0"
+            IsEditable="True" DropDownClosed="cmb_type_DropDownClosed" IsReadOnly="True" Grid.Column="1" >
             <ComboBoxItem>
                 Maintenence Repair
             </ComboBoxItem>
@@ -60,16 +64,16 @@
                 Accident Repair
             </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="330,308,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <DatePicker x:Name="txt_date" HorizontalAlignment="Left" Height="40" Margin="330,440,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_cost" HorizontalAlignment="Left" Height="40" Margin="330,502,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_claim" HorizontalAlignment="Left" Height="40" Margin="330,564,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="307.5,308,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <DatePicker x:Name="txt_date" HorizontalAlignment="Left" Height="40" Margin="307.5,440,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <TextBox x:Name="txt_cost" HorizontalAlignment="Left" Height="40" Margin="307.5,502,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <TextBox x:Name="txt_claim" HorizontalAlignment="Left" Height="40" Margin="307.5,564,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
         <Button x:Name="btn_update"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,115.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_update_Click">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,115.4,35" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_update_Click" Grid.Column="1">
             <TextBlock
                 Text="UPDATE" />
         </Button>
@@ -78,14 +82,14 @@
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_delete_Click">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.4,35" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_delete_Click" Grid.Column="1">
             <TextBlock
                 Text="DELETE" />
         </Button>
         <Button x:Name="BTN_HOME"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right" VerticalAlignment="Top"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,100.2,0" Click="BTN_HOME_Click">
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,100.4,0" Click="BTN_HOME_Click" Grid.Column="1">
             <materialDesign:PackIcon
                 Kind="Home"
                 Height="24"
@@ -94,7 +98,7 @@
         <Button x:Name="BTN_BACK"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right"  VerticalAlignment="Top"
-            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,34.4,0" Click="BTN_BACK_Click" >
+            ToolTip="MaterialDesignFloatingActionMiniButton" Margin="0,19,34.4,0" Click="BTN_BACK_Click" Grid.Column="1" >
             <materialDesign:PackIcon
                 Kind="PagePrevious"
                 Height="24"
@@ -102,9 +106,10 @@
         </Button>
         <ComboBox x:Name="cmb_RID"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
-            materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,107,0,0"
-            IsEditable="True" DropDownClosed="cmb_RID_DropDownClosed"/>
-        <TextBox x:Name="TXT_VID" HorizontalAlignment="Left" Height="41" Margin="330,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331"/>
-        <Button x:Name="btn_clear" Content="CLEAR" HorizontalAlignment="Left" Margin="825,222,0,0" VerticalAlignment="Top" Width="105" Click="btn_clear_Click"/>
+            materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="307.5,158,0,0"
+            IsEditable="True" DropDownClosed="cmb_RID_DropDownClosed" Grid.Column="1"/>
+        <TextBox x:Name="TXT_VID" HorizontalAlignment="Left" Height="41" Margin="307.5,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <Button x:Name="btn_clear" Content="CLEAR" HorizontalAlignment="Left" Margin="802.5,222,0,0" VerticalAlignment="Top" Width="105" Click="btn_clear_Click" Grid.Column="1"/>
+        <TextBlock x:Name="txt_error" Grid.Column="1" HorizontalAlignment="Left" Margin="703,581,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="270" FontSize="21" FontWeight="Bold" Foreground="Red"/>
     </Grid>
 </Window>

@@ -31,30 +31,6 @@ namespace dashNew1
             InitializeComponent();
         }
         Connect_DB db = new Connect_DB();
-        private void cmb_type_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cmb_type.SelectedIndex == 0)
-            {
-                lbl_claim.Visibility = Visibility.Hidden;
-                txt_claim.Visibility = Visibility.Hidden;
-                DataTable dt = new DataTable();
-                dt = db.getData("Select max(r_ID) from Maintenance ");
-
-              
-            }
-            else if (cmb_type.SelectedIndex == 1)
-            {
-                lbl_claim.Visibility = Visibility.Visible;
-                txt_claim.Visibility = Visibility.Visible;
-
-                lbl_claim.Visibility = Visibility.Hidden;
-                txt_claim.Visibility = Visibility.Hidden;
-                DataTable dt = new DataTable();
-                dt = db.getData("Select max(R_ID) from Acc_repair ");
-
-               
-            }
-        }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
@@ -103,55 +79,90 @@ namespace dashNew1
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
-            string a = " Delete from Acc_repair where R_ID = '" + cmb_RID.Text + "'";
-
-            int line = db.save_update_delete(a);
-            if (line == 1)
-                MessageBox.Show("Data delete Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            else
-                MessageBox.Show("Data cannot delete", "error", MessageBoxButton.OK, MessageBoxImage.Error);
-
-
-            cmb_RID.ItemsSource = null;
-            cmb_RID.Items.Clear();
-            cmb_type.ItemsSource = null;
-            cmb_type.Items.Clear();
-            TXT_VID.Clear();
-            txt_details.Clear();
-            txt_date.Text = null;
-            txt_cost.Clear();
-            txt_claim.Clear();
+            if(cmb_type.SelectedIndex == 0)
+            {
+                string a = " Delete from Maintenance where R_id = '" + cmb_RID.Text + "'";
+                int line = db.save_update_delete(a);
+                if (line == 1)
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.Show();
+                    cmb_RID.ItemsSource = null;
+                    cmb_RID.Items.Clear();
+                    cmb_type.SelectedIndex = -1;
+                    TXT_VID.Clear();
+                    txt_details.Clear();
+                    txt_date.Text = null;
+                    txt_cost.Clear();
+                }
+                else
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.Show();
+                }
+            }
+            else if (cmb_type.SelectedIndex ==1)
+            {
+                string a = " Delete from Acc_repair where R_ID = '" + cmb_RID.Text + "'";
+                int line = db.save_update_delete(a);
+                if (line == 1)
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.Show();
+                    cmb_RID.ItemsSource = null;
+                    cmb_RID.Items.Clear();
+                    cmb_type.SelectedIndex = -1;
+                    TXT_VID.Clear();
+                    txt_details.Clear();
+                    txt_date.Text = null;
+                    txt_cost.Clear();
+                    txt_claim.Clear();
+                }
+                else
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.Show();
+                }
+                    
+            }       
         }
 
-        private void update_repair1_Loaded(object sender, RoutedEventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Acc_repair");
-            cmb_RID.ItemsSource = dt.DefaultView;
-            cmb_RID.DisplayMemberPath = "R_ID";
-            cmb_RID.SelectedValuePath = "R_ID";
-        }
 
         private void cmb_RID_DropDownClosed(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("select * from Acc_repair where R_ID='" + cmb_RID.Text + "'");
-
-            TXT_VID.Text = dt.Rows[0][1].ToString();
-            txt_details.Text = dt.Rows[0][2].ToString();
-            //txt_details.Text = dt.Rows[0][3].ToString();
-            txt_date.Text = dt.Rows[0][3].ToString();
-            txt_cost.Text = dt.Rows[0][4].ToString();
-            txt_claim.Text = dt.Rows[0][5].ToString();
+            if (cmb_type.SelectedIndex == 0)
+            { 
+                dt = db.getData("select * from Maintenance where R_id='" + cmb_RID.Text + "'");
+                TXT_VID.Text = dt.Rows[0][1].ToString();
+                txt_details.Text = dt.Rows[0][2].ToString();
+                txt_date.Text = dt.Rows[0][3].ToString();
+                txt_cost.Text = dt.Rows[0][4].ToString();
+                txt_error.Text = "";
+            }
+            else if (cmb_type.SelectedIndex == 1)
+            {
+                dt = db.getData("select * from Acc_repair where R_ID='" + cmb_RID.Text + "'");
+                TXT_VID.Text = dt.Rows[0][1].ToString();
+                txt_details.Text = dt.Rows[0][2].ToString();
+                txt_date.Text = dt.Rows[0][3].ToString();
+                txt_cost.Text = dt.Rows[0][4].ToString();
+                txt_claim.Text = dt.Rows[0][5].ToString();
+                txt_error.Text = "";
+            }
+            else
+            {
+                txt_error.Text = "Please select a Repair ID";
+            }         
         }
 
         private void btn_clear_Click(object sender, RoutedEventArgs e)
         {
             cmb_RID.ItemsSource = null;
             cmb_RID.Items.Clear();
-            cmb_type.ItemsSource = null;
-            cmb_type.Items.Clear();
+            cmb_type.SelectedIndex = -1;
             TXT_VID.Clear();
             txt_details.Clear();
             txt_date.Text = null;
@@ -169,6 +180,35 @@ namespace dashNew1
         private void BTN_BACK_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void cmb_type_DropDownClosed(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            if (cmb_type.SelectedIndex==0)
+            {  
+                dt = db.getData("select * from Maintenance");
+                cmb_RID.ItemsSource = dt.DefaultView;
+                cmb_RID.DisplayMemberPath = "R_id";
+                cmb_RID.SelectedValuePath = "R_id";
+                txt_claim.Visibility = Visibility.Hidden;
+                lbl_claim.Visibility = Visibility.Hidden;
+                txt_error.Text = "";
+            }
+            else if (cmb_type.SelectedIndex == 1)
+            {
+                dt = db.getData("select * from Acc_repair");
+                cmb_RID.ItemsSource = dt.DefaultView;
+                cmb_RID.DisplayMemberPath = "R_ID";
+                cmb_RID.SelectedValuePath = "R_ID";
+                txt_claim.Visibility = Visibility.Visible;
+                lbl_claim.Visibility = Visibility.Visible;
+                txt_error.Text = "";
+            }
+            else
+            {
+                txt_error.Text = "Please select a Repair Type";
+            }
         }
     }
 }
