@@ -38,12 +38,12 @@ namespace dashNew1
 
              panelWidth = sidePanel.Width;
              sidePanel.Width = 50;*/
-
             this.PieChart();
             labelData();
         }
 
         Connect_DB db = new Connect_DB();
+        voiceCommands vc = new voiceCommands();
         public Func<ChartPoint, string> PointLabel { get; set; }
 
         public void PieChart()
@@ -426,7 +426,8 @@ namespace dashNew1
             Messagebox msg = new Messagebox();
             btn_mic_on.Visibility = Visibility.Hidden;
             btn_mic_off.Visibility = Visibility.Visible;
-            msg.informationMsg("Voice Command Activated");
+            vc.stopVoice();
+            msg.informationMsg("Voice Command Disabled");
             msg.Show();
         }
 
@@ -437,7 +438,8 @@ namespace dashNew1
             {
                 btn_mic_on.Visibility = Visibility.Visible;
                 btn_mic_off.Visibility = Visibility.Hidden;
-                msg.informationMsg("Voice Command Disabled");
+                msg.informationMsg("Voice Command Activated");
+                vc.startVoice();
                 msg.Show();
             }
             catch (Exception ex)
@@ -458,6 +460,9 @@ namespace dashNew1
             ButtonCloseMenu.Visibility = Visibility.Visible;
         }
 
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            vc.loadCommands();
+        }
     }
 }
