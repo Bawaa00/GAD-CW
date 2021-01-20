@@ -379,11 +379,6 @@ namespace dashNew1
 
         private void a_opt1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
-        }
-
-        private void a_opt2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
             Registration obj = new Registration();
             obj.Show();
         }

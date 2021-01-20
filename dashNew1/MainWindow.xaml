@@ -234,15 +234,13 @@
             </Grid>
 
         </Grid>
-        <StackPanel x:Name="acnt_option_panel" HorizontalAlignment="Left" Height="110" Background="#FF4818B1" 
+        <StackPanel x:Name="acnt_option_panel" HorizontalAlignment="Left" Height="53" Background="#FF4818B1" 
                     Margin="1081,50,0,0" VerticalAlignment="Top" Width="170" MouseEnter="acnt_option_panel_MouseEnter" MouseLeave="acnt_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
-            <TextBlock x:Name="a_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="a_opt1_MouseLeftButtonDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Update Account"
+            <TextBlock x:Name="a_opt1" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="a_opt1_MouseLeftButtonDown" Foreground="#DDFFFFFF"><LineBreak/><Run  BaselineAlignment="Center" FontSize="18" Text="Register Account"
                                                                      FontWeight="Medium"/></TextBlock>
-            <TextBlock x:Name="a_opt2" Height="54" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="a_opt2_MouseLeftButtonDown" Foreground="#DDFFFFFF"><LineBreak/><Run BaselineAlignment="Center" FontSize="18" Text="Registration"
-                    FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="car_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
                     Margin="228,120,0,0" VerticalAlignment="Top" Width="170" MouseEnter="car_option_panel_MouseEnter" MouseLeave="car_option_panel_MouseLeave" Visibility="Hidden">
