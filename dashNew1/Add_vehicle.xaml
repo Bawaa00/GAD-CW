@@ -76,7 +76,11 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,174,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True">
+            IsEditable="True" Background="{x:Null}" BorderBrush="#FF6F6E72" IsReadOnly="True">
+            <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2023" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2022" HorizontalAlignment="Left" Width="248"/>
+            <ComboBoxItem Content="2021"/>
             <ComboBoxItem Content="2021"/>
             <ComboBoxItem Content="2020"/>
             <ComboBoxItem Content="2019"/>
@@ -114,7 +118,7 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,228,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True">
+            IsEditable="True" IsReadOnly="True">
             <ComboBoxItem Content="AUDI"/>
             <ComboBoxItem Content="BMW"/>
             <ComboBoxItem Content="FORD"/>
@@ -140,7 +144,7 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,337,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True">
+            IsEditable="True" IsReadOnly="True">
             <ComboBoxItem Content="LUXUARY"/>
             <ComboBoxItem Content="PREMIUM"/>
             <ComboBoxItem Content="GENERAL"/>
