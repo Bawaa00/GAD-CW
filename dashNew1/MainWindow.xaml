@@ -24,7 +24,7 @@
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" Storyboard.TargetName="dash">
                 <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="140"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="128"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="sidePanelClose">
@@ -33,7 +33,7 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="56"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)" Storyboard.TargetName="dash">
-                <EasingDoubleKeyFrame KeyTime="0" Value="140"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="128"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0:0.5" Value="0"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
@@ -129,7 +129,7 @@
                 <Grid.RenderTransform>
                     <TranslateTransform />
                 </Grid.RenderTransform>
-                <materialDesign:Card HorizontalAlignment="Left" Margin="32,17,0,0" VerticalAlignment="Top" Height="136" Width="291">
+                <materialDesign:Card HorizontalAlignment="Left" Margin="50,17,0,0" VerticalAlignment="Top" Height="136" Width="291">
 
                     <materialDesign:Card.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -139,10 +139,10 @@
                     </materialDesign:Card.Background>
                     <materialDesign:PackIcon Kind="DirectionsCar" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
                 </materialDesign:Card>
-                <Label Content="Total No of Vehicles" HorizontalAlignment="Left" Margin="48,34,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
-                <Label x:Name="label_vehicle" Content="00" HorizontalAlignment="Left" Margin="114,80,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44" Width="56" FontSize="40" FontWeight="Bold"/>
-                <Button x:Name="btn_v_vehicle"  Content="VIEW ALL" HorizontalAlignment="Left" Margin="224,122,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_v_vehicle_Click" />
-                <materialDesign:Card Margin="33,185,747,24" />
+                <Label Content="Total No of Vehicles" HorizontalAlignment="Left" Margin="56,34,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+                <Label x:Name="label_vehicle" Content="00" HorizontalAlignment="Left" Margin="122,80,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="44" Width="56" FontSize="40" FontWeight="Bold"/>
+                <Button x:Name="btn_v_vehicle"  Content="VIEW ALL" HorizontalAlignment="Left" Margin="232,122,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_v_vehicle_Click" />
+                <materialDesign:Card Margin="33,185,747,24" Width="359" />
                 <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Margin="65,244,780,54">
                     <lvc:PieChart.Series>
                         <lvc:PieSeries Title="LUXUARY" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
@@ -206,7 +206,7 @@
                 <Label x:Name="lbl_year" Content="YEAR" HorizontalAlignment="Left" Margin="876,345,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
                 <Label x:Name="lbl_cat" Content="CATEGORY" HorizontalAlignment="Left" Margin="876,268,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Width="156" Height="35" FontSize="18"/>
                 <Label Content="MOST BOOKED VEHICLE" HorizontalAlignment="Left" Margin="527,214,0,0" VerticalAlignment="Top" Width="278" Foreground="#FF4C28B9" FontWeight="Bold" FontSize="18"/>
-                <materialDesign:Card HorizontalAlignment="Left" Margin="399,17,0,0" VerticalAlignment="Top" Height="136" Width="292">
+                <materialDesign:Card HorizontalAlignment="Left" Margin="409,17,0,0" VerticalAlignment="Top" Height="136" Width="292">
                     <materialDesign:Card.Background>
 
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -216,9 +216,9 @@
                     </materialDesign:Card.Background>
                     <materialDesign:PackIcon Kind="Accessibility" Margin="197,26.5,0,0" Height="71.5" Width="78.8" Foreground="#DDFFFFFF" />
                 </materialDesign:Card>
-                <Label Content="Total No of Drivers" HorizontalAlignment="Left" Margin="413,34,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
-                <Label x:Name="label_driver" Content="00" HorizontalAlignment="Left" Margin="485,84,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="45" Width="54" FontSize="40" FontWeight="Bold"/>
-                <Button x:Name="btn_v_driver" Content="VIEW ALL" HorizontalAlignment="Left" Margin="595,121,0,0" VerticalAlignment="Top" Width="96" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_v_driver_Click"/>
+                <Label Content="Total No of Drivers" HorizontalAlignment="Left" Margin="423,34,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="18"/>
+                <Label x:Name="label_driver" Content="00" HorizontalAlignment="Left" Margin="495,84,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" Height="45" Width="54" FontSize="40" FontWeight="Bold"/>
+                <Button x:Name="btn_v_driver" Content="VIEW ALL" HorizontalAlignment="Left" Margin="605,121,0,0" VerticalAlignment="Top" Width="96" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_v_driver_Click"/>
                 <materialDesign:Card HorizontalAlignment="Left" Margin="772,18,0,0" VerticalAlignment="Top" Height="136" Width="292">
                     <materialDesign:Card.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
