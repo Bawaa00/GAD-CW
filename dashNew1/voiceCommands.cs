@@ -42,26 +42,26 @@ namespace dashNew1
                     addCustomer obj4 = new addCustomer();
                     obj4.Show();
                     break;
-                /*case "goto view customer":
-                    Update_Vehicle obj5 = new Update_Vehicle();
+                case "goto view customer":
+                    view_customer obj5 = new view_customer();
                     obj5.Show();
                     break;
                 case "goto update customer":
-                    Update_Vehicle obj6 = new Update_Vehicle();
+                   update_customer obj6 = new update_customer();
                     obj6.Show();
-                    break;*/
+                    break;
                 case "goto view bookings":
                     view_bookings obj7 = new view_bookings();
                     obj7.Show();
                     break;
-                /*case "goto add driver":
-                    Update_Vehicle obj8 = new Update_Vehicle();
+                case "goto add driver":
+                    add_driver obj8 = new add_driver();
                     obj8.Show();
                     break;
                 case "goto view driver":
-                    Update_Vehicle obj9 = new Update_Vehicle();
+                    view_driver obj9 = new view_driver();
                     obj9.Show();
-                    break;*/
+                    break;
                 case "goto update driver":
                     Driver obj10 = new Driver();
                     obj10.Show();
@@ -74,10 +74,10 @@ namespace dashNew1
                     view_services obj12 = new view_services();
                     obj12.Show();
                     break;
-                /*case "goto update service":
-                    Update_Vehicle obj13 = new Update_Vehicle();
+                case "goto update service":
+                    update_service obj13 = new update_service();
                     obj13.Show();
-                    break;*/
+                    break;
                 case "goto serivce report":
                     ServiceReport obj14 = new ServiceReport();
                     obj14.Show();
@@ -90,10 +90,10 @@ namespace dashNew1
                     repairs obj16  = new repairs();
                     obj16.Show();
                     break;
-                /*case "goto update repairs":
-                    Update_Vehicle obj17 = new Update_Vehicle();
+                case "goto update repairs":
+                    update_repair obj17 = new update_repair();
                     obj17.Show();
-                    break;*/
+                    break;
                 case "goto maintenance report":
                     MaintenanceReport obj18 = new MaintenanceReport();
                     obj18.Show();
@@ -110,10 +110,6 @@ namespace dashNew1
                     View_insurnce obj21 = new View_insurnce();
                     obj21.Show();
                     break;
-                /*case "goto update insurance":
-                    Update_Vehicle obj22 = new Update_Vehicle();
-                    obj22.Show();
-                    break;*/
                 case "goto add owner":
                     Add_owner obj23 = new Add_owner();
                     obj23.Show();
@@ -136,7 +132,7 @@ namespace dashNew1
             command.Add(new string[] { "goto add vehicle", "goto view vehicle", "goto update vehicle", "goto book vehicle", "goto add customer" , "goto view customer" , 
                 "goto update customer" , "goto view bookings", "goto add driver", "goto view driver", "goto update driver", "goto add service", "goto view service", 
                 "goto update service", "goto serivce report", "goto add repairs", "goto view repairs", "goto update repairs", "goto maintenance report", "goto accident report",
-                "goto add insurance", "goto view insurance", "goto update insurance", "goto add owner", "goto view owner", "goto update owner" });
+                "goto add insurance", "goto view insurance", "goto add owner", "goto view owner", "goto update owner" });
             GrammarBuilder gbiulder = new GrammarBuilder();
             gbiulder.Append(command);
             Grammar grammar = new Grammar(gbiulder);

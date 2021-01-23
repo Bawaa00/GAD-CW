@@ -165,6 +165,7 @@ namespace dashNew1
         private void BTN_HOME_Click(object sender, RoutedEventArgs e)
         {
             MainWindow obj = new MainWindow();
+            this.Close();
             obj.Show();
         }
 

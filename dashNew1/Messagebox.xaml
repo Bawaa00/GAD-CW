@@ -13,11 +13,11 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Messagebox" Height="160" Width="320" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Width="300" Height="150" HorizontalAlignment="Center">
+        Title="Messagebox" Height="180" Width="360" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Width="350" Height="170" HorizontalAlignment="Center">
         <StackPanel Orientation="Horizontal" Margin="15">
             <materialDesign:PackIcon x:Name="icon" Kind="CheckCircle" Foreground="{StaticResource PrimaryHueMidBrush}" Width="50" Height="50"/>
-            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="200" Margin="15,52" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="249" Margin="15,10,15,37" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="93" TextAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
             <Button x:Name="btn_cancel"  Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Content="NO" Visibility="Hidden"/>
