@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Data;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -72,6 +73,8 @@ namespace dashNew1
             txt_sdate.Text = "";
             txt_exdate.Text = "";
             cbox_category.Text = "";
+            cbox_year.SelectedIndex = -1;
+            cbox_make.SelectedIndex = -1;
         }
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
@@ -107,28 +110,47 @@ namespace dashNew1
             File.Copy(filepath, destinationPath, true);
 
             string query = "Insert into Vehicle values ('" + txt_lno.Text + "','" + cbox_year.Text + "','" + cbox_make.Text + "','" + txt_model.Text + "','" + cbox_category.Text + "','"+txt_cpmonth.Text+"','"+txt_cpweek.Text+"','"+txt_extra.Text+"','"+cbox_oid.Text+"','"+txt_lndate.Text+"','"+cbox_ins.Text+ "','"+txt_sdate.Text+"','"+txt_exdate.Text+"','"+destinationPath+"')";
-         
-                int i = db.save_update_delete(query);
-                if (i == 1)
-                    { 
-                      Messagebox msg = new Messagebox();
-                      Vehicle_Setup_Form_Loaded(this, null);
-                      msg.Show();
+                if (string.IsNullOrEmpty(error_msg.Text))
+                {
+                    int i = db.save_update_delete(query);
+                    if (i == 2)
+                    {
+                        Messagebox msg = new Messagebox();
+                        Vehicle_Setup_Form_Loaded(this, null);
+                        msg.Show();
                     }
+                    else
+                    {
+                        Messagebox msg = new Messagebox();
+                        msg.errorMsg("Sorry, couldn't save your data.Please try again. ");
+                        msg.Show();
+
+                    }
+                }
                 else
-                   {
-                      Messagebox msg = new Messagebox();
-                      msg.errorMsg("Sorry, couldn't save your data.Please try again");
-                      msg.Show();
-                   
-                   }
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Please fill out the form properly");
+                    msg.Show();
+                }
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
-                MessageBox.Show(ex.Message);
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please upload a photo");
+                msg.Show();
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
             }
             catch (Exception ex)
-            { MessageBox.Show(ex.Message); 
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
             }
 
         }
@@ -161,5 +183,107 @@ namespace dashNew1
         {
             Vehicle_Setup_Form_Loaded(this, null);
         }
+
+        private void txt_lno_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_lno.Text.Length == 0)
+            { error_msg.Text = "Please Enter license Number "; }
+            else
+            {
+                error_msg.Text = "";
+            }
+        }
+
+        private void txt_model_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_model.Text.Length == 0)
+                error_msg.Text = "Please Enter Model ";
+            else if (txt_model.Text.Any(char.IsSymbol))
+                error_msg.Text = "Model cannot contain symbols";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cpweek_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cpweek.Text.Length == 0)
+                error_msg.Text = "Please Enter Cost per week ";
+           /* else if (txt_cpweek.Text.Any(char.IsLetter))
+                error_msg.Text = "Cost per week cannot have letters";
+            else if (txt_cpweek.Text.Any(char.IsSymbol))
+                error_msg.Text = "Cost per week cannot contain symbols";
+            else if (txt_cpweek.Text.Any(char.IsWhiteSpace))
+                error_msg.Text = "Cost per week cannot contain spaces";*/
+            else if (!Regex.IsMatch(txt_cpweek.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cpmonth_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cpmonth.Text.Length == 0)
+                error_msg.Text = "Please Enter Cost per Month ";
+            else if (!Regex.IsMatch(txt_cpmonth.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_extra_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cpweek.Text.Length == 0)
+                error_msg.Text = "Please Enter Extra Cost per Milege ";
+            else if (!Regex.IsMatch(txt_cpweek.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
+            else
+                error_msg.Text = "";
+        }
+
+        private void cbox_year_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_year.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Year";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cbox_make_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_make.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Make";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cbox_category_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_category.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Catagory";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cbox_oid_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_oid.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Owner ID";
+            }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cbox_ins_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_ins.SelectedItem == null)
+            {
+                error_msg.Text = "Please Select Insurance";
+            }
+            else { error_msg.Text = ""; }
+        }
+
     }
 }
