@@ -76,16 +76,25 @@ namespace dashNew1
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Multiselect = false;
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            bool? result = open.ShowDialog();
-
-            if (result == true)
+            try
             {
-                filepath = open.FileName; // Stores Original Path in Textbox    
-                ImageSource imgsource = new BitmapImage(new Uri(filepath)); // Just show The File In Image when we browse It
-                img_vehicle.Source = imgsource;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Multiselect = false;
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                bool? result = open.ShowDialog();
+
+                if (result == true)
+                {
+                    filepath = open.FileName; // Stores Original Path in Textbox    
+                    ImageSource imgsource = new BitmapImage(new Uri(filepath)); // Just show The File In Image when we browse It
+                    img_vehicle.Source = imgsource;
+                }
+            }
+            catch(Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
             }
         }
 
