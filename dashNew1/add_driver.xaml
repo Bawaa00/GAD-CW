@@ -47,16 +47,16 @@
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
         <TextBlock HorizontalAlignment="Left" Margin="52,344,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium"/>
-        <TextBox x:Name="txt_Did" HorizontalAlignment="Left" Height="30" Margin="198,103,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-                 FontSize="18" FontWeight="Medium" IsReadOnly="True"/>
-        <TextBox x:Name="txt_Lnum" HorizontalAlignment="Left" Height="30" Margin="200,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="18" FontWeight="Medium"/>
-        <TextBox x:Name="txt_Name" HorizontalAlignment="Left" Height="30" Margin="200,151,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="18" FontWeight="Medium"/>
-        <TextBox x:Name="txt_Tp" HorizontalAlignment="Left" Height="30" Margin="200,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="18" FontWeight="Medium"/>
-        <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="81" Margin="200,344,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="18" FontWeight="Medium"/>
+        <TextBox x:Name="txt_Did" HorizontalAlignment="Left" Height="33" Margin="198,103,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+                 FontSize="21" IsReadOnly="True" TextChanged="txt_Did_TextChanged"/>
+        <TextBox x:Name="txt_Lnum" HorizontalAlignment="Left" Height="41" Margin="200,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+            FontSize="21" TextChanged="txt_Lnum_TextChanged"/>
+        <TextBox x:Name="txt_Name" HorizontalAlignment="Left" Height="41" Margin="200,151,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+            FontSize="21" TextChanged="txt_Name_TextChanged"/>
+        <TextBox x:Name="txt_Tp" HorizontalAlignment="Left" Height="41" Margin="200,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+            FontSize="21" TextChanged="txt_Tp_TextChanged"/>
+        <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="90" Margin="200,344,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
+            FontSize="21" TextChanged="txt_Address_TextChanged"/>
 
 
         <Button x:Name="btn_Update"
@@ -95,6 +95,7 @@
             <TextBlock
                 Text="CLEAR" FontFamily="Segoe UI Black" FontSize="20" />
         </Button>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="117,621,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="580" Grid.ColumnSpan="2" FontSize="30" Foreground="Red"/>
 
     </Grid>
 </Window>

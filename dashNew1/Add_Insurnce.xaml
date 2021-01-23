@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="Add Insurnce" Height="611.493" Width="797.6" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Add_Insurance_Form_Loaded">
-    <Grid Margin="0,0,0,0">
+        Title="Add Insurnce" Height="700" Width="797.6" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Add_Insurance_Form_Loaded">
+    <Grid Margin="0,0,0,-1">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                 <GradientStop Color="#FFDFD9ED" Offset="0.167"/>
                 <GradientStop Color="White" Offset="0.683"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle HorizontalAlignment="Left" Height="561" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="483" Margin="25,0,0,0" VerticalAlignment="Top" Width="241" Fill="#FF320B86" RadiusX="20" RadiusY="20"/>
         <Rectangle HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="790">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
@@ -23,7 +23,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,-0.8,22.6"  VerticalAlignment="Bottom" Width="462">
+        <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,10,24"  VerticalAlignment="Bottom" Width="462">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
                     <GradientStop Color="#FF4818B1" Offset="0.503"/>
@@ -44,15 +44,15 @@
                    Height="39" FontSize="22" Foreground="White"/>
 
         <TextBox x:Name="txt_iid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True"/>
-        <TextBox x:Name="txt_org" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_tel" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_org" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_org_TextChanged"/>
+        <TextBox x:Name="txt_tel" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_tel_TextChanged"/>
+        <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="127" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_address_TextChanged"/>
         <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,115.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,137,35" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_save_Click">
             <TextBlock
                 Text="SAVE" />
         </Button>
@@ -61,7 +61,7 @@
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
             ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Width="100"
-            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,14.2,34.6" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_cls_Click">
+            VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,36,35" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_cls_Click">
             <TextBlock
                 Text="CLEAR" />
         </Button>
@@ -83,6 +83,7 @@
                 Height="24"
                 Width="24" />
         </Button>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="30,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="752" Height="45" FontSize="30" Foreground="Red"/>
 
     </Grid>
 </Window>

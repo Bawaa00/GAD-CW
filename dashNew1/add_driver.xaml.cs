@@ -36,36 +36,51 @@ namespace dashNew1
         {
             try
             {
-                string name = System.IO.Path.GetFileName(filepath);
-                string destinationPath = GetDestinationPath(name);
-                File.Copy(filepath, destinationPath, true);
-
-                string a = "insert into  Driver values  ('" + txt_Did.Text + "','" + txt_Lnum.Text + "','" + txt_Name.Text + "','" + txt_Tp.Text + "','" + txt_Address.Text + "','" + filepath + "')";
-
-
-                File.Copy(filepath, destinationPath, true);
-
-
-                int line = db.save_update_delete(a);
-                if (line == 1)
+                if(String.IsNullOrEmpty(error_msg.Text))
                 {
-                    Messagebox msg = new Messagebox();
-                    add_driver1_Loaded(this, null);
-                    msg.Show();
+                    string name = System.IO.Path.GetFileName(filepath);
+                    string destinationPath = GetDestinationPath(name);
+                    File.Copy(filepath, destinationPath, true);
+
+                    string a = "insert into  Driver values  ('" + txt_Did.Text + "','" + txt_Lnum.Text + "','" + txt_Name.Text + "','" + txt_Tp.Text + "','" + txt_Address.Text + "','" + filepath + "')";
+
+
+                    File.Copy(filepath, destinationPath, true);
+
+
+                    int line = db.save_update_delete(a);
+                    if (line == 1)
+                    {
+                        Messagebox msg = new Messagebox();
+                        add_driver1_Loaded(this, null);
+                        msg.Show();
+                    }
+                    else
+                    {
+                        Messagebox msg = new Messagebox();
+                        msg.errorMsg("Unable to save data. Please try again");
+                        msg.Show();
+                    }
                 }
                 else
                 {
                     Messagebox msg = new Messagebox();
-                    msg.errorMsg("Unable to save data. Please try again");
+                    msg.errorMsg("Please fill the form properly");
+                    msg.Show();
                 }
+
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
-                MessageBox.Show(ex.Message);
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please upload a photo");
+                msg.Show();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops...something went wrong. "+ex.Message);
+                msg.Show();
             }
         }
 
@@ -130,5 +145,52 @@ namespace dashNew1
             txt_Address.Clear();
             imd_addDriver.Source = null;
         }
+
+        private void txt_Did_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Did.Text.Length == 0)
+                error_msg.Text = "Please Enter Driver ID ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_Name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Name.Text.Length == 0)
+                error_msg.Text = "Please Enter Name";
+            else if (!Regex.IsMatch(txt_Name.Text, "^[a-zA-Z]+$"))
+                error_msg.Text = "Invalid name";        
+            else
+                error_msg.Text = "";
+
+        }
+
+        private void txt_Lnum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Lnum.Text.Length == 0)
+                error_msg.Text = "Please Enter License Number ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_Tp_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Tp.Text.Length == 0)
+                error_msg.Text = "Please Enter Telephone Number ";
+            else if (!Regex.IsMatch(txt_Tp.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Telephone No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_Address_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Address.Text.Length == 0)
+                error_msg.Text = "Please Enter Address ";
+            else
+                error_msg.Text = "";
+        }
     }
 }
+

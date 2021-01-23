@@ -90,5 +90,32 @@ namespace dashNew1
         {
             Add_Insurance_Form_Loaded(this, null);
         }
+
+        private void txt_org_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_org.Text.Length == 0)
+                error_msg.Text = "Please Enter Company Name";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_tel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_tel.Text.Length == 0)
+                error_msg.Text = "Please Enter Telephone NUmber ";
+            else if (!Regex.IsMatch(txt_tel.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+                error_msg.Text = "Telephone No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_address_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_address.Text.Length == 0)
+                error_msg.Text = "Please Enter Address ";
+            else
+                error_msg.Text = "";
+        }
+
     }
 }
