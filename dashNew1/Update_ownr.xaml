@@ -61,7 +61,7 @@
             materialDesign:HintAssist.HintOpacity=".26"
             IsEditable="True" DropDownClosed="cmb_oid_DropDownClosed" IsReadOnly="True">
         </ComboBox>
-        <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_name_TextChanged"/>
         <TextBox x:Name="txt_nic" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <TextBox x:Name="txt_contact" HorizontalAlignment="Left" Height="40" Margin="330,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>

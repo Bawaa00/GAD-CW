@@ -148,5 +148,37 @@ namespace dashNew1
             Update_Vehicle obj = new Update_Vehicle();
             obj.Show();
         }
+
+        private void txt_details_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_details.Text.Length == 0)
+                error_msg.Text = "Please Enter Driver ID ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void cmb_vid_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_vid.SelectedItem==null)
+                error_msg.Text = "Please Select Vechicle ID  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cost.Text.Length == 0)
+                error_msg.Text = "Please Enter Repair cost ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_claim_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_claim.Text.Length == 0)
+                error_msg.Text = "Please Enter  Claim Amount  ";
+            else
+                error_msg.Text = "";
+        }
     }
 }

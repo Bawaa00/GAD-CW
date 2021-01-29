@@ -137,6 +137,54 @@ namespace dashNew1
             txt_contact.Clear();
             img_cus.Source = null;
         }
+
+        private void txt_fName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_fName.Text.Length == 0)
+                error_msg.Text = "Please Enter Driver ID ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_lName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_lName.Text.Length == 0)
+                error_msg.Text = "Please Enter Last Name ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_address_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_address.Text.Length == 0)
+                error_msg.Text = "Please Enter Address ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_LicNum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_LicNum.Text.Length == 0)
+                error_msg.Text = "Please Enter License Number ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_NIC_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_NIC.Text.Length == 0)
+                error_msg.Text = "Please Enter NIC ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_contact_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_contact.Text.Length == 0)
+                error_msg.Text = "Please Enter Contact Number ";
+            else
+                error_msg.Text = "";
+        }
     }
 }
 

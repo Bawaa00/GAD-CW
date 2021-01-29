@@ -47,10 +47,10 @@
                    Height="39" FontSize="22" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,488,0,0"  Text="Contact No." VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White"/>
-        <TextBox x:Name="txt_oid" HorizontalAlignment="Left" Height="40" Margin="294,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True"/>
-        <TextBox x:Name="txt_oname" HorizontalAlignment="Left" Height="41" Margin="294,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_onic" HorizontalAlignment="Left" Height="40" Margin="294,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="294,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_oid" HorizontalAlignment="Left" Height="40" Margin="294,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True" TextChanged="txt_oid_TextChanged"/>
+        <TextBox x:Name="txt_oname" HorizontalAlignment="Left" Height="41" Margin="294,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_oname_TextChanged"/>
+        <TextBox x:Name="txt_onic" HorizontalAlignment="Left" Height="40" Margin="294,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_onic_TextChanged"/>
+        <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="294,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_address_TextChanged"/>
         <TextBox x:Name="txt_contact" HorizontalAlignment="Left" Height="40" Margin="294,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
         <Button x:Name="btn_change"
             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -109,6 +109,7 @@
                 Text="UPLOAD" />
             </Button>
         </Grid>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="75" Margin="271,586,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="561" Foreground="#FFE81212"/>
 
     </Grid>
 </Window>

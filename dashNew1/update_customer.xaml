@@ -90,14 +90,14 @@
         <Button x:Name="BTN_CLEAR"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             Height="50" Width="180" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-            materialDesign:ButtonAssist.CornerRadius="5 5 5 5" Margin="340,0,0,74"
+            materialDesign:ButtonAssist.CornerRadius="5 5 5 5" Margin="340,0,0,46"
             ToolTip="MaterialDesignRaisedAccentButton with Round Top Corners" Background="#FF4818B1" Click="BTN_CLEAR_Click" BorderBrush="White">
             <TextBlock
                 Text="CLEAR" FontSize="21" FontWeight="Heavy" Foreground="White" />
         </Button>
         <TextBox x:Name="TXT_FIRSTNAME" 
             HorizontalAlignment="Left" Height="32" Margin="420,207,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" TextChanged="TXT_FIRSTNAME_TextChanged"/>
         <TextBox x:Name="TXT_LASTNAME" 
             HorizontalAlignment="Left" Height="32" Margin="420,267,0,0" TextWrapping="Wrap" Foreground="White"
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
@@ -112,7 +112,7 @@
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
         <TextBlock HorizontalAlignment="Left" Margin="240,49,0,0" TextWrapping="Wrap" Text="UPDATE CUSTOMER" VerticalAlignment="Top"
                    FontSize="50" Foreground="White" Opacity="0.6"/>
-        <ComboBox x:Name="CMB_UPDATE" HorizontalAlignment="Left" Margin="420,150,0,0" VerticalAlignment="Top" Width="304" DropDownClosed="CMB_UPDATE_DropDownClosed" FontSize="20" FontFamily="Segoe UI Black"/>
+        <ComboBox x:Name="CMB_UPDATE" HorizontalAlignment="Left" Margin="420,150,0,0" VerticalAlignment="Top" Width="304" DropDownClosed="CMB_UPDATE_DropDownClosed" FontSize="20" FontFamily="Segoe UI Black" IsReadOnly="True"/>
         <Grid HorizontalAlignment="Left" Height="61" Margin="936,0,0,0" VerticalAlignment="Top" Width="483">
             <Rectangle HorizontalAlignment="Right" Height="61" VerticalAlignment="Top" Width="383">
                 <Rectangle.Fill>
@@ -180,6 +180,8 @@
                 Text="UPDATE" FontSize="21" FontWeight="Heavy" Foreground="White" />
             </Button>
         </Grid>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="18,491,0,0"   VerticalAlignment="Top" Height="67" Width="765"
+                   Foreground="Red" FontSize="20" TextAlignment="Center"/>
 
 
     </Grid>

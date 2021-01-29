@@ -64,12 +64,12 @@
         <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,244,0,0"
-            IsEditable="True" IsReadOnly="True">
+            IsEditable="True" IsReadOnly="True" DropDownClosed="cmb_vid_DropDownClosed">
         </ComboBox>
-        <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="330,308,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="330,308,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_details_TextChanged"/>
         <DatePicker x:Name="txt_date" HorizontalAlignment="Left" Height="40" Margin="330,440,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_cost" HorizontalAlignment="Left" Height="40" Margin="330,502,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_claim" HorizontalAlignment="Left" Height="40" Margin="330,564,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_cost" HorizontalAlignment="Left" Height="40" Margin="330,502,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_cost_TextChanged"/>
+        <TextBox x:Name="txt_claim" HorizontalAlignment="Left" Height="40" Margin="330,564,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_claim_TextChanged"/>
         <Button x:Name="btn_save"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
@@ -111,5 +111,7 @@
             ToolTip="Resource name: MaterialDesignRaisedLightButton" Margin="683,244,0,0" Click="btn_search_Click">
             SEARCH VEHICLE
         </Button>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="286,635,0,0"  VerticalAlignment="Top" Height="45" Width="375"
+                   FontSize="20" Foreground="Red" TextAlignment="Center"/>
     </Grid>
 </Window>

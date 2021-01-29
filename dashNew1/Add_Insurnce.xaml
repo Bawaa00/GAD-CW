@@ -43,7 +43,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="45,356,0,0"  Text="Address" VerticalAlignment="Top"
                    Height="39" FontSize="22" Foreground="White"/>
 
-        <TextBox x:Name="txt_iid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True"/>
+        <TextBox x:Name="txt_iid" HorizontalAlignment="Left" Height="40" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True" TextChanged="txt_iid_TextChanged"/>
         <TextBox x:Name="txt_org" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_org_TextChanged"/>
         <TextBox x:Name="txt_tel" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_tel_TextChanged"/>
         <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="127" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_address_TextChanged"/>

@@ -140,5 +140,10 @@ namespace dashNew1
         {
             this.Close();
         }
+
+        private void txt_name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
