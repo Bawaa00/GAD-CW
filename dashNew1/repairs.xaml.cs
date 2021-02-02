@@ -93,5 +93,10 @@ namespace dashNew1
         {
             this.Close();
         }
+
+        private void cmb_type_DropDownClosed(object sender, EventArgs e)
+        {
+
+        }
     }
 }

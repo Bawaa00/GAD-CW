@@ -58,7 +58,7 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="275,84,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True">
+            IsEditable="True" DropDownClosed="cmb_type_DropDownClosed">
             <ComboBoxItem Content="Maintenance Repair"/>
             <ComboBoxItem Content="Accident Repair"/>
         </ComboBox>
@@ -129,6 +129,7 @@
                 <TextBlock
                 Text="DELETE" />
             </Button>
+            <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="62" Margin="311,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="660" Foreground="#FFF70D0D" FontSize="20"/>
         </Grid>
     </Grid>
 </Window>
