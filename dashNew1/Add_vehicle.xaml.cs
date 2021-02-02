@@ -285,5 +285,9 @@ namespace dashNew1
             else { error_msg.Text = ""; }
         }
 
+        private void cbox_year_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -45,6 +45,15 @@ namespace dashNew1
 
         private void cmb_oid_DropDownClosed(object sender, EventArgs e)
         {
+
+            if (cmb_oid.SelectedItem == null)
+            {
+                error_msg.Text = "Please select owner id";
+
+            }
+            else { error_msg.Text = ""; }
+            
+
             DataTable dt = new DataTable();
             dt = db.getData("select * from Owner where O_ID = '"+cmb_oid.Text+"' ");
             dg_owners.ItemsSource = dt.DefaultView;

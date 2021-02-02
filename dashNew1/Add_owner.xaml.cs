@@ -128,6 +128,38 @@ namespace dashNew1
         {
             this.Close();
         }
+
+        private void txt_oid_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_oid.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner ID";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_oname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_oname.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Name  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_onic_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_onic.Text.Length == 0)
+                error_msg.Text = "Please Enter Owner Nic ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_address_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_address.Text.Length == 0)
+                error_msg.Text = "Please Enter Address ";
+            else
+                error_msg.Text = "";
+        }
     }
  
 }

@@ -173,5 +173,14 @@ namespace dashNew1
         {
             this.Close();
         }
+
+        private void TXT_FIRSTNAME_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TXT_FIRSTNAME.Text.Length == 0)
+            {
+                error_msg.Text = "Please Enter First Name ";
+            }
+            else { error_msg.Text = ""; }
+        }
     }
 }

@@ -104,5 +104,6 @@
                 Text="DELETE" />
             </Button>
         </Grid>
+        <TextBlock x:Name="error_msg" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="76" Margin="45,585,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="619" Foreground="#FFF70404"/>
     </Grid>
 </Window>

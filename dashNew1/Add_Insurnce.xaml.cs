@@ -117,5 +117,13 @@ namespace dashNew1
                 error_msg.Text = "";
         }
 
+        private void txt_iid_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_iid.Text.Length == 0)
+                error_msg.Text = "Please Enter Insurance ID";
+            else
+                error_msg.Text = "";
+
+        }
     }
 }

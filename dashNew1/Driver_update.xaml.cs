@@ -135,16 +135,22 @@ namespace dashNew1
 
         private void cbox_did_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = obj.getData("select * from Driver where D_ID='" + cbox_did.Text + "'");
-            txt_Lnum.Text = cbox_did.Text;
-            txt_Lnum.Text = dt.Rows[0][1].ToString();
-            txt_Name.Text = dt.Rows[0][2].ToString();
-            txt_Tp.Text = dt.Rows[0][3].ToString();
-            txt_Address.Text = dt.Rows[0][4].ToString();
-            filepath = dt.Rows[0][5].ToString();
-            ImageSource imgsource = new BitmapImage(new Uri(filepath));
-            img.Source = imgsource;
+            if (cbox_did.SelectedIndex == -1)
+                error_msg.Text = "Please select a driver ID";
+            else
+            {
+                error_msg.Text = "";
+                DataTable dt = new DataTable();
+                dt = obj.getData("select * from Driver where D_ID='" + cbox_did.Text + "'");
+                txt_Lnum.Text = cbox_did.Text;
+                txt_Lnum.Text = dt.Rows[0][1].ToString();
+                txt_Name.Text = dt.Rows[0][2].ToString();
+                txt_Tp.Text = dt.Rows[0][3].ToString();
+                txt_Address.Text = dt.Rows[0][4].ToString();
+                filepath = dt.Rows[0][5].ToString();
+                ImageSource imgsource = new BitmapImage(new Uri(filepath));
+                img.Source = imgsource;
+            }
         }
 
         private void btn_home_Click(object sender, RoutedEventArgs e)

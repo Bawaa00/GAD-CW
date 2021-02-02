@@ -76,7 +76,7 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,174,0,0" VerticalAlignment="Top" Width="250" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True" Background="{x:Null}" BorderBrush="#FF6F6E72" IsReadOnly="True" DropDownClosed="cbox_year_DropDownClosed">
+            IsEditable="True" Background="{x:Null}" BorderBrush="#FF6F6E72" IsReadOnly="True" DropDownClosed="cbox_year_DropDownClosed" SelectionChanged="cbox_year_SelectionChanged">
             <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="248"/>
             <ComboBoxItem Content="2023" HorizontalAlignment="Left" Width="248"/>
             <ComboBoxItem Content="2022" HorizontalAlignment="Left" Width="248"/>
@@ -219,7 +219,7 @@
                     Text="CLEAR" />
             </Button>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="543" Margin="633,102,0,0" VerticalAlignment="Top" Width="661">
+        <Grid HorizontalAlignment="Left" Height="488" Margin="633,102,0,0" VerticalAlignment="Top" Width="661">
             <Image x:Name="img_vehicle" HorizontalAlignment="Left" Height="388" Margin="46,54,0,0" VerticalAlignment="Top" Width="388"/>
             <Button x:Name="btn_upload"
             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -251,6 +251,7 @@
             </Button>
         </Grid>
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="610,699,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="684" FontSize="30" Foreground="Red"/>
+        <TextBlock x:Name="error_msg1" HorizontalAlignment="Left" Height="54" Margin="651,661,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="628" Foreground="#FFF70D0D"/>
 
 
     </Grid>
