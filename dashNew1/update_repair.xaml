@@ -64,10 +64,10 @@
                 Accident Repair
             </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="307.5,308,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <TextBox x:Name="txt_details" HorizontalAlignment="Left" Height="110" Margin="307.5,308,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1" TextChanged="txt_details_TextChanged"/>
         <DatePicker x:Name="txt_date" HorizontalAlignment="Left" Height="40" Margin="307.5,440,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
-        <TextBox x:Name="txt_cost" HorizontalAlignment="Left" Height="40" Margin="307.5,502,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
-        <TextBox x:Name="txt_claim" HorizontalAlignment="Left" Height="40" Margin="307.5,564,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
+        <TextBox x:Name="txt_cost" HorizontalAlignment="Left" Height="40" Margin="307.5,502,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1" TextChanged="txt_cost_TextChanged"/>
+        <TextBox x:Name="txt_claim" HorizontalAlignment="Left" Height="40" Margin="307.5,564,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1" TextChanged="txt_claim_TextChanged"/>
         <Button x:Name="btn_update"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
@@ -110,6 +110,15 @@
             IsEditable="True" DropDownClosed="cmb_RID_DropDownClosed" Grid.Column="1"/>
         <TextBox x:Name="TXT_VID" HorizontalAlignment="Left" Height="41" Margin="307.5,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1"/>
         <Button x:Name="btn_clear" Content="CLEAR" HorizontalAlignment="Left" Margin="802.5,222,0,0" VerticalAlignment="Top" Width="105" Click="btn_clear_Click" Grid.Column="1"/>
-        <TextBlock x:Name="txt_error" Grid.Column="1" HorizontalAlignment="Left" Margin="703,581,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="270" FontSize="21" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="txt_error" Grid.Column="1" HorizontalAlignment="Left" Margin="265,626,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="453" FontSize="21" FontWeight="Bold" Foreground="Red" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.137"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
     </Grid>
 </Window>

@@ -59,12 +59,12 @@
             materialDesign:HintAssist.Hint="Search" HorizontalAlignment="Left" Height="38" 
             Margin="330,120,0,0" VerticalAlignment="Top" Width="331" FontSize="21"
             materialDesign:HintAssist.HintOpacity=".26"
-            IsEditable="True" DropDownClosed="cmb_oid_DropDownClosed" IsReadOnly="True">
+            IsEditable="True" DropDownClosed="cmb_oid_DropDownClosed" IsReadOnly="True" SelectionChanged="cmb_oid_SelectionChanged">
         </ComboBox>
         <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="41" Margin="330,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_name_TextChanged"/>
-        <TextBox x:Name="txt_nic" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
-        <TextBox x:Name="txt_contact" HorizontalAlignment="Left" Height="40" Margin="330,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_nic" HorizontalAlignment="Left" Height="40" Margin="330,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_nic_TextChanged"/>
+        <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="330,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_address_TextChanged"/>
+        <TextBox x:Name="txt_contact" HorizontalAlignment="Left" Height="40" Margin="330,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_contact_TextChanged"/>
         <Image x:Name="img_owner" HorizontalAlignment="Left" Height="300" Margin="791,125,0,0" VerticalAlignment="Top" Width="300"/>
         <Button x:Name="btn_upload"
             Style="{StaticResource MaterialDesignRaisedButton}"
@@ -116,5 +116,6 @@
                 Text="SAVE" />
             </Button>
         </Grid>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="69" Margin="329,595,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="449" Foreground="#FFF50808"/>
     </Grid>
 </Window>
