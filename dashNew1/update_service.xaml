@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:dashNew1"
         mc:Ignorable="d"
-        Title="update_service" Height="639.468" Width="896.835" Loaded="UPDATE_SERVICE_Loaded" WindowStartupLocation="CenterScreen">
+        Title="update_service" Height="667" Width="896.835" Loaded="UPDATE_SERVICE_Loaded" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,3.8,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -39,9 +39,9 @@
                    Height="40" FontSize="22" Foreground="White" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="45,442,0,0"  Text="Next Service" VerticalAlignment="Top"
                    Height="40" FontSize="22" Foreground="White" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_Sdetails" HorizontalAlignment="Left" Height="110" Margin="330,244,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_milge" HorizontalAlignment="Left" Height="40" Margin="330,380,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_nxt" HorizontalAlignment="Left" Height="40" Margin="330,442,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_Sdetails" HorizontalAlignment="Left" Height="110" Margin="330,244,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2" TextChanged="txt_Sdetails_TextChanged"/>
+        <TextBox x:Name="txt_milge" HorizontalAlignment="Left" Height="40" Margin="330,380,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2" TextChanged="txt_milge_TextChanged"/>
+        <TextBox x:Name="txt_nxt" HorizontalAlignment="Left" Height="40" Margin="330,442,0,0" VerticalAlignment="Top" Width="331" FontSize="21" Grid.ColumnSpan="2" TextChanged="txt_nxt_TextChanged"/>
         <Button x:Name="BTN_HOME"
             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
             HorizontalAlignment="Right" VerticalAlignment="Top"
@@ -61,8 +61,8 @@
                 Width="24" />
         </Button>
         <ComboBox x:Name="cmb_updateser" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="330,120,0,0" VerticalAlignment="Top" Width="331" DropDownClosed="cmb_updateser_DropDownClosed"/>
-        <TextBox x:Name="txt_vehiclenum" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="38" Margin="330,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331"/>
-        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="110" Margin="266,498,0,0" VerticalAlignment="Top" Width="619">
+        <TextBox x:Name="txt_vehiclenum" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="38" Margin="330,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" TextChanged="txt_vehiclenum_TextChanged"/>
+        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="110" Margin="271,541,-5,-15" VerticalAlignment="Top" Width="619">
             <Rectangle HorizontalAlignment="Right" Height="75" Margin="0,0,-4,25"  VerticalAlignment="Bottom" Width="561">
                 <Rectangle.Fill>
                     <LinearGradientBrush EndPoint="0,0" StartPoint="1,0">
@@ -97,6 +97,7 @@
                 <TextBlock
                 Text="DELETE" FontSize="14" FontWeight="Bold" />
             </Button>
+            <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="41" Margin="62,-36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="547" Foreground="#FFF70505" FontSize="20"/>
         </Grid>
     </Grid>
 </Window>

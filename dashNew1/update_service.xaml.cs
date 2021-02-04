@@ -106,18 +106,56 @@ namespace dashNew1
 
         private void cmb_updateser_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Service where S_ID='" + cmb_updateser.Text + "'");
+            if (cmb_updateser.SelectedIndex == 0)
+            { error_msg.Text = "Please Select Service ID"; }
+            else
+            {
+                error_msg.Text = "";
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Service where S_ID='" + cmb_updateser.Text + "'");
 
-            txt_vehiclenum.Text = dt.Rows[0][0].ToString();
-            txt_Sdetails.Text = dt.Rows[0][2].ToString();
-            txt_milge.Text = dt.Rows[0][3].ToString();
-            txt_nxt.Text = dt.Rows[0][4].ToString();
+                txt_vehiclenum.Text = dt.Rows[0][0].ToString();
+                txt_Sdetails.Text = dt.Rows[0][2].ToString();
+                txt_milge.Text = dt.Rows[0][3].ToString();
+                txt_nxt.Text = dt.Rows[0][4].ToString();
+            }
         }
 
         private void BTN_BACK_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_vehiclenum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_vehiclenum.Text.Length == 0)
+                error_msg.Text = " Please Enter Vehicle ID";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_Sdetails_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Sdetails.Text.Length == 0)
+                error_msg.Text = " Please Enter Service Details";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_milge_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_milge.Text.Length == 0)
+                error_msg.Text = " Please Enter Meliage at Sevrice";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_nxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_nxt.Text.Length == 0)
+                error_msg.Text = " Please Enter Next Service";
+            else
+                error_msg.Text = "";
         }
     }
 }

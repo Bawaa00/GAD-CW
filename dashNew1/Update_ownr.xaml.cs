@@ -55,20 +55,29 @@ namespace dashNew1
 
         private void cmb_oid_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Owner where O_ID = '"+cmb_oid.Text+"'");
-            txt_nic.Text = dt.Rows[0][1].ToString();
-            txt_name.Text = dt.Rows[0][2].ToString();
-            txt_address.Text = dt.Rows[0][3].ToString();
-            txt_contact.Text = dt.Rows[0][4].ToString();
-            path = dt.Rows[0][5].ToString();
 
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.CacheOption = BitmapCacheOption.OnLoad;
-            image.UriSource = new Uri(path);
-            image.EndInit();
-            img_owner.Source = image;
+            if (cmb_oid.SelectedIndex == 0)
+            { error_msg.Text = "Please Select Owner ID"; }
+            else
+            {
+
+                error_msg.Text = "";
+
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Owner where O_ID = '" + cmb_oid.Text + "'");
+                txt_nic.Text = dt.Rows[0][1].ToString();
+                txt_name.Text = dt.Rows[0][2].ToString();
+                txt_address.Text = dt.Rows[0][3].ToString();
+                txt_contact.Text = dt.Rows[0][4].ToString();
+                path = dt.Rows[0][5].ToString();
+
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = new Uri(path);
+                image.EndInit();
+                img_owner.Source = image;
+            }
         }
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
@@ -143,7 +152,39 @@ namespace dashNew1
 
         private void txt_name_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (txt_name.Text.Length == 0)
+                error_msg.Text = " Please Enter Owner Name ";
+            else
+                error_msg.Text = "";
+        }
 
+        private void cmb_oid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void txt_nic_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_nic.Text.Length == 0)
+                error_msg.Text = "  Please Enter Owner NIC ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_address_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_address.Text.Length == 0)
+                error_msg.Text = "  Please Enter Owner Address ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_contact_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_contact.Text.Length == 0)
+                error_msg.Text = "  Please Enter Owner Contact ";
+            else
+                error_msg.Text = "";
         }
     }
 }

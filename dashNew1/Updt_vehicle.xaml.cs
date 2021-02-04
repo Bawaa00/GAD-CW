@@ -169,5 +169,70 @@ namespace dashNew1
         {
             this.Close();
         }
+
+        private void cbox_year_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_year.SelectedItem == null)
+            { error_msg.Text = "Please Select Year"; }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cbox_make_DropDownClosed(object sender, EventArgs e)
+        {
+
+            if (cbox_make.SelectedItem == null)
+            { error_msg.Text = "Please Select Make"; }
+            else { error_msg.Text = ""; }
+        }
+
+        private void cbox_category_DropDownClosed(object sender, EventArgs e)
+        {
+
+            if (cbox_category.SelectedItem == null)
+            { error_msg.Text = "Please Select Category"; }
+            else { error_msg.Text = ""; }
+        }
+
+        private void txt_model_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_model.Text.Length == 0)
+                error_msg.Text = "Please Enter Model";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cpweek_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txt_cpweek.Text.Length == 0)
+                error_msg.Text = "Please Enter Cost per Week";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cpmonth_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txt_cpmonth.Text.Length == 0)
+                error_msg.Text = "Please Enter Coset Per Month";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_extra_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txt_model.Text.Length == 0)
+                error_msg.Text = "Please Enter Extra Cost per Milage";
+            else
+                error_msg.Text = "";
+        }
+
+        private void cbox_oid_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_oid.SelectedItem == null)
+            { error_msg.Text = "Please Select Owner ID"; }
+            else { error_msg.Text = ""; }
+        }
     }
 }

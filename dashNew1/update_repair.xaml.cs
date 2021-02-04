@@ -210,5 +210,29 @@ namespace dashNew1
                 txt_error.Text = "Please select a Repair Type";
             }
         }
+
+        private void txt_details_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_details.Text.Length == 0)
+                txt_error.Text = " Please Enter Repair Detail";
+            else
+                txt_error.Text = "";
+        }
+
+        private void txt_cost_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cost.Text.Length == 0)
+                txt_error.Text = " Please Enter Repair Cost ";
+            else
+                txt_error.Text = "";
+        }
+
+        private void txt_claim_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_claim.Text.Length == 0)
+                txt_error.Text = " Please Enter Claim Amount";
+            else
+                txt_error.Text = "";
+        }
     }
 }
