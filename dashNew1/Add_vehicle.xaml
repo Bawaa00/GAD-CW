@@ -250,7 +250,7 @@
                 Width="24" />
             </Button>
         </Grid>
-        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="610,699,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="684" FontSize="30" Foreground="Red"/>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="610,699,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="684" FontSize="30" Foreground="Red" FontWeight="Bold"/>
 
 
     </Grid>

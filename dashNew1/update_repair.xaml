@@ -110,7 +110,7 @@
             IsEditable="True" DropDownClosed="cmb_RID_DropDownClosed" Grid.Column="1"/>
         <TextBox x:Name="TXT_VID" HorizontalAlignment="Left" Height="41" Margin="307.5,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="331" FontSize="21" Grid.Column="1" TextChanged="TXT_VID_TextChanged"/>
         <Button x:Name="btn_clear" Content="CLEAR" HorizontalAlignment="Left" Margin="802.5,222,0,0" VerticalAlignment="Top" Width="105" Click="btn_clear_Click" Grid.Column="1"/>
-        <TextBlock x:Name="txt_error" Grid.Column="1" HorizontalAlignment="Left" Margin="265,626,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="453" FontSize="21" FontWeight="Bold" Foreground="Red" RenderTransformOrigin="0.5,0.5">
+        <TextBlock x:Name="txt_error" Grid.Column="1" HorizontalAlignment="Left" Margin="265,626,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="453" FontSize="21" Foreground="Red" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

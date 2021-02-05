@@ -116,6 +116,6 @@
                 Text="SAVE" />
             </Button>
         </Grid>
-        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="69" Margin="329,595,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="449" Foreground="#FFF50808"/>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="69" Margin="329,595,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="449" Foreground="#FFF50808" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -181,7 +181,7 @@
             </Button>
         </Grid>
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="18,491,0,0"   VerticalAlignment="Top" Height="67" Width="765"
-                   Foreground="Red" FontSize="20" TextAlignment="Center"/>
+                   Foreground="Red" FontSize="20" TextAlignment="Center" FontWeight="Bold"/>
 
 
     </Grid>
