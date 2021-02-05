@@ -125,13 +125,13 @@
                 <TextBlock
                 Text="UPDATE" />
             </Button>
-            <Button x:Name="btn_del"
+            <Button x:Name="btn_view"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
             materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="405,17,34,19" Background="#FF20A820" BorderBrush="{x:Null}">
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="405,17,34,19" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_view_Click">
                 <TextBlock
-                Text="DELETE" />
+                Text="VIEW ALL" />
             </Button>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="191" Margin="1077,-5,0,0" VerticalAlignment="Top" Width="207">

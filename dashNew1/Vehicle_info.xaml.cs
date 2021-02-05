@@ -83,5 +83,10 @@ namespace dashNew1
         {
             this.Close();
         }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            view_vehicle_form_Loaded(this, null);
+        }
     }
 }

@@ -254,7 +254,7 @@
                 Width="24" />
             </Button>
         </Grid>
-        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="69" Margin="680,662,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="599" Foreground="#FFF50808"/>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="69" Margin="680,662,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="599" Foreground="#FFF50808" FontSize="30" FontWeight="Bold"/>
 
     </Grid>
 </Window>
