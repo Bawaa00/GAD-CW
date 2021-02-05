@@ -90,31 +90,31 @@
                         <materialDesign:PackIcon Kind="ViewDashboard" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Dashboard"/></TextBlock>
-                <TextBlock x:Name="Cars" Background="#FF4818B1" Height="50" Margin="3" MouseLeave="Cars_MouseLeave" MouseDown="Cars_MouseDown">
+                <TextBlock x:Name="Cars" Background="#FF4818B1" Height="50" Margin="3" MouseDown="Cars_MouseDown">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="CarSports" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Vehicles"/>
                 </TextBlock>
-                <TextBlock x:Name="Customers" Background="#FF4818B1" Height="50" Margin="3" MouseLeave="Customers_MouseLeave" MouseDown="Customers_MouseDown">
+                <TextBlock x:Name="Customers" Background="#FF4818B1" Height="50" Margin="3" MouseDown="Customers_MouseDown">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="HumanGreeting" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Customers"/>
                 </TextBlock>
-                <TextBlock x:Name="driver" Background="#FF4818B1" Height="50" Margin="3" MouseLeave="driver_MouseLeave" MouseDown="driver_MouseDown">
+                <TextBlock x:Name="driver" Background="#FF4818B1" Height="50" Margin="3" MouseDown="driver_MouseDown">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="CardAccountDetails" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Drivers"/>
                 </TextBlock>
-                <TextBlock x:Name="services" Background="#FF4818B1" Height="50" Margin="3" MouseLeave="services_MouseLeave" MouseDown="services_MouseDown">
+                <TextBlock x:Name="services" Background="#FF4818B1" Height="50" Margin="3" MouseDown="services_MouseDown">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="ProgressWrench" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
                     </InlineUIContainer><Run BaselineAlignment="Center" Foreground="White" FontSize="23" Text="   Services"/>
                 </TextBlock>
-                <TextBlock x:Name="repairs" Background="#FF4818B1" Height="50" Margin="3" MouseLeave="repairs_MouseLeave" MouseDown="repairs_MouseDown">
+                <TextBlock x:Name="repairs" Background="#FF4818B1" Height="50" Margin="3" MouseDown="repairs_MouseDown">
                     <InlineUIContainer>
                         <materialDesign:PackIcon Kind="HammerWrench" Margin="5" Height="40" Width="40"
                             Foreground="White"/>
@@ -235,7 +235,7 @@
 
         </Grid>
         <StackPanel x:Name="acnt_option_panel" HorizontalAlignment="Left" Height="53" Background="#FF4818B1" 
-                    Margin="1081,50,0,0" VerticalAlignment="Top" Width="170" MouseEnter="acnt_option_panel_MouseEnter" MouseLeave="acnt_option_panel_MouseLeave" Visibility="Hidden">
+                    Margin="1081,50,0,0" VerticalAlignment="Top" Width="170" MouseLeave="acnt_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
@@ -243,7 +243,7 @@
                                                                      FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="car_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
-                    Margin="228,120,0,0" VerticalAlignment="Top" Width="170" MouseEnter="car_option_panel_MouseEnter" MouseLeave="car_option_panel_MouseLeave" Visibility="Hidden">
+                    Margin="228,120,0,0" VerticalAlignment="Top" Width="170" MouseLeave="car_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
@@ -258,7 +258,7 @@
         </StackPanel>
 
         <StackPanel x:Name="cus_option_panel" HorizontalAlignment="Left" Height="auto" 
-                    Margin="228,176,0,0" VerticalAlignment="Top" Width="170" MouseEnter="cus_option_panel_MouseEnter" MouseLeave="cus_option_panel_MouseLeave" Background="#FF4818B1" Visibility="Hidden">
+                    Margin="228,176,0,0" VerticalAlignment="Top" Width="170"  MouseLeave="cus_option_panel_MouseLeave" Background="#FF4818B1" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
@@ -269,7 +269,7 @@
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="d_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
-                    Margin="228,230,0,0" VerticalAlignment="Top" Width="170" MouseEnter="d_option_panel_MouseEnter" MouseLeave="d_option_panel_MouseLeave" Visibility="Hidden">
+                    Margin="228,230,0,0" VerticalAlignment="Top" Width="170" MouseLeave="d_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
@@ -281,7 +281,7 @@
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="s_option_panel" HorizontalAlignment="Left" Height="auto" Background="#FF4818B1" 
-                    Margin="228,286,0,0" VerticalAlignment="Top" Width="170" MouseEnter="s_option_panel_MouseEnter" MouseLeave="s_option_panel_MouseLeave" Visibility="Hidden">
+                    Margin="228,286,0,0" VerticalAlignment="Top" Width="170" MouseLeave="s_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>
@@ -295,7 +295,7 @@
                     FontWeight="Medium"/></TextBlock>
         </StackPanel>
         <StackPanel x:Name="repair_option_panel" HorizontalAlignment="Left" Height="270" Background="#FF4818B1" 
-                    Margin="228,342,0,0" VerticalAlignment="Top" Width="181" MouseEnter="repair_option_panel_MouseEnter" MouseLeave="reapair_option_panel_MouseLeave" Visibility="Hidden">
+                    Margin="228,342,0,0" VerticalAlignment="Top" Width="181" MouseLeave="reapair_option_panel_MouseLeave" Visibility="Hidden">
             <StackPanel.Effect>
                 <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
             </StackPanel.Effect>

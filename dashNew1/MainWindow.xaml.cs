@@ -25,19 +25,10 @@ namespace dashNew1
     /// </summary>
     public partial class MainWindow : Window
     {
-        //DispatcherTimer timer;
-        //double panelWidth;
-        //Brush tab;
-        //bool hidden = true;
         public MainWindow()
         {
             InitializeComponent();
-            /* timer = new DispatcherTimer();
-             timer.Interval = new TimeSpan(10);
-             timer.Tick += Timer_Tick;
 
-             panelWidth = sidePanel.Width;
-             sidePanel.Width = 50;*/
             this.PieChart();
             labelData();
         }
@@ -51,29 +42,6 @@ namespace dashNew1
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
             DataContext = this;
         }
-
-        /*  private void Timer_Tick(object sender, EventArgs e)
-          {
-              if (hidden == true)
-              {
-                  sidePanel.Width += 1;
-                  if (sidePanel.Width >= panelWidth)
-                  {
-                      timer.Stop();
-                      hidden = false;
-                  }
-              }
-              else
-              {
-                  sidePanel.Width -= 1;
-                  if (sidePanel.Width <= 50)
-                  {
-                      timer.Stop();
-                      hidden = true;
-                  }
-
-              }
-          }*/
 
         public void labelData()
         {
@@ -103,26 +71,6 @@ namespace dashNew1
             img_vehicle.Source = image;
         }
 
-        /*private void SidePanel_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
-        }*/
-
-        /*private void ToggleButton_Checked(object sender, RoutedEventArgs e)
-        {
-            timer.Start();
-        }*/
-
-
-
-        /*private void collapse(object sender, RoutedEventArgs e)
-        {
-            timer.Start();
-        }*/
-
         //Side Panel Buttons
 
         private void Cars_MouseDown(object sender, MouseButtonEventArgs e)
@@ -130,28 +78,14 @@ namespace dashNew1
             car_option_panel.Visibility = Visibility.Visible;
         }
 
-        private void Cars_MouseLeave(object sender, MouseEventArgs e)
-        {
-            car_option_panel.Visibility = Visibility.Hidden;
-        }
-
         private void Customers_MouseDown(object sender, MouseButtonEventArgs e)
         {
             cus_option_panel.Visibility = Visibility.Visible;
         }
 
-        private void Customers_MouseLeave(object sender, MouseEventArgs e)
-        {
-            cus_option_panel.Visibility = Visibility.Hidden;
-        }
-
         private void driver_MouseDown(object sender, MouseButtonEventArgs e)
         {
             d_option_panel.Visibility = Visibility.Visible;
-        }
-        private void driver_MouseLeave(object sender, MouseEventArgs e)
-        {
-            d_option_panel.Visibility = Visibility.Hidden;
         }
 
         private void services_MouseDown(object sender, MouseButtonEventArgs e)
@@ -159,24 +93,9 @@ namespace dashNew1
             s_option_panel.Visibility = Visibility.Visible;
         }
 
-        private void services_MouseLeave(object sender, MouseEventArgs e)
-        {
-            s_option_panel.Visibility = Visibility.Hidden;
-        }
-
         private void repairs_MouseDown(object sender, MouseButtonEventArgs e)
         {
             repair_option_panel.Visibility = Visibility.Visible;
-        }
-
-        private void repairs_MouseLeave(object sender, MouseEventArgs e)
-        {
-            repair_option_panel.Visibility = Visibility.Hidden;
-        }
-
-        private void cus_option_panel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            cus_option_panel.Visibility = Visibility.Visible;
         }
 
         private void cus_option_panel_MouseLeave(object sender, MouseEventArgs e)
@@ -184,19 +103,9 @@ namespace dashNew1
             cus_option_panel.Visibility = Visibility.Hidden;
         }
 
-        private void car_option_panel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            car_option_panel.Visibility = Visibility.Visible;
-        }
-
         private void car_option_panel_MouseLeave(object sender, MouseEventArgs e)
         {
             car_option_panel.Visibility = Visibility.Hidden;
-        }
-
-        private void d_option_panel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            d_option_panel.Visibility = Visibility.Visible;
         }
 
         private void d_option_panel_MouseLeave(object sender, MouseEventArgs e)
@@ -204,20 +113,11 @@ namespace dashNew1
             d_option_panel.Visibility = Visibility.Hidden;
         }
 
-        private void s_option_panel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            s_option_panel.Visibility = Visibility.Visible;
-        }
-
         private void s_option_panel_MouseLeave(object sender, MouseEventArgs e)
         {
             s_option_panel.Visibility = Visibility.Hidden;
         }
 
-        private void repair_option_panel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            repair_option_panel.Visibility = Visibility.Visible;
-        }
 
         private void reapair_option_panel_MouseLeave(object sender, MouseEventArgs e)
         {
@@ -381,11 +281,6 @@ namespace dashNew1
         {
             Registration obj = new Registration();
             obj.Show();
-        }
-
-        private void acnt_option_panel_MouseEnter(object sender, MouseEventArgs e)
-        {
-            acnt_option_panel.Visibility = Visibility.Visible;
         }
 
         private void acnt_option_panel_MouseLeave(object sender, MouseEventArgs e)
