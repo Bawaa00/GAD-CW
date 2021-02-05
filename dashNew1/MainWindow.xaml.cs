@@ -77,51 +77,86 @@ namespace dashNew1
         {
             car_option_panel.Visibility = Visibility.Visible;
         }
+        private void Cars_MouseLeave(object sender, MouseEventArgs e)
+        {
+            car_option_panel.Visibility = Visibility.Hidden;
+        }
+        private void car_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            car_option_panel.Visibility = Visibility.Visible;
+        }
+        private void car_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            car_option_panel.Visibility = Visibility.Hidden;
+        }
 
+        private void Customers_MouseLeave(object sender, MouseEventArgs e)
+        {
+            cus_option_panel.Visibility = Visibility.Hidden;
+        }
+        private void cus_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            cus_option_panel.Visibility = Visibility.Visible;
+        }
         private void Customers_MouseDown(object sender, MouseButtonEventArgs e)
         {
             cus_option_panel.Visibility = Visibility.Visible;
+        }
+        private void cus_option_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            cus_option_panel.Visibility = Visibility.Hidden;
         }
 
         private void driver_MouseDown(object sender, MouseButtonEventArgs e)
         {
             d_option_panel.Visibility = Visibility.Visible;
         }
-
-        private void services_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            s_option_panel.Visibility = Visibility.Visible;
-        }
-
-        private void repairs_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            repair_option_panel.Visibility = Visibility.Visible;
-        }
-
-        private void cus_option_panel_MouseLeave(object sender, MouseEventArgs e)
-        {
-            cus_option_panel.Visibility = Visibility.Hidden;
-        }
-
-        private void car_option_panel_MouseLeave(object sender, MouseEventArgs e)
-        {
-            car_option_panel.Visibility = Visibility.Hidden;
-        }
-
         private void d_option_panel_MouseLeave(object sender, MouseEventArgs e)
         {
             d_option_panel.Visibility = Visibility.Hidden;
         }
+        private void d_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            d_option_panel.Visibility = Visibility.Visible;
+        }
+        private void driver_MouseLeave(object sender, MouseEventArgs e)
+        {
+            d_option_panel.Visibility = Visibility.Hidden;
+        }
+
 
         private void s_option_panel_MouseLeave(object sender, MouseEventArgs e)
         {
             s_option_panel.Visibility = Visibility.Hidden;
         }
-
+        private void services_MouseLeave(object sender, MouseEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Hidden;
+        }
+        private void s_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Visible;
+        }
+        private void services_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            s_option_panel.Visibility = Visibility.Visible;
+        }
 
         private void reapair_option_panel_MouseLeave(object sender, MouseEventArgs e)
         {
             repair_option_panel.Visibility = Visibility.Hidden;
+        }
+        private void repairs_MouseLeave(object sender, MouseEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Hidden;
+        }
+        private void repair_option_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Visible;
+        }
+        private void repairs_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            repair_option_panel.Visibility = Visibility.Visible;
         }
 
         //Vehicle Sub Menu
@@ -359,5 +394,15 @@ namespace dashNew1
         {
             vc.loadCommands();
         }
+
+
+
+
+
+
+
+
+
+
     }
 }
