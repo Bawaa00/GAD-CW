@@ -19,7 +19,7 @@ using System.Diagnostics;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.Common;
-
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -47,22 +47,26 @@ namespace dashNew1
         }
 
         private void CMB_UPDATE_DropDownClosed(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Customer where Cus_ID='" + CMB_UPDATE.Text + "'");
+        {if (CMB_UPDATE.SelectedItem == null)
+            { error_msg.Text = "Pleasse Enter Customer ID"}
+            else { error_msg.Text = "";
 
-            TXT_FIRSTNAME.Text = dt.Rows[0][1].ToString();
-            TXT_LASTNAME.Text = dt.Rows[0][2].ToString();
-            TXT_ADDRESS.Text = dt.Rows[0][3].ToString();
-            TXT_LICENNUM.Text = dt.Rows[0][5].ToString();
-            TXT_NIC.Text = dt.Rows[0][6].ToString();
-            filepath = dt.Rows[0][7].ToString();
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.CacheOption = BitmapCacheOption.OnLoad;
-            image.UriSource = new Uri(filepath);
-            image.EndInit();
-            IMG_UPDATECUS.Source = image;
+
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Customer where Cus_ID='" + CMB_UPDATE.Text + "'");
+
+                TXT_FIRSTNAME.Text = dt.Rows[0][1].ToString();
+                TXT_LASTNAME.Text = dt.Rows[0][2].ToString();
+                TXT_ADDRESS.Text = dt.Rows[0][3].ToString();
+                TXT_LICENNUM.Text = dt.Rows[0][5].ToString();
+                TXT_NIC.Text = dt.Rows[0][6].ToString();
+                filepath = dt.Rows[0][7].ToString();
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = new Uri(filepath);
+                image.EndInit();
+                IMG_UPDATECUS.Source = image; }
         }
 
         private void BTN_UPDATE_Click(object sender, RoutedEventArgs e)
@@ -177,10 +181,46 @@ namespace dashNew1
         private void TXT_FIRSTNAME_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (TXT_FIRSTNAME.Text.Length == 0)
-            {
-                error_msg.Text = "Please Enter First Name ";
-            }
-            else { error_msg.Text = ""; }
+                error_msg.Text = "Please Enter First name Name";
+            else if (!Regex.IsMatch(TXT_FIRSTNAME.Text, "^[a-zA-Z]+$"))
+                error_msg.Text = "Invalid name";
+            else
+                error_msg.Text = "";
+        }
+
+        private void TXT_LASTNAME_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TXT_LASTNAME.Text.Length == 0)
+                error_msg.Text = "Please Enter Last Name ";
+            else if (!Regex.IsMatch(TXT_LASTNAME.Text, "^[a-zA-Z]+$"))
+                error_msg.Text = "Invalid name";
+            else
+                error_msg.Text = "";
+        }
+
+        private void TXT_ADDRESS_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TXT_ADDRESS.Text.Length == 0)
+                error_msg.Text = "Please Enter Address";
+            else
+                error_msg.Text = "";
+        }
+
+        private void TXT_LICENNUM_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (TXT_LICENNUM.Text.Length == 0)
+                error_msg.Text = "Please Enter License Number";
+            else
+                error_msg.Text = "";
+        }
+
+        private void TXT_NIC_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TXT_NIC.Text.Length == 0)
+                error_msg.Text = "Please Enter NIC Number";
+            else
+                error_msg.Text = "";
         }
     }
 }

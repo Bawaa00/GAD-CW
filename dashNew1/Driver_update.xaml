@@ -30,13 +30,13 @@
         <TextBlock HorizontalAlignment="Left" Margin="39.827,305,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top"
                    FontSize="18" Height="25" Foreground="White" FontWeight="Medium" Grid.ColumnSpan="2" Grid.Column="1"/>
         <TextBox x:Name="txt_Lnum" HorizontalAlignment="Left" Height="33" Margin="23.2,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="21" Grid.Column="3"/>
+            FontSize="21" Grid.Column="3" TextChanged="txt_Lnum_TextChanged"/>
         <TextBox x:Name="txt_Name" HorizontalAlignment="Left" Height="33" Margin="23.2,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="21" Grid.Column="3"/>
+            FontSize="21" Grid.Column="3" TextChanged="txt_Name_TextChanged"/>
         <TextBox x:Name="txt_Tp" HorizontalAlignment="Left" Height="33" Margin="23.2,250,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="21" Grid.Column="3"/>
+            FontSize="21" Grid.Column="3" TextChanged="txt_Tp_TextChanged"/>
         <TextBox x:Name="txt_Address" HorizontalAlignment="Left" Height="33" Margin="23.2,305,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220"
-            FontSize="21" Grid.Column="3"/>
+            FontSize="21" Grid.Column="3" TextChanged="txt_Address_TextChanged"/>
         <Button x:Name="btn_cancel"
             Style="{StaticResource MaterialDesignFlatButton}"
             ToolTip="MaterialDesignFlatButton" Width="100" Margin="23,361,592,276" BorderBrush="#FF320B86" Click="btn_cancel_Click" Grid.Column="3">
@@ -88,7 +88,7 @@
                 Text="DELETE" FontSize="21" FontWeight="Bold" />
             </Button>
         </Grid>
-        <TextBlock x:Name="error_msg" Grid.Column="3" HorizontalAlignment="Left" Margin="0,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="360"/>
+        <TextBlock x:Name="error_msg" Grid.Column="3" HorizontalAlignment="Left" Margin="0,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="104" Width="360"/>
 
 
     </Grid>

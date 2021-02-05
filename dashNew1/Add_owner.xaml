@@ -51,7 +51,7 @@
         <TextBox x:Name="txt_oname" HorizontalAlignment="Left" Height="41" Margin="294,198,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_oname_TextChanged"/>
         <TextBox x:Name="txt_onic" HorizontalAlignment="Left" Height="40" Margin="294,277,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_onic_TextChanged"/>
         <TextBox x:Name="txt_address" HorizontalAlignment="Left" Height="93" Margin="294,356,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_address_TextChanged"/>
-        <TextBox x:Name="txt_contact" HorizontalAlignment="Left" Height="40" Margin="294,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21"/>
+        <TextBox x:Name="txt_contact" HorizontalAlignment="Left" Height="40" Margin="294,488,0,0" VerticalAlignment="Top" Width="331" FontSize="21" TextChanged="txt_contact_TextChanged"/>
         <Button x:Name="btn_change"
             Style="{StaticResource MaterialDesignRaisedButton}"
             Height="38" Background="#FF0EB0C0"

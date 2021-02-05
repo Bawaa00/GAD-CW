@@ -52,7 +52,7 @@
         <ComboBox x:Name="cmb_type"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,120,0,0"
-            IsEditable="True" SelectionChanged="cmb_type_SelectionChanged" IsReadOnly="True" >
+            IsEditable="True" SelectionChanged="cmb_type_SelectionChanged" IsReadOnly="True" DropDownClosed="cmb_type_DropDownClosed" >
             <ComboBoxItem>
                 Maintenence Repair
             </ComboBoxItem>
@@ -60,7 +60,7 @@
                 Accident Repair
             </ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txt_rid" HorizontalAlignment="Left" Height="40" Margin="330,182,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True"/>
+        <TextBox x:Name="txt_rid" HorizontalAlignment="Left" Height="40" Margin="330,182,0,0" VerticalAlignment="Top" Width="331" FontSize="21" IsReadOnly="True" TextChanged="txt_rid_TextChanged"/>
         <ComboBox x:Name="cmb_vid"
             materialDesign:HintAssist.Hint="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40"
             materialDesign:HintAssist.HintOpacity=".26" Width="331" FontSize="21" Margin="330,244,0,0"

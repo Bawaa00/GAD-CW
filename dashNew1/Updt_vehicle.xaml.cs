@@ -15,6 +15,7 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -84,30 +85,33 @@ namespace dashNew1
 
         private void cbox_lplate_DropDownClosed(object sender, EventArgs e)
         {
-            if (cbox_lplate.Text != "")
-            {
-                DataTable dt = new DataTable();
-                dt = db.getData("select * from Vehicle where L_Plate='" + cbox_lplate.Text.ToString() + "'");
-                old_id = dt.Rows[0][0].ToString();
-                cbox_year.Text = dt.Rows[0][1].ToString();
-                cbox_make.Text = dt.Rows[0][2].ToString();
-                txt_model.Text = dt.Rows[0][3].ToString();
-                cbox_category.Text = dt.Rows[0][4].ToString();
-                txt_cpweek.Text = dt.Rows[0][6].ToString();
-                txt_cpmonth.Text = dt.Rows[0][5].ToString();
-                txt_extra.Text = dt.Rows[0][7].ToString();
-                cbox_oid.Text = dt.Rows[0][8].ToString();
-                txt_lndate.Text = dt.Rows[0][9].ToString();
-                cbox_ins.Text = dt.Rows[0][10].ToString();
-                txt_sdate.Text = dt.Rows[0][11].ToString();
-                txt_exdate.Text = dt.Rows[0][12].ToString();
-                path = dt.Rows[0][13].ToString();
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.UriSource = new Uri(path);
-                image.EndInit();
-                img_vehicle.Source = image;
+            if (cbox_lplate.SelectedItem == null) { error_msg.Text = "Please Select License Number"; }
+            else { error_msg.Text = "";
+                if (cbox_lplate.Text != "")
+                {
+                    DataTable dt = new DataTable();
+                    dt = db.getData("select * from Vehicle where L_Plate='" + cbox_lplate.Text.ToString() + "'");
+                    old_id = dt.Rows[0][0].ToString();
+                    cbox_year.Text = dt.Rows[0][1].ToString();
+                    cbox_make.Text = dt.Rows[0][2].ToString();
+                    txt_model.Text = dt.Rows[0][3].ToString();
+                    cbox_category.Text = dt.Rows[0][4].ToString();
+                    txt_cpweek.Text = dt.Rows[0][6].ToString();
+                    txt_cpmonth.Text = dt.Rows[0][5].ToString();
+                    txt_extra.Text = dt.Rows[0][7].ToString();
+                    cbox_oid.Text = dt.Rows[0][8].ToString();
+                    txt_lndate.Text = dt.Rows[0][9].ToString();
+                    cbox_ins.Text = dt.Rows[0][10].ToString();
+                    txt_sdate.Text = dt.Rows[0][11].ToString();
+                    txt_exdate.Text = dt.Rows[0][12].ToString();
+                    path = dt.Rows[0][13].ToString();
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = new Uri(path);
+                    image.EndInit();
+                    img_vehicle.Source = image;
+                }
             }
 
         }
@@ -205,16 +209,21 @@ namespace dashNew1
         {
 
             if (txt_cpweek.Text.Length == 0)
-                error_msg.Text = "Please Enter Cost per Week";
+                error_msg.Text = "Please Enter Cost per week ";
+            else if (!Regex.IsMatch(txt_cpweek.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
             else
                 error_msg.Text = "";
+
         }
 
         private void txt_cpmonth_TextChanged(object sender, TextChangedEventArgs e)
         {
 
             if (txt_cpmonth.Text.Length == 0)
-                error_msg.Text = "Please Enter Coset Per Month";
+                error_msg.Text = "Please Enter Cost per Month ";
+            else if (!Regex.IsMatch(txt_cpmonth.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
             else
                 error_msg.Text = "";
         }
@@ -222,10 +231,15 @@ namespace dashNew1
         private void txt_extra_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-            if (txt_model.Text.Length == 0)
-                error_msg.Text = "Please Enter Extra Cost per Milage";
+            if (txt_extra.Text.Length == 0)
+                error_msg.Text = "Please Enter Extra Cost per Milage ";
+            else if (!Regex.IsMatch(txt_extra.Text, "^[0-9]*$"))
+                error_msg.Text = "Please enter numbers only";
             else
                 error_msg.Text = "";
+
+
+
         }
 
         private void cbox_oid_DropDownClosed(object sender, EventArgs e)
@@ -233,6 +247,14 @@ namespace dashNew1
             if (cbox_oid.SelectedItem == null)
             { error_msg.Text = "Please Select Owner ID"; }
             else { error_msg.Text = ""; }
+        }
+
+        private void cbox_ins_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_ins.SelectedItem == null)
+            { error_msg.Text = "Please Select Insurance"; }
+            else { error_msg.Text = ""; }
+
         }
     }
 }

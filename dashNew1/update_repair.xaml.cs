@@ -184,31 +184,35 @@ namespace dashNew1
 
         private void cmb_type_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            if (cmb_type.SelectedIndex==0)
-            {  
-                dt = db.getData("select * from Maintenance");
-                cmb_RID.ItemsSource = dt.DefaultView;
-                cmb_RID.DisplayMemberPath = "R_id";
-                cmb_RID.SelectedValuePath = "R_id";
-                txt_claim.Visibility = Visibility.Hidden;
-                lbl_claim.Visibility = Visibility.Hidden;
-                txt_error.Text = "";
-            }
-            else if (cmb_type.SelectedIndex == 1)
-            {
-                dt = db.getData("select * from Acc_repair");
-                cmb_RID.ItemsSource = dt.DefaultView;
-                cmb_RID.DisplayMemberPath = "R_ID";
-                cmb_RID.SelectedValuePath = "R_ID";
-                txt_claim.Visibility = Visibility.Visible;
-                lbl_claim.Visibility = Visibility.Visible;
-                txt_error.Text = "";
-            }
-            else
-            {
-                txt_error.Text = "Please select a Repair Type";
-            }
+            
+
+
+                DataTable dt = new DataTable();
+                if (cmb_type.SelectedIndex == 0)
+                {
+                    dt = db.getData("select * from Maintenance");
+                    cmb_RID.ItemsSource = dt.DefaultView;
+                    cmb_RID.DisplayMemberPath = "R_id";
+                    cmb_RID.SelectedValuePath = "R_id";
+                    txt_claim.Visibility = Visibility.Hidden;
+                    lbl_claim.Visibility = Visibility.Hidden;
+                    txt_error.Text = "";
+                }
+                else if (cmb_type.SelectedIndex == 1)
+                {
+                    dt = db.getData("select * from Acc_repair");
+                    cmb_RID.ItemsSource = dt.DefaultView;
+                    cmb_RID.DisplayMemberPath = "R_ID";
+                    cmb_RID.SelectedValuePath = "R_ID";
+                    txt_claim.Visibility = Visibility.Visible;
+                    lbl_claim.Visibility = Visibility.Visible;
+                    txt_error.Text = "";
+                }
+                else
+                {
+                    txt_error.Text = "Please select a Repair Type";
+                }
+            
         }
 
         private void txt_details_TextChanged(object sender, TextChangedEventArgs e)
@@ -222,15 +226,28 @@ namespace dashNew1
         private void txt_cost_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_cost.Text.Length == 0)
-                txt_error.Text = " Please Enter Repair Cost ";
+                txt_error.Text = "Please Enter Repair Cost ";
+            else if (!Regex.IsMatch(txt_cost.Text, "^[0-9]*$"))
+                txt_error.Text = "Please enter numbers only";
             else
                 txt_error.Text = "";
+
         }
 
         private void txt_claim_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_claim.Text.Length == 0)
-                txt_error.Text = " Please Enter Claim Amount";
+                txt_error.Text = "Please Enter Repair Claimed Amount  ";
+            else if (!Regex.IsMatch(txt_claim.Text, "^[0-9]*$"))
+                txt_error.Text = "Please enter numbers only";
+            else
+                txt_error.Text = "";
+        }
+
+        private void TXT_VID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TXT_VID.Text.Length == 0)
+                txt_error.Text = " Please Enter Vehicle ID";
             else
                 txt_error.Text = "";
         }

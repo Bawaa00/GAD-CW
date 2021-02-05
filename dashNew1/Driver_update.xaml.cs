@@ -18,7 +18,7 @@ using MaterialDesignThemes.Wpf;
 using System.Diagnostics;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -136,7 +136,7 @@ namespace dashNew1
         private void cbox_did_DropDownClosed(object sender, EventArgs e)
         {
             if (cbox_did.SelectedIndex == -1)
-                error_msg.Text = "Please select a driver ID";
+            { error_msg.Text = "Please select a driver ID"; }
             else
             {
                 error_msg.Text = "";
@@ -163,6 +163,51 @@ namespace dashNew1
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_Lnum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Lnum.Text.Length == 0)
+            {
+                error_msg.Text = "Enter License Number";
+            }
+            else
+            {
+                error_msg.Text = "";
+            }
+        }
+
+        private void txt_Name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Name.Text.Length == 0)
+            { error_msg.Text = "Please Enter Name"; }
+            else if (!Regex.IsMatch(txt_Name.Text, "^[a-zA-Z]+$"))
+                error_msg.Text = "Invalid name";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_Tp_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Tp.Text.Length == 0)
+                error_msg.Text = "Please Enter Telephone Number ";
+            else if (!Regex.IsMatch(txt_Tp.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Telephone No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_Address_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Address.Text.Length == 0)
+            {
+                error_msg.Text = "Enter License Number";
+            }
+            else
+            {
+                error_msg.Text = "";
+            }
         }
     }
 }
