@@ -93,12 +93,20 @@ namespace dashNew1
                     msg.Show();
                 }
             }
-            catch(Exception ex)
+ 
+            catch (System.Data.SqlClient.SqlException)
             {
-                MessageBox.Show(ex.Message);
-
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
             }
-            
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
+
         }
 
         private void btn_addcus_Click(object sender, RoutedEventArgs e)

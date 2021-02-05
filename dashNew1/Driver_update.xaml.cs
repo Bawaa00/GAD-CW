@@ -38,20 +38,40 @@ namespace dashNew1
 
         private void btn_Update_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                string name = System.IO.Path.GetFileName(filepath);
+                string destinationPath = GetDestinationPath(name);
+                string a = " update Driver set  L_num= '" + txt_Lnum.Text + "', D_name = '" + txt_Name.Text + "', " +
+                                " Tel=  '" + txt_Tp.Text + "', Address= '" + txt_Address.Text + "',D_Path = '" + destinationPath + "' where D_ID  = '" + cbox_did.Text + "'";
 
-            string name = System.IO.Path.GetFileName(filepath);
-            string destinationPath = GetDestinationPath(name);
-            string a = " update Driver set  L_num= '" + txt_Lnum.Text + "', D_name = '" + txt_Name.Text + "', " +
-                            " Tel=  '" + txt_Tp.Text + "', Address= '" + txt_Address.Text + "',D_Path = '" + destinationPath + "' where D_ID  = '" + cbox_did.Text + "'";
+                File.Copy(filepath, destinationPath, true);
 
-            File.Copy(filepath, destinationPath, true);
+                int line = obj.save_update_delete(a);
+                if (line == 1)
+                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            int line = obj.save_update_delete(a);
-            if (line == 1)
-                MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            else
-                MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                else
+                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (ArgumentNullException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please upload a photo");
+                msg.Show();
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private String GetDestinationPath(string filename)

@@ -88,13 +88,24 @@ namespace dashNew1
                 else
                     MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            catch (ArgumentNullException ex)
+
+            catch (ArgumentNullException)
             {
-                MessageBox.Show(ex.Message);
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please upload a photo");
+                msg.Show();
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
             }
         }
 
@@ -114,16 +125,25 @@ namespace dashNew1
 
         private void BTN_UPLOAD_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Multiselect = false;
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            bool? result = open.ShowDialog();
-
-            if (result == true)
+            try
             {
-                filepath = open.FileName;   
-                ImageSource imgsource = new BitmapImage(new Uri(filepath));
-                IMG_UPDATECUS.Source = imgsource;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Multiselect = false;
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                bool? result = open.ShowDialog();
+
+                if (result == true)
+                {
+                    filepath = open.FileName;
+                    ImageSource imgsource = new BitmapImage(new Uri(filepath));
+                    IMG_UPDATECUS.Source = imgsource;
+                }
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
             }
 
 

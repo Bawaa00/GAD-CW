@@ -34,32 +34,47 @@ namespace dashNew1
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-
-            if (cmb_type.SelectedIndex == 0)
+            try
             {
-                string a = " update Acc_repair set  VNO= '" + TXT_VID.Text + "', R_details = '" + txt_details.Text + "', " +
-                              " R_date=  '" + txt_date.Text + "', cost= '" + txt_cost.Text + "',Claim_amt= '" + txt_claim + "' where R_ID = '" + cmb_RID.Text + "'";
 
-
-                int line = db.save_update_delete(a);
-                if (line == 1)
-                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                else
-                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (cmb_type.SelectedIndex == 1)
-            {
-                string a = " update Acc_repair set  VNO= '" + TXT_VID.Text + "', R_details = '" + txt_details.Text + "', " +
+                if (cmb_type.SelectedIndex == 0)
+                {
+                    string a = " update Acc_repair set  VNO= '" + TXT_VID.Text + "', R_details = '" + txt_details.Text + "', " +
                                   " R_date=  '" + txt_date.Text + "', cost= '" + txt_cost.Text + "',Claim_amt= '" + txt_claim + "' where R_ID = '" + cmb_RID.Text + "'";
 
 
-                int line = db.save_update_delete(a);
-                if (line == 1)
-                    MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    int line = db.save_update_delete(a);
+                    if (line == 1)
+                        MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                else
-                    MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    else
+                        MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (cmb_type.SelectedIndex == 1)
+                {
+                    string a = " update Acc_repair set  VNO= '" + TXT_VID.Text + "', R_details = '" + txt_details.Text + "', " +
+                                      " R_date=  '" + txt_date.Text + "', cost= '" + txt_cost.Text + "',Claim_amt= '" + txt_claim + "' where R_ID = '" + cmb_RID.Text + "'";
+
+
+                    int line = db.save_update_delete(a);
+                    if (line == 1)
+                        MessageBox.Show("Data save Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    else
+                        MessageBox.Show("Data cannot save", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
             }
         }
             private String GetDestinationPath(string filename)

@@ -64,21 +64,30 @@ namespace dashNew1
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Multiselect = false;
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            bool? result = open.ShowDialog();
-
-            if (result == true)
+            try
             {
-                path = open.FileName; // Stores Original Path in Textbox    
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.UriSource = new Uri(path);
-                image.EndInit();
-                img_vehicle.Source = image;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Multiselect = false;
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                bool? result = open.ShowDialog();
 
+                if (result == true)
+                {
+                    path = open.FileName; // Stores Original Path in Textbox    
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = new Uri(path);
+                    image.EndInit();
+                    img_vehicle.Source = image;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
             }
         }
 
@@ -114,24 +123,45 @@ namespace dashNew1
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
-            string name = System.IO.Path.GetFileName(path);
-            string destinationPath = GetDestinationPath(name);
-            File.Copy(path, destinationPath, true);
-
-            string q = "update Vehicle set L_Plate='"+cbox_lplate.Text+ "',Year='" + cbox_year.Text + "',Make='" + cbox_make.Text + "',Model='" + txt_model.Text + "',Category='" + cbox_category.Text + "'" +
-                ",Cost_Per_Month='" + txt_cpmonth.Text + "',Cost_Per_Week='" + txt_cpweek.Text + "',Extra_Cost='" + txt_extra.Text + "',O_ID='" + cbox_oid.Text + "',Lend_Date='" + txt_lndate.Text + "'," +
-                "S_date='" + txt_sdate.Text + "',E_date='" + txt_exdate.Text + "', V_Path = '"+destinationPath+"'  where L_Plate = '" + old_id+"'"; 
-
-            int i = db.save_update_delete(q);
-            if (i == 1)
+            try
             {
-                msg.informationMsg("Data Updated Successfully!");
+                Messagebox msg = new Messagebox();
+                string name = System.IO.Path.GetFileName(path);
+                string destinationPath = GetDestinationPath(name);
+                File.Copy(path, destinationPath, true);
+
+                string q = "update Vehicle set L_Plate='" + cbox_lplate.Text + "',Year='" + cbox_year.Text + "',Make='" + cbox_make.Text + "',Model='" + txt_model.Text + "',Category='" + cbox_category.Text + "'" +
+                    ",Cost_Per_Month='" + txt_cpmonth.Text + "',Cost_Per_Week='" + txt_cpweek.Text + "',Extra_Cost='" + txt_extra.Text + "',O_ID='" + cbox_oid.Text + "',Lend_Date='" + txt_lndate.Text + "'," +
+                    "S_date='" + txt_sdate.Text + "',E_date='" + txt_exdate.Text + "', V_Path = '" + destinationPath + "'  where L_Plate = '" + old_id + "'";
+
+                int i = db.save_update_delete(q);
+                if (i == 1)
+                {
+                    msg.informationMsg("Data Updated Successfully!");
+                    msg.Show();
+                }
+                else
+                {
+                    msg.errorMsg("Unable to Update Data.Please check again");
+                    msg.Show();
+                }
+            }
+            catch (ArgumentNullException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please upload a photo");
                 msg.Show();
             }
-            else
+            catch (System.Data.SqlClient.SqlException)
             {
-                msg.errorMsg("Unable to Update Data.Please check again");
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
                 msg.Show();
             }
         }
