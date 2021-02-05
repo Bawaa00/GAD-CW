@@ -117,12 +117,19 @@ namespace dashNew1
                    }
                 }
             }
-            catch (ArgumentNullException ex)
+            catch (System.Data.SqlClient.SqlException)
             {
-                MessageBox.Show(ex.Message);
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
             }
+
+
             catch (Exception ex)
-            { MessageBox.Show(ex.Message); 
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
             }
         }
 

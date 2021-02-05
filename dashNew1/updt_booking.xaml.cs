@@ -86,23 +86,37 @@ namespace dashNew1
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-           
-            string a = " update Booking set  BK_date = '"+date_book.Text+"', S_date='"+date_pick.Text+"', L_date='"+date_lend.Text+ "' where BK_No = '" + cmb_bid.Text + "'";
-            string b = " update Car_Booking set VNO='" + cmb_vid.Text + "' , DNO = '" + cmb_did.Text + "' , BNO = '"+cmb_bid.Text+ "' where  CNO = '" + cmb_cid.Text + "'";
+            try
+            {
+                string a = " update Booking set  BK_date = '" + date_book.Text + "', S_date='" + date_pick.Text + "', L_date='" + date_lend.Text + "' where BK_No = '" + cmb_bid.Text + "'";
+                string b = " update Car_Booking set VNO='" + cmb_vid.Text + "' , DNO = '" + cmb_did.Text + "' , BNO = '" + cmb_bid.Text + "' where  CNO = '" + cmb_cid.Text + "'";
 
-            int x = db.save_update_delete(a);
-            int y = db.save_update_delete(b);
-            if (x == 1 && y == 1 )
-            {
-                Messagebox msg = new Messagebox();
-                msg.informationMsg("Data Updated Successfully!");
-                msg.Show();
-                btn_bill.Visibility = Visibility.Visible;
+                int x = db.save_update_delete(a);
+                int y = db.save_update_delete(b);
+                if (x == 1 && y == 1)
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.informationMsg("Data Updated Successfully!");
+                    msg.Show();
+                    btn_bill.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Unable to Update Data.Please check again");
+                    msg.Show();
+                }
             }
-            else
+            catch (System.Data.SqlClient.SqlException)
             {
                 Messagebox msg = new Messagebox();
-                msg.errorMsg("Unable to Update Data.Please check again");
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
                 msg.Show();
             }
         }

@@ -82,44 +82,74 @@ namespace dashNew1
 
         private void btn_upload_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Multiselect = false;
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            bool? result = open.ShowDialog();
-
-            if (result == true)
+            try
             {
-                path = open.FileName; // Stores Original Path in Textbox    
-               /* ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
-                img_owner.Source = imgsource;*/
-                BitmapImage image = new BitmapImage();
-                image.BeginInit();
-                image.CacheOption = BitmapCacheOption.OnLoad;
-                image.UriSource = new Uri(path);
-                image.EndInit();
-                img_owner.Source = image;
+                OpenFileDialog open = new OpenFileDialog();
+                open.Multiselect = false;
+                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+                bool? result = open.ShowDialog();
+
+                if (result == true)
+                {
+                    path = open.FileName; // Stores Original Path in Textbox    
+                    /* ImageSource imgsource = new BitmapImage(new Uri(path)); // Just show The File In Image when we browse It
+                     img_owner.Source = imgsource;*/
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.UriSource = new Uri(path);
+                    image.EndInit();
+                    img_owner.Source = image;
+                }
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
             }
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            Messagebox msg = new Messagebox();
-            string a = "update Owner set O_ID='"+cmb_oid.Text+"' , O_NIC = '"+txt_nic.Text+"' , O_path = '"+path+"' , O_Tel = "+txt_contact.Text+" ,O_Name = '" + txt_name.Text + "', O_Address = '"+txt_address.Text+"' where O_ID = '" + cmb_oid.Text + "' ";
-            string name = System.IO.Path.GetFileName(path);
-            string destinationPath = GetDestinationPath(name);
-            
-            File.Copy(path, destinationPath, true);
-           // txt_did.Text = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
-
-            int line = db.save_update_delete(a);
-            if (line == 1)
+            try
             {
-                msg.informationMsg("Data Updated Successfully!");
+                Messagebox msg = new Messagebox();
+                string a = "update Owner set O_ID='" + cmb_oid.Text + "' , O_NIC = '" + txt_nic.Text + "' , O_path = '" + path + "' , O_Tel = " + txt_contact.Text + " ,O_Name = '" + txt_name.Text + "', O_Address = '" + txt_address.Text + "' where O_ID = '" + cmb_oid.Text + "' ";
+                string name = System.IO.Path.GetFileName(path);
+                string destinationPath = GetDestinationPath(name);
+
+                File.Copy(path, destinationPath, true);
+                // txt_did.Text = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+
+                int line = db.save_update_delete(a);
+                if (line == 1)
+                {
+                    msg.informationMsg("Data Updated Successfully!");
+                    msg.Show();
+                }
+                else
+                {
+                    msg.errorMsg("Unable to Update Data.Please check again");
+                    msg.Show();
+                }
+            }
+            catch (ArgumentNullException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please upload a photo");
                 msg.Show();
             }
-            else
+            catch (System.Data.SqlClient.SqlException)
             {
-                msg.errorMsg("Unable to Update Data.Please check again");
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
                 msg.Show();
             }
         }

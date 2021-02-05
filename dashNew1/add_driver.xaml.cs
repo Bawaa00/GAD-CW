@@ -76,10 +76,16 @@ namespace dashNew1
                 msg.errorMsg("Please upload a photo");
                 msg.Show();
             }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
+            }
             catch (Exception ex)
             {
                 Messagebox msg = new Messagebox();
-                msg.errorMsg("Oops...something went wrong. "+ex.Message);
+                msg.errorMsg("Oops something went worng. " + ex.Message);
                 msg.Show();
             }
         }

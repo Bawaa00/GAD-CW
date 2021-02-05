@@ -86,13 +86,23 @@ namespace dashNew1
                 dg_owners.ItemsSource = dt.DefaultView;
 
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
-                MessageBox.Show(ex.Message);
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please upload a photo");
+                msg.Show();
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops something went worng. " + ex.Message);
+                msg.Show();
             }
         }
 
