@@ -95,7 +95,7 @@
             <TextBlock
                 Text="CLEAR" FontFamily="Segoe UI Black" FontSize="20" />
         </Button>
-        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="117,621,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="580" Grid.ColumnSpan="2" FontSize="30" Foreground="Red"/>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="117,596,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="580" Grid.ColumnSpan="2" FontSize="30" Foreground="Red" FontWeight="Bold" Text=" "/>
 
     </Grid>
 </Window>

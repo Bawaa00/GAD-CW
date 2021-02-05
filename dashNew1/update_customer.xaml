@@ -100,16 +100,16 @@
             VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" TextChanged="TXT_FIRSTNAME_TextChanged"/>
         <TextBox x:Name="TXT_LASTNAME" 
             HorizontalAlignment="Left" Height="32" Margin="420,267,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" TextChanged="TXT_LASTNAME_TextChanged"/>
         <TextBox x:Name="TXT_ADDRESS" 
             HorizontalAlignment="Left" Height="32" Margin="420,327,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" TextChanged="TXT_ADDRESS_TextChanged"/>
         <TextBox x:Name="TXT_LICENNUM" 
             HorizontalAlignment="Left" Height="32" Margin="420,387,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" TextChanged="TXT_LICENNUM_TextChanged"/>
         <TextBox x:Name="TXT_NIC" 
             HorizontalAlignment="Left" Height="32" Margin="420,447,0,0" TextWrapping="Wrap" Foreground="White"
-            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light"/>
+            VerticalAlignment="Top" Width="300" FontSize="20" FontWeight="Light" TextChanged="TXT_NIC_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="240,49,0,0" TextWrapping="Wrap" Text="UPDATE CUSTOMER" VerticalAlignment="Top"
                    FontSize="50" Foreground="White" Opacity="0.6"/>
         <ComboBox x:Name="CMB_UPDATE" HorizontalAlignment="Left" Margin="420,150,0,0" VerticalAlignment="Top" Width="304" DropDownClosed="CMB_UPDATE_DropDownClosed" FontSize="20" FontFamily="Segoe UI Black" IsReadOnly="True"/>

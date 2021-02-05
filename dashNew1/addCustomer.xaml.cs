@@ -162,7 +162,9 @@ namespace dashNew1
         private void txt_fName_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_fName.Text.Length == 0)
-                error_msg.Text = "Please Enter Driver ID ";
+                error_msg.Text = "Please Enter First Name";
+            else if (!Regex.IsMatch(txt_fName.Text, "^[a-zA-Z]+$"))
+                error_msg.Text = "Invalid name";
             else
                 error_msg.Text = "";
         }
@@ -170,7 +172,9 @@ namespace dashNew1
         private void txt_lName_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_lName.Text.Length == 0)
-                error_msg.Text = "Please Enter Last Name ";
+                error_msg.Text = "Please Enter Last Name";
+            else if (!Regex.IsMatch(txt_lName.Text, "^[a-zA-Z]+$"))
+                error_msg.Text = "Invalid name";
             else
                 error_msg.Text = "";
         }
@@ -203,6 +207,17 @@ namespace dashNew1
         {
             if (txt_contact.Text.Length == 0)
                 error_msg.Text = "Please Enter Contact Number ";
+            else if (!Regex.IsMatch(txt_contact.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Telephone No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_id_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_id.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer ID ";
             else
                 error_msg.Text = "";
         }

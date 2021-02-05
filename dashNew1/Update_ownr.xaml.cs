@@ -15,6 +15,7 @@ using System.Data;
 using Microsoft.Win32;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace dashNew1
 {
@@ -183,7 +184,9 @@ namespace dashNew1
         private void txt_name_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_name.Text.Length == 0)
-                error_msg.Text = " Please Enter Owner Name ";
+                error_msg.Text = "Please Enter Owner Name";
+            else if (!Regex.IsMatch(txt_name.Text, "^[a-zA-Z]+$"))
+                error_msg.Text = "Invalid name";
             else
                 error_msg.Text = "";
         }
@@ -212,7 +215,10 @@ namespace dashNew1
         private void txt_contact_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_contact.Text.Length == 0)
-                error_msg.Text = "  Please Enter Owner Contact ";
+                error_msg.Text = "Please Enter Contact Number ";
+            else if (!Regex.IsMatch(txt_contact.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Contact Number not Valid";
             else
                 error_msg.Text = "";
         }

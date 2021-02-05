@@ -179,6 +179,18 @@ namespace dashNew1
             else
                 error_msg.Text = "";
         }
+
+        private void txt_contact_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_contact.Text.Length == 0)
+                error_msg.Text = "Please Enter Contact Number ";
+            else if (!Regex.IsMatch(txt_contact.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+
+        }
     }
  
 }

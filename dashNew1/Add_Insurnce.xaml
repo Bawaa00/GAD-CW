@@ -84,6 +84,7 @@
                 Width="24" />
         </Button>
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="30,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="752" Height="45" FontSize="30" Foreground="Red"/>
+        <TextBlock x:Name="error_msg_Copy" HorizontalAlignment="Left" Margin="45,510,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="724" FontSize="30" Foreground="Red" FontWeight="Bold" Text=" "/>
 
     </Grid>
 </Window>

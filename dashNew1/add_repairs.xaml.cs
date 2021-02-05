@@ -159,7 +159,7 @@ namespace dashNew1
         private void txt_details_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_details.Text.Length == 0)
-                error_msg.Text = "Please Enter Driver ID ";
+                error_msg.Text = "Please Enter Repair Details ";
             else
                 error_msg.Text = "";
         }
@@ -184,6 +184,22 @@ namespace dashNew1
         {
             if (txt_claim.Text.Length == 0)
                 error_msg.Text = "Please Enter  Claim Amount  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void cmb_type_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_type.SelectedItem == null)
+            { error_msg.Text = "Please Select Repair Type"; }
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_rid_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_rid.Text.Length == 0)
+            { error_msg.Text = "Please enter Repair ID"; }
             else
                 error_msg.Text = "";
         }
