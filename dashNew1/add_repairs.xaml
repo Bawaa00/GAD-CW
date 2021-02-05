@@ -112,6 +112,6 @@
             SEARCH VEHICLE
         </Button>
         <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Margin="286,635,0,0"  VerticalAlignment="Top" Height="45" Width="375"
-                   FontSize="20" Foreground="Red" TextAlignment="Center"/>
+                   FontSize="20" Foreground="Red" TextAlignment="Center" FontWeight="Bold"/>
     </Grid>
 </Window>

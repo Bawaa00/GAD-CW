@@ -109,7 +109,7 @@
                 Text="UPLOAD" />
             </Button>
         </Grid>
-        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="75" Margin="271,586,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="561" Foreground="#FFE81212"/>
+        <TextBlock x:Name="error_msg" HorizontalAlignment="Left" Height="75" Margin="271,586,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="561" Foreground="#FFE81212" FontWeight="Bold"/>
 
     </Grid>
 </Window>
