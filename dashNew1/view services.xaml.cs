@@ -77,5 +77,11 @@ namespace dashNew1
         {
             this.Close();
         }
+
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            update_repair obj = new update_repair();
+            obj.Show();
+        }
     }
 }

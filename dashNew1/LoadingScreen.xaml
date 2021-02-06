@@ -10,7 +10,7 @@
         Title="LoadingScreen" Height="300" Width="400" Background="{x:Null}">
     <Grid VerticalAlignment="Center" Margin="0,8">
 
-        <Image HorizontalAlignment="Left" Height="300" Margin="0,-35,0,-31" VerticalAlignment="Top" Width="400" gif:ImageBehavior.AnimatedSource="D:\NIBM\GAD\CW\gitCW\image_processing20191023-12591-qdzowf.gif"/>
+        <Image HorizontalAlignment="Left" Height="300" Margin="0,-35,0,-31" VerticalAlignment="Top" Width="400" gif:ImageBehavior.AnimatedSource="D:\NIBM\GUI application development(c#)\cw new\loadingScreen.gif"/>
 
     </Grid>
 </Window>

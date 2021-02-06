@@ -110,18 +110,33 @@ namespace dashNew1
 
         private void cmb_updateser_DropDownClosed(object sender, EventArgs e)
         {
-            if (cmb_updateser.SelectedIndex == 0)
-            { error_msg.Text = "Please Select Service ID"; }
-            else
+            try
             {
-                error_msg.Text = "";
-                DataTable dt = new DataTable();
-                dt = db.getData("select * from Service where S_ID='" + cmb_updateser.Text + "'");
+                if (cmb_updateser.SelectedIndex == 0)
+                { error_msg.Text = "Please Select Service ID"; }
+                else
+                {
+                    error_msg.Text = "";
+                    DataTable dt = new DataTable();
+                    dt = db.getData("select * from Service where S_ID='" + cmb_updateser.Text + "'");
 
-                txt_vehiclenum.Text = dt.Rows[0][0].ToString();
-                txt_Sdetails.Text = dt.Rows[0][2].ToString();
-                txt_milge.Text = dt.Rows[0][3].ToString();
-                txt_nxt.Text = dt.Rows[0][4].ToString();
+                    txt_vehiclenum.Text = dt.Rows[0][0].ToString();
+                    txt_Sdetails.Text = dt.Rows[0][2].ToString();
+                    txt_milge.Text = dt.Rows[0][3].ToString();
+                    txt_nxt.Text = dt.Rows[0][4].ToString();
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
             }
         }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace dashNew1
 {
@@ -35,18 +36,32 @@ namespace dashNew1
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-           // TODO: This line of code loads data into the 'rENT_VEHICLESDataSet.Vehicle' table. You can move, or remove it, as needed.
-            this.ServiceTableAdapter.FillBy(this.DataSet_Service.Service, cmb_lplate.Text);
+            try
+            {
+                // TODO: This line of code loads data into the 'rENT_VEHICLESDataSet.Vehicle' table. You can move, or remove it, as needed.
+                this.ServiceTableAdapter.FillBy(this.DataSet_Service.Service, cmb_lplate.Text);
 
-            this.reportViewerService.RefreshReport();
+                this.reportViewerService.RefreshReport();
+            }
+            catch (SqlException)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Database Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_load_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'DataSet_Service.Service' table. You can move, or remove it, as needed.
-            this.ServiceTableAdapter.Fill(this.DataSet_Service.Service);
+            try
+            {
+                // TODO: This line of code loads data into the 'DataSet_Service.Service' table. You can move, or remove it, as needed.
+                this.ServiceTableAdapter.Fill(this.DataSet_Service.Service);
 
-            this.reportViewerService.RefreshReport();
+                this.reportViewerService.RefreshReport();
+            }
+            catch (SqlException)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Database Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

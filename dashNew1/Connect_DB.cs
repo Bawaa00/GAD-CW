@@ -23,7 +23,7 @@ namespace dashNew1
         }
         public Connect_DB()
         {
-            con = new SqlConnection("Data Source=LAPTOP-MQN2RJ5N;Initial Catalog=RENT_VEHICLES;Integrated Security=True");
+            con = new SqlConnection("Data Source=DESKTOP-7EJV26G;Initial Catalog=RENT_VEHICLES;Integrated Security=True");
         }
         public int save_update_delete(string q)
         {

@@ -50,11 +50,18 @@ namespace dashNew1
             DataTable dt2 = new DataTable();
             dt = db.getData("Select max(BK_NO) from Booking ");
             string id = dt.Rows[0][0].ToString();
-            var prefix = Regex.Match(id, "^\\D+").Value;
-            var number = Regex.Replace(id, "^\\D+", "");
-            var i = int.Parse(number) + 1;
-            var newString = prefix + i.ToString(new string('0', number.Length));
-            txt_bid.Text = newString;
+            if (id == "")
+            {
+                txt_bid.Text = "B001";
+            }
+            else
+            {
+                var prefix = Regex.Match(id, "^\\D+").Value;
+                var number = Regex.Replace(id, "^\\D+", "");
+                var i = int.Parse(number) + 1;
+                var newString = prefix + i.ToString(new string('0', number.Length));
+                txt_bid.Text = newString;
+            }
 
             cmb_cusid.Text = "";
             cmb_vid.Text = "";
@@ -160,25 +167,77 @@ namespace dashNew1
 
         private void cmb_cusid_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Customer where Cus_ID='" + cmb_cusid.Text + "'");
-            txt_cusFname.Text = dt.Rows[0][1].ToString();
-            txt_cusLname.Text = dt.Rows[0][2].ToString();
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Customer where Cus_ID='" + cmb_cusid.Text + "'");
+                if (cmb_cusid.Text != "")
+                {
+                    txt_cusFname.Text = dt.Rows[0][1].ToString();
+                    txt_cusLname.Text = dt.Rows[0][2].ToString();
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void cmb_vid_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
-            txt_make.Text = dt.Rows[0][2].ToString();
-            txt_model.Text = dt.Rows[0][3].ToString();
+            try
+            {
+                DataTable dt = new DataTable();
+                if (cmb_vid.Text != "")
+                {
+                    dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
+                    txt_make.Text = dt.Rows[0][2].ToString();
+                    txt_model.Text = dt.Rows[0][3].ToString();
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void cmb_did_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Driver where D_ID='" + cmb_did.Text + "'");
-            txt_dname.Text = dt.Rows[0][2].ToString();
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Driver where D_ID='" + cmb_did.Text + "'");
+                if (cmb_did.Text != "")
+                txt_dname.Text = dt.Rows[0][2].ToString();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
     }
 }

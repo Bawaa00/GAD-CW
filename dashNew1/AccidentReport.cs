@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace dashNew1
 {
@@ -35,16 +36,30 @@ namespace dashNew1
 
         private void btn_load_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'DataSet_Service.Acc_repair' table. You can move, or remove it, as needed.
-            this.Acc_repairTableAdapter.Fill(this.DataSet_Service.Acc_repair);
+            try
+            {
+                // TODO: This line of code loads data into the 'DataSet_Service.Acc_repair' table. You can move, or remove it, as needed.
+                this.Acc_repairTableAdapter.Fill(this.DataSet_Service.Acc_repair);
 
-            this.reportViewerAcc.RefreshReport();
+                this.reportViewerAcc.RefreshReport();
+            }
+            catch (SqlException)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Database Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            this.Acc_repairTableAdapter.FillBy(this.DataSet_Service.Acc_repair, cmb_lplate.Text);
-            this.reportViewerAcc.RefreshReport();
+            try
+            {
+                this.Acc_repairTableAdapter.FillBy(this.DataSet_Service.Acc_repair, cmb_lplate.Text);
+                this.reportViewerAcc.RefreshReport();
+            }
+            catch (SqlException)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Database Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

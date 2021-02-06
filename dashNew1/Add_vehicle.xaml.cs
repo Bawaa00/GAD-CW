@@ -58,7 +58,6 @@ namespace dashNew1
             cbox_oid.ItemsSource = dt.DefaultView;
             cbox_oid.DisplayMemberPath = "O_ID";
             cbox_oid.SelectedValuePath = "O_ID";
-            //DataTable dt2 = new DataTable();
             dt = db.getData("select * from Insurance");
             cbox_ins.ItemsSource = dt.DefaultView;
             cbox_ins.DisplayMemberPath = "I_ID";

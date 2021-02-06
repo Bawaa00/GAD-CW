@@ -52,19 +52,37 @@ namespace dashNew1
 
         private void cmb_bid_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("exec booking_vehicle '" + cmb_bid.Text + "'");
-            date_book.Text = dt.Rows[0][1].ToString();
-            date_pick.Text = dt.Rows[0][2].ToString();
-            date_lend.Text = dt.Rows[0][3].ToString();
-            cmb_cid.Text = dt.Rows[0][4].ToString();
-            txt_fname.Text = dt.Rows[0][5].ToString();
-            txt_lname.Text = dt.Rows[0][6].ToString();
-            cmb_vid.Text = dt.Rows[0][7].ToString();
-            txt_make.Text = dt.Rows[0][8].ToString();
-            txt_model.Text = dt.Rows[0][9].ToString();
-            cmb_did.Text = dt.Rows[0][10].ToString();
-            txt_dname.Text = dt.Rows[0][11].ToString();
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = db.getData("exec booking_vehicle '" + cmb_bid.Text + "'");
+                if (cmb_did.Text != "")
+                {
+                    date_book.Text = dt.Rows[0][1].ToString();
+                    date_pick.Text = dt.Rows[0][2].ToString();
+                    date_lend.Text = dt.Rows[0][3].ToString();
+                    cmb_cid.Text = dt.Rows[0][4].ToString();
+                    txt_fname.Text = dt.Rows[0][5].ToString();
+                    txt_lname.Text = dt.Rows[0][6].ToString();
+                    cmb_vid.Text = dt.Rows[0][7].ToString();
+                    txt_make.Text = dt.Rows[0][8].ToString();
+                    txt_model.Text = dt.Rows[0][9].ToString();
+                    cmb_did.Text = dt.Rows[0][10].ToString();
+                    txt_dname.Text = dt.Rows[0][11].ToString();
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void btn_add_cus_Click(object sender, RoutedEventArgs e)
@@ -123,25 +141,75 @@ namespace dashNew1
 
         private void cmb_cid_DropDownClosed(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Customer where Cus_ID='" + cmb_cid.Text + "'");
-            txt_fname.Text = dt.Rows[0][1].ToString();
-            txt_lname.Text = dt.Rows[0][2].ToString();
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Customer where Cus_ID='" + cmb_cid.Text + "'");
+                if (cmb_cid.Text != "")
+                {
+                    txt_fname.Text = dt.Rows[0][1].ToString();
+                    txt_lname.Text = dt.Rows[0][2].ToString();
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void cmb_vid_DropDownClosed(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
-            txt_make.Text = dt.Rows[0][2].ToString();
-            txt_model.Text = dt.Rows[0][3].ToString();
+        {    try
+            {
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Vehicle where L_Plate='" + cmb_vid.Text + "'");
+                if (cmb_vid.Text != "")
+                {
+                    txt_make.Text = dt.Rows[0][2].ToString();
+                    txt_model.Text = dt.Rows[0][3].ToString();
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void cmb_did_DropDownClosed(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt = db.getData("select * from Driver where D_ID = '" + cmb_did.Text + "'");
-            txt_dname.Text = dt.Rows[0][2].ToString();
+        {  try
+            {
+                DataTable dt = new DataTable();
+                dt = db.getData("select * from Driver where D_ID = '" + cmb_did.Text + "'");
+                if(cmb_did.Text!="")
+                txt_dname.Text = dt.Rows[0][2].ToString();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void btn_home_Click(object sender, RoutedEventArgs e)

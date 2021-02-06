@@ -124,11 +124,18 @@ namespace dashNew1
             DataTable dt = new DataTable();
             dt = db.getData("Select max(O_ID) from Owner ");
             string id = dt.Rows[0][0].ToString();
-            var prefix = Regex.Match(id, "^\\D+").Value;
-            var number = Regex.Replace(id, "^\\D+", "");
-            var i = int.Parse(number) + 1;
-            var newString = prefix + i.ToString(new string('0', number.Length));
-            txt_oid.Text = newString;
+            if (id == "")
+            {
+                txt_oid.Text = "OW001";
+            }
+            else
+            {
+                var prefix = Regex.Match(id, "^\\D+").Value;
+                var number = Regex.Replace(id, "^\\D+", "");
+                var i = int.Parse(number) + 1;
+                var newString = prefix + i.ToString(new string('0', number.Length));
+                txt_oid.Text = newString;
+            }
             txt_onic.Clear();
             txt_oname.Clear();
             txt_address.Clear();

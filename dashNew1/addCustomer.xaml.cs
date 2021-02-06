@@ -144,12 +144,18 @@ namespace dashNew1
             DataTable dt = new DataTable();
             dt = db.getData("Select max(Cus_ID) from Customer");
             string id = dt.Rows[0][0].ToString();
-            var prefix = Regex.Match(id, "^\\D+").Value;
-            var number = Regex.Replace(id, "^\\D+", "");
-            var i = int.Parse(number) + 1;
-            var newString = prefix + i.ToString(new string('0', number.Length));
-            txt_id.Text = newString;
-
+            if (id == "")
+            {
+                txt_id.Text = "C001";
+            }
+            else
+            {
+                var prefix = Regex.Match(id, "^\\D+").Value;
+                var number = Regex.Replace(id, "^\\D+", "");
+                var i = int.Parse(number) + 1;
+                var newString = prefix + i.ToString(new string('0', number.Length));
+                txt_id.Text = newString;
+            }
             txt_fName.Clear();
             txt_lName.Clear();
             txt_address.Clear();

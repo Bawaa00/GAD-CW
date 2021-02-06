@@ -48,7 +48,7 @@ namespace dashNew1
 
         private void CMB_UPDATE_DropDownClosed(object sender, EventArgs e)
         {if (CMB_UPDATE.SelectedItem == null)
-            { error_msg.Text = "Pleasse Enter Customer ID"}
+            { error_msg.Text = "Pleasse Enter Customer ID"; }
             else { error_msg.Text = "";
 
 

@@ -45,6 +45,7 @@ namespace dashNew1
 
         public void labelData()
         {
+
             string path;
             DataTable dt = new DataTable();
             dt = db.getData("select COUNT(L_Plate) from Vehicle");
@@ -54,21 +55,36 @@ namespace dashNew1
             dt = db.getData("select COUNT(Cus_ID) from Customer");
             label_customer.Content = dt.Rows[0][0].ToString();
 
-            string lnum;
-            dt = db.getData("select L_Plate,COUNT(L_Plate) from Car_Booking,Vehicle where L_Plate = VNO group by L_Plate");
-            lnum = dt.Rows[0][0].ToString();
-            dt = db.getData("select * from Vehicle where L_Plate = '" + lnum + "'");
-            lbl_year.Content = dt.Rows[0][1].ToString();
-            lbl_make.Content = dt.Rows[0][2].ToString();
-            lbl_model.Content = dt.Rows[0][3].ToString();
-            lbl_cat.Content = dt.Rows[0][4].ToString();
-            path = dt.Rows[0][13].ToString();
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.CacheOption = BitmapCacheOption.OnLoad;
-            image.UriSource = new Uri(path);
-            image.EndInit();
-            img_vehicle.Source = image;
+            try
+            {
+                string lnum;
+                dt = db.getData("select L_Plate,COUNT(L_Plate) from Car_Booking,Vehicle where L_Plate = VNO group by L_Plate");
+                lnum = dt.Rows[0][0].ToString();
+                dt = db.getData("select * from Vehicle where L_Plate = '" + lnum + "'");
+                lbl_year.Content = dt.Rows[0][1].ToString();
+                lbl_make.Content = dt.Rows[0][2].ToString();
+                lbl_model.Content = dt.Rows[0][3].ToString();
+                lbl_cat.Content = dt.Rows[0][4].ToString();
+                path = dt.Rows[0][13].ToString();
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = new Uri(path);
+                image.EndInit();
+                img_vehicle.Source = image;
+            }
+            catch(IndexOutOfRangeException)
+            {
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch(Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         //Side Panel Buttons

@@ -140,11 +140,18 @@ namespace dashNew1
             DataTable dt = new DataTable();
             dt = db.getData("Select max(D_ID) from Driver");
             string id = dt.Rows[0][0].ToString();
-            var prefix = Regex.Match(id, "^\\D+").Value;
-            var number = Regex.Replace(id, "^\\D+", "");
-            var i = int.Parse(number) + 1;
-            var newString = prefix + i.ToString(new string('0', number.Length));
-            txt_Did.Text = newString;
+            if (id == "")
+            {
+                txt_Did.Text = "D001";
+            }
+            else
+            {
+                var prefix = Regex.Match(id, "^\\D+").Value;
+                var number = Regex.Replace(id, "^\\D+", "");
+                var i = int.Parse(number) + 1;
+                var newString = prefix + i.ToString(new string('0', number.Length));
+                txt_Did.Text = newString;
+            }
             txt_Lnum.Clear();
             txt_Name.Clear();
             txt_Tp.Clear();

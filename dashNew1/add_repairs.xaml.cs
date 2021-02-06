@@ -39,11 +39,18 @@ namespace dashNew1
                 dt = db.getData("Select max(r_ID) from Maintenance ");
 
                 string id = dt.Rows[0][0].ToString();
-                var prefix = Regex.Match(id, "^\\D+").Value;
-                var number = Regex.Replace(id, "^\\D+", "");
-                var i = int.Parse(number) + 1;
-                var newString = prefix + i.ToString(new string('0', number.Length));
-                txt_rid.Text = newString;
+                if (id == "")
+                {
+                    txt_rid.Text = "MR001";
+                }
+                else
+                {
+                    var prefix = Regex.Match(id, "^\\D+").Value;
+                    var number = Regex.Replace(id, "^\\D+", "");
+                    var i = int.Parse(number) + 1;
+                    var newString = prefix + i.ToString(new string('0', number.Length));
+                    txt_rid.Text = newString;
+                }
             }
             else if (cmb_type.SelectedIndex == 1 )
             {
@@ -56,11 +63,18 @@ namespace dashNew1
                 dt = db.getData("Select max(R_ID) from Acc_repair ");
 
                 string id = dt.Rows[0][0].ToString();
-                var prefix = Regex.Match(id, "^\\D+").Value;
-                var number = Regex.Replace(id, "^\\D+", "");
-                var i = int.Parse(number) + 1;
-                var newString = prefix + i.ToString(new string('0', number.Length));
-                txt_rid.Text = newString;
+                if (id == "")
+                {
+                    txt_rid.Text = "AR001";
+                }
+                else
+                {
+                    var prefix = Regex.Match(id, "^\\D+").Value;
+                    var number = Regex.Replace(id, "^\\D+", "");
+                    var i = int.Parse(number) + 1;
+                    var newString = prefix + i.ToString(new string('0', number.Length));
+                    txt_rid.Text = newString;
+                }
 
             }
         }

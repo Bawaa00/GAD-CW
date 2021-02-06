@@ -148,29 +148,44 @@ namespace dashNew1
         private void cmb_RID_DropDownClosed(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            if (cmb_type.SelectedIndex == 0)
-            { 
-                dt = db.getData("select * from Maintenance where R_id='" + cmb_RID.Text + "'");
-                TXT_VID.Text = dt.Rows[0][1].ToString();
-                txt_details.Text = dt.Rows[0][2].ToString();
-                txt_date.Text = dt.Rows[0][3].ToString();
-                txt_cost.Text = dt.Rows[0][4].ToString();
-                txt_error.Text = "";
-            }
-            else if (cmb_type.SelectedIndex == 1)
+            try
             {
-                dt = db.getData("select * from Acc_repair where R_ID='" + cmb_RID.Text + "'");
-                TXT_VID.Text = dt.Rows[0][1].ToString();
-                txt_details.Text = dt.Rows[0][2].ToString();
-                txt_date.Text = dt.Rows[0][3].ToString();
-                txt_cost.Text = dt.Rows[0][4].ToString();
-                txt_claim.Text = dt.Rows[0][5].ToString();
-                txt_error.Text = "";
+                if (cmb_type.SelectedIndex == 0)
+                {
+                    dt = db.getData("select * from Maintenance where R_id='" + cmb_RID.Text + "'");
+                    TXT_VID.Text = dt.Rows[0][1].ToString();
+                    txt_details.Text = dt.Rows[0][2].ToString();
+                    txt_date.Text = dt.Rows[0][3].ToString();
+                    txt_cost.Text = dt.Rows[0][4].ToString();
+                    txt_error.Text = "";
+                }
+                else if (cmb_type.SelectedIndex == 1)
+                {
+                    dt = db.getData("select * from Acc_repair where R_ID='" + cmb_RID.Text + "'");
+                    TXT_VID.Text = dt.Rows[0][1].ToString();
+                    txt_details.Text = dt.Rows[0][2].ToString();
+                    txt_date.Text = dt.Rows[0][3].ToString();
+                    txt_cost.Text = dt.Rows[0][4].ToString();
+                    txt_claim.Text = dt.Rows[0][5].ToString();
+                    txt_error.Text = "";
+                }
+                else
+                {
+                    txt_error.Text = "Please select a Repair ID";
+                }
             }
-            else
+            catch (IndexOutOfRangeException)
             {
-                txt_error.Text = "Please select a Repair ID";
-            }         
+                Messagebox obj = new Messagebox();
+                obj.errorMsg("Database Error");
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+                Messagebox msg = new Messagebox();
+                msg.errorMsg("Oops soomething went worng. " + ex.Message);
+                msg.Show();
+            }
         }
 
         private void btn_clear_Click(object sender, RoutedEventArgs e)

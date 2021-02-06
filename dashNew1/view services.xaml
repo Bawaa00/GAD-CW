@@ -53,19 +53,11 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Button x:Name="btn_delete"
-            Style="{StaticResource MaterialDesignRaisedDarkButton}"
-            Height="50"
-            materialDesign:ButtonAssist.CornerRadius="0,25,25,0"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1142,28,29,22" Background="#FF20A820" BorderBrush="{x:Null}">
-                <TextBlock
-                Text="DELETE" />
-            </Button>
             <Button x:Name="btn_update"
             Style="{StaticResource MaterialDesignRaisedDarkButton}"
             Height="50"
-            materialDesign:ButtonAssist.CornerRadius="25,0,0,25"
-            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1008,28,163,22" Background="#FF20A820" BorderBrush="{x:Null}">
+            materialDesign:ButtonAssist.CornerRadius="25,25,25,25"
+            ToolTip="MaterialDesignRaisedDarkButton with Round Corners" Margin="1126,28,45,22" Background="#FF20A820" BorderBrush="{x:Null}" Click="btn_update_Click">
                 <TextBlock
                 Text="UPDATE" />
             </Button>

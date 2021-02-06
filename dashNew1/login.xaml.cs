@@ -30,11 +30,12 @@ namespace dashNew1
 
         private void btn_log_Click(object sender, RoutedEventArgs e)
         {
-             LoadingScreen ls = new LoadingScreen();
+            
             DataTable dt = new DataTable();
             dt = db.getData("Select * from User_Login where Uname = '" + txt_uname.Text + "' and Upass='" + hc.PassHash(pass_box.Password) + "' ");
             if (dt.Rows.Count == 1)
             {
+                LoadingScreen ls = new LoadingScreen();
                 this.Close();
                 ls.Show();
             }

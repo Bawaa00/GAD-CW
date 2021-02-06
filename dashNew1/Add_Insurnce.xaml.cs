@@ -34,11 +34,18 @@ namespace dashNew1
             dt = db.getData("Select max(I_ID) from Insurance ");
 
             string id = dt.Rows[0][0].ToString();
-            var prefix = Regex.Match(id, "^\\D+").Value;
-            var number = Regex.Replace(id, "^\\D+", "");
-            var i = int.Parse(number) + 1;
-            var newString = prefix + i.ToString(new string('0', number.Length));
-            txt_iid.Text = newString;
+            if (id == "")
+            {
+                txt_iid.Text = "I001";
+            }
+            else
+            {
+                var prefix = Regex.Match(id, "^\\D+").Value;
+                var number = Regex.Replace(id, "^\\D+", "");
+                var i = int.Parse(number) + 1;
+                var newString = prefix + i.ToString(new string('0', number.Length));
+                txt_iid.Text = newString;
+            }
             txt_org.Clear();
             txt_tel.Clear();
             txt_address.Clear();
@@ -108,7 +115,7 @@ namespace dashNew1
         private void txt_tel_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_tel.Text.Length == 0)
-                error_msg.Text = "Please Enter Telephone NUmber ";
+                error_msg.Text = "Please Enter Telephone Number ";
             else if (!Regex.IsMatch(txt_tel.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
                 error_msg.Text = "Telephone No not Valid";
             else
