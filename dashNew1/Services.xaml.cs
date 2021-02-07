@@ -82,29 +82,37 @@ namespace dashNew1
 
         private void txt_milge_TextChanged(object sender, TextChangedEventArgs e)
         {
-            try
+            if (txt_milge.Text.Length == 0)
+            { error_msg.Text = "Please Enter Milage at sevice "; }
+            else if (!Regex.IsMatch(txt_milge.Text, "^[0-9]*$"))
+            { error_msg.Text = "Please enter numbers only"; }
+            else
             {
-                txt_nxt.Text = (Int32.Parse(txt_milge.Text) + 2500).ToString();
-            }
-            catch(System.OverflowException)
-            {
-                Messagebox msg = new Messagebox();
-                msg.errorMsg("Number too large");
-                msg.Show();
-                txt_milge.Clear();
-                txt_nxt.Clear();
-            }
-            catch(System.FormatException)
-            {
-                Messagebox msg = new Messagebox();
-                msg.errorMsg("Please input a number");
-                msg.Show();
-                txt_milge.Clear();
-                txt_nxt.Clear();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                error_msg.Text = "";
+                try
+                {
+                    txt_nxt.Text = (Int32.Parse(txt_milge.Text) + 2500).ToString();
+                }
+                catch (System.OverflowException)
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Number too large");
+                    msg.Show();
+                    txt_milge.Clear();
+                    txt_nxt.Clear();
+                }
+                catch (System.FormatException)
+                {
+                    Messagebox msg = new Messagebox();
+                    msg.errorMsg("Please input a number");
+                    msg.Show();
+                    txt_milge.Clear();
+                    txt_nxt.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -129,6 +137,31 @@ namespace dashNew1
         private void btn_cls_Click(object sender, RoutedEventArgs e)
         {
             add_service_form_Loaded(this, null);
+        }
+
+        private void cmb_vid_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cmb_vid.SelectedItem == null)
+                error_msg.Text = "Please Select Vehicle ID";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_Sdetails_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_Sdetails.Text.Length == 0)
+                error_msg.Text = "Please Enter Service Details";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_Sid_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if (txt_Sdetails.Text.Length == 0)
+                error_msg.Text = "Please Enter Service ID";
+            else
+                error_msg.Text = "";
         }
     }
 }
